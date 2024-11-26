@@ -1,0 +1,664 @@
+\hypertarget{classmodio}{\section{modio Module Reference}
+\label{classmodio}\index{modio@{modio}}
+}
+
+
+This module contains subroutines used for I/\-O.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodio_aefab9476e94da81a75351dbeee74e623}{title} ()
+\item 
+subroutine \hyperlink{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof.\-nml file (default name) with process 0 and broadcasts them to every processes. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_ae764b324dac1a0991a9643a54d47aa36}{writeparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the input parameters in a .nml file, print them on screen and writes them in the .log file. It should be called only from process 0. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a6ba64be35b401e31cd35f96ea50bb0c4}{writetimings} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes timings in the log file and prints them on screen. It should be called only by process 0. It also closes the log file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a7bb73858f091ddd46631bcb29022f803}{ramses\-\_\-lecture} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles files created by R\-A\-M\-S\-E\-S that p\-F\-O\-F has to analyze. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a663de68512ba066cd881ea37f378f6a8}{outputcube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes binary cube files. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a943b18e88497f616e47f7be2047d269a}{writehalomass} (halo\-N\-B, halo\-Mass, halocom\-Pos, halo\-I\-D)
+\begin{DoxyCompactList}\small\item\em This subroutine writes binary files containing the mass, the id and the position of the center of mass for each halo found by p\-F\-O\-F. One file is written per process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_ae7caa5bd1a32540628e11748a56626ae}{writehalopart} (halo\-N\-B, halopart\-N\-B, halo\-Mass, halopart\-Pos, halopart\-Vel, halopart\-I\-D)
+\begin{DoxyCompactList}\small\item\em This subroutine writes binary files containing the position, the velocity and the id of each particle in each halo found by p\-F\-O\-F. One file is written per process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a52cdc31734affd194230ed16510dae68}{h5writecube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the position, velocity and id of each particle on the process in a hdf5 file. One file is written per M\-P\-I process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a92f73643cbd1d8b16e0c29d683a147e0}{h5readcube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads hdf5 cube files created by p\-F\-O\-F. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_af1c4604ad1d5c38063a516fe6ef6756d}{mpih5writecube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a538e3b0c56f785106907880cb1e359b1}{mpih5readcube} ()
+\item 
+subroutine \hyperlink{classmodio_aefab9476e94da81a75351dbeee74e623}{title} ()
+\item 
+subroutine \hyperlink{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{h5readshellinfo} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a0d3522f20c353a57b002c3120bc266f2}{h5readmap} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the map file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a8f70f66bd5285c807b17e0c89a6e0e4a}{h5readparticles} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles from the shell files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{classmodio_af7ac0e60c49f16bf08605237dd728508}{ncube}
+\item 
+integer(kind=4) \hyperlink{classmodio_a62b213d7b9f52071f903b877ee52c86b}{ioerr}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodio_a0bb05c9005df17b314c2a7e0f43e758c}{npart\-\_\-tab}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines used for I/\-O. 
+
+This module contains the subroutines and common variables used for I/\-O in p\-Fo\-F\-\_\-cone.
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 5 of file modio.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodio_a92f73643cbd1d8b16e0c29d683a147e0}{\index{modio@{modio}!h5readcube@{h5readcube}}
+\index{h5readcube@{h5readcube}!modio@{modio}}
+\subsubsection[{h5readcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a92f73643cbd1d8b16e0c29d683a147e0}
+
+
+This subroutine reads hdf5 cube files created by p\-F\-O\-F. 
+
+
+
+Definition at line 1003 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{classmodio_a92f73643cbd1d8b16e0c29d683a147e0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{classmodio_a92f73643cbd1d8b16e0c29d683a147e0_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a0d3522f20c353a57b002c3120bc266f2}{\index{modio@{modio}!h5readmap@{h5readmap}}
+\index{h5readmap@{h5readmap}!modio@{modio}}
+\subsubsection[{h5readmap}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5readmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a0d3522f20c353a57b002c3120bc266f2}
+
+
+This subroutine reads the map file. 
+
+
+
+Definition at line 225 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), and modmpicom\-::settopology().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classmodio_a0d3522f20c353a57b002c3120bc266f2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodio_a0d3522f20c353a57b002c3120bc266f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a8f70f66bd5285c807b17e0c89a6e0e4a}{\index{modio@{modio}!h5readparticles@{h5readparticles}}
+\index{h5readparticles@{h5readparticles}!modio@{modio}}
+\subsubsection[{h5readparticles}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5readparticles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a8f70f66bd5285c807b17e0c89a6e0e4a}
+
+
+This subroutine reads the particles from the shell files. 
+
+
+
+Definition at line 288 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a8f70f66bd5285c807b17e0c89a6e0e4a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classmodio_a8f70f66bd5285c807b17e0c89a6e0e4a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{\index{modio@{modio}!h5readshellinfo@{h5readshellinfo}}
+\index{h5readshellinfo@{h5readshellinfo}!modio@{modio}}
+\subsubsection[{h5readshellinfo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5readshellinfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}
+
+
+This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. 
+
+
+
+Definition at line 109 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-file().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a52cdc31734affd194230ed16510dae68}{\index{modio@{modio}!h5writecube@{h5writecube}}
+\index{h5writecube@{h5writecube}!modio@{modio}}
+\subsubsection[{h5writecube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5writecube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a52cdc31734affd194230ed16510dae68}
+
+
+This subroutine writes the position, velocity and id of each particle on the process in a hdf5 file. One file is written per M\-P\-I process. 
+
+
+
+Definition at line 718 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-file(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), and modxdmf\-::writesinglecubexdmf().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a52cdc31734affd194230ed16510dae68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classmodio_a52cdc31734affd194230ed16510dae68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a538e3b0c56f785106907880cb1e359b1}{\index{modio@{modio}!mpih5readcube@{mpih5readcube}}
+\index{mpih5readcube@{mpih5readcube}!modio@{modio}}
+\subsubsection[{mpih5readcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::mpih5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a538e3b0c56f785106907880cb1e359b1}
+
+
+Definition at line 1332 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-mpi\-\_\-file().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a538e3b0c56f785106907880cb1e359b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodio_a538e3b0c56f785106907880cb1e359b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_af1c4604ad1d5c38063a516fe6ef6756d}{\index{modio@{modio}!mpih5writecube@{mpih5writecube}}
+\index{mpih5writecube@{mpih5writecube}!modio@{modio}}
+\subsubsection[{mpih5writecube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::mpih5writecube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_af1c4604ad1d5c38063a516fe6ef6756d}
+
+
+This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. 
+
+
+
+Definition at line 1091 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-close\-\_\-mpi\-\_\-file(), modhdf5\-::hdf5\-\_\-create\-\_\-mpi\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodio_af1c4604ad1d5c38063a516fe6ef6756d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{classmodio_af1c4604ad1d5c38063a516fe6ef6756d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a663de68512ba066cd881ea37f378f6a8}{\index{modio@{modio}!outputcube@{outputcube}}
+\index{outputcube@{outputcube}!modio@{modio}}
+\subsubsection[{outputcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::outputcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a663de68512ba066cd881ea37f378f6a8}
+
+
+This subroutine writes binary cube files. 
+
+
+
+Definition at line 615 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{classmodio_a663de68512ba066cd881ea37f378f6a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a7bb73858f091ddd46631bcb29022f803}{\index{modio@{modio}!ramses\-\_\-lecture@{ramses\-\_\-lecture}}
+\index{ramses\-\_\-lecture@{ramses\-\_\-lecture}!modio@{modio}}
+\subsubsection[{ramses\-\_\-lecture}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::ramses\-\_\-lecture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a7bb73858f091ddd46631bcb29022f803}
+
+
+This subroutine reads the particles files created by R\-A\-M\-S\-E\-S that p\-F\-O\-F has to analyze. 
+
+
+
+Definition at line 201 of file modio.\-f90.
+
+
+
+References modmpicom\-::emergencystop().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a7bb73858f091ddd46631bcb29022f803_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodio_a7bb73858f091ddd46631bcb29022f803_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}
+
+
+This subroutine reads the input parameters from pfof.\-nml file (default name) with process 0 and broadcasts them to every processes. 
+
+
+
+Definition at line 50 of file modio.\-f90.
+
+
+
+References modmpicom\-::bcastparam().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}
+
+
+This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. 
+
+
+
+Definition at line 52 of file modio.\-f90.
+
+
+
+References modmpicom\-::bcastparam().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_aefab9476e94da81a75351dbeee74e623}{\index{modio@{modio}!title@{title}}
+\index{title@{title}!modio@{modio}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_aefab9476e94da81a75351dbeee74e623}
+
+
+Definition at line 15 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classmodio_aefab9476e94da81a75351dbeee74e623_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_aefab9476e94da81a75351dbeee74e623}{\index{modio@{modio}!title@{title}}
+\index{title@{title}!modio@{modio}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_aefab9476e94da81a75351dbeee74e623}
+
+
+Definition at line 21 of file modio.\-f90.
+
+\hypertarget{classmodio_a943b18e88497f616e47f7be2047d269a}{\index{modio@{modio}!writehalomass@{writehalomass}}
+\index{writehalomass@{writehalomass}!modio@{modio}}
+\subsubsection[{writehalomass}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::writehalomass (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{halo\-N\-B, }
+\item[{integer(kind=4), dimension(halonb), intent(in)}]{halo\-Mass, }
+\item[{real(kind=8), dimension(3,halonb), intent(in)}]{halocom\-Pos, }
+\item[{integer(kind=pri), dimension(halonb), intent(in)}]{halo\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a943b18e88497f616e47f7be2047d269a}
+
+
+This subroutine writes binary files containing the mass, the id and the position of the center of mass for each halo found by p\-F\-O\-F. One file is written per process. 
+
+
+
+Definition at line 644 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a943b18e88497f616e47f7be2047d269a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_ae7caa5bd1a32540628e11748a56626ae}{\index{modio@{modio}!writehalopart@{writehalopart}}
+\index{writehalopart@{writehalopart}!modio@{modio}}
+\subsubsection[{writehalopart}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::writehalopart (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{halo\-N\-B, }
+\item[{integer(kind=4), intent(in)}]{halopart\-N\-B, }
+\item[{integer(kind=4), dimension(halonb), intent(in)}]{halo\-Mass, }
+\item[{real (kind=4), dimension(3,halopartnb), intent(in)}]{halopart\-Pos, }
+\item[{real (kind=4), dimension(3,halopartnb), intent(in)}]{halopart\-Vel, }
+\item[{integer(kind=pri), dimension(halopartnb), intent(in)}]{halopart\-I\-D}
+\end{DoxyParamCaption}
+)}}\label{classmodio_ae7caa5bd1a32540628e11748a56626ae}
+
+
+This subroutine writes binary files containing the position, the velocity and the id of each particle in each halo found by p\-F\-O\-F. One file is written per process. 
+
+
+
+Definition at line 677 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_ae7caa5bd1a32540628e11748a56626ae_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_ae764b324dac1a0991a9643a54d47aa36}{\index{modio@{modio}!writeparameters@{writeparameters}}
+\index{writeparameters@{writeparameters}!modio@{modio}}
+\subsubsection[{writeparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::writeparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_ae764b324dac1a0991a9643a54d47aa36}
+
+
+This subroutine writes the input parameters in a .nml file, print them on screen and writes them in the .log file. It should be called only from process 0. 
+
+
+
+Definition at line 97 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{classmodio_ae764b324dac1a0991a9643a54d47aa36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a6ba64be35b401e31cd35f96ea50bb0c4}{\index{modio@{modio}!writetimings@{writetimings}}
+\index{writetimings@{writetimings}!modio@{modio}}
+\subsubsection[{writetimings}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::writetimings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a6ba64be35b401e31cd35f96ea50bb0c4}
+
+
+This subroutine writes timings in the log file and prints them on screen. It should be called only by process 0. It also closes the log file. 
+
+
+
+Definition at line 158 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classmodio_a6ba64be35b401e31cd35f96ea50bb0c4_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodio_a62b213d7b9f52071f903b877ee52c86b}{\index{modio@{modio}!ioerr@{ioerr}}
+\index{ioerr@{ioerr}!modio@{modio}}
+\subsubsection[{ioerr}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::ioerr}}\label{classmodio_a62b213d7b9f52071f903b877ee52c86b}
+
+
+Definition at line 17 of file modio.\-f90.
+
+\hypertarget{classmodio_af7ac0e60c49f16bf08605237dd728508}{\index{modio@{modio}!ncube@{ncube}}
+\index{ncube@{ncube}!modio@{modio}}
+\subsubsection[{ncube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::ncube}}\label{classmodio_af7ac0e60c49f16bf08605237dd728508}
+
+
+Definition at line 16 of file modio.\-f90.
+
+\hypertarget{classmodio_a0bb05c9005df17b314c2a7e0f43e758c}{\index{modio@{modio}!npart\-\_\-tab@{npart\-\_\-tab}}
+\index{npart\-\_\-tab@{npart\-\_\-tab}!modio@{modio}}
+\subsubsection[{npart\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modio\-::npart\-\_\-tab}}\label{classmodio_a0bb05c9005df17b314c2a7e0f43e758c}
+
+
+Definition at line 18 of file modio.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/pfof\-\_\-hdf5/src/\hyperlink{pfof__hdf5_2src_2modio_8f90}{modio.\-f90}\end{DoxyCompactItemize}

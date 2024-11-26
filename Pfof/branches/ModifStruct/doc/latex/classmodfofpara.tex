@@ -1,0 +1,286 @@
+\hypertarget{classmodfofpara}{\section{modfofpara Module Reference}
+\label{classmodfofpara}\index{modfofpara@{modfofpara}}
+}
+
+
+This module contains the serial F\-O\-F algorithm.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodfofpara_a4ec0353cad472761978bbabf6846ac4f}{fofpara} ()
+\begin{DoxyCompactList}\small\item\em Parallel F\-O\-F subroutine Finds haloes on each process then apply the merging process for haloes that extend across several processes. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodfofpara_a5294ecab752fb3cfbea3bec7cd28a29a}{init} (n, np, ngpp, x, pile, adfirst, npcase, xmin, ymin, zmin, t)
+\begin{DoxyCompactList}\small\item\em Initialize the stacks of pointers for local friends of friends.\par
+ The whole domain is divided into t$^\wedge$3 cubes, where t is the resolution of the simulation analized times the refine\-\_\-fof factor.\par
+ Each process will implicitly considere only its subdomains because every particles treated by the process is located in the same subdomain.\par
+ This routine initializes one stack of \char`\"{}pointers\char`\"{} to the index of the particles located in each cube. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodfofpara_a033a2820dd29f107782b566ca298bde4}{fofparacone} ()
+\begin{DoxyCompactList}\small\item\em Parallel F\-O\-F subroutine Finds haloes on each process then apply the merging process for haloes that extend across several processes. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodfofpara_afdd2abc340cad047a13ebbb62f1bafdc}{init} (n, np, ngpp, x, pile, adfirst, npcase, xmin, ymin, zmin, t, edgem1)
+\begin{DoxyCompactList}\small\item\em Initialize the stacks of pointers for local friends of friends.\par
+ The whole domain is divided into t$^\wedge$3 cubes, where t is the resolution of the simulation analized times the refine\-\_\-fof factor.\par
+ Each process will implicitly considere only its subdomains because every particles treated by the process is located in the same subdomain.\par
+ This routine initializes one stack of \char`\"{}pointers\char`\"{} to the index of the particles located in each cube. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodfofpara_aae8bee067b5066b64d8799e78efa239c}{computeminmax} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the serial F\-O\-F algorithm. 
+
+Authors\-: E. Audit, F. Roy, V. Bouillot 
+
+Definition at line 8 of file modfofpara.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodfofpara_aae8bee067b5066b64d8799e78efa239c}{\index{modfofpara@{modfofpara}!computeminmax@{computeminmax}}
+\index{computeminmax@{computeminmax}!modfofpara@{modfofpara}}
+\subsubsection[{computeminmax}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofpara\-::computeminmax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodfofpara_aae8bee067b5066b64d8799e78efa239c}
+
+
+Definition at line 590 of file modfofpara.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classmodfofpara_aae8bee067b5066b64d8799e78efa239c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodfofpara_a4ec0353cad472761978bbabf6846ac4f}{\index{modfofpara@{modfofpara}!fofpara@{fofpara}}
+\index{fofpara@{fofpara}!modfofpara@{modfofpara}}
+\subsubsection[{fofpara}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modfofpara\-::fofpara (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodfofpara_a4ec0353cad472761978bbabf6846ac4f}
+
+
+Parallel F\-O\-F subroutine Finds haloes on each process then apply the merging process for haloes that extend across several processes. 
+
+
+
+Definition at line 23 of file modfofpara.\-f90.
+
+
+
+References modhalo\-::computecom(), modhalo\-::computeradius(), modhalo\-::gatherhaloes(), modwritehalo\-::h5writehalopart(), init(), modfofmpi\-::mergehaloes(), modwritehalo\-::mpih5writehalomass(), and modhalo\-::selecthaloes().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodfofpara_a4ec0353cad472761978bbabf6846ac4f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classmodfofpara_a4ec0353cad472761978bbabf6846ac4f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodfofpara_a033a2820dd29f107782b566ca298bde4}{\index{modfofpara@{modfofpara}!fofparacone@{fofparacone}}
+\index{fofparacone@{fofparacone}!modfofpara@{modfofpara}}
+\subsubsection[{fofparacone}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofpara\-::fofparacone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodfofpara_a033a2820dd29f107782b566ca298bde4}
+
+
+Parallel F\-O\-F subroutine Finds haloes on each process then apply the merging process for haloes that extend across several processes. 
+
+
+
+Definition at line 19 of file modfofpara.\-f90.
+
+
+
+References modhalo\-::computecom(), modhalo\-::computeradius(), modhalo\-::gatherhaloes(), modwritehalo\-::h5writehalopart(), init(), modfofmpi\-::mergehaloes(), modwritehalo\-::mpih5writehalomass(), and modhalo\-::selecthaloes().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodfofpara_a033a2820dd29f107782b566ca298bde4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classmodfofpara_a033a2820dd29f107782b566ca298bde4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodfofpara_afdd2abc340cad047a13ebbb62f1bafdc}{\index{modfofpara@{modfofpara}!init@{init}}
+\index{init@{init}!modfofpara@{modfofpara}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofpara\-::init (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), intent(in)}]{np, }
+\item[{integer(kind=4), intent(in)}]{ngpp, }
+\item[{real(kind=4), dimension(3,np), intent(in)}]{x, }
+\item[{integer(kind=4), dimension(np), intent(out)}]{pile, }
+\item[{integer(kind=4), dimension(ngpp), intent(out)}]{adfirst, }
+\item[{integer(kind=4), dimension(ngpp), intent(out)}]{npcase, }
+\item[{real(kind=4)}]{xmin, }
+\item[{real(kind=4)}]{ymin, }
+\item[{real(kind=4)}]{zmin, }
+\item[{real(kind=4), intent(in)}]{t, }
+\item[{real(kind=4), intent(in)}]{edgem1}
+\end{DoxyParamCaption}
+)}}\label{classmodfofpara_afdd2abc340cad047a13ebbb62f1bafdc}
+
+
+Initialize the stacks of pointers for local friends of friends.\par
+ The whole domain is divided into t$^\wedge$3 cubes, where t is the resolution of the simulation analized times the refine\-\_\-fof factor.\par
+ Each process will implicitly considere only its subdomains because every particles treated by the process is located in the same subdomain.\par
+ This routine initializes one stack of \char`\"{}pointers\char`\"{} to the index of the particles located in each cube. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & number of \char`\"{}cube\char`\"{} in each dimension in a subdomain, i.\-e. there are n$^\wedge$3 cubes in a subdomain\\
+\hline
+\mbox{\tt in}  & {\em np} & number of particles in the subdomain\\
+\hline
+\mbox{\tt in}  & {\em ngpp} & number of \char`\"{}\-F\-O\-F\char`\"{} cubes in the subdomain\\
+\hline
+\mbox{\tt in}  & {\em x} & positions of the particles\\
+\hline
+\mbox{\tt in}  & {\em t} & resolution of the cosmological simulation times refine\-\_\-fof factor\\
+\hline
+\mbox{\tt out}  & {\em npcase} & number of particles in each cube\\
+\hline
+\mbox{\tt out}  & {\em adfirst} & index of the first particle to examine in the cube\\
+\hline
+\mbox{\tt out}  & {\em pile} & stack of indices \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 507 of file modfofpara.\-f90.
+
+
+
+References modmpicommons\-::emergencystop().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodfofpara_afdd2abc340cad047a13ebbb62f1bafdc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodfofpara_a5294ecab752fb3cfbea3bec7cd28a29a}{\index{modfofpara@{modfofpara}!init@{init}}
+\index{init@{init}!modfofpara@{modfofpara}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofpara\-::init (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), intent(in)}]{np, }
+\item[{integer(kind=4), intent(in)}]{ngpp, }
+\item[{real(kind=4), dimension(3,np), intent(in)}]{x, }
+\item[{integer(kind=4), dimension(np), intent(out)}]{pile, }
+\item[{integer(kind=4), dimension(ngpp), intent(out)}]{adfirst, }
+\item[{integer(kind=4), dimension(ngpp), intent(out)}]{npcase, }
+\item[{real(kind=4), intent(in)}]{xmin, }
+\item[{real(kind=4), intent(in)}]{ymin, }
+\item[{real(kind=4), intent(in)}]{zmin, }
+\item[{real(kind=4), intent(in)}]{t}
+\end{DoxyParamCaption}
+)}}\label{classmodfofpara_a5294ecab752fb3cfbea3bec7cd28a29a}
+
+
+Initialize the stacks of pointers for local friends of friends.\par
+ The whole domain is divided into t$^\wedge$3 cubes, where t is the resolution of the simulation analized times the refine\-\_\-fof factor.\par
+ Each process will implicitly considere only its subdomains because every particles treated by the process is located in the same subdomain.\par
+ This routine initializes one stack of \char`\"{}pointers\char`\"{} to the index of the particles located in each cube. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & number of \char`\"{}cube\char`\"{} in each dimension in a subdomain, i.\-e. there are n$^\wedge$3 cubes in a subdomain\\
+\hline
+\mbox{\tt in}  & {\em np} & number of particles in the subdomain\\
+\hline
+\mbox{\tt in}  & {\em ngpp} & number of \char`\"{}\-F\-O\-F\char`\"{} cubes in the subdomain\\
+\hline
+\mbox{\tt in}  & {\em x} & positions of the particles\\
+\hline
+\mbox{\tt in}  & {\em zmin} & minimum x,y and z of the subdomain\\
+\hline
+\mbox{\tt in}  & {\em t} & resolution of the cosmological simulation times refine\-\_\-fof factor\\
+\hline
+\mbox{\tt out}  & {\em npcase} & number of particles in each cube\\
+\hline
+\mbox{\tt out}  & {\em adfirst} & index of the first particle to examine in the cube\\
+\hline
+\mbox{\tt out}  & {\em pile} & stack of indices \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 458 of file modfofpara.\-f90.
+
+
+
+References modmpicommons\-::emergencystop().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodfofpara_a5294ecab752fb3cfbea3bec7cd28a29a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodfofpara_a5294ecab752fb3cfbea3bec7cd28a29a_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/pfof\-\_\-snap/src/\hyperlink{pfof__snap_2src_2modfofpara_8f90}{modfofpara.\-f90}\end{DoxyCompactItemize}

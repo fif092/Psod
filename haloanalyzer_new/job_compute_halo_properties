@@ -1,0 +1,42 @@
+#!/bin/bash
+set -x
+
+WORKDIR=/data/yrasera/prepa4096
+
+#WORK_DIR
+BOX=82.03125
+NPART=128
+simu=boxlen"$BOX"_n"$NPART"_lcdmw7
+WORK_DIR=$WORKDIR/$simu
+
+for ((i=11;i<=11;i+=1)); do
+N=$(printf %5.5i $i) #output to analyse
+
+#parameters
+delta=200.      #Overdensity used to compute Rdelta and Vdelta from MFOF  
+data=$WORK_DIR
+
+#GO TO REPOSITORY FOR RESULTS
+#rep=$WORK_DIR/post/fof/output_$N/
+rep=$WORK_DIR/post/fof/output_$N/
+#cd $rep
+
+#get simu name, output number and box length                      
+echo $simu
+cosmo=$(echo ${simu} | awk -F'_' '{ print $3 }')
+boxlen=$(echo ${simu} | awk -F'_' '{ print $1 }')
+boxlength=$(echo ${boxlen} | awk -F'len' '{ print $2 }')
+
+#create parameter file
+cat > compute_halos_properties_$simu.param <<EOF
+${boxlength}
+$delta
+$data/ramses_input_$cosmo.dat
+EOF
+
+#RUN
+mpirun -np  8 src/haloanalyzer compute_halos_properties_$simu.param >compute_halos_properties_$simu.log
+ls -alrt
+
+done
+

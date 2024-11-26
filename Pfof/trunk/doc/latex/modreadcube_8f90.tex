@@ -1,0 +1,42 @@
+\hypertarget{modreadcube_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modreadcube.f90 File Reference}
+\label{modreadcube_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modreadcube.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modreadcube.\+f90}}
+
+
+This file contains the subroutines used to read \char`\"{}cube\char`\"{} files produced by pfof\+\_\+snap.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodreadcube}{modreadcube}
+\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218}{modreadcube\+::selectcubetype} ()
+\begin{DoxyCompactList}\small\item\em Opens a cube file, reads the file\+\_\+type metadata, and selects the corresponding reading subroutine. Sets the readcube procedure pointer to the right subroutine. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}{modreadcube\+::h5readcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a standard hdf5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547}{modreadcube\+::h5readsortedcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a hdf5 sorted cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27}{modreadcube\+::mpih5readcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a parallel H\+D\+F5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}{modreadcube\+::mpih5readsortedcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a parallel and sorted H\+D\+F5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+procedure(), pointer \hyperlink{namespacemodreadcube_af4018b3e5809ee7ec7974a7601f2b304}{modreadcube\+::readcube}
+\begin{DoxyCompactList}\small\item\em Procedure pointer pointing to the cube reading subroutine selected from the \char`\"{}file\+\_\+type\char`\"{} metadata in the H\+D\+F5 cube file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the subroutines used to read \char`\"{}cube\char`\"{} files produced by pfof\+\_\+snap. 
+
+There are 4 differents cube types, there is one reading subroutine per cube type.
+
+There is a subroutine used to select the right reading function according to the file\+\_\+type metadata read from the H\+D\+F5 cube file.
+
+\begin{DoxyAuthor}{Author}
+Fabrice Roy 
+\end{DoxyAuthor}

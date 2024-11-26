@@ -1,0 +1,24 @@
+&ramsesinput
+code_index = 'RA3'
+pathinput = '/obs/roy/Cosmo/Data/TestStructure/output_00009'
+namepart = 'part_00009.out'
+nameinfo = 'info_00009.txt'
+grpsize = 16
+star = .false.
+metal = .false. 
+readfromcube = .true./
+
+&fofparam
+perco = 0.20
+Mmin = 100 
+Mmax = 100000000
+dofof = .true./
+ 
+&outputparam
+output_root = 'test'
+outcube = .true.
+usehdf5 = .true.
+gatherwrite = 2
+gatherread = 1
+dotimings = .true./
+

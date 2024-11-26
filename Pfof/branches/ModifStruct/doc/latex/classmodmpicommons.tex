@@ -1,0 +1,351 @@
+\hypertarget{classmodmpicommons}{\section{modmpicommons Module Reference}
+\label{classmodmpicommons}\index{modmpicommons@{modmpicommons}}
+}
+
+
+Common M\-P\-I related variables, type declarations and initialization procedures.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_aa4bf05da4dd24fecb5a01019cb4761bd}{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_a462cf966a8c4f578081006dd0631feab}{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_a23a14939cb2ed36bd8a7811ad9eba219}{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_abfea7d54faeee68ff1f714bbdba25283}{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_ace4e1f6e395ff7e6c6aeb609c952a9c1}{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_a6c5b37e320148b90663b0c47b95f3bb3}{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_a753f779e951b4b6e1e239a71763f6add}{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav}
+\item 
+subroutine, public \hyperlink{classmodmpicommons_a04e7d2c785e40fe089fef7c3b3cd5831}{emergencystop} (message, errcode)
+\begin{DoxyCompactList}\small\item\em The subroutine is used to abort the execution if something wrong is happening. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a895d05e6095a8a0c14013d3af546148f}{procid}
+\begin{DoxyCompactList}\small\item\em process id in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_ae6d2f748e667900423c3bd8404bf165d}{procnb}
+\begin{DoxyCompactList}\small\item\em process number in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6), \\*
+public \hyperlink{classmodmpicommons_aeb9144358efbf3350b75103e7c5e356f}{neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighbours of the local process in the Mpi\-Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_ad9669ed4065b2389ec88512a5fa63c3c}{mpi\-\_\-type\-\_\-info\-\_\-ramses}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-info\-\_\-ramses. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a9ab9e509165ff81f220a2a2a9e5057d9}{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-info\-\_\-cone\-\_\-part. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a3cc383a12a1eab12b23c3ab54ff01fbc}{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-info\-\_\-cone\-\_\-grav. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_ab52ab5f47b5ef66ae14b8fb64521b798}{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-pfof\-\_\-snap. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a218b0422727269c7f9cff7a8eb5b22bc}{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-pfof\-\_\-cone. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a5ea3acdd1a05643c2a359ed42abd3264}{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-conecreator\-\_\-part. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicommons_a9f948ab13dbfdd8f08dede33bd3deed1}{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav}
+\begin{DoxyCompactList}\small\item\em M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-conecreator\-\_\-grav. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common M\-P\-I related variables, type declarations and initialization procedures. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modmpicommons.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodmpicommons_a462cf966a8c4f578081006dd0631feab}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_a462cf966a8c4f578081006dd0631feab}
+
+
+Definition at line 121 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_aa4bf05da4dd24fecb5a01019cb4761bd}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_aa4bf05da4dd24fecb5a01019cb4761bd}
+
+
+Definition at line 52 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_aa4bf05da4dd24fecb5a01019cb4761bd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_a23a14939cb2ed36bd8a7811ad9eba219}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses@{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_a23a14939cb2ed36bd8a7811ad9eba219}
+
+
+Definition at line 188 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_a23a14939cb2ed36bd8a7811ad9eba219_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_a753f779e951b4b6e1e239a71763f6add}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_a753f779e951b4b6e1e239a71763f6add}
+
+
+Definition at line 388 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_a753f779e951b4b6e1e239a71763f6add_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_a6c5b37e320148b90663b0c47b95f3bb3}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_a6c5b37e320148b90663b0c47b95f3bb3}
+
+
+Definition at line 343 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_a6c5b37e320148b90663b0c47b95f3bb3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_ace4e1f6e395ff7e6c6aeb609c952a9c1}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_ace4e1f6e395ff7e6c6aeb609c952a9c1}
+
+
+Definition at line 295 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_ace4e1f6e395ff7e6c6aeb609c952a9c1_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_abfea7d54faeee68ff1f714bbdba25283}{\index{modmpicommons@{modmpicommons}!create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap}}
+\index{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap@{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap}!modmpicommons@{modmpicommons}}
+\subsubsection[{create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_abfea7d54faeee68ff1f714bbdba25283}
+
+
+Definition at line 235 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_abfea7d54faeee68ff1f714bbdba25283_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicommons_a04e7d2c785e40fe089fef7c3b3cd5831}{\index{modmpicommons@{modmpicommons}!emergencystop@{emergencystop}}
+\index{emergencystop@{emergencystop}!modmpicommons@{modmpicommons}}
+\subsubsection[{emergencystop}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicommons\-::emergencystop (
+\begin{DoxyParamCaption}
+\item[{character(len=$\ast$), intent(in)}]{message, }
+\item[{integer, intent(in)}]{errcode}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicommons_a04e7d2c785e40fe089fef7c3b3cd5831}
+
+
+The subroutine is used to abort the execution if something wrong is happening. 
+
+
+
+Definition at line 431 of file modmpicommons.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicommons_a04e7d2c785e40fe089fef7c3b3cd5831_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodmpicommons_a3cc383a12a1eab12b23c3ab54ff01fbc}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav@{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}}
+\index{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav@{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-grav}}\label{classmodmpicommons_a3cc383a12a1eab12b23c3ab54ff01fbc}
+
+
+M\-P\-I type corresponding to Type\-\_\-info\-\_\-cone\-\_\-grav. 
+
+
+
+Definition at line 21 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_a9ab9e509165ff81f220a2a2a9e5057d9}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part@{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}}
+\index{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part@{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part}}\label{classmodmpicommons_a9ab9e509165ff81f220a2a2a9e5057d9}
+
+
+M\-P\-I type corresponding to Type\-\_\-info\-\_\-cone\-\_\-part. 
+
+
+
+Definition at line 20 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_ad9669ed4065b2389ec88512a5fa63c3c}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-info\-\_\-ramses@{mpi\-\_\-type\-\_\-info\-\_\-ramses}}
+\index{mpi\-\_\-type\-\_\-info\-\_\-ramses@{mpi\-\_\-type\-\_\-info\-\_\-ramses}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-info\-\_\-ramses}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-info\-\_\-ramses}}\label{classmodmpicommons_ad9669ed4065b2389ec88512a5fa63c3c}
+
+
+M\-P\-I type corresponding to Type\-\_\-info\-\_\-ramses. 
+
+
+
+Definition at line 19 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_a9f948ab13dbfdd8f08dede33bd3deed1}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav@{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav}}
+\index{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav@{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-grav}}\label{classmodmpicommons_a9f948ab13dbfdd8f08dede33bd3deed1}
+
+
+M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-conecreator\-\_\-grav. 
+
+
+
+Definition at line 25 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_a5ea3acdd1a05643c2a359ed42abd3264}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part@{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part}}
+\index{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part@{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-parameter\-\_\-cone\-\_\-part}}\label{classmodmpicommons_a5ea3acdd1a05643c2a359ed42abd3264}
+
+
+M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-conecreator\-\_\-part. 
+
+
+
+Definition at line 24 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_a218b0422727269c7f9cff7a8eb5b22bc}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone@{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone}}
+\index{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone@{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-cone}}\label{classmodmpicommons_a218b0422727269c7f9cff7a8eb5b22bc}
+
+
+M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-pfof\-\_\-cone. 
+
+
+
+Definition at line 23 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_ab52ab5f47b5ef66ae14b8fb64521b798}{\index{modmpicommons@{modmpicommons}!mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap@{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap}}
+\index{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap@{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap}!modmpicommons@{modmpicommons}}
+\subsubsection[{mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::mpi\-\_\-type\-\_\-parameter\-\_\-pfof\-\_\-snap}}\label{classmodmpicommons_ab52ab5f47b5ef66ae14b8fb64521b798}
+
+
+M\-P\-I type corresponding to Type\-\_\-parameter\-\_\-pfof\-\_\-snap. 
+
+
+
+Definition at line 22 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_aeb9144358efbf3350b75103e7c5e356f}{\index{modmpicommons@{modmpicommons}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!modmpicommons@{modmpicommons}}
+\subsubsection[{neighbours}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6), public modmpicommons\-::neighbours}}\label{classmodmpicommons_aeb9144358efbf3350b75103e7c5e356f}
+
+
+array containing the id of the neighbours of the local process in the Mpi\-Cube communicator 
+
+
+
+Definition at line 17 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_a895d05e6095a8a0c14013d3af546148f}{\index{modmpicommons@{modmpicommons}!procid@{procid}}
+\index{procid@{procid}!modmpicommons@{modmpicommons}}
+\subsubsection[{procid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::procid}}\label{classmodmpicommons_a895d05e6095a8a0c14013d3af546148f}
+
+
+process id in the global communicator 
+
+
+
+Definition at line 15 of file modmpicommons.\-f90.
+
+\hypertarget{classmodmpicommons_ae6d2f748e667900423c3bd8404bf165d}{\index{modmpicommons@{modmpicommons}!procnb@{procnb}}
+\index{procnb@{procnb}!modmpicommons@{modmpicommons}}
+\subsubsection[{procnb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicommons\-::procnb}}\label{classmodmpicommons_ae6d2f748e667900423c3bd8404bf165d}
+
+
+process number in the global communicator 
+
+
+
+Definition at line 16 of file modmpicommons.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modmpicommons_8f90}{modmpicommons.\-f90}\end{DoxyCompactItemize}

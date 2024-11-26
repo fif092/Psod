@@ -1,0 +1,18 @@
+&input_parameters
+input_path = '/home/roy/Travail/Devel/Cosmologie/test/Data/test/output_ncoarse_00310'
+cone_input_file = 'cone_part_narrow_past_00001_ncoarse_00310_proc'
+info_ramses_input_file = 'info_ncoarse_00310.txt'
+info_cone_input_file = 'info_cone_part_narrow_past_00001_ncoarse_00310.txt'
+nfile = 1
+first_file = 1
+last_file = 64
+do_read_ramses_part_id = .true. 
+do_read_potential = .true. 
+do_read_gravitational_field = .true. 
+cone_max_radius = 0.330134732163900E+01
+/
+
+&output_parameters
+simulation_name = 'testtrunk'
+cube_size = 0.1
+/

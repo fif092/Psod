@@ -1,0 +1,27 @@
+!=======================================================================
+! Author: Fabrice Roy (LUTH/CNRS/Observatoire de Paris)
+! Fabrice.Roy@obspm.fr
+!=======================================================================
+
+Module modparameters
+
+  ! Input parameters
+  Character(len=200) :: input_path
+  Character(len=195) :: cone_input_file
+  Character(len=200) :: info_cone_input_file
+  Character(len=200) :: info_ramses_input_file
+  Integer(kind=4) :: filenb
+  Integer(kind=4) :: ffile
+  Integer(kind=4) :: lfile
+  Logical(kind=4) :: do_read_ramses_partid
+  Real(kind=8) :: cone_max_radius
+
+  ! Output parameters
+  Character(len=200) :: cone_name
+  Real(kind=8) :: cube_size
+
+  Namelist/input_parameters/ input_path, cone_input_file, info_cone_input_file, &
+       info_ramses_input_file, filenb, ffile, lfile, do_read_ramses_part_id, cone_max_radius
+  Namelist/output_parameters/ cone_name, cube_size
+
+End Module modparameters

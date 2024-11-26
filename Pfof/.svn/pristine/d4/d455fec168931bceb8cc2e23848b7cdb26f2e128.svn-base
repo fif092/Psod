@@ -1,0 +1,99 @@
+WITHHDF5 = 0
+
+ifdef WITHHDF5
+MPIFC = skin h5pfc
+else
+MPIFC = skin mpiifort
+endif
+
+#OPTS = -O2 -g -traceback -warn all -fpp -I/usr/local/include
+#OPTS = -O3 -xHost -ipo -g -traceback -warn all -convert big_endian -assume byterecl -fpp -DLONGINT -I/usr/local/include
+#OPTS = -O2 -g -Wall -fconvert=big-endian  -I/usr/local/include -cpp -DLONGINT 
+OPTS = -O2 -g -Wall   -I/usr/local/include -cpp -DLONGINT 
+
+ifdef WITHHDF5
+FCFLAGS = $(OPTS) -DWITHHDF5
+EXE = pfofhdf5
+MODS = 			\
+	modconst.mod	\
+	modvariable.mod	\
+	modtiming.mod	\
+	modparam.mod	\
+	modmpicom.mod	\
+	modhdf5.mod	\
+	modxdmf.mod	\
+	modio.mod	\
+	modsort.mod	\
+	modfofpara.mod	
+
+OBJS = 			\
+	modconst.o	\
+	modvariable.o	\
+	modtiming.o	\
+	modparam.o	\
+	modmpicom.o	\
+	modhdf5.o	\
+	modxdmf.o	\
+	modio.o 	\
+	modsort.o	\
+	modfofpara.o	\
+	fof.o
+else
+FCFLAGS = $(OPTS)
+EXE = pfof
+MODS =	 		\
+	modconst.mod	\
+	modvariable.mod	\
+	modtiming.mod	\
+	modparam.mod	\
+	modmpicom.mod	\
+	modxdmf.mod	\
+	modio.mod	\
+	modsort.mod	\
+	modfofpara.mod	
+
+OBJS = 			\
+	modconst.o	\
+	modvariable.o	\
+	modtiming.o	\
+	modparam.o	\
+	modmpicom.o	\
+	modxdmf.o	\
+	modio.o 	\
+	modsort.o	\
+	modfofpara.o	\
+	fof.o
+endif
+
+
+#.SUFFIXES: .f90
+
+#.f90.o: $(MODS)
+#	$(MPIFC) $(FCFLAGS) -c $<
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+all : $(EXE)
+
+#$(EXE) : $(MODS) $(OBJS)
+#	$(MPIFC) $(OBJS) -o $(EXE)
+$(EXE) : $(MODS) $(OBJS)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -g -o $(EXE) $(OBJS) $(LDFLAGS)
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) 
+

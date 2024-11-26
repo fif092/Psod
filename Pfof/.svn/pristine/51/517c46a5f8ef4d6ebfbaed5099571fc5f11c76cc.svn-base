@@ -1,0 +1,12 @@
+!> @file
+!! This file contains variables used for timings.
+
+!> This module contains variables used for timings.
+Module modtiming
+
+  Implicit None
+  Real(kind=8) :: time0, timeInt
+  Real(kind=8) :: tReadFile, tTailPart, tInitRead, tReadRA
+  Real(kind=8) :: tObs,tOut,tFoF,tFoFloc, tFoFinit,tRaccord
+
+End Module modtiming

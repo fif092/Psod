@@ -1,0 +1,27 @@
+&ramsesinput
+code_index = 'RA3'
+pathinput = '/obs/roy/Cosmo/Data/output_00013'
+namepart = 'part_00013.out'
+nameinfo = 'info_00013.txt'
+grpsize = 00
+star = .false.
+metal = .false. 
+readfromcube = .false.
+/
+
+&fofparam
+perco = 0.20
+Mmin = 100 
+Mmax = 100000000
+dofof = .true.
+/
+ 
+&outputparam
+root = 'release1_0'
+outcube = .true.
+usehdf5 = .true.
+gatherwrite = 1
+gatherread = 1
+dotimings = .true.
+/
+

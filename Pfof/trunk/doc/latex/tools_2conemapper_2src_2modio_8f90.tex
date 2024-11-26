@@ -1,0 +1,18 @@
+\hypertarget{tools_2conemapper_2src_2modio_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conemapper/src/modio.f90 File Reference}
+\label{tools_2conemapper_2src_2modio_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conemapper/src/modio.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conemapper/src/modio.\+f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodio}{modio}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used for I/O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodio_a2688770b2d08498c14ef3212e61d74bf}{modio\+::theend} ()
+\item 
+subroutine \hyperlink{namespacemodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{modio\+::readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\+\_\+snap.\+nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{modio\+::h5readshellinfo} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_aa0fe6635f944f6d4591f52191c7223c1}{modio\+::h5writemap} (factor, proc\+NB, dims, coords)
+\begin{DoxyCompactList}\small\item\em This subroutine writes a map for pfof\+\_\+cone, this map contains the id of the shell cubes and the proc\+ID of the neighbours for each pfof\+\_\+cone process. \end{DoxyCompactList}\end{DoxyCompactItemize}

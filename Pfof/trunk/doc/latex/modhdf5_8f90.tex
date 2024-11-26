@@ -1,0 +1,174 @@
+\hypertarget{modhdf5_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhdf5.f90 File Reference}
+\label{modhdf5_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhdf5.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhdf5.\+f90}}
+
+
+This file contains wrappers for H\+D\+F5 serial and M\+PI I/O functions.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__attr}{modhdf5\+::hdf5\+\_\+write\+\_\+attr}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write attributes in a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__attr}{modhdf5\+::hdf5\+\_\+read\+\_\+attr}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read attributes from a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__data}{modhdf5\+::hdf5\+\_\+write\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write data in a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__data}{modhdf5\+::hdf5\+\_\+read\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read data from a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write data in a parallel hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__mpi__data}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read data from a parallel hdf5 file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodhdf5}{modhdf5}
+\begin{DoxyCompactList}\small\item\em This module contains wrappers for H\+D\+F5 serial and M\+PI I/O functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{namespacemodhdf5_a78ec7a0bfdcd60f1ce1ecf0c88bb7cd9}{modhdf5\+::hdf5\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Open the hdf5 interface. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_ace643e6a3e592dbe1be4d158888eb477}{modhdf5\+::hdf5\+\_\+finalize} ()
+\begin{DoxyCompactList}\small\item\em Close the hdf5 interface. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_a11539d06d180bff29d3c56ba198451d4}{modhdf5\+::hdf5\+\_\+open\+\_\+file} (filename, file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Open an existing hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_a9f6976ee158485f6b203635df23156e3}{modhdf5\+::hdf5\+\_\+open\+\_\+mpi\+\_\+file} (filename, comm, file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Open an existing \textquotesingle{}parallel\textquotesingle{} hdf5 file shared by the communicator comm. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_aba50f37e2c24ac3271cdfc8877ebdcd9}{modhdf5\+::hdf5\+\_\+create\+\_\+mpi\+\_\+file} (filename, comm, file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Create and open a \textquotesingle{}parallel\textquotesingle{} hdf5 file shared by the communicator comm. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_a72cb805582425e8633c70c5db85df8bc}{modhdf5\+::hdf5\+\_\+close\+\_\+mpi\+\_\+file} (file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Close a \textquotesingle{}parallel\textquotesingle{} hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_a66cf3f318aafac811c2422f8155f7ae1}{modhdf5\+::hdf5\+\_\+create\+\_\+file} (filename, file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Create and open a hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_af70ee678ccdc5ce829431ebe909264a9}{modhdf5\+::hdf5\+\_\+close\+\_\+file} (file\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Close a h5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_ae547666d0167e2a78d6529e11c1faa92}{modhdf5\+::hdf5\+\_\+open\+\_\+group} (id, name, group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Open an existing hdf5 group. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_a5486f9c861f7b8ee2060015acf0169a4}{modhdf5\+::hdf5\+\_\+create\+\_\+group} (id, name, group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Create and open a hdf5 group. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{namespacemodhdf5_aba547bfdd3dc38385069b0885ab5d526}{modhdf5\+::hdf5\+\_\+close\+\_\+group} (group\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Close a hdf5 group. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a85487dfda18b03bd8b48100b016240b3}{modhdf5\+::hdf5\+\_\+write\+\_\+int4\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ac1a8b8e5ce7ef658ba72dab5853a855a}{modhdf5\+::hdf5\+\_\+write\+\_\+int8\+\_\+0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write an integer(kind=8) scalar in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_af39615b3539b84afc3890884aafec217}{modhdf5\+::hdf5\+\_\+write\+\_\+int8\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ab39fa5690f5f029a8beea46dd8030b1d}{modhdf5\+::hdf5\+\_\+write\+\_\+int4\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_abcc24e701a795a92f16c6d4c1eb034c7}{modhdf5\+::hdf5\+\_\+write\+\_\+int8\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a5f075a274076e480eee835fd3b9573af}{modhdf5\+::hdf5\+\_\+write\+\_\+real4\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_aed41c10954f7cb054d46df0c012d147d}{modhdf5\+::hdf5\+\_\+write\+\_\+real8\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a71a612d3c6bc8959576fe46d7bab679f}{modhdf5\+::hdf5\+\_\+write\+\_\+real4\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a86d263896481bcb679282cede10ab4a1}{modhdf5\+::hdf5\+\_\+write\+\_\+real8\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_af38c097f92a373ed47962ec1e02f4cb3}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a727abaf04f522d9a2a2accdbf3512a96}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a3402bae4c5e2b0e315c1728b264798da}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a2ca2e47f5fe959ef8cbf3bdad5bef7f8}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_aa5b200799b385418068f6c916bbbad34}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a6c880adf75b8b8a5ad56120effed2f6a}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a6fe25705d9c64cf43c06c885a71878e2}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a670313739a46ec4d9006d8761d35157a}{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_afda2e44922def0d140ce850c12ef2f48}{modhdf5\+::hdf5\+\_\+read\+\_\+int4\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ac60e719f8d357b8ffab4f183a7ca4603}{modhdf5\+::hdf5\+\_\+read\+\_\+int8\+\_\+0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer(kind=8) scalar from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a640df6ccea7f28d6ed6b578d8018d7d7}{modhdf5\+::hdf5\+\_\+read\+\_\+int8\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a29f383042b1dc2b1fc1155af48fc98a3}{modhdf5\+::hdf5\+\_\+read\+\_\+int4\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D integer(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a4ac00fa4fbae4c8a8f936ee48292e114}{modhdf5\+::hdf5\+\_\+read\+\_\+int8\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D integer(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ae087ad5b47b31640a477e5056aaf97e9}{modhdf5\+::hdf5\+\_\+read\+\_\+real4\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a584fb8f065f2c6675049794e856b5085}{modhdf5\+::hdf5\+\_\+read\+\_\+real8\+\_\+1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a36acd2df481965d7cb9c1b312fdff7b0}{modhdf5\+::hdf5\+\_\+read\+\_\+real4\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a7ba4b99f85945770344cdd73b713ea3a}{modhdf5\+::hdf5\+\_\+read\+\_\+real8\+\_\+2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a18b987f7a44198ccc7dd893cbdc322fc}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+int4\+\_\+1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ac96ae5057bcd6745840c716a232d4b66}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+int4\+\_\+2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D integer4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a2847f70176f88d95e8e6e1bec3a2539e}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+int8\+\_\+1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a41bc63b78ce861c9898ef45642514a9d}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+int8\+\_\+2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D integer8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a7c2f69141e8a85768536e7c8f79f6348}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+real4\+\_\+1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a406b07a6320d4dd08a12ca4b8d6b9e9d}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+real4\+\_\+2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_afaf6a2a85551a1a7e9638d597c39dc32}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+real8\+\_\+1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a29c6c1a0c3de14678ed8eebe304b3255}{modhdf5\+::hdf5\+\_\+read\+\_\+mpi\+\_\+real8\+\_\+2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a1f5aac5704c10accbb39476926a4a7aa}{modhdf5\+::hdf5\+\_\+write\+\_\+int4\+\_\+attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write an integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a41e511ab23277132cad7aa447804eee4}{modhdf5\+::hdf5\+\_\+write\+\_\+int4\+\_\+attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D array of integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a902380b589c35be03e33f0ae8ebdc0dc}{modhdf5\+::hdf5\+\_\+write\+\_\+int4\+\_\+attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{namespacemodhdf5_abadf683caad48e7acd96f916246bf778}{modhdf5\+::hdf5\+\_\+write\+\_\+real4\+\_\+attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a6158884984b6690aad27d75c6d5f58a7}{modhdf5\+::hdf5\+\_\+write\+\_\+real4\+\_\+attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D array of real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ad682a858bcaec8fcd21f646d44d76208}{modhdf5\+::hdf5\+\_\+write\+\_\+real4\+\_\+attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{namespacemodhdf5_a28db26cc0b827091ab455d2419c88b10}{modhdf5\+::hdf5\+\_\+write\+\_\+real8\+\_\+attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ad55b7cffc861305840d5f160ba6fa1fd}{modhdf5\+::hdf5\+\_\+write\+\_\+real8\+\_\+attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D array of real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a71ef9213132fb3f757d29f58f9c20966}{modhdf5\+::hdf5\+\_\+write\+\_\+real8\+\_\+attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{namespacemodhdf5_ad6fea34611cf76b56b5143cd182b8484}{modhdf5\+::hdf5\+\_\+write\+\_\+char\+\_\+attr} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a string as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a10a4b5212d77e52dba2616ba3abb7df1}{modhdf5\+::hdf5\+\_\+read\+\_\+int4\+\_\+attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read an integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a2ff1b28dd896cc37583e97a52348039f}{modhdf5\+::hdf5\+\_\+read\+\_\+int4\+\_\+attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a4ca8f47995bf9df5b6c892781c87dd95}{modhdf5\+::hdf5\+\_\+read\+\_\+int4\+\_\+attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a6cf3b8369d7cbc96e8639439eb7c51ff}{modhdf5\+::hdf5\+\_\+read\+\_\+real4\+\_\+attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_acd7e7ad91ecc73c632ddc76468dbd083}{modhdf5\+::hdf5\+\_\+read\+\_\+real4\+\_\+attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a783cb12e2d85f812c506fff7cc69f37a}{modhdf5\+::hdf5\+\_\+read\+\_\+real4\+\_\+attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_ad2a6c1b4f0229be1ac9f4e4eb0556af4}{modhdf5\+::hdf5\+\_\+read\+\_\+real8\+\_\+attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a5010be0e91c8d56afbd40530b8064d6a}{modhdf5\+::hdf5\+\_\+read\+\_\+real8\+\_\+attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/D real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a85144bc1c41d08550379f855b3974507}{modhdf5\+::hdf5\+\_\+read\+\_\+real8\+\_\+attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhdf5_a2da336bc6d0ebbf1e6d582469b741a63}{modhdf5\+::hdf5\+\_\+read\+\_\+char\+\_\+attr} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read string attribute in a hdf5 file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4), parameter, public \hyperlink{namespacemodhdf5_a74fed11716b5063ece33a584a5872f7a}{modhdf5\+::h5strlen} = 32
+\item 
+integer(kind=4) \hyperlink{namespacemodhdf5_a7c21e772a564aec00e44e46562e9e840}{modhdf5\+::h5err}
+\begin{DoxyCompactList}\small\item\em hdf5 error code \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhdf5_a8d55ad41fc659457afec426d7eb3b2e8}{modhdf5\+::mpierr}
+\begin{DoxyCompactList}\small\item\em mpi error code \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains wrappers for H\+D\+F5 serial and M\+PI I/O functions. 
+

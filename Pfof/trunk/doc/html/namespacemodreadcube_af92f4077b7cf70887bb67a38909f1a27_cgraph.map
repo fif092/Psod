@@ -1,0 +1,7 @@
+<map id="modreadcube::mpih5readcube" name="modreadcube::mpih5readcube">
+<area shape="rect" id="node2" href="$namespacemodiocommons.html#a303306d620ca4d1ab28ec77613894994" title="modiocommons::h5readcommonmetadata" alt="" coords="249,54,515,81"/>
+<area shape="rect" id="node3" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="563,5,705,47"/>
+<area shape="rect" id="node4" href="$namespacemodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="564,80,704,121"/>
+<area shape="rect" id="node5" href="$namespacemodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="299,155,465,182"/>
+<area shape="rect" id="node6" href="$namespacemodhdf5.html#a9f6976ee158485f6b203635df23156e3" title="Open an existing &#39;parallel&#39; hdf5 file shared by the communicator comm. " alt="" coords="312,207,452,248"/>
+</map>

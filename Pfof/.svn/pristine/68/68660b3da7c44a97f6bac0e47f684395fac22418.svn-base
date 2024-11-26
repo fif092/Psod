@@ -1,0 +1,15 @@
+&input_parameters
+input_path  = '/obs/roy/Cosmo/Data/Cone/output_ncoarse_00160'
+cone_input_file = 'cone_narrow1_ncoarse_00160_proc'
+info_ramses_input_file = 'info_ncoarse_00160'
+info_cone_input_file = 'info_cone_narrow1_ncoarse_00160'
+filenb   = 16
+ffile    = 1
+lfile    = 16
+do_read_ramses_partid = .false.
+/
+
+&output_parameters
+cone_name = 'boxlenTEST'
+cube_size = 1.0d-1
+/

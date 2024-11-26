@@ -1,0 +1,65 @@
+!> @file
+!!This file contains the common variables used in pFoF_cone and a subroutine used to deallocate all allocatable arrays.
+
+!> This module contains the common variables used in pFoF_cone and a subroutine used to deallocate all allocatable arrays.
+!>
+!> Authors: F. Roy, V. Bouillot
+
+
+Module modvariables
+
+  Use modvarcommons
+  Use modconstant
+  Implicit None
+
+  Integer(kind=4) :: shell_nb
+  Integer(kind=4), dimension(:,:), allocatable :: indexcube
+  Integer(kind=4), dimension(:), allocatable :: ictable
+  Integer(kind=4) :: shellcubes_size
+  Real(kind=8), dimension(6) :: boundaries 
+  Integer(kind=4), dimension(:), allocatable :: cubepershell
+
+  Real(kind=PR), dimension(3) :: partmin, partmax
+
+  Integer(kind=4) :: ncube
+  Integer(kind=4), dimension(:), allocatable :: npart_tab
+
+  Type(Type_info_ramses) :: inforamses
+  Type(Type_info_cone_part) :: infocone
+  Type(Type_parameter_pfof_cone) :: param
+
+  Private
+  Public :: shell_nb, &
+       indexcube, &
+       ictable, &
+       shellcubes_size, &
+       boundaries, &
+       cubepershell, &
+       ncube, &
+       npart_tab, &
+       partmin, &
+       partmax, &
+       inforamses, &
+       infocone, &
+       param, &
+       deallocall
+
+Contains
+
+  Subroutine deallocall()
+
+    Implicit None
+
+    If(Allocated(indexcube)) Deallocate(indexcube)
+    If(Allocated(ictable)) Deallocate(ictable)
+    If(Allocated(cubepershell)) Deallocate(cubepershell)
+    If(Allocated(position)) Deallocate(position)
+    If(Allocated(velocity)) Deallocate(velocity)
+    If(Allocated(pfof_id)) Deallocate(pfof_id)
+    If(Allocated(ramses_id)) Deallocate(ramses_id)
+    If(Allocated(potential)) Deallocate(potential)
+    If(Allocated(field)) Deallocate(field)
+
+  End Subroutine deallocall
+
+End Module modvariables

@@ -1,0 +1,5 @@
+<map id="modiocommons::h5write_meta_info_cone" name="modiocommons::h5write_meta_info_cone">
+<area shape="rect" id="node2" href="$classmodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="222,5,365,46"/>
+<area shape="rect" id="node3" href="$classmodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="219,70,367,111"/>
+<area shape="rect" id="node4" href="$classmodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="223,135,363,177"/>
+</map>

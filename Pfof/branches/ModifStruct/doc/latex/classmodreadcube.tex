@@ -1,0 +1,242 @@
+\hypertarget{classmodreadcube}{\section{modreadcube Module Reference}
+\label{classmodreadcube}\index{modreadcube@{modreadcube}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodreadcube_a4a766e844f098b280fdd9b43f4ba1f08}{selectreadcubetype} ()
+\item 
+subroutine \hyperlink{classmodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}{mpih5readsortedcube} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+procedure(), pointer, public \hyperlink{classmodreadcube_a29b15033a5a22b6885adfeec6dc59423}{readcube}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}{h5readcube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads hdf5 cube files created by p\-F\-O\-F. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodreadcube_a30050fd5631222b0125e7917cc8ae547}{h5readsortedcube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads hdf5 sorted cube files created by p\-F\-O\-F. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodreadcube_af92f4077b7cf70887bb67a38909f1a27}{mpih5readcube} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 1 of file modreadcube.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}{\index{modreadcube@{modreadcube}!h5readcube@{h5readcube}}
+\index{h5readcube@{h5readcube}!modreadcube@{modreadcube}}
+\subsubsection[{h5readcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\-::h5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}
+
+
+This subroutine reads hdf5 cube files created by p\-F\-O\-F. 
+
+
+
+Definition at line 65 of file modreadcube.\-f90.
+
+
+
+References modiocommons\-::h5read\-\_\-meta\-\_\-common(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_a9b00396dd9eab642a275a7aa06d9cd20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_a9b00396dd9eab642a275a7aa06d9cd20_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadcube_a30050fd5631222b0125e7917cc8ae547}{\index{modreadcube@{modreadcube}!h5readsortedcube@{h5readsortedcube}}
+\index{h5readsortedcube@{h5readsortedcube}!modreadcube@{modreadcube}}
+\subsubsection[{h5readsortedcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\-::h5readsortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodreadcube_a30050fd5631222b0125e7917cc8ae547}
+
+
+This subroutine reads hdf5 sorted cube files created by p\-F\-O\-F. 
+
+
+
+Definition at line 166 of file modreadcube.\-f90.
+
+
+
+References modmpicommons\-::emergencystop(), modiocommons\-::h5read\-\_\-meta\-\_\-common(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_a30050fd5631222b0125e7917cc8ae547_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_a30050fd5631222b0125e7917cc8ae547_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadcube_af92f4077b7cf70887bb67a38909f1a27}{\index{modreadcube@{modreadcube}!mpih5readcube@{mpih5readcube}}
+\index{mpih5readcube@{mpih5readcube}!modreadcube@{modreadcube}}
+\subsubsection[{mpih5readcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\-::mpih5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodreadcube_af92f4077b7cf70887bb67a38909f1a27}
+
+
+Definition at line 303 of file modreadcube.\-f90.
+
+
+
+References modiocommons\-::h5read\-\_\-meta\-\_\-common(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-mpi\-\_\-file().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_af92f4077b7cf70887bb67a38909f1a27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_af92f4077b7cf70887bb67a38909f1a27_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}{\index{modreadcube@{modreadcube}!mpih5readsortedcube@{mpih5readsortedcube}}
+\index{mpih5readsortedcube@{mpih5readsortedcube}!modreadcube@{modreadcube}}
+\subsubsection[{mpih5readsortedcube}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\-::mpih5readsortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}
+
+
+Definition at line 451 of file modreadcube.\-f90.
+
+
+
+References modiocommons\-::h5read\-\_\-meta\-\_\-common(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadcube_a4a766e844f098b280fdd9b43f4ba1f08}{\index{modreadcube@{modreadcube}!selectreadcubetype@{selectreadcubetype}}
+\index{selectreadcubetype@{selectreadcubetype}!modreadcube@{modreadcube}}
+\subsubsection[{selectreadcubetype}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modreadcube\-::selectreadcubetype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodreadcube_a4a766e844f098b280fdd9b43f4ba1f08}
+
+
+Definition at line 24 of file modreadcube.\-f90.
+
+
+
+References modmpicommons\-::emergencystop(), h5readcube(), h5readsortedcube(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), mpih5readcube(), and mpih5readsortedcube().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadcube_a4a766e844f098b280fdd9b43f4ba1f08_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{classmodreadcube_a4a766e844f098b280fdd9b43f4ba1f08_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodreadcube_a29b15033a5a22b6885adfeec6dc59423}{\index{modreadcube@{modreadcube}!readcube@{readcube}}
+\index{readcube@{readcube}!modreadcube@{modreadcube}}
+\subsubsection[{readcube}]{\setlength{\rightskip}{0pt plus 5cm}procedure(), pointer, public modreadcube\-::readcube}}\label{classmodreadcube_a29b15033a5a22b6885adfeec6dc59423}
+
+
+Definition at line 15 of file modreadcube.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/pfof\-\_\-snap/src/\hyperlink{modreadcube_8f90}{modreadcube.\-f90}\end{DoxyCompactItemize}

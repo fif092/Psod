@@ -1,0 +1,466 @@
+\hypertarget{namespacemodmpicom}{}\section{modmpicom Module Reference}
+\label{namespacemodmpicom}\index{modmpicom@{modmpicom}}
+
+
+This module contains the subroutines and the variables used for M\+PI communications.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodmpicom_a95ff384e42736ca3e2ccef78d7d8554a}{setcommunicators} ()
+\begin{DoxyCompactList}\small\item\em This subroutine creates the global cartesian grid of processes. It also creates the communicators used for the parallel hdf5 i/o if they are needed. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodmpicom_a75a2de7a16fce78b94bd79731a2fbd81}{emergencystop} (message, errcode)
+\begin{DoxyCompactList}\small\item\em The subroutine is used to abort the execution if something wrong is happening. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodmpicom_a158a13b594a854025da3c47f32a493de}{settopology} ()
+\begin{DoxyCompactList}\small\item\em This subroutine create a processes topology that maps the lightcone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a500c48035640d6e5b49b1b694372bcd3}{mpierr}
+\begin{DoxyCompactList}\small\item\em M\+PI error code. \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a34052e13410e6236c45dcfc1b5563200}{mpireqs1}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a24670bd8507b230a6be2c2f3afabf5c1}{mpireqs2}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a7105e5547fa246381624c998c59249b9}{mpireqs3}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a848fe3dd718230ed7fb98e58796619ea}{mpireqs4}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a74eac9af638b6438f5a6e0ba77997f33}{mpireqs5}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_adad671e20507f6639f50d87ec487534b}{mpireqs6}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a42cc3c99615d14140b7b8088760ca8bd}{mpireqs7}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_ac22bfba3e611102e10fdfd1de038f25f}{mpireqr1}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a825f1ba2f76e8ca1c71b11f4e7b29815}{mpireqr2}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a3d9bf986389786c043540894df1ad003}{mpireqr3}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a7a50a2ea228f57406a2f246a57016fa9}{mpireqr4}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_afd68da48bf63f3f360384fa66e7453bd}{mpireqr5}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a9b3e05d2267d77a7a4af942c9db7f204}{mpireqr6}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_ad55af2a3154bdc4be9156046d29af59d}{mpireqr7}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0a592a5f03c3c0d61e07b5a56fd161d1}{procid}
+\begin{DoxyCompactList}\small\item\em process id in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a5e40853b0f15e4c14658ea56fb1b9b73}{procnb}
+\begin{DoxyCompactList}\small\item\em process number in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a8762b65024b222a0c5bfab4f8af21d7d}{dims}
+\begin{DoxyCompactList}\small\item\em dimensions of the processes grid \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a85f71373d318b169e73b6a0221dc62f1}{mpicube}
+\begin{DoxyCompactList}\small\item\em cartesian global communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_aa950234af9f6bdf930d8c4e61a76ca96}{mpisubcubewrite}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel output \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_afee5305bd782226daffc69f8db2af8a7}{mpisubcuberead}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel input \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a533718abb8ce3f03b430dfbf9f821069}{cubecoord}
+\begin{DoxyCompactList}\small\item\em coordinates of the process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodmpicom_a818e6dbfc3705e5d5bddb752f2aeb5aa}{neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighboor of the local process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a10897435b88ede934389b5099b4a2f7f}{commcolorwrite}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0ba0397b7d92b456e11a65bce1f86e7c}{commcolorread}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0bade7a409f7af1432be0253a6262442}{scprocidwrite}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a23d8fed28f6705c564d6a10038de36c7}{scprocidread}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a8281c8567826b44d76d7a801203c99a8}{scprocnbwrite}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a8fde31beaf4b43228d7f93325630cefa}{scprocnbread}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+logical(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a0347e6d8a15028132a57953e6ff823a2}{periods}
+\begin{DoxyCompactList}\small\item\em periodicity of the global cartesian processes grid \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a81805e955c1ef5ffb5846c0dad06976f}{commgatherwrite}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the subroutines and the variables used for M\+PI communications. 
+
+This module contains the subroutines and the variables used to prepare M\+PI communications and a routine used to broadcast the input parameters.
+
+Authors\+: F. Roy, V. Bouillot 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modmpicom@{modmpicom}!emergencystop@{emergencystop}}
+\index{emergencystop@{emergencystop}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{emergencystop(message, errcode)}{emergencystop(message, errcode)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modmpicom\+::emergencystop (
+\begin{DoxyParamCaption}
+\item[{character(len=$\ast$), intent(in)}]{message, }
+\item[{integer, intent(in)}]{errcode}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodmpicom_a75a2de7a16fce78b94bd79731a2fbd81}{}\label{namespacemodmpicom_a75a2de7a16fce78b94bd79731a2fbd81}
+
+
+The subroutine is used to abort the execution if something wrong is happening. 
+
+
+
+Definition at line 112 of file modmpicom.\+f90.
+
+
+
+References mpicube, mpierr, and procid.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodmpicom_a75a2de7a16fce78b94bd79731a2fbd81_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modmpicom@{modmpicom}!setcommunicators@{setcommunicators}}
+\index{setcommunicators@{setcommunicators}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{setcommunicators()}{setcommunicators()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modmpicom\+::setcommunicators (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodmpicom_a95ff384e42736ca3e2ccef78d7d8554a}{}\label{namespacemodmpicom_a95ff384e42736ca3e2ccef78d7d8554a}
+
+
+This subroutine creates the global cartesian grid of processes. It also creates the communicators used for the parallel hdf5 i/o if they are needed. 
+
+
+
+Definition at line 43 of file modmpicom.\+f90.
+
+
+
+References commcolorread, commcolorwrite, cubecoord, dims, mpicube, mpierr, mpisubcuberead, mpisubcubewrite, neighbours, modparameters\+::param, periods, procid, procnb, scprocidread, scprocidwrite, scprocnbread, and scprocnbwrite.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{namespacemodmpicom_a95ff384e42736ca3e2ccef78d7d8554a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modmpicom@{modmpicom}!settopology@{settopology}}
+\index{settopology@{settopology}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{settopology()}{settopology()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modmpicom\+::settopology (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodmpicom_a158a13b594a854025da3c47f32a493de}{}\label{namespacemodmpicom_a158a13b594a854025da3c47f32a493de}
+
+
+This subroutine create a processes topology that maps the lightcone. 
+
+
+
+Definition at line 31 of file modmpicom.\+f90.
+
+
+
+References commcolorwrite, commgatherwrite, cubecoord, mpierr, neighbours, procid, and scprocidwrite.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodmpicom_a158a13b594a854025da3c47f32a493de_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modmpicom@{modmpicom}!commcolorread@{commcolorread}}
+\index{commcolorread@{commcolorread}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{commcolorread}{commcolorread}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::commcolorread}\hypertarget{namespacemodmpicom_a0ba0397b7d92b456e11a65bce1f86e7c}{}\label{namespacemodmpicom_a0ba0397b7d92b456e11a65bce1f86e7c}
+
+
+parameter used to create the Mpi\+Sub\+Cube\+Read communicator 
+
+
+
+Definition at line 28 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!commcolorwrite@{commcolorwrite}}
+\index{commcolorwrite@{commcolorwrite}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{commcolorwrite}{commcolorwrite}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::commcolorwrite}\hypertarget{namespacemodmpicom_a10897435b88ede934389b5099b4a2f7f}{}\label{namespacemodmpicom_a10897435b88ede934389b5099b4a2f7f}
+
+
+parameter used to create the Mpi\+Sub\+Cube\+Write communicator 
+
+
+
+Definition at line 27 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!commgatherwrite@{commgatherwrite}}
+\index{commgatherwrite@{commgatherwrite}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{commgatherwrite}{commgatherwrite}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::commgatherwrite}\hypertarget{namespacemodmpicom_a81805e955c1ef5ffb5846c0dad06976f}{}\label{namespacemodmpicom_a81805e955c1ef5ffb5846c0dad06976f}
+
+
+Definition at line 24 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!cubecoord@{cubecoord}}
+\index{cubecoord@{cubecoord}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{cubecoord}{cubecoord}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3) modmpicom\+::cubecoord}\hypertarget{namespacemodmpicom_a533718abb8ce3f03b430dfbf9f821069}{}\label{namespacemodmpicom_a533718abb8ce3f03b430dfbf9f821069}
+
+
+coordinates of the process in the Mpi\+Cube communicator 
+
+
+
+Definition at line 25 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!dims@{dims}}
+\index{dims@{dims}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{dims}{dims}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3) modmpicom\+::dims}\hypertarget{namespacemodmpicom_a8762b65024b222a0c5bfab4f8af21d7d}{}\label{namespacemodmpicom_a8762b65024b222a0c5bfab4f8af21d7d}
+
+
+dimensions of the processes grid 
+
+
+
+Definition at line 21 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpicube@{mpicube}}
+\index{mpicube@{mpicube}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpicube}{mpicube}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpicube}\hypertarget{namespacemodmpicom_a85f71373d318b169e73b6a0221dc62f1}{}\label{namespacemodmpicom_a85f71373d318b169e73b6a0221dc62f1}
+
+
+cartesian global communicator 
+
+
+
+Definition at line 22 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpierr@{mpierr}}
+\index{mpierr@{mpierr}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpierr}{mpierr}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpierr}\hypertarget{namespacemodmpicom_a500c48035640d6e5b49b1b694372bcd3}{}\label{namespacemodmpicom_a500c48035640d6e5b49b1b694372bcd3}
+
+
+M\+PI error code. 
+
+
+
+Definition at line 16 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr1@{mpireqr1}}
+\index{mpireqr1@{mpireqr1}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr1}{mpireqr1}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr1}\hypertarget{namespacemodmpicom_ac22bfba3e611102e10fdfd1de038f25f}{}\label{namespacemodmpicom_ac22bfba3e611102e10fdfd1de038f25f}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr2@{mpireqr2}}
+\index{mpireqr2@{mpireqr2}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr2}{mpireqr2}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr2}\hypertarget{namespacemodmpicom_a825f1ba2f76e8ca1c71b11f4e7b29815}{}\label{namespacemodmpicom_a825f1ba2f76e8ca1c71b11f4e7b29815}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr3@{mpireqr3}}
+\index{mpireqr3@{mpireqr3}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr3}{mpireqr3}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr3}\hypertarget{namespacemodmpicom_a3d9bf986389786c043540894df1ad003}{}\label{namespacemodmpicom_a3d9bf986389786c043540894df1ad003}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr4@{mpireqr4}}
+\index{mpireqr4@{mpireqr4}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr4}{mpireqr4}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr4}\hypertarget{namespacemodmpicom_a7a50a2ea228f57406a2f246a57016fa9}{}\label{namespacemodmpicom_a7a50a2ea228f57406a2f246a57016fa9}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr5@{mpireqr5}}
+\index{mpireqr5@{mpireqr5}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr5}{mpireqr5}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr5}\hypertarget{namespacemodmpicom_afd68da48bf63f3f360384fa66e7453bd}{}\label{namespacemodmpicom_afd68da48bf63f3f360384fa66e7453bd}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr6@{mpireqr6}}
+\index{mpireqr6@{mpireqr6}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr6}{mpireqr6}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr6}\hypertarget{namespacemodmpicom_a9b3e05d2267d77a7a4af942c9db7f204}{}\label{namespacemodmpicom_a9b3e05d2267d77a7a4af942c9db7f204}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqr7@{mpireqr7}}
+\index{mpireqr7@{mpireqr7}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqr7}{mpireqr7}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqr7}\hypertarget{namespacemodmpicom_ad55af2a3154bdc4be9156046d29af59d}{}\label{namespacemodmpicom_ad55af2a3154bdc4be9156046d29af59d}
+
+
+Definition at line 18 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs1@{mpireqs1}}
+\index{mpireqs1@{mpireqs1}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs1}{mpireqs1}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs1}\hypertarget{namespacemodmpicom_a34052e13410e6236c45dcfc1b5563200}{}\label{namespacemodmpicom_a34052e13410e6236c45dcfc1b5563200}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs2@{mpireqs2}}
+\index{mpireqs2@{mpireqs2}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs2}{mpireqs2}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs2}\hypertarget{namespacemodmpicom_a24670bd8507b230a6be2c2f3afabf5c1}{}\label{namespacemodmpicom_a24670bd8507b230a6be2c2f3afabf5c1}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs3@{mpireqs3}}
+\index{mpireqs3@{mpireqs3}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs3}{mpireqs3}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs3}\hypertarget{namespacemodmpicom_a7105e5547fa246381624c998c59249b9}{}\label{namespacemodmpicom_a7105e5547fa246381624c998c59249b9}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs4@{mpireqs4}}
+\index{mpireqs4@{mpireqs4}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs4}{mpireqs4}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs4}\hypertarget{namespacemodmpicom_a848fe3dd718230ed7fb98e58796619ea}{}\label{namespacemodmpicom_a848fe3dd718230ed7fb98e58796619ea}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs5@{mpireqs5}}
+\index{mpireqs5@{mpireqs5}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs5}{mpireqs5}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs5}\hypertarget{namespacemodmpicom_a74eac9af638b6438f5a6e0ba77997f33}{}\label{namespacemodmpicom_a74eac9af638b6438f5a6e0ba77997f33}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs6@{mpireqs6}}
+\index{mpireqs6@{mpireqs6}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs6}{mpireqs6}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs6}\hypertarget{namespacemodmpicom_adad671e20507f6639f50d87ec487534b}{}\label{namespacemodmpicom_adad671e20507f6639f50d87ec487534b}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpireqs7@{mpireqs7}}
+\index{mpireqs7@{mpireqs7}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpireqs7}{mpireqs7}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpireqs7}\hypertarget{namespacemodmpicom_a42cc3c99615d14140b7b8088760ca8bd}{}\label{namespacemodmpicom_a42cc3c99615d14140b7b8088760ca8bd}
+
+
+Definition at line 17 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpisubcuberead@{mpisubcuberead}}
+\index{mpisubcuberead@{mpisubcuberead}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpisubcuberead}{mpisubcuberead}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpisubcuberead}\hypertarget{namespacemodmpicom_afee5305bd782226daffc69f8db2af8a7}{}\label{namespacemodmpicom_afee5305bd782226daffc69f8db2af8a7}
+
+
+local communicator used for hdf5 parallel input 
+
+
+
+Definition at line 24 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!mpisubcubewrite@{mpisubcubewrite}}
+\index{mpisubcubewrite@{mpisubcubewrite}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{mpisubcubewrite}{mpisubcubewrite}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::mpisubcubewrite}\hypertarget{namespacemodmpicom_aa950234af9f6bdf930d8c4e61a76ca96}{}\label{namespacemodmpicom_aa950234af9f6bdf930d8c4e61a76ca96}
+
+
+local communicator used for hdf5 parallel output 
+
+
+
+Definition at line 23 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{neighbours}{neighbours}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6) modmpicom\+::neighbours}\hypertarget{namespacemodmpicom_a818e6dbfc3705e5d5bddb752f2aeb5aa}{}\label{namespacemodmpicom_a818e6dbfc3705e5d5bddb752f2aeb5aa}
+
+
+array containing the id of the neighboor of the local process in the Mpi\+Cube communicator 
+
+
+
+Definition at line 26 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!periods@{periods}}
+\index{periods@{periods}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{periods}{periods}}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4), dimension(3) modmpicom\+::periods}\hypertarget{namespacemodmpicom_a0347e6d8a15028132a57953e6ff823a2}{}\label{namespacemodmpicom_a0347e6d8a15028132a57953e6ff823a2}
+
+
+periodicity of the global cartesian processes grid 
+
+
+
+Definition at line 33 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!procid@{procid}}
+\index{procid@{procid}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{procid}{procid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::procid}\hypertarget{namespacemodmpicom_a0a592a5f03c3c0d61e07b5a56fd161d1}{}\label{namespacemodmpicom_a0a592a5f03c3c0d61e07b5a56fd161d1}
+
+
+process id in the global communicator 
+
+
+
+Definition at line 19 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!procnb@{procnb}}
+\index{procnb@{procnb}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{procnb}{procnb}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::procnb}\hypertarget{namespacemodmpicom_a5e40853b0f15e4c14658ea56fb1b9b73}{}\label{namespacemodmpicom_a5e40853b0f15e4c14658ea56fb1b9b73}
+
+
+process number in the global communicator 
+
+
+
+Definition at line 20 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!scprocidread@{scprocidread}}
+\index{scprocidread@{scprocidread}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{scprocidread}{scprocidread}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::scprocidread}\hypertarget{namespacemodmpicom_a23d8fed28f6705c564d6a10038de36c7}{}\label{namespacemodmpicom_a23d8fed28f6705c564d6a10038de36c7}
+
+
+process id in the Mpi\+Sub\+Cube\+Read communicator 
+
+
+
+Definition at line 30 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!scprocidwrite@{scprocidwrite}}
+\index{scprocidwrite@{scprocidwrite}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{scprocidwrite}{scprocidwrite}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::scprocidwrite}\hypertarget{namespacemodmpicom_a0bade7a409f7af1432be0253a6262442}{}\label{namespacemodmpicom_a0bade7a409f7af1432be0253a6262442}
+
+
+process id in the Mpi\+Sub\+Cube\+Write communicator 
+
+
+
+Definition at line 29 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!scprocnbread@{scprocnbread}}
+\index{scprocnbread@{scprocnbread}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{scprocnbread}{scprocnbread}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::scprocnbread}\hypertarget{namespacemodmpicom_a8fde31beaf4b43228d7f93325630cefa}{}\label{namespacemodmpicom_a8fde31beaf4b43228d7f93325630cefa}
+
+
+process number in the Mpi\+Sub\+Cube\+Read communicator 
+
+
+
+Definition at line 32 of file modmpicom.\+f90.
+
+\index{modmpicom@{modmpicom}!scprocnbwrite@{scprocnbwrite}}
+\index{scprocnbwrite@{scprocnbwrite}!modmpicom@{modmpicom}}
+\subsubsection[{\texorpdfstring{scprocnbwrite}{scprocnbwrite}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\+::scprocnbwrite}\hypertarget{namespacemodmpicom_a8281c8567826b44d76d7a801203c99a8}{}\label{namespacemodmpicom_a8281c8567826b44d76d7a801203c99a8}
+
+
+process number in the Mpi\+Sub\+Cube\+Write communicator 
+
+
+
+Definition at line 31 of file modmpicom.\+f90.
+

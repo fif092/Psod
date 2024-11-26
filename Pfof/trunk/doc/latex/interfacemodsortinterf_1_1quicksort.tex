@@ -1,0 +1,173 @@
+\hypertarget{interfacemodsortinterf_1_1quicksort}{}\section{modsortinterf\+:\+:quicksort Interface Reference}
+\label{interfacemodsortinterf_1_1quicksort}\index{modsortinterf\+::quicksort@{modsortinterf\+::quicksort}}
+
+
+Collaboration diagram for modsortinterf\+:\+:quicksort\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=209pt]{interfacemodsortinterf_1_1quicksort__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+recursive subroutine \hyperlink{interfacemodsortinterf_1_1quicksort_a88e479f171ee05e6abb21a575e1adeba}{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi} (p, r, tref, tx, tv, tid)
+\item 
+recursive subroutine \hyperlink{interfacemodsortinterf_1_1quicksort_a7fbea10343fd99b63db7567ea5144ede}{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi} (p, r, tref, tx, tv, tp, tid)
+\item 
+recursive subroutine \hyperlink{interfacemodsortinterf_1_1quicksort_a237ac7aee8dc5e42d744ff43931172c7}{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi} (p, r, tref, tx, tv, tf, tp, tid)
+\item 
+recursive subroutine \hyperlink{interfacemodsortinterf_1_1quicksort_aec3f4280d2579e6d98acd38398728d28}{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi} (p, r, tref, tx, tv, tf, tid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file modsortinterf.\+f90.
+
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\index{modsortinterf\+::quicksort@{modsortinterf\+::quicksort}!quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi@{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi}}
+\index{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi@{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi}!modsortinterf\+::quicksort@{modsortinterf\+::quicksort}}
+\subsubsection[{\texorpdfstring{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi(p, r, tref, tx, tv, tid)}{quicksort_refi_2x3r_1xi(p, r, tref, tx, tv, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortinterf\+::quicksort\+::quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodsortinterf_1_1quicksort_a88e479f171ee05e6abb21a575e1adeba}{}\label{interfacemodsortinterf_1_1quicksort_a88e479f171ee05e6abb21a575e1adeba}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 36 of file modsortinterf.\+f90.
+
+\index{modsortinterf\+::quicksort@{modsortinterf\+::quicksort}!quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi@{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi}}
+\index{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi@{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi}!modsortinterf\+::quicksort@{modsortinterf\+::quicksort}}
+\subsubsection[{\texorpdfstring{quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi(p, r, tref, tx, tv, tp, tid)}{quicksort_refi_2x3r_1xr_1xi(p, r, tref, tx, tv, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortinterf\+::quicksort\+::quicksort\+\_\+refi\+\_\+2x3r\+\_\+1xr\+\_\+1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodsortinterf_1_1quicksort_a7fbea10343fd99b63db7567ea5144ede}{}\label{interfacemodsortinterf_1_1quicksort_a7fbea10343fd99b63db7567ea5144ede}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file modsortinterf.\+f90.
+
+\index{modsortinterf\+::quicksort@{modsortinterf\+::quicksort}!quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi@{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi}}
+\index{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi@{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi}!modsortinterf\+::quicksort@{modsortinterf\+::quicksort}}
+\subsubsection[{\texorpdfstring{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi(p, r, tref, tx, tv, tf, tid)}{quicksort_refi_3x3r_1xi(p, r, tref, tx, tv, tf, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortinterf\+::quicksort\+::quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodsortinterf_1_1quicksort_aec3f4280d2579e6d98acd38398728d28}{}\label{interfacemodsortinterf_1_1quicksort_aec3f4280d2579e6d98acd38398728d28}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 153 of file modsortinterf.\+f90.
+
+\index{modsortinterf\+::quicksort@{modsortinterf\+::quicksort}!quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi@{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi}}
+\index{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi@{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi}!modsortinterf\+::quicksort@{modsortinterf\+::quicksort}}
+\subsubsection[{\texorpdfstring{quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi(p, r, tref, tx, tv, tf, tp, tid)}{quicksort_refi_3x3r_1xr_1xi(p, r, tref, tx, tv, tf, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortinterf\+::quicksort\+::quicksort\+\_\+refi\+\_\+3x3r\+\_\+1xr\+\_\+1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodsortinterf_1_1quicksort_a237ac7aee8dc5e42d744ff43931172c7}{}\label{interfacemodsortinterf_1_1quicksort_a237ac7aee8dc5e42d744ff43931172c7}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 113 of file modsortinterf.\+f90.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/\hyperlink{modsortinterf_8f90}{modsortinterf.\+f90}\end{DoxyCompactItemize}

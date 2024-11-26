@@ -1,0 +1,26 @@
+<map id="modfofpara::fofparacone" name="modfofpara::fofparacone">
+<area shape="rect" id="node2" href="$namespacemodhalo.html#ac4afe524dd9d15d21ce67171c4a7ba70" title="modhalo::computecom" alt="" coords="252,180,407,207"/>
+<area shape="rect" id="node3" href="$namespacemodhalo.html#a873e8c6a5fd11756e18c33dd7a08ab7d" title="modhalo::computeradius" alt="" coords="247,231,411,257"/>
+<area shape="rect" id="node4" href="$namespacemodhalo.html#acf1576354acf16b205a17c83983b248a" title="Exchange the particles so that particles belonging to one halo are gathered on the same process..." alt="" coords="253,332,406,359"/>
+<area shape="rect" id="node6" href="$namespacemodwritehalo.html#a3e00317bab6230ca8987e14b62b79874" title="This subroutine writes for each halo the position, the velocity and the id of each particle in this h..." alt="" coords="232,383,427,409"/>
+<area shape="rect" id="node16" href="$namespacemodfofpara.html#a5294ecab752fb3cfbea3bec7cd28a29a" title="Initializes the stacks of pointers for local friends of friends. " alt="" coords="273,281,385,308"/>
+<area shape="rect" id="node17" href="$namespacemodfofmpi.html#a8fbc997f93fd71798027bc6946d3bddb" title="This routine merges haloes that extends across several process by setting their halo ID to the same v..." alt="" coords="247,907,412,933"/>
+<area shape="rect" id="node21" href="$namespacemodwritehalo.html#a9f9dfc9671a5f395219212ba8d45204b" title="This subroutine writes, for each halo, its mass (number of particles), the position and the velocity ..." alt="" coords="216,448,443,475"/>
+<area shape="rect" id="node23" href="$namespacemodwritehalo.html#a7de4785bb81feb8a4b806bd18a65bf4d" title="This subroutine writes for each halo the position, the velocity and the id of each particle in this h..." alt="" coords="221,545,437,572"/>
+<area shape="rect" id="node25" href="$namespacemodhalo.html#a4af0af98272044df8ab650e79d2516d6" title="modhalo::selecthaloes" alt="" coords="253,957,405,984"/>
+<area shape="rect" id="node5" href="$namespacemodmpicom.html#a75a2de7a16fce78b94bd79731a2fbd81" title="The subroutine is used to abort the execution if something wrong is happening. " alt="" coords="492,5,683,32"/>
+<area shape="rect" id="node7" href="$namespacemodhdf5.html#a66cf3f318aafac811c2422f8155f7ae1" title="Create and open a hdf5 file. " alt="" coords="501,56,673,83"/>
+<area shape="rect" id="node8" href="$namespacemodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="732,375,880,417"/>
+<area shape="rect" id="node9" href="$namespacemodiocommons.html#a34d5806274712591a9d885c1d926af57" title="modiocommons::h5write\l_meta_common" alt="" coords="505,571,669,613"/>
+<area shape="rect" id="node10" href="$namespacemodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="736,506,876,547"/>
+<area shape="rect" id="node11" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="735,441,877,482"/>
+<area shape="rect" id="node12" href="$namespacemodiocommons.html#a27eabdb687af381e608f120d19dfa997" title="modiocommons::h5write\l_meta_pfof_parameter" alt="" coords="505,375,669,417"/>
+<area shape="rect" id="node13" href="$namespacemodiocommons.html#aa0393a317c75eb21189d5d381c3cf591" title="modiocommons::h5write\l_meta_info_ramses" alt="" coords="505,441,669,482"/>
+<area shape="rect" id="node14" href="$namespacemodiocommons.html#afee94c7a833034224dee17e9055971e4" title="modiocommons::h5write\l_meta_info_cone" alt="" coords="505,506,669,547"/>
+<area shape="rect" id="node15" href="$namespacemodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="504,157,671,184"/>
+<area shape="rect" id="node18" href="$namespacemodfofmpi.html#ad3a945459cf7b001e4c4e51429eb8f31" title="Finds the pairs of particles that should be linked through the merging procedure. &#160;&#160;two directions ar..." alt="" coords="514,957,661,984"/>
+<area shape="rect" id="node19" href="$namespacemodfofmpi.html#ac5a219c1a82d90230bcb2b1260adc4b4" title="This routine initializes the merging of halo parts. If the flag value is not 0, the position and halo..." alt="" coords="510,1008,665,1035"/>
+<area shape="rect" id="node20" href="$namespacemodfofmpi.html#ae5663edf5a2902f952f8d6d3f5c4c8a5" title="Exchanges the haloID of the particles located near the faces and edges and set the same haloID to eac..." alt="" coords="491,907,684,933"/>
+<area shape="rect" id="node22" href="$namespacemodhdf5.html#aba50f37e2c24ac3271cdfc8877ebdcd9" title="Create and open a &#39;parallel&#39; hdf5 file shared by the communicator comm. " alt="" coords="513,310,661,351"/>
+<area shape="rect" id="node24" href="$namespacemodhdf5.html#a72cb805582425e8633c70c5db85df8bc" title="Close a &#39;parallel&#39; hdf5 file. " alt="" coords="516,841,659,882"/>
+</map>

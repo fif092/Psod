@@ -1,0 +1,28 @@
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+
+export HOMESHARED=/ccc/cont003/home/gen2287/gen2287/
+export STORESHARED=/ccc/store/cont003/gen2287/gen2287/
+export SCRATCHSHARED=/ccc/scratch/cont003/gen2287/gen2287/
+export WORKSHARED=/ccc/work/cont003/gen2287/gen2287
+
+module purge
+module load intel/
+module load feature/openmpi/          
+module load feature/intelmpi/
+module load flavor/hdf5/parallel
+module load hdf5
+#module load hdf5/1.10.1
+#module load hdf5/1.12.2
+module load fftw2

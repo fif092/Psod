@@ -1,0 +1,24 @@
+&input_parameters
+input_path = '/home/roy/Travail/Devel/Cosmologie/test/'
+part_input_file = 'pfof_shell_cone_part_data_prepa4096'
+do_read_potential = .false.
+do_read_gravitational_field = .false.
+do_read_ramses_part_id = .false.
+shell_first_id = 291
+shell_last_id = 310
+/
+
+&fof_parameters
+percolation_length = 0.30
+mmin = 200 
+mmax = 100000000
+do_unbinding = .false.
+do_subhalo = .false.
+/
+ 
+&output_parameters
+simulation_name = 'prepa4096'
+do_gather_halo = .true.
+do_timings = .true.
+/
+

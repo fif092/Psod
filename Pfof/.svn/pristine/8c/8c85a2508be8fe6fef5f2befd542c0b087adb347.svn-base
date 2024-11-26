@@ -1,0 +1,22 @@
+../../common/src/modconstant.o : ../../common/src/modconstant.f90 
+../../common/src/modfofmpi.o : ../../common/src/modfofmpi.f90 modvariables.o modio.o modmpicom.o ../../common/src/modconstant.o 
+../../common/src/modhalo.o : ../../common/src/modhalo.f90 ../../common/src/modtiming.o ../../common/src/modmpicommons.o modvariables.o ../../common/src/modconstant.o 
+../../common/src/modhdf5.o : ../../common/src/modhdf5.f90 
+../../common/src/modiocommons.o : ../../common/src/modiocommons.f90 ../../common/src/modhdf5.o ../../common/src/modconstant.o 
+../../common/src/modmpicommons.o : ../../common/src/modmpicommons.f90 ../../common/src/modconstant.o 
+../../common/src/modreadhalo.o : ../../common/src/modreadhalo.f90 ../../common/src/modhdf5.o 
+../../common/src/modreadinfo.o : ../../common/src/modreadinfo.f90 ../../common/src/modmpicommons.o ../../common/src/modconstant.o 
+../../common/src/modreadparameters.o : ../../common/src/modreadparameters.f90 ../../common/src/modconstant.o 
+../../common/src/modsort.o : ../../common/src/modsort.f90 modmpicom.o ../../common/src/modconstant.o 
+../../common/src/modsortinterf.o : ../../common/src/modsortinterf.f90 ../../common/src/modconstant.o 
+../../common/src/modtiming.o : ../../common/src/modtiming.f90 
+../../common/src/modwritehalo.o : ../../common/src/modwritehalo.f90 modmpicom.o modparameters.o ../../common/src/modhdf5.o ../../common/src/modiocommons.o 
+modfofpara.o : modfofpara.f90 modvariables.o ../../common/src/modsortinterf.o ../../common/src/modtiming.o ../../common/src/modwritehalo.o modio.o ../../common/src/modhalo.o modparameters.o ../../common/src/modfofmpi.o modmpicom.o 
+modio.o : modio.f90 modmpicom.o ../../common/src/modtiming.o modparameters.o ../../common/src/modmpicommons.o ../../common/src/modreadinfo.o modvariables.o ../../common/src/modconstant.o 
+modmpicom.o : modmpicom.f90 modparameters.o ../../common/src/modmpicommons.o 
+modparameters.o : modparameters.f90 ../../common/src/modconstant.o 
+modreadcube.o : modreadcube.f90 ../../common/src/modiocommons.o modvariables.o modparameters.o modmpicom.o ../../common/src/modhdf5.o ../../common/src/modconstant.o 
+modvariables.o : modvariables.f90 ../../common/src/modconstant.o 
+modwritecube.o : modwritecube.f90 ../../common/src/modsortinterf.o ../../common/src/modiocommons.o modvariables.o modparameters.o modmpicom.o ../../common/src/modhdf5.o ../../common/src/modconstant.o 
+modxdmf.o : modxdmf.f90 modvariables.o 
+pfof_snap.o : pfof_snap.f90 ../../common/src/modtiming.o modio.o modwritecube.o modreadcube.o modfofpara.o modmpicom.o modparameters.o modvariables.o ../../common/src/modhdf5.o 

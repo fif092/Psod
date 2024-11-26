@@ -1,0 +1,79 @@
+\hypertarget{pfof__snap_2src_2modvariables_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modvariables.f90 File Reference}
+\label{pfof__snap_2src_2modvariables_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modvariables.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modvariables.\+f90}}
+
+
+This file contains the definition of the 3 arrays containing the position, the velocity and the id of the particles.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodvariables}{modvariables}
+\begin{DoxyCompactList}\small\item\em This module contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{modvariables\+::mynpart}
+\begin{DoxyCompactList}\small\item\em local particle number \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{modvariables\+::nres}
+\begin{DoxyCompactList}\small\item\em 1-\/D resolution\+: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin \end{DoxyCompactList}\item 
+integer(kind=pri) \hyperlink{namespacemodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}{modvariables\+::npart}
+\begin{DoxyCompactList}\small\item\em total particle number\+: npart = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+integer(kind=pri) \hyperlink{namespacemodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}{modvariables\+::ngrid}
+\begin{DoxyCompactList}\small\item\em total number of grid points\+: ngrid = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+real(kind=4) \hyperlink{namespacemodvariables_aaa639d561a94ae000546755b6863b6be}{modvariables\+::xmin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_a9112a5edebd73d310c4594fca429a757}{modvariables\+::xmax}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_af09b8e9f670d2074a46c55ed90661609}{modvariables\+::ymin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_aa84922c68231d1c3496d3a7d210a62e7}{modvariables\+::ymax}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_aa88314239681eb1c24673391f4612eb3}{modvariables\+::zmin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_ab9a39f4e4f686b80011f46a2f88617c1}{modvariables\+::zmax}
+\begin{DoxyCompactList}\small\item\em min and max (x,y,z) for each process \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodvariables_ad84b74b636d64be51d7aba857b4b5c05}{modvariables\+::neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighbours of the local process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{modvariables\+::pos}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{modvariables\+::vel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a81417dbf044e4c170e3b3ae6eebcd6a1}{modvariables\+::for}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a872451e872cc528b38bd43f2ed09b446}{modvariables\+::pot}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ac2069a0665c46610db9e57a5d5eaf195}{modvariables\+::id}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a93c25eb46b5370bd8153733e03f3008d}{modvariables\+::structure}
+\begin{DoxyCompactList}\small\item\em Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a7528c234a190760e036921b956ec9fe8}{modvariables\+::posf}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{modvariables\+::velf}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a1f2453280a3af1c380a1c3ad4797dc4b}{modvariables\+::forf}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a719beead34fb4c6c7c70e7f51f1dfc78}{modvariables\+::potf}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a74cd7fb485e34ae685664db5b2629aa9}{modvariables\+::idf}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a5b99e0cc82073c06969e0fe6caa06357}{modvariables\+::stf}
+\begin{DoxyCompactList}\small\item\em Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ae6b45a68a4cbf0ccbbf7c08ee87e3573}{modvariables\+::ramsesid}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a960cf3d5497024438caba54185cd7793}{modvariables\+::ramsesidf}
+\item 
+character(len=50) \hyperlink{namespacemodvariables_a9f9928f8307cdd707b3a7d360a992f9f}{modvariables\+::origin}
+\item 
+type(type\+\_\+inforamses) \hyperlink{namespacemodvariables_ac84b14c43266126c4d7120ba0b8f48f4}{modvariables\+::inforamses}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the definition of the 3 arrays containing the position, the velocity and the id of the particles. 
+
+\begin{DoxyAuthor}{Author}
+Fabrice Roy 
+
+Vincent Bouillot 
+\end{DoxyAuthor}

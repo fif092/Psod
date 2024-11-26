@@ -1,0 +1,24 @@
+!> @file
+!! This file contains variables used for timings.
+
+!> This module contains variables used for timings.
+!>
+!> Authors: F. Roy, V. Bouillot
+
+Module modtiming
+
+  Implicit None
+  Real(kind=8) :: time0                  !< beginning of the execution
+  Real(kind=8) :: timeInt                !< intermediate time
+  Real(kind=8) :: tReadFile              !< time used to read particles files (cubes or Ramses files, HDF5 or not)
+  Real(kind=8) :: tTailPart              !< time used to distribute the particles if read from Ramses files
+  Real(kind=8) :: tInitRead              !< time used to initialize reading from Ramses files
+  Real(kind=8) :: tRead                  !< global reading time
+  Real(kind=8) :: tObs                   !< time used to compute observables for haloes
+  Real(kind=8) :: tOut                   !< time used to write output files
+  Real(kind=8) :: tFoF                   !< global time for friends-of-friends halo detection
+  Real(kind=8) :: tFoFloc                !< time for local fof algorithm
+  Real(kind=8) :: tFoFinit               !< time for fof initialization (construction of the tree)
+  Real(kind=8) :: tRaccord               !< time for halo merging procedure 
+
+End Module modtiming

@@ -1,0 +1,206 @@
+\hypertarget{classmodconstant}{\section{modconstant Module Reference}
+\label{classmodconstant}\index{modconstant@{modconstant}}
+}
+
+
+Constant parameters definition.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \hyperlink{structmodconstant_1_1type__common__metadata}{type\-\_\-common\-\_\-metadata}
+\begin{DoxyCompactList}\small\item\em Type for metadata common to every kind of hdf5 output file. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__info__cone}{type\-\_\-info\-\_\-cone}
+\begin{DoxyCompactList}\small\item\em Type for information read from cone info file. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__info__cone__grav}{type\-\_\-info\-\_\-cone\-\_\-grav}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-info\-\_\-cone for cells cone. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__info__cone__part}{type\-\_\-info\-\_\-cone\-\_\-part}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-info\-\_\-cone for particles cone. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__info__ramses}{type\-\_\-info\-\_\-ramses}
+\begin{DoxyCompactList}\small\item\em Type for information read from Ramses info file. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator}{type\-\_\-parameter\-\_\-conecreator}
+\begin{DoxyCompactList}\small\item\em Type for conecreator input parameters common to particles and cells versions. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator__grav}{type\-\_\-parameter\-\_\-conecreator\-\_\-grav}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-parameter\-\_\-conecreator for the cells version. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator__part}{type\-\_\-parameter\-\_\-conecreator\-\_\-part}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-parameter\-\_\-conecreator for the particles version. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof}{type\-\_\-parameter\-\_\-pfof}
+\begin{DoxyCompactList}\small\item\em Type for pfof input parameters common to snapshot and cone versions. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof__cone}{type\-\_\-parameter\-\_\-pfof\-\_\-cone}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-parameter\-\_\-pfof for the cone version. \end{DoxyCompactList}\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof__snap}{type\-\_\-parameter\-\_\-pfof\-\_\-snap}
+\begin{DoxyCompactList}\small\item\em Extension of Type\-\_\-parameter\-\_\-pfof for the snapshot version. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter, public \hyperlink{classmodconstant_ae56d6723f2d9f742f5e86130f933dc5a}{pr} =8
+\begin{DoxyCompactList}\small\item\em Precision for real arrays read from Ramses simulations (position/velocities) \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_a7a71c60a74ed2c5f33f51df2c6709c41}{pri} = 8
+\begin{DoxyCompactList}\small\item\em Precision for integer arrays (id) \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_a4717a1a875853ed2396e076e95fa12f1}{mpi\-\_\-pri} = Mpi\-\_\-\-Integer8
+\begin{DoxyCompactList}\small\item\em M\-P\-I precision for integer arrays. \end{DoxyCompactList}\item 
+character(len=16), parameter, \\*
+public \hyperlink{classmodconstant_a8cb8268586070d3ab8e654e5d2a434f4}{name\-\_\-conecreator\-\_\-part} ='conecreator\-\_\-part'
+\item 
+character(len=16), parameter, \\*
+public \hyperlink{classmodconstant_a6b0007da6df5318a91769f3130de6cb4}{name\-\_\-conecreator\-\_\-grav} ='conecreator\-\_\-grav'
+\item 
+character(len=16), parameter, \\*
+public \hyperlink{classmodconstant_af7a0e90a75b8e13c6e6bcf434bafcd84}{name\-\_\-pfof\-\_\-snap} ='pfof\-\_\-snap'
+\item 
+character(len=16), parameter, \\*
+public \hyperlink{classmodconstant_a79267a90db91d9d4ef5f6179a358a27d}{name\-\_\-pfof\-\_\-cone} ='\hyperlink{pfof__cone_8f90_addc770475dc2e497bf70a10ebc158aed}{pfof\-\_\-cone}'
+\item 
+integer, parameter, public \hyperlink{classmodconstant_ae996968f053a2ed978bda16dad601b9f}{ulog} =50
+\begin{DoxyCompactList}\small\item\em I/\-O unit for text log file. \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_a9509aa964770163a2cc1dab767b7afc1}{ucub} =51
+\begin{DoxyCompactList}\small\item\em I/\-O unit for binary cube file. \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_a7c4638477348db5b2b973ec77d289248}{umas} =52
+\begin{DoxyCompactList}\small\item\em I/\-O unit for binary mass file. \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_af348170b4f06a596d512347383aa406b}{ustr} =53
+\begin{DoxyCompactList}\small\item\em I/\-O unit for binary haloes file. \end{DoxyCompactList}\item 
+integer, parameter, public \hyperlink{classmodconstant_aa03af4caf7d57d16746ad4cb3c673677}{uopa} =54
+\begin{DoxyCompactList}\small\item\em I/\-O unit for text input parameter log file. \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodconstant_aa77df404168800abb297de67a837cb04}{svn\-\_\-version} =S\-V\-N\-R\-E\-V
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Constant parameters definition. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 8 of file modconstant.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodconstant_a4717a1a875853ed2396e076e95fa12f1}{\index{modconstant@{modconstant}!mpi\-\_\-pri@{mpi\-\_\-pri}}
+\index{mpi\-\_\-pri@{mpi\-\_\-pri}!modconstant@{modconstant}}
+\subsubsection[{mpi\-\_\-pri}]{\setlength{\rightskip}{0pt plus 5cm}integer parameter public modconstant\-::mpi\-\_\-pri = Mpi\-\_\-\-Integer8}}\label{classmodconstant_a4717a1a875853ed2396e076e95fa12f1}
+
+
+M\-P\-I precision for integer arrays. 
+
+
+
+Definition at line 21 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a6b0007da6df5318a91769f3130de6cb4}{\index{modconstant@{modconstant}!name\-\_\-conecreator\-\_\-grav@{name\-\_\-conecreator\-\_\-grav}}
+\index{name\-\_\-conecreator\-\_\-grav@{name\-\_\-conecreator\-\_\-grav}!modconstant@{modconstant}}
+\subsubsection[{name\-\_\-conecreator\-\_\-grav}]{\setlength{\rightskip}{0pt plus 5cm}character(len=16), parameter, public modconstant\-::name\-\_\-conecreator\-\_\-grav ='conecreator\-\_\-grav'}}\label{classmodconstant_a6b0007da6df5318a91769f3130de6cb4}
+
+
+Definition at line 29 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a8cb8268586070d3ab8e654e5d2a434f4}{\index{modconstant@{modconstant}!name\-\_\-conecreator\-\_\-part@{name\-\_\-conecreator\-\_\-part}}
+\index{name\-\_\-conecreator\-\_\-part@{name\-\_\-conecreator\-\_\-part}!modconstant@{modconstant}}
+\subsubsection[{name\-\_\-conecreator\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}character(len=16), parameter, public modconstant\-::name\-\_\-conecreator\-\_\-part ='conecreator\-\_\-part'}}\label{classmodconstant_a8cb8268586070d3ab8e654e5d2a434f4}
+
+
+Definition at line 28 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a79267a90db91d9d4ef5f6179a358a27d}{\index{modconstant@{modconstant}!name\-\_\-pfof\-\_\-cone@{name\-\_\-pfof\-\_\-cone}}
+\index{name\-\_\-pfof\-\_\-cone@{name\-\_\-pfof\-\_\-cone}!modconstant@{modconstant}}
+\subsubsection[{name\-\_\-pfof\-\_\-cone}]{\setlength{\rightskip}{0pt plus 5cm}character(len=16), parameter, public modconstant\-::name\-\_\-pfof\-\_\-cone ='{\bf pfof\-\_\-cone}'}}\label{classmodconstant_a79267a90db91d9d4ef5f6179a358a27d}
+
+
+Definition at line 31 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_af7a0e90a75b8e13c6e6bcf434bafcd84}{\index{modconstant@{modconstant}!name\-\_\-pfof\-\_\-snap@{name\-\_\-pfof\-\_\-snap}}
+\index{name\-\_\-pfof\-\_\-snap@{name\-\_\-pfof\-\_\-snap}!modconstant@{modconstant}}
+\subsubsection[{name\-\_\-pfof\-\_\-snap}]{\setlength{\rightskip}{0pt plus 5cm}character(len=16), parameter, public modconstant\-::name\-\_\-pfof\-\_\-snap ='pfof\-\_\-snap'}}\label{classmodconstant_af7a0e90a75b8e13c6e6bcf434bafcd84}
+
+
+Definition at line 30 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_ae56d6723f2d9f742f5e86130f933dc5a}{\index{modconstant@{modconstant}!pr@{pr}}
+\index{pr@{pr}!modconstant@{modconstant}}
+\subsubsection[{pr}]{\setlength{\rightskip}{0pt plus 5cm}integer parameter public modconstant\-::pr =8}}\label{classmodconstant_ae56d6723f2d9f742f5e86130f933dc5a}
+
+
+Precision for real arrays read from Ramses simulations (position/velocities) 
+
+
+
+Definition at line 14 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a7a71c60a74ed2c5f33f51df2c6709c41}{\index{modconstant@{modconstant}!pri@{pri}}
+\index{pri@{pri}!modconstant@{modconstant}}
+\subsubsection[{pri}]{\setlength{\rightskip}{0pt plus 5cm}integer parameter public modconstant\-::pri = 8}}\label{classmodconstant_a7a71c60a74ed2c5f33f51df2c6709c41}
+
+
+Precision for integer arrays (id) 
+
+
+
+Definition at line 20 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_aa77df404168800abb297de67a837cb04}{\index{modconstant@{modconstant}!svn\-\_\-version@{svn\-\_\-version}}
+\index{svn\-\_\-version@{svn\-\_\-version}!modconstant@{modconstant}}
+\subsubsection[{svn\-\_\-version}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modconstant\-::svn\-\_\-version =S\-V\-N\-R\-E\-V}}\label{classmodconstant_aa77df404168800abb297de67a837cb04}
+
+
+Definition at line 42 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a9509aa964770163a2cc1dab767b7afc1}{\index{modconstant@{modconstant}!ucub@{ucub}}
+\index{ucub@{ucub}!modconstant@{modconstant}}
+\subsubsection[{ucub}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter, public modconstant\-::ucub =51}}\label{classmodconstant_a9509aa964770163a2cc1dab767b7afc1}
+
+
+I/\-O unit for binary cube file. 
+
+
+
+Definition at line 36 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_ae996968f053a2ed978bda16dad601b9f}{\index{modconstant@{modconstant}!ulog@{ulog}}
+\index{ulog@{ulog}!modconstant@{modconstant}}
+\subsubsection[{ulog}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter, public modconstant\-::ulog =50}}\label{classmodconstant_ae996968f053a2ed978bda16dad601b9f}
+
+
+I/\-O unit for text log file. 
+
+
+
+Definition at line 35 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_a7c4638477348db5b2b973ec77d289248}{\index{modconstant@{modconstant}!umas@{umas}}
+\index{umas@{umas}!modconstant@{modconstant}}
+\subsubsection[{umas}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter, public modconstant\-::umas =52}}\label{classmodconstant_a7c4638477348db5b2b973ec77d289248}
+
+
+I/\-O unit for binary mass file. 
+
+
+
+Definition at line 37 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_aa03af4caf7d57d16746ad4cb3c673677}{\index{modconstant@{modconstant}!uopa@{uopa}}
+\index{uopa@{uopa}!modconstant@{modconstant}}
+\subsubsection[{uopa}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter, public modconstant\-::uopa =54}}\label{classmodconstant_aa03af4caf7d57d16746ad4cb3c673677}
+
+
+I/\-O unit for text input parameter log file. 
+
+
+
+Definition at line 39 of file modconstant.\-f90.
+
+\hypertarget{classmodconstant_af348170b4f06a596d512347383aa406b}{\index{modconstant@{modconstant}!ustr@{ustr}}
+\index{ustr@{ustr}!modconstant@{modconstant}}
+\subsubsection[{ustr}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter, public modconstant\-::ustr =53}}\label{classmodconstant_af348170b4f06a596d512347383aa406b}
+
+
+I/\-O unit for binary haloes file. 
+
+
+
+Definition at line 38 of file modconstant.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modconstant_8f90}{modconstant.\-f90}\end{DoxyCompactItemize}

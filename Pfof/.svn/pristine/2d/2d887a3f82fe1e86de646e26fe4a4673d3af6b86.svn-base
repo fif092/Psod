@@ -1,0 +1,22 @@
+&ramsesinput
+code_index = 'RA3'
+pathinput = '/obs/roy/Cosmo/fof_dev/output_00013'
+namepart = 'part_00013.out'
+nameinfo = 'info_00013.txt'
+grpsize = 64
+star = .false.
+metal = .false. 
+readfromcube = .true. /
+
+&fofparam
+perco = 0.20
+Mmin = 100
+Mmax = 100000000
+dofof = .true./
+ 
+&outputparam
+root = 'fof_test'
+outcube = .true.
+hdf5 = .true.
+dotimings = .true./
+

@@ -1,0 +1,50 @@
+MPIFC = h5pfc
+SVNVERSION=0
+
+OPTS = -O2 -g -Wall -fcheck=all -fbacktrace -cpp -DLONGINT  -DWITHMPI -DSVNREV=${SVNVERSION}
+LDFLAGS = -g
+
+VPATH = ../../../common/src:.
+
+EXE = conecreator 
+
+SRC = modhdf5.f90 \
+	modconstant.f90 \
+	modiocommons.f90 \
+	modmpicommons.f90 \
+	modreadinfo.f90 \
+	modparameters.f90 \
+	modvariables.f90 \
+	modio.f90 \
+	modsortpart.f90 \
+	conecreator.f90
+
+OBJ = $(SRC:%.f90=%.o)
+FCFLAGS = $(OPTS)
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<  
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $< 
+
+all : $(EXE)
+
+$(EXE) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -o $(EXE) $(OBJ)  $(LDFLAGS)
+	svnversion > conecreator.version
+
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) conecreator.version
+

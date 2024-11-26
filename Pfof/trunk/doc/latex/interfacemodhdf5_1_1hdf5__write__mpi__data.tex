@@ -1,0 +1,343 @@
+\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data}{}\section{modhdf5\+:\+:hdf5\+\_\+write\+\_\+mpi\+\_\+data Interface Reference}
+\label{interfacemodhdf5_1_1hdf5__write__mpi__data}\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+
+
+Generic inteface used to write data in a parallel hdf5 file.  
+
+
+
+
+Collaboration diagram for modhdf5\+:\+:hdf5\+\_\+write\+\_\+mpi\+\_\+data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{interfacemodhdf5_1_1hdf5__write__mpi__data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_a7ea09115ff2a974a7d871c555b1be2d0}{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_a2906d576070456a5137a6e0abe667156}{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_a9e1ae706eda63ff5c0be30ee69ec560a}{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D integer(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_a16185b9e0e6ab2aaaff9c931f4554e3a}{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D integer(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_abbbc965c3da38a9f6ba1a37d18f1384a}{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_a524aa3c194952012883099ad1b29df82}{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_ad323516e83fa60e25ecc34f7c6d5a21f}{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/D real(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data_ae7a2203ebd7ce2df80b58543f5afe1dc}{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/D real(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic inteface used to write data in a parallel hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written \\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset \\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data array \\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data array (optional) \\
+\hline
+\mbox{\tt in}  & {\em data} & 1-\/D or 2-\/D data array of type Integer(4), Integer(8), Real(4) or Real(8) \\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used for the output (the same communicator should have been used to create the file) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 125 of file modhdf5.\+f90.
+
+
+
+\subsection{Member Function/\+Subroutine Documentation}
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d(id, name, n1, data, comm, empty)}{hdf5_write_mpi_int4_1d(id, name, n1, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_a7ea09115ff2a974a7d871c555b1be2d0}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_a7ea09115ff2a974a7d871c555b1be2d0}
+
+
+Write a 1-\/D integer(kind=4) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 914 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d(id, name, n1, n2, data, comm, empty)}{hdf5_write_mpi_int4_2d(id, name, n1, n2, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int4\+\_\+2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_a2906d576070456a5137a6e0abe667156}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_a2906d576070456a5137a6e0abe667156}
+
+
+Write a 2-\/D integer(kind=4) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1011 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d(id, name, n1, data, comm, empty)}{hdf5_write_mpi_int8_1d(id, name, n1, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_a9e1ae706eda63ff5c0be30ee69ec560a}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_a9e1ae706eda63ff5c0be30ee69ec560a}
+
+
+Write a 1-\/D integer(kind=8) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1112 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d(id, name, n1, n2, data, comm, empty)}{hdf5_write_mpi_int8_2d(id, name, n1, n2, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+int8\+\_\+2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_a16185b9e0e6ab2aaaff9c931f4554e3a}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_a16185b9e0e6ab2aaaff9c931f4554e3a}
+
+
+Write a 2-\/D integer(kind=8) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1219 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d(id, name, n1, data, comm, empty)}{hdf5_write_mpi_real4_1d(id, name, n1, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_abbbc965c3da38a9f6ba1a37d18f1384a}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_abbbc965c3da38a9f6ba1a37d18f1384a}
+
+
+Write a 1-\/D real(kind=4) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1320 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d(id, name, n1, n2, data, comm, empty)}{hdf5_write_mpi_real4_2d(id, name, n1, n2, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real4\+\_\+2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_a524aa3c194952012883099ad1b29df82}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_a524aa3c194952012883099ad1b29df82}
+
+
+Write a 2-\/D real(kind=4) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1418 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d(id, name, n1, data, comm, empty)}{hdf5_write_mpi_real8_1d(id, name, n1, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_ad323516e83fa60e25ecc34f7c6d5a21f}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_ad323516e83fa60e25ecc34f7c6d5a21f}
+
+
+Write a 1-\/D real(kind=8) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1528 of file modhdf5.\+f90.
+
+\index{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}!hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d}}
+\index{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d@{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d}!modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data@{modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data}}
+\subsubsection[{\texorpdfstring{hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d(id, name, n1, n2, data, comm, empty)}{hdf5_write_mpi_real8_2d(id, name, n1, n2, data, comm, empty)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\+::hdf5\+\_\+write\+\_\+mpi\+\_\+data\+::hdf5\+\_\+write\+\_\+mpi\+\_\+real8\+\_\+2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\+\_\+t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{interfacemodhdf5_1_1hdf5__write__mpi__data_ae7a2203ebd7ce2df80b58543f5afe1dc}{}\label{interfacemodhdf5_1_1hdf5__write__mpi__data_ae7a2203ebd7ce2df80b58543f5afe1dc}
+
+
+Write a 2-\/D real(kind=8) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\+PI communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1626 of file modhdf5.\+f90.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/\hyperlink{modhdf5_8f90}{modhdf5.\+f90}\end{DoxyCompactItemize}

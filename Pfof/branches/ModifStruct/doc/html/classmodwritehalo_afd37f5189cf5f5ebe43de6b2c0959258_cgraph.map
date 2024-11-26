@@ -1,0 +1,11 @@
+<map id="modwritehalo::h5writehalopart" name="modwritehalo::h5writehalopart">
+<area shape="rect" id="node2" href="$classmodiocommons.html#aafba4b5ca834c55dd741c4040e971e5b" title="Write metadata common to every hdf5 ouput files of the pfof toolbox. " alt="" coords="253,42,417,83"/>
+<area shape="rect" id="node3" href="$classmodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="473,127,615,168"/>
+<area shape="rect" id="node4" href="$classmodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="474,192,614,234"/>
+<area shape="rect" id="node5" href="$classmodiocommons.html#a7357bab67b152d137d4b2d43f30263e5" title="Write light cone info as metadata. " alt="" coords="253,159,417,200"/>
+<area shape="rect" id="node6" href="$classmodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="470,290,618,331"/>
+<area shape="rect" id="node7" href="$classmodiocommons.html#a88b4f4949433f00d81d86b9b1e031646" title="Write ramses info as metadata. " alt="" coords="253,224,417,266"/>
+<area shape="rect" id="node8" href="$classmodiocommons.html#a6c7b87aedd57a36d2f5b643cb3fc7c12" title="Write pfof input parameters as metadata. " alt="" coords="253,290,417,331"/>
+<area shape="rect" id="node9" href="$classmodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="251,457,418,484"/>
+<area shape="rect" id="node10" href="$classmodhdf5.html#a66cf3f318aafac811c2422f8155f7ae1" title="Create and open a hdf5 file. " alt="" coords="249,356,421,382"/>
+</map>

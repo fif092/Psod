@@ -1,0 +1,339 @@
+\hypertarget{namespacemodsortpart}{}\section{modsortpart Module Reference}
+\label{namespacemodsortpart}\index{modsortpart@{modsortpart}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodsortpart_a45cee800346ecf7b0cdc0c235bd06c48}{dividespace} ()
+\item 
+subroutine \hyperlink{namespacemodsortpart_a1a6a9f53783f2139141e9064f49d2f1b}{tritas} (n, tref, tx, ta, tp, tr, ti)
+\item 
+subroutine \hyperlink{namespacemodsortpart_a18d32ea34d090d81f8f618e593860e72}{construction} (size, n, tref, tx, ta, tp, tr, ti)
+\item 
+recursive subroutine \hyperlink{namespacemodsortpart_a237cc515810e4aa5203ebead3f59a3a7}{entasser} (size, i, tref, tx, ta, tp, tr, ti)
+\item 
+subroutine \hyperlink{namespacemodsortpart_a0b24fe38ef401030203a179425190ba9}{echanger} (i, j, tref, tx, ta, tp, tr, ti)
+\item 
+subroutine \hyperlink{namespacemodsortpart_aa3fa8de94821d20599528fffd223a0b1}{heapsort} (n, tref, tx, tv, tf, tp, tid)
+\item 
+subroutine \hyperlink{namespacemodsortpart_a22ac7a574e86139261a41a3380b63b5a}{construction} (size, n, tref, tx, tv, tf, tp, tid)
+\item 
+recursive subroutine \hyperlink{namespacemodsortpart_a5d085df72d2f718f2b8d37a434a5511d}{entasser} (size, i, tref, tx, tv, tf, tp, tid)
+\item 
+subroutine \hyperlink{namespacemodsortpart_a8c03f207ba984156927802e30e176e56}{echanger} (i, j, tref, tx, tv, tf, tp, tid)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modsortpart@{modsortpart}!construction@{construction}}
+\index{construction@{construction}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{construction(size, n, tref, tx, ta, tp, tr, ti)}{construction(size, n, tref, tx, ta, tp, tr, ti)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::construction (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(out)}]{size, }
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{ta, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tr, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{ti}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a18d32ea34d090d81f8f618e593860e72}{}\label{namespacemodsortpart_a18d32ea34d090d81f8f618e593860e72}
+
+
+Definition at line 135 of file modsortpart.\+f90.
+
+
+
+References entasser().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a18d32ea34d090d81f8f618e593860e72_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a18d32ea34d090d81f8f618e593860e72_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!construction@{construction}}
+\index{construction@{construction}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{construction(size, n, tref, tx, tv, tf, tp, tid)}{construction(size, n, tref, tx, tv, tf, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::construction (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(out)}]{size, }
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(inout), optional}]{tf, }
+\item[{real(kind=4), dimension($\ast$), intent(inout), optional}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout), optional}]{tid}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a22ac7a574e86139261a41a3380b63b5a}{}\label{namespacemodsortpart_a22ac7a574e86139261a41a3380b63b5a}
+
+
+Definition at line 177 of file modsortpart.\+f90.
+
+
+
+References entasser().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a22ac7a574e86139261a41a3380b63b5a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!dividespace@{dividespace}}
+\index{dividespace@{dividespace}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{dividespace()}{dividespace()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::dividespace (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a45cee800346ecf7b0cdc0c235bd06c48}{}\label{namespacemodsortpart_a45cee800346ecf7b0cdc0c235bd06c48}
+
+
+Definition at line 19 of file modsortpart.\+f90.
+
+
+
+References modvariable\+::hy, modvariable\+::hz, modvariable\+::idcube, modvariable\+::infocone, modvariable\+::mpierr, modvariable\+::ncellcube, modvariable\+::ncellcubeloc, modvariable\+::ncellperlevel, modio\+::ncube, modvariable\+::ncx, modvariable\+::ncy, modvariable\+::ncz, modparam\+::param, modvariable\+::pos, and modvariable\+::req\+\_\+sumnpc.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{namespacemodsortpart_a45cee800346ecf7b0cdc0c235bd06c48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!echanger@{echanger}}
+\index{echanger@{echanger}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{echanger(i, j, tref, tx, ta, tp, tr, ti)}{echanger(i, j, tref, tx, ta, tp, tr, ti)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::echanger (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{i, }
+\item[{integer(kind=4), intent(in)}]{j, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{ta, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tr, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{ti}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a0b24fe38ef401030203a179425190ba9}{}\label{namespacemodsortpart_a0b24fe38ef401030203a179425190ba9}
+
+
+Definition at line 200 of file modsortpart.\+f90.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a0b24fe38ef401030203a179425190ba9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!echanger@{echanger}}
+\index{echanger@{echanger}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{echanger(i, j, tref, tx, tv, tf, tp, tid)}{echanger(i, j, tref, tx, tv, tf, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::echanger (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{i, }
+\item[{integer(kind=4), intent(in)}]{j, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(inout), optional}]{tf, }
+\item[{real(kind=4), dimension($\ast$), intent(inout), optional}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout), optional}]{tid}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a8c03f207ba984156927802e30e176e56}{}\label{namespacemodsortpart_a8c03f207ba984156927802e30e176e56}
+
+
+Definition at line 303 of file modsortpart.\+f90.
+
+\index{modsortpart@{modsortpart}!entasser@{entasser}}
+\index{entasser@{entasser}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{entasser(size, i, tref, tx, ta, tp, tr, ti)}{entasser(size, i, tref, tx, ta, tp, tr, ti)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortpart\+::entasser (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{size, }
+\item[{integer(kind=4), intent(in)}]{i, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{ta, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tr, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{ti}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a237cc515810e4aa5203ebead3f59a3a7}{}\label{namespacemodsortpart_a237cc515810e4aa5203ebead3f59a3a7}
+
+
+Definition at line 162 of file modsortpart.\+f90.
+
+
+
+References echanger().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{namespacemodsortpart_a237cc515810e4aa5203ebead3f59a3a7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a237cc515810e4aa5203ebead3f59a3a7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!entasser@{entasser}}
+\index{entasser@{entasser}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{entasser(size, i, tref, tx, tv, tf, tp, tid)}{entasser(size, i, tref, tx, tv, tf, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsortpart\+::entasser (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{size, }
+\item[{integer(kind=4), intent(in)}]{i, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(inout), optional}]{tf, }
+\item[{real(kind=4), dimension($\ast$), intent(inout), optional}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout), optional}]{tid}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a5d085df72d2f718f2b8d37a434a5511d}{}\label{namespacemodsortpart_a5d085df72d2f718f2b8d37a434a5511d}
+
+
+Definition at line 238 of file modsortpart.\+f90.
+
+
+
+References echanger(), and entasser().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a5d085df72d2f718f2b8d37a434a5511d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!heapsort@{heapsort}}
+\index{heapsort@{heapsort}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{heapsort(n, tref, tx, tv, tf, tp, tid)}{heapsort(n, tref, tx, tv, tf, tp, tid)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::heapsort (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(inout), optional}]{tf, }
+\item[{real(kind=4), dimension($\ast$), intent(inout), optional}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout), optional}]{tid}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_aa3fa8de94821d20599528fffd223a0b1}{}\label{namespacemodsortpart_aa3fa8de94821d20599528fffd223a0b1}
+
+
+Definition at line 95 of file modsortpart.\+f90.
+
+
+
+References construction(), echanger(), and entasser().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_aa3fa8de94821d20599528fffd223a0b1_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{namespacemodsortpart_aa3fa8de94821d20599528fffd223a0b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modsortpart@{modsortpart}!tritas@{tritas}}
+\index{tritas@{tritas}!modsortpart@{modsortpart}}
+\subsubsection[{\texorpdfstring{tritas(n, tref, tx, ta, tp, tr, ti)}{tritas(n, tref, tx, ta, tp, tr, ti)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortpart\+::tritas (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{ta, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tr, }
+\item[{integer(kind=4), dimension($\ast$), intent(inout)}]{ti}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodsortpart_a1a6a9f53783f2139141e9064f49d2f1b}{}\label{namespacemodsortpart_a1a6a9f53783f2139141e9064f49d2f1b}
+
+
+Definition at line 108 of file modsortpart.\+f90.
+
+
+
+References construction(), echanger(), and entasser().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodsortpart_a1a6a9f53783f2139141e9064f49d2f1b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{namespacemodsortpart_a1a6a9f53783f2139141e9064f49d2f1b_icgraph}
+\end{center}
+\end{figure}
+
+

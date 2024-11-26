@@ -1,0 +1,263 @@
+\hypertarget{classmodvarcommons}{\section{modvarcommons Module Reference}
+\label{classmodvarcommons}\index{modvarcommons@{modvarcommons}}
+}
+
+
+This module contains variables used by pfof\-\_\-snap and pfof\-\_\-cone.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{classmodvarcommons_ac6a221a790865b56b21df2f1cb544e4c}{local\-\_\-npart}
+\begin{DoxyCompactList}\small\item\em local particle number \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodvarcommons_ad7c50fb83d1dfe26ec032d10928a5f77}{nres}
+\begin{DoxyCompactList}\small\item\em 1-\/\-D resolution\-: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin \end{DoxyCompactList}\item 
+integer(kind=pri) \hyperlink{classmodvarcommons_a76303173f75dcfe82023dfe19fc22fbb}{global\-\_\-npart}
+\begin{DoxyCompactList}\small\item\em total particle number\-: npart = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a1b79bd5412057e847c022c233c3919cf}{position}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a7671f66edc6e99da11ea2ee4c246e033}{velocity}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_af5bba78d6e056541f1defb808bf62d63}{field}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a2c88b0f5e49a7236083aefd81aa33877}{potential}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_ac41f2f8ba4836f86de4c566f01b7f4c9}{pfof\-\_\-id}
+\begin{DoxyCompactList}\small\item\em I\-D of the particles used by pfof to identify particles (= ramses\-\_\-id for snapshot) \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_aa00fdd8871a32c56cc03a4b25e272346}{structure\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_acd431fedb7c6f3075a86103784aba97f}{ramses\-\_\-id}
+\begin{DoxyCompactList}\small\item\em R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_ac0351b89e73074a6621ceef3a7f64e65}{fposition}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a5c548d805cdaa0c237b5cdd58247b207}{fvelocity}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a715db5dbf29bce0c1dfa4e5b5d681f5a}{ffield}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a3ec54ce242c738eb8965506fe283409f}{fpotential}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a8ed131ee0f1bd2a33b132ea270741133}{fpfof\-\_\-id}
+\begin{DoxyCompactList}\small\item\em I\-D of the particles used by pfof to identify particles. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_aa3e7819da325f4559abff9dc0359d05d}{fstructure\-\_\-id}
+\begin{DoxyCompactList}\small\item\em Halo I\-D of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvarcommons_a2c11ac48bbedcbc167820223ba89721e}{framses\-\_\-id}
+\begin{DoxyCompactList}\small\item\em R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains variables used by pfof\-\_\-snap and pfof\-\_\-cone. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modvarcommons.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodvarcommons_a715db5dbf29bce0c1dfa4e5b5d681f5a}{\index{modvarcommons@{modvarcommons}!ffield@{ffield}}
+\index{ffield@{ffield}!modvarcommons@{modvarcommons}}
+\subsubsection[{ffield}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::ffield}}\label{classmodvarcommons_a715db5dbf29bce0c1dfa4e5b5d681f5a}
+
+
+force on the particles 
+
+
+
+Definition at line 40 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_af5bba78d6e056541f1defb808bf62d63}{\index{modvarcommons@{modvarcommons}!field@{field}}
+\index{field@{field}!modvarcommons@{modvarcommons}}
+\subsubsection[{field}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::field}}\label{classmodvarcommons_af5bba78d6e056541f1defb808bf62d63}
+
+
+force on the particles 
+
+
+
+Definition at line 25 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a8ed131ee0f1bd2a33b132ea270741133}{\index{modvarcommons@{modvarcommons}!fpfof\-\_\-id@{fpfof\-\_\-id}}
+\index{fpfof\-\_\-id@{fpfof\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{fpfof\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::fpfof\-\_\-id}}\label{classmodvarcommons_a8ed131ee0f1bd2a33b132ea270741133}
+
+
+I\-D of the particles used by pfof to identify particles. 
+
+
+
+Definition at line 44 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_ac0351b89e73074a6621ceef3a7f64e65}{\index{modvarcommons@{modvarcommons}!fposition@{fposition}}
+\index{fposition@{fposition}!modvarcommons@{modvarcommons}}
+\subsubsection[{fposition}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::fposition}}\label{classmodvarcommons_ac0351b89e73074a6621ceef3a7f64e65}
+
+
+position of the particles 
+
+
+
+Definition at line 36 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a3ec54ce242c738eb8965506fe283409f}{\index{modvarcommons@{modvarcommons}!fpotential@{fpotential}}
+\index{fpotential@{fpotential}!modvarcommons@{modvarcommons}}
+\subsubsection[{fpotential}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:), allocatable modvarcommons\-::fpotential}}\label{classmodvarcommons_a3ec54ce242c738eb8965506fe283409f}
+
+
+potential at the position of the particles (optional) 
+
+
+
+Definition at line 42 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a2c11ac48bbedcbc167820223ba89721e}{\index{modvarcommons@{modvarcommons}!framses\-\_\-id@{framses\-\_\-id}}
+\index{framses\-\_\-id@{framses\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{framses\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::framses\-\_\-id}}\label{classmodvarcommons_a2c11ac48bbedcbc167820223ba89721e}
+
+
+R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 48 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_aa3e7819da325f4559abff9dc0359d05d}{\index{modvarcommons@{modvarcommons}!fstructure\-\_\-id@{fstructure\-\_\-id}}
+\index{fstructure\-\_\-id@{fstructure\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{fstructure\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::fstructure\-\_\-id}}\label{classmodvarcommons_aa3e7819da325f4559abff9dc0359d05d}
+
+
+Halo I\-D of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 46 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a5c548d805cdaa0c237b5cdd58247b207}{\index{modvarcommons@{modvarcommons}!fvelocity@{fvelocity}}
+\index{fvelocity@{fvelocity}!modvarcommons@{modvarcommons}}
+\subsubsection[{fvelocity}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::fvelocity}}\label{classmodvarcommons_a5c548d805cdaa0c237b5cdd58247b207}
+
+
+velocity of the particles 
+
+
+
+Definition at line 38 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a76303173f75dcfe82023dfe19fc22fbb}{\index{modvarcommons@{modvarcommons}!global\-\_\-npart@{global\-\_\-npart}}
+\index{global\-\_\-npart@{global\-\_\-npart}!modvarcommons@{modvarcommons}}
+\subsubsection[{global\-\_\-npart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri) modvarcommons\-::global\-\_\-npart}}\label{classmodvarcommons_a76303173f75dcfe82023dfe19fc22fbb}
+
+
+total particle number\-: npart = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 18 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_ac6a221a790865b56b21df2f1cb544e4c}{\index{modvarcommons@{modvarcommons}!local\-\_\-npart@{local\-\_\-npart}}
+\index{local\-\_\-npart@{local\-\_\-npart}!modvarcommons@{modvarcommons}}
+\subsubsection[{local\-\_\-npart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvarcommons\-::local\-\_\-npart}}\label{classmodvarcommons_ac6a221a790865b56b21df2f1cb544e4c}
+
+
+local particle number 
+
+
+
+Definition at line 14 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_ad7c50fb83d1dfe26ec032d10928a5f77}{\index{modvarcommons@{modvarcommons}!nres@{nres}}
+\index{nres@{nres}!modvarcommons@{modvarcommons}}
+\subsubsection[{nres}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvarcommons\-::nres}}\label{classmodvarcommons_ad7c50fb83d1dfe26ec032d10928a5f77}
+
+
+1-\/\-D resolution\-: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin 
+
+
+
+Definition at line 16 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_ac41f2f8ba4836f86de4c566f01b7f4c9}{\index{modvarcommons@{modvarcommons}!pfof\-\_\-id@{pfof\-\_\-id}}
+\index{pfof\-\_\-id@{pfof\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{pfof\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::pfof\-\_\-id}}\label{classmodvarcommons_ac41f2f8ba4836f86de4c566f01b7f4c9}
+
+
+I\-D of the particles used by pfof to identify particles (= ramses\-\_\-id for snapshot) 
+
+
+
+Definition at line 29 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a1b79bd5412057e847c022c233c3919cf}{\index{modvarcommons@{modvarcommons}!position@{position}}
+\index{position@{position}!modvarcommons@{modvarcommons}}
+\subsubsection[{position}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::position}}\label{classmodvarcommons_a1b79bd5412057e847c022c233c3919cf}
+
+
+position of the particles 
+
+
+
+Definition at line 21 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a2c88b0f5e49a7236083aefd81aa33877}{\index{modvarcommons@{modvarcommons}!potential@{potential}}
+\index{potential@{potential}!modvarcommons@{modvarcommons}}
+\subsubsection[{potential}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:), allocatable modvarcommons\-::potential}}\label{classmodvarcommons_a2c88b0f5e49a7236083aefd81aa33877}
+
+
+potential at the position of the particles (optional) 
+
+
+
+Definition at line 27 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_acd431fedb7c6f3075a86103784aba97f}{\index{modvarcommons@{modvarcommons}!ramses\-\_\-id@{ramses\-\_\-id}}
+\index{ramses\-\_\-id@{ramses\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{ramses\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::ramses\-\_\-id}}\label{classmodvarcommons_acd431fedb7c6f3075a86103784aba97f}
+
+
+R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 33 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_aa00fdd8871a32c56cc03a4b25e272346}{\index{modvarcommons@{modvarcommons}!structure\-\_\-id@{structure\-\_\-id}}
+\index{structure\-\_\-id@{structure\-\_\-id}!modvarcommons@{modvarcommons}}
+\subsubsection[{structure\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvarcommons\-::structure\-\_\-id}}\label{classmodvarcommons_aa00fdd8871a32c56cc03a4b25e272346}
+
+
+Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 31 of file modvarcommons.\-f90.
+
+\hypertarget{classmodvarcommons_a7671f66edc6e99da11ea2ee4c246e033}{\index{modvarcommons@{modvarcommons}!velocity@{velocity}}
+\index{velocity@{velocity}!modvarcommons@{modvarcommons}}
+\subsubsection[{velocity}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvarcommons\-::velocity}}\label{classmodvarcommons_a7671f66edc6e99da11ea2ee4c246e033}
+
+
+velocity of the particles 
+
+
+
+Definition at line 23 of file modvarcommons.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modvarcommons_8f90}{modvarcommons.\-f90}\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{namespacemodxdmf}{}\section{modxdmf Module Reference}
+\label{namespacemodxdmf}\index{modxdmf@{modxdmf}}
+
+
+This module contains subroutine used to write xdmf files corresponding to the H\+D\+F5 files written by p\+F\+OF. The xdmf files can be read by Paraview to visualize the contents of the H\+D\+F5 files.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodxdmf_ae2f7d2597902a070b71c0f7e57a1fd94}{writehaloxdmf}
+\item 
+subroutine \hyperlink{namespacemodxdmf_ab794d1f6abf632c9ff4279bec51e13b1}{writesinglehaloxdmf} (proc\+NB, filebase, halonbtab, halomasstab, haloidtab)
+\begin{DoxyCompactList}\small\item\em Writes a single xdmf file containing the references to each H\+D\+F5 halo file written by p\+F\+OF. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodxdmf_a72e8949508c9724a4993f8f43447a1ea}{writecubexdmf} (filebase, npart)
+\begin{DoxyCompactList}\small\item\em Writes one xmdf file for each H\+D\+F5 cube file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodxdmf_ae843cb42b7f4598f934c91195facf470}{writesinglecubexdmf} (proc\+NB, filebase, nparttab)
+\begin{DoxyCompactList}\small\item\em Writes a single xdmf file containing the references to each H\+D\+F5 cube file written by p\+F\+OF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutine used to write xdmf files corresponding to the H\+D\+F5 files written by p\+F\+OF. The xdmf files can be read by Paraview to visualize the contents of the H\+D\+F5 files. 
+
+Authors\+: F. Roy 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modxdmf@{modxdmf}!writecubexdmf@{writecubexdmf}}
+\index{writecubexdmf@{writecubexdmf}!modxdmf@{modxdmf}}
+\subsubsection[{\texorpdfstring{writecubexdmf(filebase, npart)}{writecubexdmf(filebase, npart)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modxdmf\+::writecubexdmf (
+\begin{DoxyParamCaption}
+\item[{character(len=82), intent(in)}]{filebase, }
+\item[{integer(kind=4), intent(in)}]{npart}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodxdmf_a72e8949508c9724a4993f8f43447a1ea}{}\label{namespacemodxdmf_a72e8949508c9724a4993f8f43447a1ea}
+
+
+Writes one xmdf file for each H\+D\+F5 cube file. 
+
+
+
+Definition at line 94 of file modxdmf.\+f90.
+
+\index{modxdmf@{modxdmf}!writehaloxdmf@{writehaloxdmf}}
+\index{writehaloxdmf@{writehaloxdmf}!modxdmf@{modxdmf}}
+\subsubsection[{\texorpdfstring{writehaloxdmf}{writehaloxdmf}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modxdmf\+::writehaloxdmf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodxdmf_ae2f7d2597902a070b71c0f7e57a1fd94}{}\label{namespacemodxdmf_ae2f7d2597902a070b71c0f7e57a1fd94}
+
+
+Definition at line 17 of file modxdmf.\+f90.
+
+\index{modxdmf@{modxdmf}!writesinglecubexdmf@{writesinglecubexdmf}}
+\index{writesinglecubexdmf@{writesinglecubexdmf}!modxdmf@{modxdmf}}
+\subsubsection[{\texorpdfstring{writesinglecubexdmf(proc\+N\+B, filebase, nparttab)}{writesinglecubexdmf(procNB, filebase, nparttab)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modxdmf\+::writesinglecubexdmf (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{proc\+NB, }
+\item[{character(len=76), intent(in)}]{filebase, }
+\item[{integer(kind=4), dimension(procnb), intent(in)}]{nparttab}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodxdmf_ae843cb42b7f4598f934c91195facf470}{}\label{namespacemodxdmf_ae843cb42b7f4598f934c91195facf470}
+
+
+Writes a single xdmf file containing the references to each H\+D\+F5 cube file written by p\+F\+OF. 
+
+
+
+Definition at line 139 of file modxdmf.\+f90.
+
+\index{modxdmf@{modxdmf}!writesinglehaloxdmf@{writesinglehaloxdmf}}
+\index{writesinglehaloxdmf@{writesinglehaloxdmf}!modxdmf@{modxdmf}}
+\subsubsection[{\texorpdfstring{writesinglehaloxdmf(proc\+N\+B, filebase, halonbtab, halomasstab, haloidtab)}{writesinglehaloxdmf(procNB, filebase, halonbtab, halomasstab, haloidtab)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modxdmf\+::writesinglehaloxdmf (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{proc\+NB, }
+\item[{character(len=76), intent(in)}]{filebase, }
+\item[{integer(kind=4), dimension(procnb), intent(in)}]{halonbtab, }
+\item[{integer(kind=4), dimension($\ast$), intent(in)}]{halomasstab, }
+\item[{integer(kind=pri), dimension($\ast$), intent(in)}]{haloidtab}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodxdmf_ab794d1f6abf632c9ff4279bec51e13b1}{}\label{namespacemodxdmf_ab794d1f6abf632c9ff4279bec51e13b1}
+
+
+Writes a single xdmf file containing the references to each H\+D\+F5 halo file written by p\+F\+OF. 
+
+
+
+Definition at line 25 of file modxdmf.\+f90.
+
+
+
+References modvariables\+::pri.
+

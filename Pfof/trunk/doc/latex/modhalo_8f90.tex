@@ -1,0 +1,63 @@
+\hypertarget{modhalo_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhalo.f90 File Reference}
+\label{modhalo_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhalo.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modhalo.\+f90}}
+
+
+This file contains subroutines used to gather haloes on the differents processes and compute some observables.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodhalo}{modhalo}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used to gather haloes on the differents processes and compute some observables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodhalo_acf1576354acf16b205a17c83983b248a}{modhalo\+::gatherhaloes} (mpicomm, param)
+\begin{DoxyCompactList}\small\item\em Exchange the particles so that particles belonging to one halo are gathered on the same process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhalo_a4af0af98272044df8ab650e79d2516d6}{modhalo\+::selecthaloes} (param)
+\item 
+subroutine \hyperlink{namespacemodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}{modhalo\+::computecom} (periodic)
+\item 
+subroutine \hyperlink{namespacemodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}{modhalo\+::computeradius} (periodic)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a7a64076c8448a822872da06cfb3e98f6}{modhalo\+::halonb}
+\begin{DoxyCompactList}\small\item\em local number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}{modhalo\+::halonb\+\_\+all}
+\begin{DoxyCompactList}\small\item\em global number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a026b99d5d7dc52fa2755b516c9947514}{modhalo\+::halopartnb}
+\begin{DoxyCompactList}\small\item\em number of particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a52f1f25dcc26f652f137e54813e02309}{modhalo\+::myfinalnpart}
+\begin{DoxyCompactList}\small\item\em number of particles after the particles have been exchanged to gather them by haloes \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a22da1dc93c68210ac3c692f1fb545bc0}{modhalo\+::halomass}
+\begin{DoxyCompactList}\small\item\em mass of the haloes \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a28d1d14569d3cd370d375aca76fd838c}{modhalo\+::haloid}
+\begin{DoxyCompactList}\small\item\em ID of the haloes. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a6c47abc5102dc629247c7b90831b1030}{modhalo\+::halopartid}
+\begin{DoxyCompactList}\small\item\em ID of the particles belonging to a halo. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a5b68c60e3d37130087e8314a89f8f880}{modhalo\+::halopartramsesid}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES ID of the particles belonging to a halo, used only for lightcone halo. \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a5047e50f3939eaf91496eb430ea12952}{modhalo\+::halosubhalonb}
+\begin{DoxyCompactList}\small\item\em number of subhalo for each halo \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a935d49a97e72fe931ab0e2cee84d1523}{modhalo\+::halopartpos}
+\begin{DoxyCompactList}\small\item\em position of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a9d88ee4555aab3eb3cc4626800de250b}{modhalo\+::halopartvel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_ae632dc8638ef825d9db5997b21fd3b63}{modhalo\+::halopartpot}
+\begin{DoxyCompactList}\small\item\em potential of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_aa850def902800d1eb780c6e4bd47edb9}{modhalo\+::halopartfor}
+\begin{DoxyCompactList}\small\item\em force on the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a872c41ce5ed017bb6f443156dd18d0af}{modhalo\+::halocompos}
+\begin{DoxyCompactList}\small\item\em position of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}{modhalo\+::halocomvel}
+\begin{DoxyCompactList}\small\item\em velocity of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:), allocatable \hyperlink{namespacemodhalo_ac245616b2bd1db72ab7891e811f668de}{modhalo\+::haloradius}
+\begin{DoxyCompactList}\small\item\em radius of each halo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains subroutines used to gather haloes on the differents processes and compute some observables. 
+

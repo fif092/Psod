@@ -1,0 +1,147 @@
+!------------------------------------------------------------------------
+!> This parallel Friend of Friend implementation is based on a sequential
+!! implementation written by Edouard Audit (CEA).
+!! It has been written by Fabrice Roy
+!! CNRS / LUTH (Observatoire de Paris)
+!! mail: fabrice.roy@obspm.fr
+!------------------------------------------------------------------------
+Program friend
+
+  Use modhdf5
+  Use modconst
+  Use modvariable
+  Use modparam
+  Use modmpicom
+  Use modfofpara
+  Use modio
+  Use modtiming
+
+  Implicit none
+
+  ! Local variables
+
+  Integer :: errcode
+
+  !----------------------------------------------------
+
+  ! Initialization of MPI
+  Call Mpi_Init(mpierr)
+  Call Mpi_Comm_size(Mpi_Comm_World, procNB, mpierr)
+  Call Mpi_Comm_rank(Mpi_Comm_World, procID, mpierr)
+  
+  Call readparameters()
+  
+  If(procID==0) Then
+     Call writeparameters()
+  End If
+
+  Call setcommunicators()
+  
+#ifdef WITHHDF5
+  If(usehdf5) Then
+     ! Open hdf5 interface
+     Call hdf5_init()
+  End If
+#endif
+  
+  ! code_index determines the type of cosmological simulation to be analyzed:
+  ! RA2 = RAMSES v2
+  ! RA3 = RAMSES v3
+  ! Read the output of the cosmological simulation
+
+  If( readfromcube ) Then
+#ifdef WITHHDF5
+     If(usehdf5) Then
+        If(gatherread==1) Then
+           Call h5readcube()
+        Else
+           Call mpih5readcube()
+        End If
+     Else
+        Print *,'Read from cube is only available with hdf5 i/o file format. Parameter usehdf5 should be .true. '
+        errcode = 2
+        Call Mpi_Abort(Mpi_Comm_World,errcode,mpierr)
+     End If
+#else
+     Print *,'Read from cube is only available with hdf5 i/o file format.'
+     errcode = 2
+     Call Mpi_Abort(Mpi_Comm_World,errcode,mpierr)
+#endif
+  Else If (code_index.eq.'RA2' .or. code_index.eq.'RA3') Then
+     Call RAMSES_lecture()
+  Else
+     If(procID==0) Print *,'** Wrong file type. Possibilities are RA2 or RA3. **'
+     errcode = 2
+     Call Mpi_Abort(Mpi_Comm_World,errcode,mpierr)
+     Stop
+  End If
+  
+  ! Print on screen and in log file 
+  If(procID==0) Then
+     Write(* ,*)   'nz = ',nres,'ngrid = ',ngrid
+     Write(Ulog,*) 'nz = ',nres,'ngrid = ',ngrid
+  End If
+
+
+
+
+  ! Write cube of particles files if requested
+  If(outcube) Then
+     If(procID==0) Print *,      'Write particles distributed in a cartesian grid'
+     If(procID==0) Write(Ulog,*) 'Write particles distributed in a cartesian grid'
+     
+#ifdef WITHHDF5
+     If(usehdf5) Then
+        If(gatherwrite==1) Then
+           Call h5writecube()
+        Else
+           Call mpih5writecube()
+        End If
+     Else
+        Call outputcube()
+     End If
+#else
+     Call outputcube()
+#endif
+
+  End If
+
+
+  If(procID==0) Then
+     Print *,' '
+     Print *,'Friends of Friends halo detection'
+     Print *,' '
+     Write(Ulog,*) 'Friends of Friends halo detection'
+  End If
+
+
+  ! Parallele Friends of Friends if requested
+  If(dofof) Then
+     Call parafof()
+  Else
+     tFoF     = 0.0
+     tFoFinit = 0.0
+     tFoFloc  = 0.0
+     tRaccord = 0.0
+     tObs     = 0.0
+     tOut     = 0.0
+  End If
+
+  
+  ! Output of timings if requested
+  If(dotimings .and. procID==0) Then
+     Call writetimings()
+  End If
+  
+
+#ifdef WITHHDF5
+  If(usehdf5) Then
+     ! Close hdf5 interface.
+     Call hdf5_finalize()
+  End If
+#endif
+
+  ! Finalize MPI
+  Call Mpi_Finalize(mpierr)
+
+End Program friend

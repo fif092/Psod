@@ -1,0 +1,414 @@
+\hypertarget{classmodvariables}{\section{modvariables Module Reference}
+\label{classmodvariables}\index{modvariables@{modvariables}}
+}
+
+
+This module contains the common variables used in p\-Fo\-F\-\_\-cone and a subroutine used to deallocate all allocatable arrays.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}{deallocall} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{mynpart}
+\begin{DoxyCompactList}\small\item\em local particle number \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodvariables_a8047c27f346b34f664c6e5fc6a862d84}{ndim}
+\begin{DoxyCompactList}\small\item\em number of dimensions \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodvariables_ac0a0cf8631d5bf1592b35087a83ced9e}{lmin}
+\begin{DoxyCompactList}\small\item\em minimum mesh refinement level \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{nres}
+\begin{DoxyCompactList}\small\item\em 1-\/\-D resolution\-: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin \end{DoxyCompactList}\item 
+integer(kind=pri) \hyperlink{classmodvariables_a003cd4a3edf99a1c8f83cef4c61eb690}{npart}
+\begin{DoxyCompactList}\small\item\em total particle number\-: nptot = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+integer(kind=pri) \hyperlink{classmodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}{ngrid}
+\begin{DoxyCompactList}\small\item\em total number of grid points\-: ngrid = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+real(kind=4) \hyperlink{classmodvariables_aaa639d561a94ae000546755b6863b6be}{xmin}
+\item 
+real(kind=4) \hyperlink{classmodvariables_a9112a5edebd73d310c4594fca429a757}{xmax}
+\item 
+real(kind=4) \hyperlink{classmodvariables_af09b8e9f670d2074a46c55ed90661609}{ymin}
+\item 
+real(kind=4) \hyperlink{classmodvariables_aa84922c68231d1c3496d3a7d210a62e7}{ymax}
+\item 
+real(kind=4) \hyperlink{classmodvariables_aa88314239681eb1c24673391f4612eb3}{zmin}
+\item 
+real(kind=4) \hyperlink{classmodvariables_ab9a39f4e4f686b80011f46a2f88617c1}{zmax}
+\begin{DoxyCompactList}\small\item\em min and max (x,y,z) for each process \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6) \hyperlink{classmodvariables_ad84b74b636d64be51d7aba857b4b5c05}{neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighbours of the local process in the Mpi\-Cube communicator \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{pos}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{vel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}{id}
+\begin{DoxyCompactList}\small\item\em R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a93c25eb46b5370bd8153733e03f3008d}{structure}
+\begin{DoxyCompactList}\small\item\em Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a7528c234a190760e036921b956ec9fe8}{posf}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{velf}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a74cd7fb485e34ae685664db5b2629aa9}{idf}
+\begin{DoxyCompactList}\small\item\em R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a5b99e0cc82073c06969e0fe6caa06357}{stf}
+\begin{DoxyCompactList}\small\item\em Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{shell\-\_\-nb}
+\item 
+integer(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a46e17f78883958892917ac536b4ab1b1}{indexcube}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a2de620524061386e6addabfa15a6b020}{ictable}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}{shellcubes\-\_\-size}
+\item 
+real(kind=8), dimension(6) \hyperlink{classmodvariables_a45ca9fc03093230dfc1beb56cacb8e80}{boundaries}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}{cubepershell}
+\item 
+real(kind=pr), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a1eb22f6b56e0963ff4d88a5114903517}{pos}
+\item 
+real(kind=pr), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_aea9c591211b0b8c19d6ab8d5b017c789}{vel}
+\item 
+real(kind=pr), dimension(3) \hyperlink{classmodvariables_a70ddcf7f533c219df5c249774ff81df1}{partmin}
+\item 
+real(kind=pr), dimension(3) \hyperlink{classmodvariables_abeabad3e2598f3abb4a4fa74adca7743}{partmax}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the common variables used in p\-Fo\-F\-\_\-cone and a subroutine used to deallocate all allocatable arrays. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 5 of file modvariables.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}{\index{modvariables@{modvariables}!deallocall@{deallocall}}
+\index{deallocall@{deallocall}!modvariables@{modvariables}}
+\subsubsection[{deallocall}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modvariables\-::deallocall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}
+
+
+Definition at line 37 of file modvariables.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classmodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodvariables_a45ca9fc03093230dfc1beb56cacb8e80}{\index{modvariables@{modvariables}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!modvariables@{modvariables}}
+\subsubsection[{boundaries}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(6) modvariables\-::boundaries}}\label{classmodvariables_a45ca9fc03093230dfc1beb56cacb8e80}
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}{\index{modvariables@{modvariables}!cubepershell@{cubepershell}}
+\index{cubepershell@{cubepershell}!modvariables@{modvariables}}
+\subsubsection[{cubepershell}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modvariables\-::cubepershell}}\label{classmodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}
+
+
+Definition at line 19 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a2de620524061386e6addabfa15a6b020}{\index{modvariables@{modvariables}!ictable@{ictable}}
+\index{ictable@{ictable}!modvariables@{modvariables}}
+\subsubsection[{ictable}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modvariables\-::ictable}}\label{classmodvariables_a2de620524061386e6addabfa15a6b020}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}{\index{modvariables@{modvariables}!id@{id}}
+\index{id@{id}!modvariables@{modvariables}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::id}}\label{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}
+
+
+R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a74cd7fb485e34ae685664db5b2629aa9}{\index{modvariables@{modvariables}!idf@{idf}}
+\index{idf@{idf}!modvariables@{modvariables}}
+\subsubsection[{idf}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::idf}}\label{classmodvariables_a74cd7fb485e34ae685664db5b2629aa9}
+
+
+R\-A\-M\-S\-E\-S id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 29 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a46e17f78883958892917ac536b4ab1b1}{\index{modvariables@{modvariables}!indexcube@{indexcube}}
+\index{indexcube@{indexcube}!modvariables@{modvariables}}
+\subsubsection[{indexcube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:,\-:), allocatable modvariables\-::indexcube}}\label{classmodvariables_a46e17f78883958892917ac536b4ab1b1}
+
+
+Definition at line 15 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ac0a0cf8631d5bf1592b35087a83ced9e}{\index{modvariables@{modvariables}!lmin@{lmin}}
+\index{lmin@{lmin}!modvariables@{modvariables}}
+\subsubsection[{lmin}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::lmin}}\label{classmodvariables_ac0a0cf8631d5bf1592b35087a83ced9e}
+
+
+minimum mesh refinement level 
+
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{\index{modvariables@{modvariables}!mynpart@{mynpart}}
+\index{mynpart@{mynpart}!modvariables@{modvariables}}
+\subsubsection[{mynpart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::mynpart}}\label{classmodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}
+
+
+local particle number 
+
+
+
+Definition at line 10 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8047c27f346b34f664c6e5fc6a862d84}{\index{modvariables@{modvariables}!ndim@{ndim}}
+\index{ndim@{ndim}!modvariables@{modvariables}}
+\subsubsection[{ndim}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::ndim}}\label{classmodvariables_a8047c27f346b34f664c6e5fc6a862d84}
+
+
+number of dimensions 
+
+
+
+Definition at line 11 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ad84b74b636d64be51d7aba857b4b5c05}{\index{modvariables@{modvariables}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!modvariables@{modvariables}}
+\subsubsection[{neighbours}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6) modvariables\-::neighbours}}\label{classmodvariables_ad84b74b636d64be51d7aba857b4b5c05}
+
+
+array containing the id of the neighbours of the local process in the Mpi\-Cube communicator 
+
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}{\index{modvariables@{modvariables}!ngrid@{ngrid}}
+\index{ngrid@{ngrid}!modvariables@{modvariables}}
+\subsubsection[{ngrid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri) modvariables\-::ngrid}}\label{classmodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}
+
+
+total number of grid points\-: ngrid = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 15 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a003cd4a3edf99a1c8f83cef4c61eb690}{\index{modvariables@{modvariables}!npart@{npart}}
+\index{npart@{npart}!modvariables@{modvariables}}
+\subsubsection[{npart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri) modvariables\-::npart}}\label{classmodvariables_a003cd4a3edf99a1c8f83cef4c61eb690}
+
+
+total particle number\-: nptot = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 14 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{\index{modvariables@{modvariables}!nres@{nres}}
+\index{nres@{nres}!modvariables@{modvariables}}
+\subsubsection[{nres}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::nres}}\label{classmodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}
+
+
+1-\/\-D resolution\-: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin 
+
+
+
+Definition at line 13 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_abeabad3e2598f3abb4a4fa74adca7743}{\index{modvariables@{modvariables}!partmax@{partmax}}
+\index{partmax@{partmax}!modvariables@{modvariables}}
+\subsubsection[{partmax}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3) modvariables\-::partmax}}\label{classmodvariables_abeabad3e2598f3abb4a4fa74adca7743}
+
+
+Definition at line 33 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a70ddcf7f533c219df5c249774ff81df1}{\index{modvariables@{modvariables}!partmin@{partmin}}
+\index{partmin@{partmin}!modvariables@{modvariables}}
+\subsubsection[{partmin}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3) modvariables\-::partmin}}\label{classmodvariables_a70ddcf7f533c219df5c249774ff81df1}
+
+
+Definition at line 33 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{\index{modvariables@{modvariables}!pos@{pos}}
+\index{pos@{pos}!modvariables@{modvariables}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::pos}}\label{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}
+
+
+position of the particles 
+
+
+
+Definition at line 20 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a1eb22f6b56e0963ff4d88a5114903517}{\index{modvariables@{modvariables}!pos@{pos}}
+\index{pos@{pos}!modvariables@{modvariables}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(\-:,\-:), allocatable modvariables\-::pos}}\label{classmodvariables_a1eb22f6b56e0963ff4d88a5114903517}
+
+
+Definition at line 23 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a7528c234a190760e036921b956ec9fe8}{\index{modvariables@{modvariables}!posf@{posf}}
+\index{posf@{posf}!modvariables@{modvariables}}
+\subsubsection[{posf}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::posf}}\label{classmodvariables_a7528c234a190760e036921b956ec9fe8}
+
+
+position of the particles 
+
+
+
+Definition at line 27 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{\index{modvariables@{modvariables}!shell\-\_\-nb@{shell\-\_\-nb}}
+\index{shell\-\_\-nb@{shell\-\_\-nb}!modvariables@{modvariables}}
+\subsubsection[{shell\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::shell\-\_\-nb}}\label{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}
+
+
+Definition at line 14 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}{\index{modvariables@{modvariables}!shellcubes\-\_\-size@{shellcubes\-\_\-size}}
+\index{shellcubes\-\_\-size@{shellcubes\-\_\-size}!modvariables@{modvariables}}
+\subsubsection[{shellcubes\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::shellcubes\-\_\-size}}\label{classmodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}
+
+
+Definition at line 17 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a5b99e0cc82073c06969e0fe6caa06357}{\index{modvariables@{modvariables}!stf@{stf}}
+\index{stf@{stf}!modvariables@{modvariables}}
+\subsubsection[{stf}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::stf}}\label{classmodvariables_a5b99e0cc82073c06969e0fe6caa06357}
+
+
+Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 31 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a93c25eb46b5370bd8153733e03f3008d}{\index{modvariables@{modvariables}!structure@{structure}}
+\index{structure@{structure}!modvariables@{modvariables}}
+\subsubsection[{structure}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::structure}}\label{classmodvariables_a93c25eb46b5370bd8153733e03f3008d}
+
+
+Halo I\-D of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 24 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{\index{modvariables@{modvariables}!vel@{vel}}
+\index{vel@{vel}!modvariables@{modvariables}}
+\subsubsection[{vel}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::vel}}\label{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}
+
+
+velocity of the particles 
+
+
+
+Definition at line 21 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aea9c591211b0b8c19d6ab8d5b017c789}{\index{modvariables@{modvariables}!vel@{vel}}
+\index{vel@{vel}!modvariables@{modvariables}}
+\subsubsection[{vel}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(\-:,\-:), allocatable modvariables\-::vel}}\label{classmodvariables_aea9c591211b0b8c19d6ab8d5b017c789}
+
+
+Definition at line 24 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{\index{modvariables@{modvariables}!velf@{velf}}
+\index{velf@{velf}!modvariables@{modvariables}}
+\subsubsection[{velf}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::velf}}\label{classmodvariables_a99c2bd91d22daa7bfaa3491624db7f14}
+
+
+velocity of the particles 
+
+
+
+Definition at line 28 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a9112a5edebd73d310c4594fca429a757}{\index{modvariables@{modvariables}!xmax@{xmax}}
+\index{xmax@{xmax}!modvariables@{modvariables}}
+\subsubsection[{xmax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::xmax}}\label{classmodvariables_a9112a5edebd73d310c4594fca429a757}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aaa639d561a94ae000546755b6863b6be}{\index{modvariables@{modvariables}!xmin@{xmin}}
+\index{xmin@{xmin}!modvariables@{modvariables}}
+\subsubsection[{xmin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::xmin}}\label{classmodvariables_aaa639d561a94ae000546755b6863b6be}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa84922c68231d1c3496d3a7d210a62e7}{\index{modvariables@{modvariables}!ymax@{ymax}}
+\index{ymax@{ymax}!modvariables@{modvariables}}
+\subsubsection[{ymax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::ymax}}\label{classmodvariables_aa84922c68231d1c3496d3a7d210a62e7}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_af09b8e9f670d2074a46c55ed90661609}{\index{modvariables@{modvariables}!ymin@{ymin}}
+\index{ymin@{ymin}!modvariables@{modvariables}}
+\subsubsection[{ymin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::ymin}}\label{classmodvariables_af09b8e9f670d2074a46c55ed90661609}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab9a39f4e4f686b80011f46a2f88617c1}{\index{modvariables@{modvariables}!zmax@{zmax}}
+\index{zmax@{zmax}!modvariables@{modvariables}}
+\subsubsection[{zmax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::zmax}}\label{classmodvariables_ab9a39f4e4f686b80011f46a2f88617c1}
+
+
+min and max (x,y,z) for each process 
+
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa88314239681eb1c24673391f4612eb3}{\index{modvariables@{modvariables}!zmin@{zmin}}
+\index{zmin@{zmin}!modvariables@{modvariables}}
+\subsubsection[{zmin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\-::zmin}}\label{classmodvariables_aa88314239681eb1c24673391f4612eb3}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/pfof\-\_\-hdf5/src/\hyperlink{pfof__hdf5_2src_2modvariables_8f90}{modvariables.\-f90}\end{DoxyCompactItemize}

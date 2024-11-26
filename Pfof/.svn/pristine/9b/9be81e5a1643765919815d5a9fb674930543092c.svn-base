@@ -1,0 +1,23 @@
+&shellparameters
+simulationName = 'teststarlight'
+outputNB = 9
+shell_dir = '/obs/roy/Cosmo/test/'
+shell_filename ='shellFSTEST'
+shell_fid = 00174
+shell_lid = 00178
+/
+
+&fofparameters
+perco = 0.20
+Mmin = 100
+Mmax = 100000000
+nres = 128
+doUnbinding = .false.
+doSubHalo = .false.
+/
+ 
+&outputparameters
+output_root = 'test'
+dotimings = .false.
+/
+

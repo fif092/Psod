@@ -1,0 +1,328 @@
+Module modhalo
+
+  Use modconstant, only : PRI
+
+  Implicit none
+
+  Real(kind=4), dimension(:,:), allocatable :: halopartPos, halopartVel
+  Integer(kind=PRI), dimension(:), allocatable :: haloID, halopartID
+  Integer(kind=4) :: haloNB,haloNB_all, halopartNB
+  Integer(kind=4), dimension(:), allocatable :: haloMass
+  Integer(kind=4) :: myfinalnpart
+  Real(kind=8), dimension(:,:), allocatable :: halocomPos, halocomVel
+  Real(kind=8), dimension(:), allocatable :: haloRadius
+  Integer(kind=4), dimension(:), allocatable :: haloSubHaloNB
+
+Contains
+
+  Subroutine gatherhaloes()
+
+    Use modvariables
+    Use modmpicom
+    Use modparameters
+    Use modio, only : mynpart, nptot
+    Use modtiming
+
+    Implicit None
+
+    Integer(kind=PRI), dimension(:), allocatable :: strSend ! structure ID array, and tmp array used for comm
+    Integer(kind=PRI), dimension(:), allocatable :: idSend  ! particle ID array and tmp array used for comm
+    Real(kind=4), dimension(:,:), allocatable :: posSend, velSend
+    Integer(kind=4) :: strPID
+    Integer(kind=4), dimension(:),allocatable :: strPIDvec, strPIDvecloc  ! array of particle nb by process after
+    Integer(kind=4) :: sendID, recvID   ! ID for process to send to and to receive from
+    Integer(kind=4) :: i, ind, iproc
+    Integer(kind=4) :: allocStat
+    Integer(kind=4) :: mpistat(MPI_STATUS_SIZE)   ! MPI comm. status
+    Real(kind=8) :: ttmp0, ttmp1
+    Integer(kind=4) :: nbrec, nbsend    ! nb of elements to recv and to send
+    Integer(kind=PRI) :: strNBbeg, strNBend
+    Integer(kind=PRI) :: smin,smax
+    Integer(kind=PRI) :: tmpdi
+    Integer(kind=4) :: NPparProc
+    Integer(kind=4) :: recvpoint
+
+
+
+    tmpdi = nptot/procNB
+    NPparProc = int(tmpdi, kind=4)
+
+    strNBbeg = int(NPparProc,kind=8) * int(procID,kind=8) + 1    ! id min de halo sur le process courant
+    strNBend = int(NPparProc,kind=8) * int((procID + 1),kind=8)  ! id max de halo sur le process courant
+    
+    Allocate(strPIDvecloc(procNB), strPIDvec(procNB))
+    strPIDvecloc = 0  ! nb de particules par process
+    strPIDvec = 0
+
+    Do i = 1,mynpart
+       strPID = int((structure(i)-1) / NPparProc, kind=4) + 1  ! id du process ou se trouvera la particule
+       strPIDvecloc(strPID) = strPIDvecloc(strPID) + 1         ! on incremente le nb de particules sur ce process
+    End Do
+
+    Call Mpi_Allreduce(strPIDvecloc,strPIDvec,procNB,Mpi_Integer,Mpi_Sum,Mpi_Comm_World,mpierr)
+
+    myfinalnpart = strPIDvec(procID+1)             ! nb de particules sur le process courant apres redistribution selon les halos
+    Allocate(xf(3,myfinalnpart),STAT=allocStat)      
+    If(allocStat > 0) Call EmergencyStop('Allocate failed for xf in gatherhaloes',2)
+    Allocate(vf(3,myfinalnpart),STAT=allocStat)
+    If(allocStat > 0) Call EmergencyStop('Allocate failed for vf in gatherhaloes',2)
+    Allocate(stf(myfinalnpart),STAT=allocStat)
+    If(allocStat > 0) Call EmergencyStop('Allocate failed for stf in gatherhaloes',2)
+    Allocate(idf(myfinalnpart),STAT=allocStat)
+    If(allocStat > 0) Call EmergencyStop('Allocate failed for idf in gatherhaloes',2)
+
+    recvpoint = 1
+    procMasse : Do iproc = 1,procNB-1
+       If(procID==0) Print *,'Gatherhalo permutation: ',iproc
+
+       sendID = mod(procID + iproc,procNB)
+       recvID = mod(procID + procNB - iproc,procNB)
+       nbsend = strPIDvecloc(sendID+1)
+
+       Call Mpi_ISend(nbsend,1,Mpi_Integer,sendID,sendID,MPICube,mpireqs1,mpierr)
+       Call Mpi_IRecv(nbrec, 1,Mpi_Integer,recvID,procID,MPICube,mpireqr1,mpierr)
+
+       Call Mpi_Wait(mpireqs1,mpistat,mpierr)
+       Call Mpi_Wait(mpireqr1,mpistat,mpierr)
+
+       If(nbsend /= 0) Then
+          Allocate(strSend(nbsend),posSend(3,nbsend),velSend(3,nbsend),idSend(nbsend))
+          smin = int(NPparProc,kind=8) * int(sendID,kind=8) + 1
+          smax = int(NPparProc,kind=8) * int((sendID+1),kind=8)
+
+          ind=1
+          Do i=1, mynpart
+             If(structure(i)>= smin .and. structure(i)<= smax) Then
+                strSend(ind) = structure(i)
+                posSend(:,ind) = x(:,i)
+                velSend(:,ind) = v(:,i)
+                idSend(ind) = id(i)
+                ind = ind+1
+             End If
+          End Do
+
+          If(ind /= nbsend +1 ) Then
+             write(*,*)ind,nbsend,sendID,smin,smax,strPIDvec
+             Call EmergencyStop('Error  1 while sharing structures for output.',2)
+          End If
+
+          Call Mpi_Isend(strSend,nbsend,  MPI_PRI, sendID,1,MPICube,mpireqs1,mpierr)
+          Call Mpi_Isend(posSend,3*nbsend,Mpi_Real,sendID,2,MPICube,mpireqs2,mpierr)
+          Call Mpi_Isend(velSend,3*nbsend,Mpi_Real,sendID,3,MPICube,mpireqs3,mpierr)
+          Call Mpi_Isend(idSend, nbsend,  MPI_PRI, sendID,4,MPICube,mpireqs4,mpierr)
+
+       End If
+
+       If(nbrec /= 0) Then
+          Call Mpi_IRecv(stf(recvpoint), nbrec,  MPI_PRI, recvID,1,MPICube,mpireqr1,mpierr)
+          Call Mpi_IRecv(xf(1,recvpoint),3*nbrec,Mpi_Real,recvID,2,MPICube,mpireqr2,mpierr)
+          Call Mpi_IRecv(vf(1,recvpoint),3*nbrec,Mpi_Real,recvID,3,MPICube,mpireqr3,mpierr)
+          Call Mpi_IRecv(idf(recvpoint), nbrec,  MPI_PRI, recvID,4,MPICube,mpireqr4,mpierr)
+          recvpoint=recvpoint+nbrec
+       End If
+
+
+       If(nbsend/=0) Then
+          Call Mpi_Wait(mpireqs1,mpistat,mpierr)
+          Call Mpi_Wait(mpireqs2,mpistat,mpierr)
+          Call Mpi_Wait(mpireqs3,mpistat,mpierr)
+          Call Mpi_Wait(mpireqs4,mpistat,mpierr)
+          Deallocate(strSend,posSend,idSend,velSend)
+       End If
+       If(nbrec/=0) Then
+          Call Mpi_Wait(mpireqr1,mpistat,mpierr)
+          Call Mpi_Wait(mpireqr2,mpistat,mpierr)
+          Call Mpi_Wait(mpireqr3,mpistat,mpierr)
+          Call Mpi_Wait(mpireqr4,mpistat,mpierr)
+       End If
+
+    End Do procMasse
+
+
+    ind= recvpoint
+    Do i=1, mynpart
+       If(structure(i)>= strNBbeg .and. structure(i)<= strNBend) Then
+          stf(recvpoint)  = structure(i)
+          xf(:,recvpoint) = x(:,i)
+          vf(:,recvpoint) = v(:,i)
+          idf(recvpoint)  = id(i)
+          recvpoint = recvpoint+1
+       End If
+    End Do
+
+    Deallocate(structure)
+    Deallocate(strPIDvecloc,strPIDvec)
+    Deallocate(x, v, id)
+
+    If( recvpoint/= myfinalnpart +1 ) Then
+       Print *, procID,' recvpoint=',recvpoint
+       Print *, procID,' mynpartw=',myfinalnpart
+       Call EmergencyStop('Error while gathering haloes in gatherhaloes.',2)
+    End If
+
+    If(dotimings) Then
+       ttmp0 = Mpi_Wtime()
+       Print *,'Process ',procID,' repartition:',ttmp0-timeInt
+    End If
+
+
+  End Subroutine gatherhaloes
+
+
+  ! ======================================================================
+  ! Select haloes whose mass is >= Mmin
+  Subroutine selecthaloes()
+
+    Use modvariables
+    Use modparameters, only : Mmin
+    Use modmpicom, only : procID
+
+    Implicit none
+
+    Integer(kind=8) :: hidmin, hidmax
+    Integer(kind=4) :: nbhid
+    Integer(kind=4) :: hindex
+    Integer(kind=4) :: li, lp, fi, fp, h, i
+    Integer(kind=4), dimension(:), allocatable :: halomasstmp
+
+
+    if(myfinalnpart.ne.0) then
+       hidmin = stf(1)
+       hidmax = stf(myfinalnpart)
+    else
+       hidmin=0
+       hidmax=-1
+    endif
+    nbhid = int(hidmax - hidmin + 1, kind=4)
+
+    Allocate(halomasstmp(nbhid))
+
+    halomasstmp = 0
+
+    Do i=1, myfinalnpart
+       hindex = int(stf(i) - hidmin + 1,kind=4)
+       halomasstmp(hindex) = halomasstmp(hindex) + 1
+    End Do
+
+    haloNB = 0
+    halopartNB = 0
+
+    ! Compute total nb of particles in halo with M >= Mmin and nb of halos with M >= Mmin
+    Do i = 1, nbhid
+       If(halomasstmp(i) >= Mmin) Then
+          haloNB = haloNB + 1
+          halopartNB = halopartNB + halomasstmp(i)
+       End If
+    End Do
+
+    ! Keep positions, velocities and id for particles in halo with M >= Mmin
+    Allocate(halopartPos(3,halopartNB))
+    Allocate(halopartVel(3,halopartNB))
+    Allocate(halopartID(halopartNB))
+    ! Keep mass and id for halos with M >= Mmin
+    Allocate(haloMass(haloNB))
+    Allocate(haloID(haloNB))
+
+    fp = 1
+    lp = 0
+    fi = 1
+    li = 0
+    h = 1
+    Do i = 1, nbhid
+       If(halomasstmp(i) >= Mmin) Then
+          lp = fp + halomasstmp(i) - 1
+          li = fi + halomasstmp(i) - 1
+          halopartPos(:,fp:lp) = xf(:,fi:li)
+          halopartVel(:,fp:lp) = vf(:,fi:li)
+          halopartID(fp:lp) = idf(fi:li)
+          haloMass(h) = halomasstmp(i)
+          haloID(h) = stf(fi)
+          fp = lp + 1
+          fi = li + 1
+          h = h + 1
+       Else
+          li = fi + halomasstmp(i) - 1
+          fi = li + 1
+       End If
+    End Do
+    If(li /= myfinalnpart) Then
+       Print *, 'Error when keeping particles positions in halo with M >= Mmin on process ', procID
+    End If
+    If(lp /= halopartNB) Then
+       Print *, 'Error when keeping particles positions in halo with M >= Mmin on process ', procID
+    End If
+
+
+    If(Allocated(xf)) Deallocate(xf)
+    If(Allocated(vf)) Deallocate(vf)
+    If(Allocated(idf)) Deallocate(idf)
+    If(Allocated(halomasstmp)) Deallocate(halomasstmp)
+
+  End Subroutine selecthaloes
+
+
+  ! ======================================================================
+  ! Computes the position and the velocity of the center of mass for each halo
+  Subroutine computecom
+
+    Use modmpicom
+
+    Implicit none
+
+    Integer(kind=4) :: fi, li, h, i, j
+    Integer(kind=4) :: halom
+    Real(kind=8), dimension(3) :: delta
+ 
+    Allocate(halocomPos(3,haloNB))
+    Allocate(halocomVel(3,haloNB))
+
+    halocomPos = 0.d0
+    halocomVel = 0.d0
+
+    fi = 1
+    Do h = 1, haloNB
+       halom = 1
+       li = fi + haloMass(h) - 1
+       halocomPos(:,h) = halopartPos(:,fi)
+       halocomVel(:,h) = halopartVel(:,fi)
+       Do i = fi+1, li
+          delta(:) = halocomPos(:,h) / halom - halopartPos(:,i)
+          Do j = 1, 3
+             If(abs(delta(j)) > 0.5d0) Then
+                If(delta(j) > 0d0) halocomPos(j,h) = halocomPos(j,h) + 1.0d0
+                If(delta(j) < 0d0) halocomPos(j,h) = halocomPos(j,h) - 1.0d0
+             End If
+          End Do
+          halom = halom + 1
+          halocomPos(:,h) = halocomPos(:,h) + halopartPos(:,i)
+          halocomVel(:,h) = halocomVel(:,h) + halopartVel(:,i)
+       End Do
+       fi = li + 1
+       
+    End Do
+
+    Do h = 1, haloNB
+       halocomPos(:,h) = halocomPos(:,h) / haloMass(h)
+       halocomVel(:,h) = halocomVel(:,h) / haloMass(h)
+       Do j = 1, 3
+          If(halocomPos(j,h) > 1.0d0) halocomPos(j,h) = halocomPos(j,h) - 1.0d0
+          If(halocomPos(j,h) < 0.0d0) halocomPos(j,h) = halocomPos(j,h) + 1.0d0
+       End Do
+    End Do
+    
+    Call Mpi_AllReduce(haloNB,haloNB_all,1,Mpi_Integer,Mpi_Sum,Mpi_Comm_World,mpierr)
+
+  End Subroutine computecom
+
+  
+  ! ======================================================================
+  Subroutine computeradius
+    
+    Allocate(haloRadius(haloNB))
+
+    Deallocate(halopartPos, halopartVel)
+
+
+  End Subroutine computeradius
+
+End Module modhalo

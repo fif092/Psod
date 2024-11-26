@@ -1,0 +1,32 @@
+Module modutils
+
+Contains
+
+  !=======================================================================
+  !> The subroutine is used to abort the execution if something wrong is happening.
+  Subroutine EmergencyStop(pid,message,code)
+
+    Use mpi
+    Implicit none
+
+    Integer(kind=4), intent(in) :: pid
+    Character(len=*), intent(in) :: message
+    Integer(kind=4), intent(in) :: code
+
+    Integer(kind=4) :: mpierr
+
+    Write(*,1000) message, pid
+
+1000 Format('*** ',A,' on process ',I5.5,'. ***')
+
+    If(pid==0) Close(50)
+    
+    Close(54)
+
+    Call Mpi_Abort(Mpi_Comm_World,code,mpierr)
+
+    Stop
+
+  End Subroutine EmergencyStop
+
+End Module modutils

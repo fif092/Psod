@@ -1,0 +1,329 @@
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data}{\section{modhdf5\-:\-:hdf5\-\_\-write\-\_\-data Interface Reference}
+\label{interfacemodhdf5_1_1hdf5__write__data}\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+}
+
+
+Generic inteface used to write data in a hdf5 file.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a33e6b35760f15f06a5804cd0caa3da0b}{hdf5\-\_\-write\-\_\-int4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a3c4d3b976cc7ded0445f44f4806119eb}{hdf5\-\_\-write\-\_\-int4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a3d54b82d734756ac3b7e04eefa3f42b3}{hdf5\-\_\-write\-\_\-int8\-\_\-0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write an integer(kind=8) scalar in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_ace548f4140d1a7c171dfa972edaae0ac}{hdf5\-\_\-write\-\_\-int8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_aeb5d82f4adffdf6967fde4ab3844674b}{hdf5\-\_\-write\-\_\-int8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a75929560447e383a91b35d46c4ce8914}{hdf5\-\_\-write\-\_\-real4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a62e0df9e9de4d8ef46e07a947aad26bc}{hdf5\-\_\-write\-\_\-real4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_aff5fc1508bad5874650807a0cad4a98d}{hdf5\-\_\-write\-\_\-real8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__data_a8a1aae59f80f0cd54e7d32a0e564020f}{hdf5\-\_\-write\-\_\-real8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=8) array in a serial file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic inteface used to write data in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written \\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset \\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data array \\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data array (optional) \\
+\hline
+\mbox{\tt in}  & {\em data} & 1-\/\-D or 2-\/\-D data array of type Integer(4), Integer(8), Real(4) or Real(8) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 88 of file modhdf5.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a33e6b35760f15f06a5804cd0caa3da0b}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-int4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-int4\-\_\-1d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-int4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a33e6b35760f15f06a5804cd0caa3da0b}
+
+
+Write a 1-\/\-D integer(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 541 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a3c4d3b976cc7ded0445f44f4806119eb}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-int4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-int4\-\_\-2d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-int4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a3c4d3b976cc7ded0445f44f4806119eb}
+
+
+Write a 2-\/\-D integer(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 660 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a3d54b82d734756ac3b7e04eefa3f42b3}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-int8\-\_\-0d@{hdf5\-\_\-write\-\_\-int8\-\_\-0d}}
+\index{hdf5\-\_\-write\-\_\-int8\-\_\-0d@{hdf5\-\_\-write\-\_\-int8\-\_\-0d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int8\-\_\-0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-int8\-\_\-0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=8), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a3d54b82d734756ac3b7e04eefa3f42b3}
+
+
+Write an integer(kind=8) scalar in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em data} & data scalar \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 581 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_ace548f4140d1a7c171dfa972edaae0ac}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-int8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-int8\-\_\-1d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-int8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_ace548f4140d1a7c171dfa972edaae0ac}
+
+
+Write a 1-\/\-D integer(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 620 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_aeb5d82f4adffdf6967fde4ab3844674b}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-int8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-int8\-\_\-2d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-int8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_aeb5d82f4adffdf6967fde4ab3844674b}
+
+
+Write a 2-\/\-D integer(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 702 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a75929560447e383a91b35d46c4ce8914}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-real4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-real4\-\_\-1d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-real4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a75929560447e383a91b35d46c4ce8914}
+
+
+Write a 1-\/\-D real(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 744 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a62e0df9e9de4d8ef46e07a947aad26bc}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-real4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-real4\-\_\-2d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-real4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a62e0df9e9de4d8ef46e07a947aad26bc}
+
+
+Write a 2-\/\-D real(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 824 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_aff5fc1508bad5874650807a0cad4a98d}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-real8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-real8\-\_\-1d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-real8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_aff5fc1508bad5874650807a0cad4a98d}
+
+
+Write a 1-\/\-D real(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 784 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__data_a8a1aae59f80f0cd54e7d32a0e564020f}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}!hdf5\-\_\-write\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-real8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-real8\-\_\-2d}!modhdf5::hdf5_write_data@{modhdf5\-::hdf5\-\_\-write\-\_\-data}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-data\-::hdf5\-\_\-write\-\_\-real8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__data_a8a1aae59f80f0cd54e7d32a0e564020f}
+
+
+Write a 2-\/\-D real(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 866 of file modhdf5.\-f90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modhdf5_8f90}{modhdf5.\-f90}\end{DoxyCompactItemize}

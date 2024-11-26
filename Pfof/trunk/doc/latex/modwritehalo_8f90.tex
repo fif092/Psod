@@ -1,0 +1,26 @@
+\hypertarget{modwritehalo_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modwritehalo.f90 File Reference}
+\label{modwritehalo_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modwritehalo.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modwritehalo.\+f90}}
+
+
+This file contains routines to write H\+D\+F5 halo files created with pfof and pfof\+\_\+cone.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodwritehalo}{modwritehalo}
+\begin{DoxyCompactList}\small\item\em This module contains routines to write H\+D\+F5 halo files created with pfof and pfof\+\_\+cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodwritehalo_a3e00317bab6230ca8987e14b62b79874}{modwritehalo\+::h5writehalopart} (param\+\_\+pfof, halo\+NB, halopart\+NB, halo\+Mass, halo\+ID, halopart\+Pos, halopart\+Vel, halopart\+ID, halopart\+For, halopart\+Pot, halopart\+Ramses\+ID, inforamses, infocone)
+\begin{DoxyCompactList}\small\item\em This subroutine writes for each halo the position, the velocity and the id of each particle in this halo in a hdf5 file. One file is written per M\+PI process and several halos per file. There is one group per halo, the name of the group is the ID of the halo. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodwritehalo_a7de4785bb81feb8a4b806bd18a65bf4d}{modwritehalo\+::mpih5writehalopart} (mpicomm, param\+\_\+pfof, halo\+NB, halopart\+NB, halo\+Mass, halo\+ID, halopart\+Pos, halopart\+Vel, halopart\+ID, halopart\+For, halopart\+Pot, halopart\+Ramses\+ID, inforamses, infocone)
+\begin{DoxyCompactList}\small\item\em This subroutine writes for each halo the position, the velocity and the id of each particle in this halo in a hdf5 file. One file is written per M\+PI communicator mpicomm and several halos per file, using parallel H\+D\+F5. There is one group per halo, the name of the group is the ID of the halo. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodwritehalo_a9f9dfc9671a5f395219212ba8d45204b}{modwritehalo\+::mpih5writehalomass} (mpicomm, param\+\_\+pfof, halo\+N\+B\+\_\+all, halo\+NB, nh, halo\+Mass, halocom\+Pos, halocom\+Vel, halo\+ID, halo\+Radius, halo\+Sub\+Halo\+NB, inforamses, infocone)
+\begin{DoxyCompactList}\small\item\em This subroutine writes, for each halo, its mass (number of particles), the position and the velocity of its center of mass and its ID in only one hdf5 file using parallel H\+D\+F5. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains routines to write H\+D\+F5 halo files created with pfof and pfof\+\_\+cone. 
+

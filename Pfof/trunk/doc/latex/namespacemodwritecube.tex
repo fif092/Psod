@@ -1,0 +1,189 @@
+\hypertarget{namespacemodwritecube}{}\section{modwritecube Module Reference}
+\label{namespacemodwritecube}\index{modwritecube@{modwritecube}}
+
+
+This module contains subroutines used to write H\+D\+F5 cubes.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodwritecube_a99b5a6f7f4534196e666b125702c093f}{h5writecube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the position, velocity and id of each particle on the process in a hdf5 file. One file is written per M\+PI process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodwritecube_a0d94e39019f7808f3f373281ffe696a8}{mpih5writecube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodwritecube_a8af2220dcc73a35204f76527d4559e52}{h5writesortedcube} ()
+\item 
+subroutine \hyperlink{namespacemodwritecube_a491b7602123b1ac2d10637eb7c73ce77}{mpih5writesortedcube} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines used to write H\+D\+F5 cubes. 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modwritecube@{modwritecube}!h5writecube@{h5writecube}}
+\index{h5writecube@{h5writecube}!modwritecube@{modwritecube}}
+\subsubsection[{\texorpdfstring{h5writecube()}{h5writecube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modwritecube\+::h5writecube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodwritecube_a99b5a6f7f4534196e666b125702c093f}{}\label{namespacemodwritecube_a99b5a6f7f4534196e666b125702c093f}
+
+
+This subroutine writes the position, velocity and id of each particle on the process in a hdf5 file. One file is written per M\+PI process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file modwritecube.\+f90.
+
+
+
+References modvariables\+::for, modiocommons\+::h5write\+\_\+meta\+\_\+common(), modiocommons\+::h5write\+\_\+meta\+\_\+info\+\_\+ramses(), modiocommons\+::h5write\+\_\+meta\+\_\+pfof\+\_\+parameter(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+create\+\_\+file(), modhdf5\+::hdf5\+\_\+create\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modmpicom\+::mpicube, modmpicom\+::mpierr, modvariables\+::mynpart, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::procnb, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodwritecube_a99b5a6f7f4534196e666b125702c093f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{namespacemodwritecube_a99b5a6f7f4534196e666b125702c093f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modwritecube@{modwritecube}!h5writesortedcube@{h5writesortedcube}}
+\index{h5writesortedcube@{h5writesortedcube}!modwritecube@{modwritecube}}
+\subsubsection[{\texorpdfstring{h5writesortedcube()}{h5writesortedcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modwritecube\+::h5writesortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodwritecube_a8af2220dcc73a35204f76527d4559e52}{}\label{namespacemodwritecube_a8af2220dcc73a35204f76527d4559e52}
+
+
+Definition at line 292 of file modwritecube.\+f90.
+
+
+
+References modmpicom\+::dims, modvariables\+::for, modiocommons\+::h5write\+\_\+meta\+\_\+common(), modiocommons\+::h5write\+\_\+meta\+\_\+info\+\_\+ramses(), modiocommons\+::h5write\+\_\+meta\+\_\+pfof\+\_\+parameter(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+create\+\_\+file(), modhdf5\+::hdf5\+\_\+create\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modvariables\+::mynpart, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::procnb, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodwritecube_a8af2220dcc73a35204f76527d4559e52_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{namespacemodwritecube_a8af2220dcc73a35204f76527d4559e52_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modwritecube@{modwritecube}!mpih5writecube@{mpih5writecube}}
+\index{mpih5writecube@{mpih5writecube}!modwritecube@{modwritecube}}
+\subsubsection[{\texorpdfstring{mpih5writecube()}{mpih5writecube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modwritecube\+::mpih5writecube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodwritecube_a0d94e39019f7808f3f373281ffe696a8}{}\label{namespacemodwritecube_a0d94e39019f7808f3f373281ffe696a8}
+
+
+This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. 
+
+
+
+Definition at line 148 of file modwritecube.\+f90.
+
+
+
+References modmpicom\+::commcolorwrite, modvariables\+::for, modiocommons\+::h5write\+\_\+meta\+\_\+common(), modiocommons\+::h5write\+\_\+meta\+\_\+info\+\_\+ramses(), modiocommons\+::h5write\+\_\+meta\+\_\+pfof\+\_\+parameter(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+close\+\_\+mpi\+\_\+file(), modhdf5\+::hdf5\+\_\+create\+\_\+group(), modhdf5\+::hdf5\+\_\+create\+\_\+mpi\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modmpicom\+::mpierr, modmpicom\+::mpisubcubewrite, modvariables\+::mynpart, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::procnb, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodwritecube_a0d94e39019f7808f3f373281ffe696a8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{namespacemodwritecube_a0d94e39019f7808f3f373281ffe696a8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modwritecube@{modwritecube}!mpih5writesortedcube@{mpih5writesortedcube}}
+\index{mpih5writesortedcube@{mpih5writesortedcube}!modwritecube@{modwritecube}}
+\subsubsection[{\texorpdfstring{mpih5writesortedcube()}{mpih5writesortedcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modwritecube\+::mpih5writesortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodwritecube_a491b7602123b1ac2d10637eb7c73ce77}{}\label{namespacemodwritecube_a491b7602123b1ac2d10637eb7c73ce77}
+
+
+This subroutine writes the position, the velocity and the id of each particle on the process in a hdf5 file. The particles are gathered. 
+
+
+
+Definition at line 484 of file modwritecube.\+f90.
+
+
+
+References modmpicom\+::commcolorwrite, modmpicom\+::dims, modvariables\+::for, modiocommons\+::h5write\+\_\+meta\+\_\+common(), modiocommons\+::h5write\+\_\+meta\+\_\+info\+\_\+ramses(), modiocommons\+::h5write\+\_\+meta\+\_\+pfof\+\_\+parameter(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+close\+\_\+mpi\+\_\+file(), modhdf5\+::hdf5\+\_\+create\+\_\+group(), modhdf5\+::hdf5\+\_\+create\+\_\+mpi\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modmpicom\+::mpierr, modmpicom\+::mpisubcubewrite, modvariables\+::mynpart, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::procnb, modmpicom\+::scprocidwrite, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodwritecube_a491b7602123b1ac2d10637eb7c73ce77_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{namespacemodwritecube_a491b7602123b1ac2d10637eb7c73ce77_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,32 @@
+&input_parameters
+code_index = 'RA3'
+input_path = '/home/roy/Travail/Devel/Cosmologie/test/'
+part_input_file = 'pfof_cube_snap_part_data_testmpisorted_00000.h5'
+info_input_file = 'info_00013.txt'
+grpsize = 00
+do_skip_star = .false.
+do_skip_metal = .false. 
+do_read_potential = .false.
+do_read_gravitational_field = .false.
+do_read_from_cube = .true.
+gatherread_factor = 2
+/
+
+&fof_parameters
+percolation_length = 0.30
+mmin = 200 
+mmax = 100000000
+do_fof = .true.
+do_unbinding = .false.
+do_subhalo = .false.
+/
+ 
+&output_parameters
+simulation_name = 'testmpi'
+snapshot = 13
+do_write_cube = .true.
+gatherwrite_factor = 2
+do_sort_cube = .false.
+do_timings = .true.
+/
+

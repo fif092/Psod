@@ -1,0 +1,8 @@
+Module modvariable
+
+  Use modconst
+  Real(   kind=SP ), dimension(:,:), allocatable, target :: x   ! particles positions - Always simple precision
+  Real(   kind=SP ), dimension(:,:), allocatable, target :: v   ! particles velocities - Always simple precision
+  Integer(kind=PRI), dimension(:),   allocatable, target :: id  ! particles Ramses Id's - Integer8 if particle number 
+                                                                ! exceeds 2^31-1
+End Module modvariable

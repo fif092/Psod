@@ -1,0 +1,9 @@
+<map id="modmpicom::emergencystop" name="modmpicom::emergencystop">
+<area shape="rect" id="node2" href="$classmodhalo.html#ac4792a22c76a98fdd0bbdcf598b3adfe" title="Exchange the particles so that particles belonging to one halo are gathered on the same process..." alt="" coords="246,5,399,32"/>
+<area shape="rect" id="node7" href="$classmodfofpara.html#a5294ecab752fb3cfbea3bec7cd28a29a" title="Initialize the stacks of pointers for local friends of friends. &#160;The whole domain is divided into t^3..." alt="" coords="267,56,379,83"/>
+<area shape="rect" id="node8" href="$classmodio.html#a7bb73858f091ddd46631bcb29022f803" title="This subroutine reads the particles files created by RAMSES that pFOF has to analyze. " alt="" coords="452,107,607,133"/>
+<area shape="rect" id="node3" href="$classmodfofpara.html#a0e76e564f41683dc0c0104fc789718b0" title="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..." alt="" coords="462,56,597,83"/>
+<area shape="rect" id="node5" href="$classmodfofpara.html#a033a2820dd29f107782b566ca298bde4" title="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..." alt="" coords="448,5,611,32"/>
+<area shape="rect" id="node4" href="$pfof_8f90.html#ae44d28f09de4222a58811986e6e2a1d5" title="friend" alt="" coords="671,81,726,108"/>
+<area shape="rect" id="node6" href="$pfof__cone_8f90.html#addc770475dc2e497bf70a10ebc158aed" title="pFOF_cone is a distributed implementation of the Friends&#45;of&#45;Friends halo finder algorithm designed fo..." alt="" coords="659,5,738,32"/>
+</map>

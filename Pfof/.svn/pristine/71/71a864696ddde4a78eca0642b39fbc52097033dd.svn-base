@@ -1,0 +1,39 @@
+!> @file
+!!This file contains the parameters read from pfof_cone.nml and the version number read from pfof.version. 
+
+!> This module contains the parameters read from pfof_cone.nml and the version number read from pfof.version.
+!>
+!> Authors: F. Roy, V. Bouillot
+
+
+Module modparameters
+
+  Implicit None
+
+  ! Input parameters
+  Character(len=200) :: shell_dir
+  Character(len=200) :: shell_filename
+  Integer(kind=4) :: shell_fid
+  Integer(kind=4) :: shell_lid
+  Logical(kind=4) :: do_read_potential   !< Potential at the position of the particle?
+  Logical(kind=4) :: do_read_gravitational_field      !< Force at the position of the particle?
+
+  ! FoF parameters
+  Real(kind=4) :: percolation_length
+  Integer(kind=4) :: mmin
+  Integer(kind=4) :: mmax
+  Logical(kind=4) :: do_unbinding    !< Unbinding process? (not implemented yet)
+  Logical(kind=4) :: do_subhalo      !< SubHalo detection? (not implemented yet)
+  
+  ! Output parameters
+  Character(len=200) :: simulation_name !< Simulation name to be written in output files: contains the name of the cone (narrow or fullsky for instance)
+  Integer(kind=4)    :: snapshot       !< Ramses output number to be written in output files: first output_ncoarse in the cone
+  Logical(kind=4) :: do_timings
+
+  ! Namelists
+  Namelist / input_parameters / shell_dir, shell_filename, shell_fid, shell_lid, &
+       do_read_potential, do_read_gravitational_field
+  Namelist / fof_parameters / percolation_length, Mmin, Mmax, do_unbinding, do_subhalo
+  Namelist / output_parameters / simulation_name, snapshot, do_timings
+
+End Module modparameters

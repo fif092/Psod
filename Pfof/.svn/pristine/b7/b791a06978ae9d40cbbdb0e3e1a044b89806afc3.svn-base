@@ -1,0 +1,612 @@
+Module modiocommons
+
+  Use modconstant
+  Use modhdf5
+  Use modparameters
+
+Contains
+  
+  !=======================================================================
+  Subroutine h5writecommonmetadata(file_id, inforamses, infocone)
+    
+    Implicit none
+    
+    Integer(kind=hid_t), intent(in) :: file_id
+    Type(Type_inforamses), intent(in) :: inforamses
+    Type(Type_infocone), intent(in), optional :: infocone
+
+    Character(len=H5STRLEN) :: groupname
+    Character(len=H5STRLEN) :: aname
+    Character(len=H5STRLEN) :: adata
+    Character(len=H5STRLEN) :: dsetname
+
+    Integer(kind=hid_t) :: gr_id
+    Integer(kind=hid_t) :: gr_pfof_id
+    Integer(kind=hid_t) :: gr_input_id
+    Integer(kind=hid_t) :: gr_fof_id
+    Integer(kind=hid_t) :: gr_output_id
+    Integer(kind=hid_t) :: gr_ramses_id
+    Integer(kind=hid_t) :: gr_cone_id
+    Integer(kind=8) :: npart8
+    Integer(kind=4) :: tmpint4
+    Integer(kind=4) :: nres
+
+    groupname = 'metadata'
+    Call hdf5_open_group(file_id,groupname, gr_id)
+
+    aname = 'created_by'
+    adata = 'pfof_hdf5'
+    Call hdf5_write_attr(gr_id, aname, adata)
+
+    aname = 'svn_version'
+    Call hdf5_write_attr(gr_id, aname, svn_version)
+
+    aname = 'simulation_code'
+    adata = 'ramses'
+    Call hdf5_write_attr(gr_id, aname,adata)
+
+    aname = 'particle_type'
+    adata = 'dark_matter'
+    Call hdf5_write_attr(gr_id, aname, adata)
+
+    aname = 'constant_mass'
+    tmpint4 = 1
+    Call hdf5_write_attr(gr_id, aname, tmpint4)
+
+    aname = 'units'
+    adata = 'ramses'
+    Call hdf5_write_attr(gr_id, aname, adata) 
+
+    ! Write the number of particles in this simulation as an integer(kind=8) dataset
+    dsetname = 'npart_simulation'
+    nres = 2**inforamses%lmin
+    npart8 = int(nres**3, kind=8)
+    Call hdf5_write_data(gr_id, dsetname, npart8)
+
+    groupname = 'pfof_parameters'
+    Call hdf5_create_group(gr_id, groupname, gr_pfof_id)
+
+    groupname = 'input_parameters'
+    Call hdf5_create_group(gr_pfof_id, groupname, gr_input_id)
+
+    aname = 'code_index'
+    Call hdf5_write_attr(gr_input_id, aname, code_index)
+
+    aname = 'input_path'
+    Call hdf5_write_attr(gr_input_id, aname, input_path)
+
+    aname = 'part_inputfile'
+    Call hdf5_write_attr(gr_input_id, aname, part_inputfile)
+
+    aname = 'info_inputfile'
+    Call hdf5_write_attr(gr_input_id, aname, info_inputfile)
+
+    aname = 'grpsize'
+    Call hdf5_write_attr(gr_input_id, aname, grpsize)
+
+    ! Write potential logical as an integer attribute (1=true, 0=false)
+    aname = 'do_read_potential'
+    If(do_read_potential) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_input_id, aname, tmpint4)
+
+    ! Write force logical as an integer attribute (1=true, 0=false)
+    aname = 'do_read_gravitational_field'
+    If(do_read_force) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_input_id, aname, tmpint4)
+
+    ! Write force logical as an integer attribute (1=true, 0=false)
+    aname = 'do_skip_star'
+    If(do_skip_star) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_input_id, aname, tmpint4)
+
+    ! Write force logical as an integer attribute (1=true, 0=false)
+    aname = 'do_skip_metal'
+    If(do_skip_metal) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_input_id, aname, tmpint4)
+
+    aname='do_read_from_cube'
+    tmpint4 = 0
+    If(do_read_from_cube) tmpint4 = 1
+    Call hdf5_write_attr(gr_input_id, aname, tmpint4)
+
+    aname = 'gatherread_factor'
+    Call hdf5_write_attr(gr_input_id, aname, gatherread_factor)
+
+
+    Call hdf5_close_group(gr_input_id)
+
+
+    groupname = 'fof_parameters'
+    Call hdf5_create_group(gr_pfof_id, groupname, gr_fof_id)
+
+    ! Write percolation parameter b as attribute
+    aname = 'percolation_length'
+    Call hdf5_write_attr(gr_fof_id, aname, percolation_length)
+
+    ! Write minimum halo mass Mmin as attribute
+    aname = 'npart_halo_min'
+    Call hdf5_write_attr(gr_fof_id, aname, mmin)    
+
+    aname = 'npart_halo_max'
+    Call hdf5_write_attr(gr_fof_id, aname, mmax)
+
+    ! Write doUnbinding as attribute (not implemented yet) 
+    aname = 'do_fof'
+    If(do_fof) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_fof_id, aname, tmpint4)
+
+    ! Write doUnbinding as attribute (not implemented yet) 
+    aname = 'do_unbinding'
+    If(do_unbinding) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_fof_id, aname, tmpint4)
+
+    ! Write doSubHalo as attribute (not implemented yet) 
+    aname = 'do_subhalo'
+    If(do_subhalo) Then
+       tmpint4=1
+    Else
+       tmpint4=0
+    End If
+    Call hdf5_write_attr(gr_fof_id, aname, tmpint4)
+
+    Call hdf5_close_group(gr_fof_id)
+
+
+
+    groupname = 'output_parameters'
+    Call hdf5_create_group(gr_pfof_id, groupname, gr_output_id)
+
+    ! Write the simulation name as attribute
+    aname = 'simulation_name'
+    Call hdf5_write_attr(gr_output_id, aname, simulation_name)
+
+    ! write the snapshot number: if halo computed from a lightcone then outputNB = -1
+    aname = 'snapshot'
+    Call hdf5_write_attr(gr_output_id, aname, snapshot)
+
+    tmpint4 = 0
+    If(do_write_cube) tmpint4 = 1
+    aname = 'do_write_cube'
+    Call hdf5_write_attr(gr_output_id, aname, tmpint4)
+
+    tmpint4 = 0
+    If(do_sort_cube) tmpint4 = 1
+    aname = 'do_sort_cube'
+    Call hdf5_write_attr(gr_output_id, aname, tmpint4)
+    
+    aname = 'gatherwrite_factor'
+    Call hdf5_write_attr(gr_output_id, aname, gatherwrite_factor)
+
+    Call hdf5_close_group(gr_output_id)
+
+    Call hdf5_close_group(gr_pfof_id)
+
+
+
+    ! Ramses Info Metadata
+    groupname = 'ramses_info'
+    Call hdf5_create_group(gr_id,groupname,gr_ramses_id)
+
+    aname = 'ncpu'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%ncpu)
+
+    aname = 'ndim'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%ndim)
+
+    aname = 'lmin'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%lmin)
+
+    aname = 'lmax'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%lmax)
+
+    aname = 'ngridmax'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%ngridmax)
+
+    aname = 'nstep_coarse'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%nstep_coarse)
+
+    aname = 'boxlen'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%boxlen)
+
+    aname = 'time'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%time)
+
+    aname = 'aexp'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%aexp)
+
+    aname = 'h0'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%h0)
+
+    aname = 'omega_m'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%omega_m)
+    
+    aname = 'omega_l'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%omega_l)
+
+    aname = 'omega_k'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%omega_k)
+
+    aname = 'omega_b'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%omega_b)
+
+    aname = 'unit_l'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%unit_l)
+
+    aname = 'unit_d'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%unit_d)
+
+    aname = 'unit_t'
+    Call hdf5_write_attr(gr_ramses_id,aname,inforamses%unit_t)
+
+    Call hdf5_close_group(gr_ramses_id)
+
+    
+    If(present(infocone)) Then
+
+       groupname = 'cone_info'
+       Call hdf5_create_group(gr_id, groupname, gr_cone_id)
+
+       aname = 'ncpu'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%ncpu)
+       
+       aname = 'nstride'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%ncpu)
+       
+       aname = 'nstep_coarse'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%nstep_coarse)
+
+       aname = 'cone_id'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%cone_id)
+
+       aname = 'nglobalfile'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%nglobalfile)
+      
+       aname = 'isfullsky'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%isfullsky)
+
+       aname = 'npart'
+       Call hdf5_write_data(gr_cone_id, aname, infocone%npart)
+
+       aname = 'aexp'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%aexp)
+
+       aname = 'observer_x'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%observer_x)
+
+       aname = 'observer_y'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%observer_y)
+
+       aname = 'observer_z'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%observer_z)
+
+       aname = 'observer_rds'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%observer_rds)
+
+       aname = 'cone_zlim'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%cone_zlim)
+
+       aname = 'amax'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%amax)
+
+       aname = 'amin'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%amin)
+
+       aname = 'zmax'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zmax)
+
+       aname = 'zmin'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zmin)
+
+       aname = 'dmax'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dmax)
+
+       aname = 'dmin'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dmin)
+
+       aname = 'dtol'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dtol)
+
+       aname = 'thetay'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%thetay)
+
+       aname = 'thetaz'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%thetaz)
+
+       aname = 'theta'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%theta)
+
+       aname = 'phi'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%phi)
+
+       aname = 'aendconem2'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%aendconem2)
+
+       aname = 'aendconem1'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%aendconem1)
+
+       aname = 'aendcone'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%aendcone)
+
+       aname = 'aexpold'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%aexpold)
+
+       aname = 'zendconem2'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zendconem2)
+
+       aname = 'zendconem1'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zendconem1)
+
+       aname = 'zendcone'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zendcone)
+
+       aname = 'zexpold'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zexpold)
+
+       aname = 'zexp'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%zexp)
+
+       aname = 'dendconem2'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dendconem2)
+
+       aname = 'dendconem1'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dendconem1)
+
+       aname = 'dendcone'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dendcone)
+
+       aname = 'dexpold'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dexpold)
+
+       aname = 'dexp'
+       Call hdf5_write_attr(gr_cone_id, aname, infocone%dexp)
+
+       Call hdf5_close_group(gr_cone_id)
+
+    End If
+
+    Call hdf5_close_group(gr_id)
+
+  End Subroutine h5writecommonmetadata
+
+
+  !=======================================================================
+  Subroutine h5readcommonmetadata(file_id, inforamses, infocone)
+    
+    Implicit none
+    
+    Integer(kind=hid_t), intent(in) :: file_id
+    Type(Type_inforamses), intent(out), optional :: inforamses
+    Type(Type_infocone), intent(out), optional :: infocone
+    
+    Character(len=H5STRLEN) :: groupname
+    Character(len=H5STRLEN) :: aname
+    Character(len=H5STRLEN) :: dsetname
+
+    Integer(kind=hid_t) :: gr_id
+    Integer(kind=hid_t) :: gr_ramses_id
+    Integer(kind=hid_t) :: gr_cone_id
+    Integer(kind=8) :: npart8
+    Integer(kind=4) :: tmpint4
+
+    groupname = 'metadata'
+    Call hdf5_open_group(file_id,groupname, gr_id)
+
+    aname = 'constant_mass'
+    tmpint4 = 1
+    Call hdf5_read_attr(gr_id, aname, tmpint4)
+
+    ! Read the number of particles in this simulation as an integer(kind=8) dataset
+    dsetname = 'npart_simulation'
+    Call hdf5_read_data(gr_id, dsetname, npart8)
+
+
+    If(present(inforamses)) Then
+       ! Ramses Info Metadata
+       groupname = 'ramses_info'
+       Call hdf5_open_group(gr_id,groupname,gr_ramses_id)
+       
+       aname = 'ncpu'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%ncpu)
+       
+       aname = 'ndim'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%ndim)
+       
+       aname = 'lmin'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%lmin)
+       
+       aname = 'lmax'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%lmax)
+       
+       aname = 'ngridmax'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%ngridmax)
+       
+       aname = 'nstep_coarse'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%nstep_coarse)
+       
+       aname = 'boxlen'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%boxlen)
+       
+       aname = 'time'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%time)
+       
+       aname = 'aexp'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%aexp)
+       
+       aname = 'h0'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%h0)
+       
+       aname = 'omega_m'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%omega_m)
+       
+       aname = 'omega_l'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%omega_l)
+       
+       aname = 'omega_k'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%omega_k)
+       
+       aname = 'omega_b'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%omega_b)
+       
+       aname = 'unit_l'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%unit_l)
+
+       aname = 'unit_d'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%unit_d)
+       
+       aname = 'unit_t'
+       Call hdf5_read_attr(gr_ramses_id,aname,inforamses%unit_t)
+
+       Call hdf5_close_group(gr_ramses_id)
+    End If
+
+    If(present(infocone)) Then
+       groupname = 'cone_info'
+       Call hdf5_open_group(gr_id,groupname, gr_cone_id)
+       
+       aname= "ncpu"
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%ncpu)
+
+       aname = 'nstride'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%ncpu)
+       
+       aname = 'nstep_coarse'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%nstep_coarse)
+
+       aname = 'cone_id'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%cone_id)
+
+       aname = 'nglobalfile'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%nglobalfile)
+      
+       aname = 'isfullsky'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%isfullsky)
+
+       aname = 'npart'
+       Call hdf5_read_data(gr_cone_id, aname, infocone%npart)
+
+       aname = 'aexp'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%aexp)
+
+       aname = 'observer_x'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%observer_x)
+
+       aname = 'observer_y'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%observer_y)
+
+       aname = 'observer_z'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%observer_z)
+
+       aname = 'observer_rds'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%observer_rds)
+
+       aname = 'cone_zlim'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%cone_zlim)
+
+       aname = 'amax'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%amax)
+
+       aname = 'amin'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%amin)
+
+       aname = 'zmax'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zmax)
+
+       aname = 'zmin'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zmin)
+
+       aname = 'dmax'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dmax)
+
+       aname = 'dmin'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dmin)
+
+       aname = 'dtol'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dtol)
+
+       aname = 'thetay'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%thetay)
+
+       aname = 'thetaz'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%thetaz)
+
+       aname = 'theta'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%theta)
+
+       aname = 'phi'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%phi)
+
+       aname = 'aendconem2'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%aendconem2)
+
+       aname = 'aendconem1'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%aendconem1)
+
+       aname = 'aendcone'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%aendcone)
+
+       aname = 'aexpold'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%aexpold)
+
+       aname = 'zendconem2'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zendconem2)
+
+       aname = 'zendconem1'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zendconem1)
+
+       aname = 'zendcone'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zendcone)
+
+       aname = 'zexpold'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zexpold)
+
+       aname = 'zexp'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%zexp)
+
+       aname = 'dendconem2'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dendconem2)
+
+       aname = 'dendconem1'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dendconem1)
+
+       aname = 'dendcone'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dendcone)
+
+       aname = 'dexpold'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dexpold)
+
+       aname = 'dexp'
+       Call hdf5_read_attr(gr_cone_id, aname, infocone%dexp)
+
+       
+       Call hdf5_close_group(gr_cone_id)
+    End If
+
+    Call hdf5_close_group(gr_id)
+
+  End Subroutine h5readcommonmetadata
+
+End Module modiocommons

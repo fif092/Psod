@@ -1,0 +1,249 @@
+\hypertarget{classmodtiming}{\section{modtiming Module Reference}
+\label{classmodtiming}\index{modtiming@{modtiming}}
+}
+
+
+This module contains variables used for timings.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=8) \hyperlink{classmodtiming_aa15cbf8a08e28c5209481b3ed5f11090}{time0} = 0.d0
+\begin{DoxyCompactList}\small\item\em beginning of the execution \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a724cb127b8168bf0645e4070d83a34c0}{timeint} = 0.d0
+\begin{DoxyCompactList}\small\item\em intermediate time \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_ab585192644ed79fc1030fde80dd84f85}{treadfile} = 0.d0
+\begin{DoxyCompactList}\small\item\em time used to read particles files (cubes or Ramses files) \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a65a8925f0685c0a5c5e42b0afd3b4a69}{ttailpart} = 0.d0
+\begin{DoxyCompactList}\small\item\em time used to distribute the particles if read from Ramses files \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a6c37469e0c299e5eb7c4b21eec1f2405}{tinitread} = 0.d0
+\begin{DoxyCompactList}\small\item\em time used to initialize reading from Ramses files \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_ab77d3fc2a7e3da662677204c1c8f7e84}{tread} = 0.d0
+\begin{DoxyCompactList}\small\item\em global reading time \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a83f5f02456356934410977b127c6308c}{tobs} = 0.d0
+\begin{DoxyCompactList}\small\item\em time used to compute observables for haloes \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_aad2ce715be55a32442a507f77e24f096}{tout} = 0.d0
+\begin{DoxyCompactList}\small\item\em time used to write output files \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_ac6dbf200ea4d6d6248bb9df21ed8d2a7}{tfof} = 0.d0
+\begin{DoxyCompactList}\small\item\em global time for friends-\/of-\/friends halo detection \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a2574a405aaa97058f43e1e6b0b1d96e1}{tfofloc} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for local fof algorithm \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a2c5b98c383953b670ee94c1022c2d822}{tfofinit} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for fof initialization (construction of the tree) \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a9b8eac461e18e3b6c057420bae5b004e}{traccord} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for halo merging procedure \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a6a20740b33d07d1c6b9ed51953b48b0d}{tgatherhalo} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for gathering particles following their halo\-I\-D \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_ac41b305f5582ff3ca37058380003cfc7}{touthalopart} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for writing halo part files \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a03a912e0243fcfbdec3ceeae3a34963a}{toutmass} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for writing halo mass files \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a0e46279061d4681c9c8b5a055410f04b}{tselecthalo} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for selecting halo with mass $>$ Mmin \end{DoxyCompactList}\item 
+real(kind=8) \hyperlink{classmodtiming_a32142e111b00eb8590746eef1b1d9dd6}{tsort} = 0.d0
+\begin{DoxyCompactList}\small\item\em time for sorting particles following their halo\-I\-D \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains variables used for timings. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 8 of file modtiming.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodtiming_ac6dbf200ea4d6d6248bb9df21ed8d2a7}{\index{modtiming@{modtiming}!tfof@{tfof}}
+\index{tfof@{tfof}!modtiming@{modtiming}}
+\subsubsection[{tfof}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tfof = 0.d0}}\label{classmodtiming_ac6dbf200ea4d6d6248bb9df21ed8d2a7}
+
+
+global time for friends-\/of-\/friends halo detection 
+
+
+
+Definition at line 19 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a2c5b98c383953b670ee94c1022c2d822}{\index{modtiming@{modtiming}!tfofinit@{tfofinit}}
+\index{tfofinit@{tfofinit}!modtiming@{modtiming}}
+\subsubsection[{tfofinit}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tfofinit = 0.d0}}\label{classmodtiming_a2c5b98c383953b670ee94c1022c2d822}
+
+
+time for fof initialization (construction of the tree) 
+
+
+
+Definition at line 21 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a2574a405aaa97058f43e1e6b0b1d96e1}{\index{modtiming@{modtiming}!tfofloc@{tfofloc}}
+\index{tfofloc@{tfofloc}!modtiming@{modtiming}}
+\subsubsection[{tfofloc}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tfofloc = 0.d0}}\label{classmodtiming_a2574a405aaa97058f43e1e6b0b1d96e1}
+
+
+time for local fof algorithm 
+
+
+
+Definition at line 20 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a6a20740b33d07d1c6b9ed51953b48b0d}{\index{modtiming@{modtiming}!tgatherhalo@{tgatherhalo}}
+\index{tgatherhalo@{tgatherhalo}!modtiming@{modtiming}}
+\subsubsection[{tgatherhalo}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tgatherhalo = 0.d0}}\label{classmodtiming_a6a20740b33d07d1c6b9ed51953b48b0d}
+
+
+time for gathering particles following their halo\-I\-D 
+
+
+
+Definition at line 23 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_aa15cbf8a08e28c5209481b3ed5f11090}{\index{modtiming@{modtiming}!time0@{time0}}
+\index{time0@{time0}!modtiming@{modtiming}}
+\subsubsection[{time0}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::time0 = 0.d0}}\label{classmodtiming_aa15cbf8a08e28c5209481b3ed5f11090}
+
+
+beginning of the execution 
+
+
+
+Definition at line 11 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a724cb127b8168bf0645e4070d83a34c0}{\index{modtiming@{modtiming}!timeint@{timeint}}
+\index{timeint@{timeint}!modtiming@{modtiming}}
+\subsubsection[{timeint}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::timeint = 0.d0}}\label{classmodtiming_a724cb127b8168bf0645e4070d83a34c0}
+
+
+intermediate time 
+
+
+
+Definition at line 12 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a6c37469e0c299e5eb7c4b21eec1f2405}{\index{modtiming@{modtiming}!tinitread@{tinitread}}
+\index{tinitread@{tinitread}!modtiming@{modtiming}}
+\subsubsection[{tinitread}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tinitread = 0.d0}}\label{classmodtiming_a6c37469e0c299e5eb7c4b21eec1f2405}
+
+
+time used to initialize reading from Ramses files 
+
+
+
+Definition at line 15 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a83f5f02456356934410977b127c6308c}{\index{modtiming@{modtiming}!tobs@{tobs}}
+\index{tobs@{tobs}!modtiming@{modtiming}}
+\subsubsection[{tobs}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tobs = 0.d0}}\label{classmodtiming_a83f5f02456356934410977b127c6308c}
+
+
+time used to compute observables for haloes 
+
+
+
+Definition at line 17 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_aad2ce715be55a32442a507f77e24f096}{\index{modtiming@{modtiming}!tout@{tout}}
+\index{tout@{tout}!modtiming@{modtiming}}
+\subsubsection[{tout}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tout = 0.d0}}\label{classmodtiming_aad2ce715be55a32442a507f77e24f096}
+
+
+time used to write output files 
+
+
+
+Definition at line 18 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_ac41b305f5582ff3ca37058380003cfc7}{\index{modtiming@{modtiming}!touthalopart@{touthalopart}}
+\index{touthalopart@{touthalopart}!modtiming@{modtiming}}
+\subsubsection[{touthalopart}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::touthalopart = 0.d0}}\label{classmodtiming_ac41b305f5582ff3ca37058380003cfc7}
+
+
+time for writing halo part files 
+
+
+
+Definition at line 24 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a03a912e0243fcfbdec3ceeae3a34963a}{\index{modtiming@{modtiming}!toutmass@{toutmass}}
+\index{toutmass@{toutmass}!modtiming@{modtiming}}
+\subsubsection[{toutmass}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::toutmass = 0.d0}}\label{classmodtiming_a03a912e0243fcfbdec3ceeae3a34963a}
+
+
+time for writing halo mass files 
+
+
+
+Definition at line 25 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a9b8eac461e18e3b6c057420bae5b004e}{\index{modtiming@{modtiming}!traccord@{traccord}}
+\index{traccord@{traccord}!modtiming@{modtiming}}
+\subsubsection[{traccord}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::traccord = 0.d0}}\label{classmodtiming_a9b8eac461e18e3b6c057420bae5b004e}
+
+
+time for halo merging procedure 
+
+
+
+Definition at line 22 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_ab77d3fc2a7e3da662677204c1c8f7e84}{\index{modtiming@{modtiming}!tread@{tread}}
+\index{tread@{tread}!modtiming@{modtiming}}
+\subsubsection[{tread}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tread = 0.d0}}\label{classmodtiming_ab77d3fc2a7e3da662677204c1c8f7e84}
+
+
+global reading time 
+
+
+
+Definition at line 16 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_ab585192644ed79fc1030fde80dd84f85}{\index{modtiming@{modtiming}!treadfile@{treadfile}}
+\index{treadfile@{treadfile}!modtiming@{modtiming}}
+\subsubsection[{treadfile}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::treadfile = 0.d0}}\label{classmodtiming_ab585192644ed79fc1030fde80dd84f85}
+
+
+time used to read particles files (cubes or Ramses files) 
+
+
+
+Definition at line 13 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a0e46279061d4681c9c8b5a055410f04b}{\index{modtiming@{modtiming}!tselecthalo@{tselecthalo}}
+\index{tselecthalo@{tselecthalo}!modtiming@{modtiming}}
+\subsubsection[{tselecthalo}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tselecthalo = 0.d0}}\label{classmodtiming_a0e46279061d4681c9c8b5a055410f04b}
+
+
+time for selecting halo with mass $>$ Mmin 
+
+
+
+Definition at line 26 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a32142e111b00eb8590746eef1b1d9dd6}{\index{modtiming@{modtiming}!tsort@{tsort}}
+\index{tsort@{tsort}!modtiming@{modtiming}}
+\subsubsection[{tsort}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::tsort = 0.d0}}\label{classmodtiming_a32142e111b00eb8590746eef1b1d9dd6}
+
+
+time for sorting particles following their halo\-I\-D 
+
+
+
+Definition at line 27 of file modtiming.\-f90.
+
+\hypertarget{classmodtiming_a65a8925f0685c0a5c5e42b0afd3b4a69}{\index{modtiming@{modtiming}!ttailpart@{ttailpart}}
+\index{ttailpart@{ttailpart}!modtiming@{modtiming}}
+\subsubsection[{ttailpart}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modtiming\-::ttailpart = 0.d0}}\label{classmodtiming_a65a8925f0685c0a5c5e42b0afd3b4a69}
+
+
+time used to distribute the particles if read from Ramses files 
+
+
+
+Definition at line 14 of file modtiming.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modtiming_8f90}{modtiming.\-f90}\end{DoxyCompactItemize}

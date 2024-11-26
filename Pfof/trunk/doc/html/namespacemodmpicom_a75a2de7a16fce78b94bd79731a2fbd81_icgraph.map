@@ -1,0 +1,11 @@
+<map id="modmpicom::emergencystop" name="modmpicom::emergencystop">
+<area shape="rect" id="node2" href="$namespacemodhalo.html#acf1576354acf16b205a17c83983b248a" title="Exchange the particles so that particles belonging to one halo are gathered on the same process..." alt="" coords="273,5,426,32"/>
+<area shape="rect" id="node7" href="$namespacemodfofpara.html#a5294ecab752fb3cfbea3bec7cd28a29a" title="Initializes the stacks of pointers for local friends of friends. " alt="" coords="293,56,405,83"/>
+<area shape="rect" id="node8" href="$namespacemodio.html#a7bb73858f091ddd46631bcb29022f803" title="This subroutine reads the particles files created by RAMSES that pFOF has to analyze. " alt="" coords="523,107,678,133"/>
+<area shape="rect" id="node9" href="$namespacemodreadcube.html#a9c2a086c3d23dcb886817558a3592218" title="Opens a cube file, reads the file_type metadata, and selects the corresponding reading subroutine..." alt="" coords="503,157,699,184"/>
+<area shape="rect" id="node10" href="$namespacemodreadcube.html#a30050fd5631222b0125e7917cc8ae547" title="Reads a hdf5 sorted cube file created by pfof_snap. " alt="" coords="244,208,455,235"/>
+<area shape="rect" id="node3" href="$namespacemodfofpara.html#a0e76e564f41683dc0c0104fc789718b0" title="Serial FOF subroutine. " alt="" coords="533,56,668,83"/>
+<area shape="rect" id="node5" href="$namespacemodfofpara.html#a033a2820dd29f107782b566ca298bde4" title="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..." alt="" coords="519,5,682,32"/>
+<area shape="rect" id="node4" href="$pfof__snap_8f90.html#ae44d28f09de4222a58811986e6e2a1d5" title="friend" alt="" coords="759,107,813,133"/>
+<area shape="rect" id="node6" href="$pfof__cone_8f90.html#addc770475dc2e497bf70a10ebc158aed" title="pFOF_cone is a distributed implementation of the Friends&#45;of&#45;Friends halo finder algorithm designed fo..." alt="" coords="747,5,825,32"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="modio::mpih5writecube" name="modio::mpih5writecube">
+<area shape="rect" id="node2" href="$classmodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="214,5,357,46"/>
+<area shape="rect" id="node3" href="$classmodhdf5.html#a72cb805582425e8633c70c5db85df8bc" title="Close a &#39;parallel&#39; hdf5 file. " alt="" coords="214,70,357,111"/>
+<area shape="rect" id="node4" href="$classmodhdf5.html#a0382a4721335fbb49e1cb9cd48cfea0a" title="Create and open a &#39;parallel&#39; hdf5 file shared by the communicator comm. " alt="" coords="211,135,359,177"/>
+<area shape="rect" id="node5" href="$classmodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="215,201,355,242"/>
+</map>

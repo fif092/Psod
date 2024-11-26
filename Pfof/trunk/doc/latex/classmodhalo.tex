@@ -1,0 +1,332 @@
+\hypertarget{classmodhalo}{\section{modhalo Module Reference}
+\label{classmodhalo}\index{modhalo@{modhalo}}
+}
+
+
+This module contains subroutines used to gather haloes on the differents processes and compute some observables.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodhalo_ac4792a22c76a98fdd0bbdcf598b3adfe}{gatherhaloes} (mpicomm)
+\begin{DoxyCompactList}\small\item\em Exchange the particles so that particles belonging to one halo are gathered on the same process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhalo_adc24616c9dd9294acd0c1d478f4333ad}{selecthaloes} ()
+\item 
+subroutine \hyperlink{classmodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}{computecom} (periodic)
+\item 
+subroutine \hyperlink{classmodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}{computeradius} (periodic)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{classmodhalo_a7a64076c8448a822872da06cfb3e98f6}{halonb}
+\begin{DoxyCompactList}\small\item\em local number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}{halonb\-\_\-all}
+\begin{DoxyCompactList}\small\item\em global number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodhalo_a026b99d5d7dc52fa2755b516c9947514}{halopartnb}
+\begin{DoxyCompactList}\small\item\em number of particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodhalo_a52f1f25dcc26f652f137e54813e02309}{myfinalnpart}
+\begin{DoxyCompactList}\small\item\em number of particles after the particles have been exchanged to gather them by haloes \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodhalo_a22da1dc93c68210ac3c692f1fb545bc0}{halomass}
+\begin{DoxyCompactList}\small\item\em mass of the haloes \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodhalo_a28d1d14569d3cd370d375aca76fd838c}{haloid}
+\begin{DoxyCompactList}\small\item\em I\-D of the haloes. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodhalo_a6c47abc5102dc629247c7b90831b1030}{halopartid}
+\begin{DoxyCompactList}\small\item\em I\-D of the particles belonging to a halo. \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodhalo_a5047e50f3939eaf91496eb430ea12952}{halosubhalonb}
+\begin{DoxyCompactList}\small\item\em number of subhalo for each halo \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodhalo_a935d49a97e72fe931ab0e2cee84d1523}{halopartpos}
+\begin{DoxyCompactList}\small\item\em position of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodhalo_a9d88ee4555aab3eb3cc4626800de250b}{halopartvel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=8), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodhalo_a872c41ce5ed017bb6f443156dd18d0af}{halocompos}
+\begin{DoxyCompactList}\small\item\em position of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}{halocomvel}
+\begin{DoxyCompactList}\small\item\em velocity of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\-:), \\*
+allocatable \hyperlink{classmodhalo_ac245616b2bd1db72ab7891e811f668de}{haloradius}
+\begin{DoxyCompactList}\small\item\em radius of each halo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines used to gather haloes on the differents processes and compute some observables. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 8 of file modhalo.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}{\index{modhalo@{modhalo}!computecom@{computecom}}
+\index{computecom@{computecom}!modhalo@{modhalo}}
+\subsubsection[{computecom}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\-::computecom (
+\begin{DoxyParamCaption}
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}}\label{classmodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}
+
+
+Definition at line 293 of file modhalo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhalo_ac4afe524dd9d15d21ce67171c4a7ba70_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}{\index{modhalo@{modhalo}!computeradius@{computeradius}}
+\index{computeradius@{computeradius}!modhalo@{modhalo}}
+\subsubsection[{computeradius}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\-::computeradius (
+\begin{DoxyParamCaption}
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}}\label{classmodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}
+
+
+Definition at line 352 of file modhalo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhalo_ac4792a22c76a98fdd0bbdcf598b3adfe}{\index{modhalo@{modhalo}!gatherhaloes@{gatherhaloes}}
+\index{gatherhaloes@{gatherhaloes}!modhalo@{modhalo}}
+\subsubsection[{gatherhaloes}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\-::gatherhaloes (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{mpicomm}
+\end{DoxyParamCaption}
+)}}\label{classmodhalo_ac4792a22c76a98fdd0bbdcf598b3adfe}
+
+
+Exchange the particles so that particles belonging to one halo are gathered on the same process. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mpicomm} & M\-P\-I communicator used for the communications \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 34 of file modhalo.\-f90.
+
+
+
+References modmpicom\-::emergencystop().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhalo_ac4792a22c76a98fdd0bbdcf598b3adfe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhalo_ac4792a22c76a98fdd0bbdcf598b3adfe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhalo_adc24616c9dd9294acd0c1d478f4333ad}{\index{modhalo@{modhalo}!selecthaloes@{selecthaloes}}
+\index{selecthaloes@{selecthaloes}!modhalo@{modhalo}}
+\subsubsection[{selecthaloes}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\-::selecthaloes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodhalo_adc24616c9dd9294acd0c1d478f4333ad}
+
+
+Definition at line 190 of file modhalo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhalo_adc24616c9dd9294acd0c1d478f4333ad_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodhalo_a872c41ce5ed017bb6f443156dd18d0af}{\index{modhalo@{modhalo}!halocompos@{halocompos}}
+\index{halocompos@{halocompos}!modhalo@{modhalo}}
+\subsubsection[{halocompos}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\-:,\-:), allocatable modhalo\-::halocompos}}\label{classmodhalo_a872c41ce5ed017bb6f443156dd18d0af}
+
+
+position of the center of mass of each halo 
+
+
+
+Definition at line 25 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}{\index{modhalo@{modhalo}!halocomvel@{halocomvel}}
+\index{halocomvel@{halocomvel}!modhalo@{modhalo}}
+\subsubsection[{halocomvel}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\-:,\-:), allocatable modhalo\-::halocomvel}}\label{classmodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}
+
+
+velocity of the center of mass of each halo 
+
+
+
+Definition at line 26 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a28d1d14569d3cd370d375aca76fd838c}{\index{modhalo@{modhalo}!haloid@{haloid}}
+\index{haloid@{haloid}!modhalo@{modhalo}}
+\subsubsection[{haloid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modhalo\-::haloid}}\label{classmodhalo_a28d1d14569d3cd370d375aca76fd838c}
+
+
+I\-D of the haloes. 
+
+
+
+Definition at line 19 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a22da1dc93c68210ac3c692f1fb545bc0}{\index{modhalo@{modhalo}!halomass@{halomass}}
+\index{halomass@{halomass}!modhalo@{modhalo}}
+\subsubsection[{halomass}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modhalo\-::halomass}}\label{classmodhalo_a22da1dc93c68210ac3c692f1fb545bc0}
+
+
+mass of the haloes 
+
+
+
+Definition at line 18 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a7a64076c8448a822872da06cfb3e98f6}{\index{modhalo@{modhalo}!halonb@{halonb}}
+\index{halonb@{halonb}!modhalo@{modhalo}}
+\subsubsection[{halonb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\-::halonb}}\label{classmodhalo_a7a64076c8448a822872da06cfb3e98f6}
+
+
+local number of haloes 
+
+
+
+Definition at line 14 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}{\index{modhalo@{modhalo}!halonb\-\_\-all@{halonb\-\_\-all}}
+\index{halonb\-\_\-all@{halonb\-\_\-all}!modhalo@{modhalo}}
+\subsubsection[{halonb\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\-::halonb\-\_\-all}}\label{classmodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}
+
+
+global number of haloes 
+
+
+
+Definition at line 15 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a6c47abc5102dc629247c7b90831b1030}{\index{modhalo@{modhalo}!halopartid@{halopartid}}
+\index{halopartid@{halopartid}!modhalo@{modhalo}}
+\subsubsection[{halopartid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modhalo\-::halopartid}}\label{classmodhalo_a6c47abc5102dc629247c7b90831b1030}
+
+
+I\-D of the particles belonging to a halo. 
+
+
+
+Definition at line 20 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a026b99d5d7dc52fa2755b516c9947514}{\index{modhalo@{modhalo}!halopartnb@{halopartnb}}
+\index{halopartnb@{halopartnb}!modhalo@{modhalo}}
+\subsubsection[{halopartnb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\-::halopartnb}}\label{classmodhalo_a026b99d5d7dc52fa2755b516c9947514}
+
+
+number of particles belonging to one of the local haloes 
+
+
+
+Definition at line 16 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a935d49a97e72fe931ab0e2cee84d1523}{\index{modhalo@{modhalo}!halopartpos@{halopartpos}}
+\index{halopartpos@{halopartpos}!modhalo@{modhalo}}
+\subsubsection[{halopartpos}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modhalo\-::halopartpos}}\label{classmodhalo_a935d49a97e72fe931ab0e2cee84d1523}
+
+
+position of the particles belonging to one of the local haloes 
+
+
+
+Definition at line 23 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a9d88ee4555aab3eb3cc4626800de250b}{\index{modhalo@{modhalo}!halopartvel@{halopartvel}}
+\index{halopartvel@{halopartvel}!modhalo@{modhalo}}
+\subsubsection[{halopartvel}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modhalo\-::halopartvel}}\label{classmodhalo_a9d88ee4555aab3eb3cc4626800de250b}
+
+
+velocity of the particles belonging to one of the local haloes 
+
+
+
+Definition at line 24 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_ac245616b2bd1db72ab7891e811f668de}{\index{modhalo@{modhalo}!haloradius@{haloradius}}
+\index{haloradius@{haloradius}!modhalo@{modhalo}}
+\subsubsection[{haloradius}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\-:), allocatable modhalo\-::haloradius}}\label{classmodhalo_ac245616b2bd1db72ab7891e811f668de}
+
+
+radius of each halo 
+
+
+
+Definition at line 27 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a5047e50f3939eaf91496eb430ea12952}{\index{modhalo@{modhalo}!halosubhalonb@{halosubhalonb}}
+\index{halosubhalonb@{halosubhalonb}!modhalo@{modhalo}}
+\subsubsection[{halosubhalonb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modhalo\-::halosubhalonb}}\label{classmodhalo_a5047e50f3939eaf91496eb430ea12952}
+
+
+number of subhalo for each halo 
+
+
+
+Definition at line 21 of file modhalo.\-f90.
+
+\hypertarget{classmodhalo_a52f1f25dcc26f652f137e54813e02309}{\index{modhalo@{modhalo}!myfinalnpart@{myfinalnpart}}
+\index{myfinalnpart@{myfinalnpart}!modhalo@{modhalo}}
+\subsubsection[{myfinalnpart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\-::myfinalnpart}}\label{classmodhalo_a52f1f25dcc26f652f137e54813e02309}
+
+
+number of particles after the particles have been exchanged to gather them by haloes 
+
+
+
+Definition at line 17 of file modhalo.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/common/src/\hyperlink{modhalo_8f90}{modhalo.\-f90}\end{DoxyCompactItemize}

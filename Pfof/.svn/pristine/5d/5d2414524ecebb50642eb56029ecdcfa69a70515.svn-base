@@ -1,0 +1,13 @@
+!> @file
+!! This file contains the definition of the input parameters.
+
+!> This module contains the definition of the input parameters.
+!> Authors: F. Roy, V. Bouillot
+Module modparameters
+
+  Use modconstant
+  Implicit None
+
+  Type(Type_parameter_pfof_snap) :: param
+
+End Module modparameters

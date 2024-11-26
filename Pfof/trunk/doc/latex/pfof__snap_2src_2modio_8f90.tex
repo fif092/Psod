@@ -1,0 +1,37 @@
+\hypertarget{pfof__snap_2src_2modio_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modio.f90 File Reference}
+\label{pfof__snap_2src_2modio_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modio.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modio.\+f90}}
+
+
+This file contains subroutines used for I/O.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodio}{modio}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used for I/O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodio_aefab9476e94da81a75351dbeee74e623}{modio\+::title} ()
+\item 
+subroutine \hyperlink{namespacemodio_a2688770b2d08498c14ef3212e61d74bf}{modio\+::theend} ()
+\item 
+subroutine \hyperlink{namespacemodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{modio\+::readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\+\_\+snap.\+nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a19a738d75d352c974bb25823da81e3d7}{modio\+::print\+\_\+screen\+\_\+parameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the input parameters in a .nml file, print them on screen and writes them in the .log file. It should be called only from process 0. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a6ba64be35b401e31cd35f96ea50bb0c4}{modio\+::writetimings} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes timings in the log file and prints them on screen. It should be called only by process 0. It also closes the log file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a7bb73858f091ddd46631bcb29022f803}{modio\+::ramses\+\_\+lecture} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles files created by R\+A\+M\+S\+ES that p\+F\+OF has to analyze. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains subroutines used for I/O. 
+
+\begin{DoxyAuthor}{Author}
+Fabrice Roy 
+
+Vincent Bouillot 
+\end{DoxyAuthor}

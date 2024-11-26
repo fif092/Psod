@@ -1,0 +1,24 @@
+!> @file 
+!! This file contains the definition of the 3 arrays containing the position, 
+!! the velocity and the id of the particles.
+
+Module modvariables
+
+  Use modconstant
+  Implicit None
+
+  Real(kind=4), dimension(:,:), allocatable :: x                !< position of the particles
+  Real(kind=4), dimension(:,:), allocatable :: v                !< velocity of the particles
+  Integer(kind=PRI), dimension(:), allocatable :: id            !< RAMSES id of the particles; 
+                                                                !! Integer8 if particle number exceeds 2^31-1
+  Integer(kind=PRI), dimension(:), allocatable :: structure     !< Halo ID of the partickes;
+                                                                !! Integer8 if particle number exceeds 2^31-1
+
+  Real(kind=4), dimension(:,:), allocatable :: xf               !< position of the particles
+  Real(kind=4), dimension(:,:), allocatable :: vf               !< velocity of the particles
+  Integer(kind=PRI), dimension(:), allocatable :: idf           !< RAMSES id of the particles; 
+                                                                !! Integer8 if particle number exceeds 2^31-1
+  Integer(kind=PRI), dimension(:), allocatable :: stf           !< Halo ID of the partickes;
+                                                                !! Integer8 if particle number exceeds 2^31-1
+
+End Module modvariables

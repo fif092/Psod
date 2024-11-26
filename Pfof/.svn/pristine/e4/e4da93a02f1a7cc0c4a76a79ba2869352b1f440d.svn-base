@@ -1,0 +1,50 @@
+Module modreadhalo
+
+  !! PRI must match the value used to create the HDF5 you are reading
+  Integer, parameter :: PRI = 8
+
+Contains
+
+  Subroutine h5readhalomass(filename)
+    
+    Use modhdf5
+
+    Implicit None
+    
+    Character(len=400), intent(in) :: filename
+    Integer(hid_t) :: file_id
+    Character(len=16) :: dname
+    Integer(kind=4) :: haloNB
+
+    !! You will probably have to define the following variables in another module
+    !! and use this module here as well as in the subroutine from which you want to call h5readhalomass.
+    Real(kind=8), dimension(:,:), allocatable :: halocomPos, halocomVel
+    Integer(kind=PRI), dimension(:), allocatable :: haloID 
+    Integer(kind=4), dimension(:), allocatable :: haloMass
+    !!
+
+    Call hdf5_open_file(filename, file_id)
+      
+    ! Write number of halos as attribute
+    dname = 'haloNB'
+    Call hdf5_read_attr(file_id, dname, haloNB)
+
+    Allocate(halocomPos(3,haloNB), halocomVel(3,haloNB), haloID(haloNB), haloMass(haloNB))
+
+    dname = 'halocomPos'
+    Call hdf5_read_data(file_id, dname, 3, haloNB, halocomPos)
+
+    dname = 'halocomVel'
+    Call hdf5_read_data(file_id, dname, 3, haloNB, halocomVel)
+
+    dname = 'haloID'
+    Call hdf5_read_data(file_id, dname, haloNB, haloID)
+
+    dname = 'haloMass'
+    Call hdf5_read_data(file_id, dname, haloNB, haloMass)
+
+    Call hdf5_close_file(file_id)
+
+  End Subroutine h5readhalomass
+
+End Module modreadhalo

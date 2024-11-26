@@ -1,0 +1,277 @@
+\hypertarget{classmodsort}{\section{modsort Module Reference}
+\label{classmodsort}\index{modsort@{modsort}}
+}
+
+
+This module contains two sort subroutines.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+recursive subroutine, public \hyperlink{classmodsort_a9c9ed3d1f948bf7023476506e298e0bf}{trirapide} (p, r, tref, tid, tx, tv)
+\begin{DoxyCompactList}\small\item\em Quick sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodsort_a22712b17a572f1af3a89bb0247b6616c}{tritas} (tref, tid, tx, tv, n)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodsort_abdddab14c10da69038614dfbaf611056}{construction} (tref, tid, tx, tv, size, n)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodsort_a86fab5cf7c126f47a3f7df3d93447784}{partition} (tref, p, r, q, tid, tx, tv)
+\item 
+recursive subroutine \hyperlink{classmodsort_a7cf26a2aded499f04cfddd9a93801356}{entasser} (tref, tid, tx, tv, size, i)
+\item 
+subroutine \hyperlink{classmodsort_aa2757c63708f71eb3b4a4446b4ba6c39}{echanger} (tref, tid, tx, tv, i, j)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains two sort subroutines. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 7 of file modsort.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodsort_abdddab14c10da69038614dfbaf611056}{\index{modsort@{modsort}!construction@{construction}}
+\index{construction@{construction}!modsort@{modsort}}
+\subsubsection[{construction}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsort\-::construction (
+\begin{DoxyParamCaption}
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=4), intent(out)}]{size, }
+\item[{integer(kind=4), intent(in)}]{n}
+\end{DoxyParamCaption}
+)}}\label{classmodsort_abdddab14c10da69038614dfbaf611056}
+
+
+Definition at line 162 of file modsort.\-f90.
+
+
+
+References entasser().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_abdddab14c10da69038614dfbaf611056_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_abdddab14c10da69038614dfbaf611056_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodsort_aa2757c63708f71eb3b4a4446b4ba6c39}{\index{modsort@{modsort}!echanger@{echanger}}
+\index{echanger@{echanger}!modsort@{modsort}}
+\subsubsection[{echanger}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsort\-::echanger (
+\begin{DoxyParamCaption}
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=4), intent(in)}]{i, }
+\item[{integer(kind=4), intent(in)}]{j}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodsort_aa2757c63708f71eb3b4a4446b4ba6c39}
+
+
+Definition at line 244 of file modsort.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_aa2757c63708f71eb3b4a4446b4ba6c39_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodsort_a7cf26a2aded499f04cfddd9a93801356}{\index{modsort@{modsort}!entasser@{entasser}}
+\index{entasser@{entasser}!modsort@{modsort}}
+\subsubsection[{entasser}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modsort\-::entasser (
+\begin{DoxyParamCaption}
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=4), intent(in)}]{size, }
+\item[{integer(kind=4), intent(in)}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodsort_a7cf26a2aded499f04cfddd9a93801356}
+
+
+Definition at line 198 of file modsort.\-f90.
+
+
+
+References echanger().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classmodsort_a7cf26a2aded499f04cfddd9a93801356_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_a7cf26a2aded499f04cfddd9a93801356_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodsort_a86fab5cf7c126f47a3f7df3d93447784}{\index{modsort@{modsort}!partition@{partition}}
+\index{partition@{partition}!modsort@{modsort}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsort\-::partition (
+\begin{DoxyParamCaption}
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=4), intent(out)}]{q, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodsort_a86fab5cf7c126f47a3f7df3d93447784}
+
+
+Definition at line 59 of file modsort.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classmodsort_a86fab5cf7c126f47a3f7df3d93447784_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodsort_a9c9ed3d1f948bf7023476506e298e0bf}{\index{modsort@{modsort}!trirapide@{trirapide}}
+\index{trirapide@{trirapide}!modsort@{modsort}}
+\subsubsection[{trirapide}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine, public modsort\-::trirapide (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv}
+\end{DoxyParamCaption}
+)}}\label{classmodsort_a9c9ed3d1f948bf7023476506e298e0bf}
+
+
+Quick sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file modsort.\-f90.
+
+
+
+References partition().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classmodsort_a9c9ed3d1f948bf7023476506e298e0bf_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodsort_a22712b17a572f1af3a89bb0247b6616c}{\index{modsort@{modsort}!tritas@{tritas}}
+\index{tritas@{tritas}!modsort@{modsort}}
+\subsubsection[{tritas}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modsort\-::tritas (
+\begin{DoxyParamCaption}
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=4), intent(in)}]{n}
+\end{DoxyParamCaption}
+)}}\label{classmodsort_a22712b17a572f1af3a89bb0247b6616c}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+
+Definition at line 125 of file modsort.\-f90.
+
+
+
+References construction(), echanger(), and entasser().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_a22712b17a572f1af3a89bb0247b6616c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodsort_a22712b17a572f1af3a89bb0247b6616c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/common/src/\hyperlink{modsort_8f90}{modsort.\-f90}\end{DoxyCompactItemize}

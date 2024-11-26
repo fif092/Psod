@@ -1,0 +1,1 @@
+pfof_snap.o: pfof_snap.f90 modhdf5.mod modvariables.mod modparameters.mod modmpicom.mod modfofpara.mod modreadcube.mod modwritecube.mod modio.mod modtiming.mod  

@@ -1,0 +1,21 @@
+&infocone
+rmax   = 0.337938727079617E+01
+thetay = 0.100000000000000E+02
+thetaz = 0.100000000000000E+02
+npart  = 581164
+fullsky = .false.
+/
+
+&infofile
+dirname  = '/obs/roy/Cosmo/Data/Cone/output_ncoarse_00160'
+filename = 'cone_narrow1_ncoarse_00160_proc'
+filenb   = 16
+ffile    = 1
+lfile    = 16
+nstride  = 8192
+/
+
+&infooutput
+shellname = 'shell_00160.h5'
+cubesize = 1.0d-1
+/

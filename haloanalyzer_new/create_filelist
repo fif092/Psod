@@ -1,0 +1,32 @@
+#!/bin/bash
+set -x
+
+rm filelist.nml
+
+Number_h5_files=8
+#Number_h5_files=64
+cat > filelist.nml << EOF
+&Size
+filelistsize=$Number_h5_files /
+
+&List
+EOF
+
+for ((i=0;i<Number_h5_files-1;i+=1)); do
+ N=$(printf %5.5i $i) #output to analyze
+ j=`expr $i + 1`      #fortran indices start from 1
+ echo "filelist($j) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/fof/output_00011/pfof_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_$N.h5'" >> filelist.nml
+# echo "filelist($j) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/fof_halodatanotgathered/output_00011/pfof_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_$N.h5'" >> filelist.nml
+done
+i=$(echo $Number_h5_files '-' 1 |bc -l) 
+N=$(printf %5.5i $i) #output to analyze                                                                                                                                                            
+j=`expr $i + 1`      #fortran indices start from 1                                                                                                                                                 
+echo "filelist($j) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/fof/output_00011/pfof_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_$N.h5' / " >> filelist.nml
+#echo "filelist($j) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/fof_halodatanotgathered/output_00011/pfof_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_$N.h5' / " >> filelist.nml
+
+#BELOW IS ONLY FOR SOME OPTIONS
+cat > fileprop.nml <<EOF
+&File
+EOF
+
+echo "hf_filename = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/fof/output_00011/pfof_halo_snap_part_hfprop_boxlen82.03125_n128_lcdmw7.h5' / " >> fileprop.nml

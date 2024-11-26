@@ -1,0 +1,11 @@
+<map id="modwritehalo::h5writehalopart" name="modwritehalo::h5writehalopart">
+<area shape="rect" id="node2" href="$namespacemodiocommons.html#a34d5806274712591a9d885c1d926af57" title="modiocommons::h5write\l_meta_common" alt="" coords="252,43,416,84"/>
+<area shape="rect" id="node3" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="471,128,613,169"/>
+<area shape="rect" id="node4" href="$namespacemodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="472,193,612,235"/>
+<area shape="rect" id="node5" href="$namespacemodiocommons.html#afee94c7a833034224dee17e9055971e4" title="modiocommons::h5write\l_meta_info_cone" alt="" coords="252,160,416,201"/>
+<area shape="rect" id="node6" href="$namespacemodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="468,291,616,332"/>
+<area shape="rect" id="node7" href="$namespacemodiocommons.html#aa0393a317c75eb21189d5d381c3cf591" title="modiocommons::h5write\l_meta_info_ramses" alt="" coords="252,225,416,267"/>
+<area shape="rect" id="node8" href="$namespacemodiocommons.html#a27eabdb687af381e608f120d19dfa997" title="modiocommons::h5write\l_meta_pfof_parameter" alt="" coords="252,291,416,332"/>
+<area shape="rect" id="node9" href="$namespacemodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="251,458,417,485"/>
+<area shape="rect" id="node10" href="$namespacemodhdf5.html#a66cf3f318aafac811c2422f8155f7ae1" title="Create and open a hdf5 file. " alt="" coords="248,357,420,383"/>
+</map>

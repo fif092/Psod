@@ -1,0 +1,23 @@
+all: pfofhdf5 pfofcone conecreator conegravcreator conemapper
+
+pfofhdf5:
+	cd pfof_hdf5/src ; make
+
+pfofcone:
+	cd pfof_cone/src ; make
+
+conecreator:
+	cd tools/conecreator/src ; make
+
+conegravcreator:
+	cd tools/conegravcreator/src ; make
+
+conemapper:
+	cd tools/conemapper/src ; make
+
+clean:
+	cd pfof_hdf5/src ; make clean
+	cd pfof_cone/src ; make clean
+	cd tools/conecreator/src ; make clean
+	cd tools/conegravcreator/src ; make clean
+	cd tools/conemapper/src ; make clean

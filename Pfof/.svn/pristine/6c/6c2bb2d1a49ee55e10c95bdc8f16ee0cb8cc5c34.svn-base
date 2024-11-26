@@ -1,0 +1,656 @@
+Module modreadcube
+
+  Use modconstant
+  Use modvariables
+  Use modutils
+  Implicit None
+
+Contains
+
+  !=======================================================================
+  !> This subroutine reads hdf5 cube files created by pFOF.
+  Subroutine h5readcube()
+
+    Use modhdf5
+    Use modparameters
+    Use modmpicom
+
+
+    Character(len=400) :: filename                          ! File name
+    Integer(hid_t) :: file_id                               ! File identifier
+    Integer(hid_t) :: gr_root_id                            ! Group identifier
+    Character(len=5)  :: pid_char
+    Character(len=16) :: aname                              ! Attribute name
+    Character(len=16) :: dsetname                           ! Dataset name
+    Character(len=16) :: groupname
+    Real(kind=4), dimension(6) :: boundaries
+    Integer(kind=4) :: potattr
+    Integer(kind=4) :: forattr
+
+#ifdef DEBUG
+    Print *,"Enter h5readcube on process ",procID
+#endif
+
+    Write(pid_char(1:5),'(I5.5)') procID
+    filename = trim(output_root)//'_cube_'//pid_char//'.h5'
+
+    Print *,'filename : ', filename
+    ! open the file
+    Call hdf5_open_file(filename, file_id)
+
+
+    ! open the root group
+    groupname = '/'
+    Call hdf5_open_group(file_id,groupname, gr_root_id)
+
+    ! read attribute partNB
+    aname = 'partNB'
+    Call hdf5_read_attr(gr_root_id, aname, mynpart)
+
+    ! read attribute nres
+    aname = 'nres'
+    Call hdf5_read_attr(gr_root_id, aname, nres)
+
+    ngrid = int(nres,kind=8)**3
+    npart = ngrid
+
+    ! read attribute boundaries
+    aname = 'boundaries'
+    Call hdf5_read_attr(gr_root_id, aname, 6, boundaries)
+
+    xmin=boundaries(1)
+    xmax=boundaries(2)
+    ymin=boundaries(3)
+    ymax=boundaries(4)
+    zmin=boundaries(5)
+    zmax=boundaries(6)
+
+    potattr=0
+    ! if requested, try to read the potential attribute
+    If(potential) Then
+       aname = 'potential'
+       Call hdf5_read_attr(gr_root_id, aname, potattr)
+       If(potattr==0) Then ! potential is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The potential was not written in the cube files used for this analysis.'
+             Print *,'You should change the potential parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Potential missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(pot)) Allocate(pot(mynpart))
+       dsetname = 'pot'
+       Call hdf5_read_data(gr_root_id, dsetname, mynpart, pot)
+    End If
+
+    forattr=0
+    ! if requested, try to read the force attribute
+    If(force) Then
+       aname = 'force'
+       Call hdf5_read_attr(gr_root_id, aname, forattr)
+       If(forattr==0) Then ! force is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The force was not written in the cube files used for this analysis.'
+             Print *,'You should change the force parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Force missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(for)) Allocate(for(3,mynpart))
+       dsetname = 'for'
+       Call hdf5_read_data(gr_root_id, dsetname, 3, mynpart, for)
+    End If
+
+    If(.not.Allocated(id)) Allocate(id(mynpart))
+    If(.not.Allocated(pos))  Allocate(pos(3,mynpart))
+    If(.not.Allocated(vel))  Allocate(vel(3,mynpart))
+
+    ! read position of the particles
+    dsetname = 'pos'
+    Call hdf5_read_data(gr_root_id, dsetname, 3, mynpart, pos)
+
+    ! read velocity of the particles
+    dsetname = 'vel'
+    Call hdf5_read_data(gr_root_id, dsetname, 3, mynpart, vel)
+
+    ! read id of the particles
+    dsetname = 'ID'
+    Call hdf5_read_data(gr_root_id, dsetname, mynpart, id)
+
+
+    ! Close the root group.
+    Call hdf5_close_group(gr_root_id)
+
+    Call hdf5_close_file(file_id)
+
+
+#ifdef DEBUG
+    Print *,"Exit h5readcube on process ",procID
+#endif
+
+  End Subroutine h5readcube
+
+
+  !=======================================================================
+ 
+  Subroutine mpih5readcube()
+    
+    Use modhdf5
+    Use modparameters
+    Use modmpicom
+    Implicit none
+
+    Character(len=400) :: filecube
+    Character(len=5)  :: pid_char
+
+    Character(len=16) :: dsetname                           ! Dataset name
+    Character(len=16) :: aname                              ! Attribute name
+    Character(len=16) :: groupname
+
+    Integer(hid_t) :: file_id                               ! File identifier
+    Integer(hid_t) :: gr_root_id                            ! Group identifier
+    
+    Integer(kind=4) :: procperfile
+    Integer(kind=4), dimension(:), allocatable :: partnb_tab
+    Integer(kind=4) :: potattr
+    Integer(kind=4) :: forattr
+
+    Real(kind=4), dimension(:,:), allocatable :: bound_tab
+
+    
+#ifdef DEBUG
+    Print *,"Enter mpih5readcube on process ",procID
+#endif    
+    
+    ! number of processes writing in the same file
+    procperfile = gatherread**3
+    
+    Allocate(partnb_tab(procperfile))
+    Allocate(bound_tab(6,procperfile))
+        
+    Write(pid_char(1:5),'(I5.5)') commcolorRead
+    filecube = trim(output_root)//'_mpicube_'//pid_char//'.h5'
+
+    Call hdf5_open_mpi_file(filecube, MpiSubCubeRead, file_id)
+
+     ! open the root group
+    groupname = '/'
+    Call hdf5_open_group(file_id,groupname, gr_root_id)
+    ! read attribute partNB
+    aname = 'nres'
+    Call hdf5_read_attr(gr_root_id, aname, nres)
+
+#ifdef DEBUG
+    Print *,"Value of nres read = ",nres, " on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif
+
+    ngrid = int(nres,kind=8)**3
+    npart = ngrid
+    
+    ! read attribute partNB
+    aname = 'partNB_tab'
+    Call hdf5_read_attr(gr_root_id, aname, 6, partnb_tab)
+
+#ifdef DEBUG
+    Print *,"partNB_tab read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+    mynpart = partnb_tab(scprocIDRead+1)
+
+    ! read attribute boundaries
+    aname = 'boundaries_tab'
+    Call hdf5_read_attr(gr_root_id, aname, 6, procperfile, bound_tab)
+
+#ifdef DEBUG
+    Print *,"boundaries_tab read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+
+    xmin=bound_tab(1,scprocIDRead+1)
+    xmax=bound_tab(2,scprocIDRead+1)
+    ymin=bound_tab(3,scprocIDRead+1)
+    ymax=bound_tab(4,scprocIDRead+1)
+    zmin=bound_tab(5,scprocIDRead+1)
+    zmax=bound_tab(6,scprocIDRead+1)
+
+    potattr=0
+    ! if requested, try to read the potential attribute
+    If(potential) Then
+       aname = 'potential'
+       Call hdf5_read_attr(gr_root_id, aname, potattr)
+       If(potattr==0) Then ! potential is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The potential was not written in the cube files used for this analysis.'
+             Print *,'You should change the potential parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Potential missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(pot)) Allocate(pot(mynpart))
+       dsetname = 'pot'
+       Call hdf5_read_mpi_data(gr_root_id, dsetname, mynpart, pot, MpiSubCubeRead)
+    End If
+
+    forattr=0
+    ! if requested, try to read the force attribute
+    If(force) Then
+       aname = 'force'
+       Call hdf5_read_attr(gr_root_id, aname, forattr)
+       If(forattr==0) Then ! force is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The force was not written in the cube files used for this analysis.'
+             Print *,'You should change the force parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Force missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(for)) Allocate(for(3,mynpart))
+       dsetname = 'for'
+       Call hdf5_read_mpi_data(gr_root_id, dsetname, 3, mynpart, for, MpiSubCubeRead)
+    End If
+
+    If(.not.Allocated(id)) Allocate(id(mynpart))
+    If(.not.Allocated(pos))  Allocate(pos(3,mynpart))
+    If(.not.Allocated(vel))  Allocate(vel(3,mynpart))
+    
+    dsetname = 'pos'
+    Call hdf5_read_mpi_data(gr_root_id, dsetname, 3, mynpart, pos, MpiSubCubeRead)
+
+#ifdef DEBUG
+    Print *,"pos read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+    dsetname = 'vel'
+    Call hdf5_read_mpi_data(gr_root_id, dsetname, 3, mynpart, vel, MpiSubCubeRead)
+
+#ifdef DEBUG
+    Print *,"vel read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+    dsetname = 'ID'
+    Call hdf5_read_mpi_data(gr_root_id, dsetname, mynpart, id, MpiSubCubeRead)
+
+#ifdef DEBUG
+    Print *,"ID read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+  
+    ! Close the root group.
+    Call hdf5_close_group(gr_root_id)
+
+    Call hdf5_close_file(file_id)
+    
+    Deallocate(partnb_tab)
+    Deallocate(bound_tab)
+
+
+#ifdef DEBUG
+    Print *,"Exit mpih5readcube on process ",procID
+#endif    
+    
+    
+  End Subroutine mpih5readcube
+
+
+  !=======================================================================
+  !> This subroutine reads hdf5 sorted cube files created by pFOF.
+  Subroutine h5readsortedcube()
+
+    Use modhdf5
+    Use modparameters
+    Use modmpicom
+
+
+    Character(len=400) :: filename                          ! File name
+    Integer(hid_t) :: file_id                               ! File identifier
+    Integer(hid_t) :: gr_root_id                            ! Group identifier
+    Integer(hid_t) :: gr_id                                 ! Group identifier
+    Character(len=5)  :: pid_char
+    Character(len=8)  :: gid_char
+    Character(len=16) :: aname                              ! Attribute name
+    Character(len=16) :: dsetname                           ! Dataset name
+    Character(len=16) :: groupname
+    Real(kind=4), dimension(6) :: boundaries
+    Integer(kind=4) :: potattr
+    Integer(kind=4) :: forattr
+    Integer(kind=4) :: ngroup
+    Integer(kind=4), dimension(:), allocatable :: npartpergroup
+    Integer(kind=4) :: igroup
+    Integer(kind=4) :: indbeg, indend
+
+#ifdef DEBUG
+    Print *,"Enter h5readsortedcube on process ",procID
+#endif
+
+    Write(pid_char(1:5),'(I5.5)') procID
+    filename = trim(output_root)//'_sortedcube_'//pid_char//'.h5'
+
+    ! open the file
+    Call hdf5_open_file(filename, file_id)
+
+    ! open the root group
+    groupname = '/'
+    Call hdf5_open_group(file_id,groupname, gr_root_id)
+
+    ! read attribute partNB
+    aname = 'partNB'
+    Call hdf5_read_attr(gr_root_id, aname, mynpart)
+
+    ! read attribute nres
+    aname = 'nres'
+    Call hdf5_read_attr(gr_root_id, aname, nres)
+
+    ngrid = int(nres,kind=8)**3
+    npart = ngrid
+
+    ! read attribute boundaries
+    aname = 'boundaries'
+    Call hdf5_read_attr(gr_root_id, aname, 6, boundaries)
+
+    xmin=boundaries(1)
+    xmax=boundaries(2)
+    ymin=boundaries(3)
+    ymax=boundaries(4)
+    zmin=boundaries(5)
+    zmax=boundaries(6)
+
+    ! read attribute ngroup
+    aname = 'ngroup'
+    Call hdf5_read_attr(gr_root_id, aname, ngroup)
+
+    Allocate(npartpergroup(ngroup))
+    aname = 'npartpergroup'
+    Call hdf5_read_data(gr_root_id, aname, ngroup, npartpergroup)
+
+    potattr=0
+    ! if requested, try to read the potential attribute
+    If(potential) Then
+       aname = 'potential'
+       Call hdf5_read_attr(gr_root_id, aname, potattr)
+       If(potattr==0) Then ! potential is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The potential was not written in the cube files used for this analysis.'
+             Print *,'You should change the potential parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Potential missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(pot)) Allocate(pot(mynpart))
+    End If
+
+    forattr=0
+    ! if requested, try to read the potential attribute
+    If(force) Then
+       aname = 'force'
+       Call hdf5_read_attr(gr_root_id, aname, forattr)
+       If(forattr==0) Then ! force is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The force was not written in the cube files used for this analysis.'
+             Print *,'You should change the force parameter to false.'
+          End If
+          Call EmergencyStop(procID,'force missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(for)) Allocate(for(3,mynpart))
+    End If
+
+    If(.not.Allocated(id)) Allocate(id(mynpart))
+    If(.not.Allocated(pos))  Allocate(pos(3,mynpart))
+    If(.not.Allocated(vel))  Allocate(vel(3,mynpart))
+
+    indbeg = 1
+    indend = 0
+    ! loop over the groups
+    Do igroup=1, ngroup
+       If(npartpergroup(igroup) /= 0) Then ! there is at least one part. to read in this group
+          Write(gid_char(1:8),'(I8.8)') igroup
+          groupname='group'//gid_char
+          Call hdf5_open_group(gr_root_id,groupname,gr_id)
+          
+          indend = indbeg + npartpergroup(igroup) - 1
+          ! read position of the particles
+          dsetname = 'pos'
+          Call hdf5_read_data(gr_id, dsetname, 3, mynpart, pos(:,indbeg:indend))
+          
+          ! read velocity of the particles
+          dsetname = 'vel'
+          Call hdf5_read_data(gr_id, dsetname, 3, mynpart, vel(:,indbeg:indend))
+          
+          ! read id of the particles
+          dsetname = 'ID'
+          Call hdf5_read_data(gr_id, dsetname, mynpart, id(indbeg:indend))
+          
+          ! read potential if requested
+          If(potential) Then
+             dsetname = 'pot'
+             Call hdf5_read_data(gr_id, dsetname, mynpart, pot(indbeg:indend))
+          End If
+
+          ! read force if requested
+          If(force) Then
+             dsetname = 'for'
+             Call hdf5_read_data(gr_id, dsetname, 3, mynpart, for(:,indbeg:indend))
+          End If
+          
+          indbeg = indend + 1
+
+          Call hdf5_close_group(gr_id)
+       End If
+    End Do
+
+    If(indend /= mynpart) Then
+       Print *,'Error while reading particles from file ',filename
+       Call EmergencyStop(procID,'Error in h5readsortedcube',100)
+    End If
+
+    ! Close the root group.
+    Call hdf5_close_group(gr_root_id)
+
+    Call hdf5_close_file(file_id)
+
+    Deallocate(npartpergroup)
+
+#ifdef DEBUG
+    Print *,"Exit h5readsortedcube on process ",procID
+#endif
+
+  End Subroutine h5readsortedcube
+
+
+  !=======================================================================
+  Subroutine mpih5readsortedcube()
+    
+    Use modhdf5
+    Use modparameters
+    Use modmpicom
+    Implicit none
+
+    Character(len=400) :: filecube
+    Character(len=5)  :: pid_char
+    Character(len=8)  :: gid_char
+
+    Character(len=16) :: dsetname                           ! Dataset name
+    Character(len=16) :: aname                              ! Attribute name
+    Character(len=16) :: groupname
+
+    Integer(hid_t) :: file_id                               ! File identifier
+    Integer(hid_t) :: gr_root_id                            ! Group identifier
+    Integer(hid_t) :: gr_id                                 ! Group identifier
+    
+    Integer(kind=4) :: procperfile
+    Integer(kind=4), dimension(:), allocatable :: partnb_tab
+    Integer(kind=4) :: potattr
+    Integer(kind=4) :: forattr
+    Integer(kind=4) :: igroup, firstgroup, lastgroup
+    Integer(kind=4) :: indbeg, indend
+    Integer(kind=4) :: nc, ngroup
+    
+    Integer(kind=4), dimension(:), allocatable :: npartpergroup
+
+    Real(kind=4), dimension(:,:), allocatable :: bound_tab
+
+    
+#ifdef DEBUG
+    Print *,"Enter mpih5readsortedcube on process ",procID
+#endif    
+    
+    ! number of processes reading in the same file
+    procperfile = gatherread**3
+    
+    Allocate(partnb_tab(procperfile))
+    Allocate(bound_tab(6,procperfile))
+        
+    Write(pid_char(1:5),'(I5.5)') commcolorRead
+    filecube = trim(output_root)//'_mpisortedcube_'//pid_char//'.h5'
+
+    ! we open the file for a serial read
+    Call hdf5_open_file(filecube, file_id)
+
+     ! open the root group
+    groupname = '/'
+    Call hdf5_open_group(file_id,groupname, gr_root_id)
+    ! read attribute partNB
+    aname = 'nres'
+    Call hdf5_read_attr(gr_root_id, aname, nres)
+
+#ifdef DEBUG
+    Print *,"Value of nres read = ",nres, " on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif
+
+    ngrid = int(nres,kind=8)**3
+    npart = ngrid
+    
+    ! read attribute partNB
+    aname = 'partNB_tab'
+    Call hdf5_read_attr(gr_root_id, aname, 6, partnb_tab)
+
+#ifdef DEBUG
+    Print *,"partNB_tab read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+    mynpart = partnb_tab(scprocIDRead+1)
+
+    ! read attribute boundaries
+    aname = 'boundaries_tab'
+    Call hdf5_read_attr(gr_root_id, aname, 6, procperfile, bound_tab)
+
+#ifdef DEBUG
+    Print *,"boundaries_tab read on process ",procID
+    Call Mpi_Barrier(Mpi_Comm_World, mpierr)
+#endif    
+
+    xmin=bound_tab(1,scprocIDRead+1)
+    xmax=bound_tab(2,scprocIDRead+1)
+    ymin=bound_tab(3,scprocIDRead+1)
+    ymax=bound_tab(4,scprocIDRead+1)
+    zmin=bound_tab(5,scprocIDRead+1)
+    zmax=bound_tab(6,scprocIDRead+1)
+
+    ! read attribute ngroup
+    aname = 'ngroup'
+    Call hdf5_read_attr(gr_root_id, aname, ngroup)
+
+    Allocate(npartpergroup(ngroup))
+    aname = 'npartpergroup'
+    Call hdf5_read_data(gr_root_id, aname, ngroup, npartpergroup)
+
+    nc = ngroup / procperfile
+    firstgroup = nc * scprocIDRead + 1
+    lastgroup  = nc *(scprocIDRead+1)
+
+    potattr=0
+    ! if requested, try to read the potential attribute
+    If(potential) Then
+       aname = 'potential'
+       Call hdf5_read_attr(gr_root_id, aname, potattr)
+       If(potattr==0) Then ! potential is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The potential was not written in the cube files used for this analysis.'
+             Print *,'You should change the potential parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Potential missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(pot)) Allocate(pot(mynpart))
+    End If
+
+    forattr=0
+    ! if requested, try to read the force attribute
+    If(force) Then
+       aname = 'force'
+       Call hdf5_read_attr(gr_root_id, aname, forattr)
+       If(forattr==0) Then ! force is asked by the user but not found in the cube file: abort
+          If(procID==0) Then
+             Print *,'The force was not written in the cube files used for this analysis.'
+             Print *,'You should change the force parameter to false.'
+          End If
+          Call EmergencyStop(procID,'Force missing in the cube files: abort.',100)
+       End If
+       If(.not.Allocated(for)) Allocate(for(3,mynpart))
+    End If
+
+    If(.not.Allocated(id)) Allocate(id(mynpart))
+    If(.not.Allocated(pos))  Allocate(pos(3,mynpart))
+    If(.not.Allocated(vel))  Allocate(vel(3,mynpart))
+
+
+
+    indbeg = 1
+    indend = 0
+    ! loop over the groups
+    Do igroup=firstgroup, lastgroup
+       If(npartpergroup(igroup) /= 0) Then ! there is at least one part. to read in this group
+          Write(gid_char(1:8),'(I8.8)') igroup
+          groupname='group'//gid_char
+          Call hdf5_open_group(gr_root_id,groupname,gr_id)
+          
+          indend = indbeg + npartpergroup(igroup) - 1
+          ! read position of the particles
+          dsetname = 'pos'
+          Call hdf5_read_data(gr_id, dsetname, 3, mynpart, pos(:,indbeg:indend))
+          
+          ! read velocity of the particles
+          dsetname = 'vel'
+          Call hdf5_read_data(gr_id, dsetname, 3, mynpart, vel(:,indbeg:indend))
+          
+          ! read id of the particles
+          dsetname = 'ID'
+          Call hdf5_read_data(gr_id, dsetname, mynpart, id(indbeg:indend))
+          
+          ! read potential if requested
+          If(potential) Then
+             dsetname = 'pot'
+             Call hdf5_read_data(gr_id, dsetname, mynpart, pot(indbeg:indend))
+          End If
+
+          ! read force if requested
+          If(force) Then
+             dsetname = 'for'
+             Call hdf5_read_data(gr_id, dsetname, 3, mynpart, for(:,indbeg:indend))
+          End If
+          
+          indbeg = indend + 1
+
+          Call hdf5_close_group(gr_id)
+       End If
+    End Do
+
+
+    ! Close the root group.
+    Call hdf5_close_group(gr_root_id)
+
+    Call hdf5_close_file(file_id)
+    
+    Deallocate(partnb_tab)
+    Deallocate(bound_tab)
+
+
+#ifdef DEBUG
+    Print *,"Exit mpih5readsortedcube on process ",procID
+#endif    
+    
+    
+  End Subroutine mpih5readsortedcube
+
+
+End Module modreadcube

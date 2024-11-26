@@ -1,0 +1,66 @@
+Module modzcurve
+
+  Implicit none
+  Integer(4), dimension(9), parameter :: patternI=(/0,3,6,9 ,12,15,18,21,24/)
+  Integer(4), dimension(9), parameter :: patternJ=(/1,4,7,10,13,16,19,22,25/)
+  Integer(4), dimension(9), parameter :: patternK=(/2,5,8,11,14,17,20,23,26/)
+
+
+Contains
+
+  Subroutine coord2zcurve(i, j, k, zind)
+
+    Implicit none
+    Integer(kind=4), intent(in) :: i, j, k
+    Integer(kind=8), intent(out) :: zind
+
+    Integer(kind=4) :: ib
+    Integer(kind=4) :: is, js, ks
+
+    is = 0
+    js = 0
+    ks = 0
+
+    Do ib = 0, 9
+       Call mvbits(i,ib,1,is,3*ib)
+       Call mvbits(j,ib,1,js,3*ib+1)
+       Call mvbits(k,ib,1,ks,3*ib+2)
+    End Do
+  
+    zind = is + js + ks
+    
+  End Subroutine coord2zcurve
+
+
+  Subroutine zcurve2coord(zind, i, j, k)
+
+    Implicit none
+    Integer(kind=8), intent(in) :: zind
+    Integer(kind=4), intent(out) :: i, j, k
+
+    Integer(kind=4), dimension(3,9) :: bittab
+    Integer(kind=4) :: pos
+    Integer(kind=4) :: ib
+
+    bittab(1,:) = ibits(zind,patternI,1)
+    bittab(2,:) = ibits(zind,patternJ,1)
+    bittab(3,:) = ibits(zind,patternK,1)
+
+    Do ib = 1, 9
+       If(bittab(1,ib)>0) Then
+          pos = patternI(ib) / 3
+          i = ibset( i, pos )
+       End If
+       If(bittab(2,ib)>0) then
+          pos = patternJ(ib) / 3
+          j = ibset( j, pos )
+       End If
+       If(bittab(3,ib)>0) then
+          pos = patternK(ib) / 3
+          k = ibset( k, pos)
+       End If
+    End Do
+
+  End Subroutine zcurve2coord
+
+End Module modzcurve

@@ -1,0 +1,941 @@
+\hypertarget{classmodio}{\section{modio Module Reference}
+\label{classmodio}\index{modio@{modio}}
+}
+
+
+This module contains subroutines used for I/\-O. Authors\-: F. Roy, V. Bouillot.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodio_a90c33edbc534da99fc29b95e36133d18}{title} ()
+\item 
+subroutine, public \hyperlink{classmodio_add45280540db1513b0ec12d80d94481d}{readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\-\_\-snap.\-nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_a8a43ba0374a36e27ff444cb286703135}{print\-\_\-screen\-\_\-parameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes the input parameters in a .nml file, print them on screen and writes them in the .log file. It should be called only from process 0. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_a4ae2c63c80099d6d657525db263669b4}{writetimings} ()
+\begin{DoxyCompactList}\small\item\em This subroutine writes timings in the log file and prints them on screen. It should be called only by process 0. It also closes the log file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_ace8fcccb287d2dd5f356ec1ef317aa61}{ramses\-\_\-lecture} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles files created by R\-A\-M\-S\-E\-S that p\-F\-O\-F has to analyze. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_a90c33edbc534da99fc29b95e36133d18}{title} ()
+\item 
+subroutine, public \hyperlink{classmodio_add45280540db1513b0ec12d80d94481d}{readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_a39ae1a37db7810874544f24f5e481e75}{h5readshellinfo} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_ab1437ccb79bbe8815d8fbc76860c18d2}{h5readmap} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the map file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodio_a7958a19d4d9ca80051c50762faa5da83}{h5readparticles} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles from the shell files. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}{readparameters}
+\item 
+subroutine \hyperlink{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}{retrievefilelist} ()
+\item 
+subroutine \hyperlink{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}{readramsesfiles} ()
+\item 
+subroutine \hyperlink{classmodio_ac8d9a9aea4bf8df27247c29c816df78c}{readconehdr} (file, \hyperlink{classmodio_a0bf1df6ff1e675aabce26f3d7289a700}{npartloc})
+\item 
+subroutine \hyperlink{classmodio_a15ba57a85caae734e0b917de58988acd}{readconedat} (file, ifile)
+\item 
+subroutine \hyperlink{classmodio_a756eae4b92791daadf54d68094c44c8b}{h5writecone} ()
+\item 
+subroutine \hyperlink{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}{readparameters}
+\item 
+subroutine \hyperlink{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}{retrievefilelist} ()
+\item 
+subroutine \hyperlink{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}{readramsesfiles} ()
+\item 
+subroutine \hyperlink{classmodio_a781355181afb550bcc570313df840da4}{readconegravhdr} (file, \hyperlink{classmodio_a1c862995bd67ce8f4a3305dad6022064}{ncellloc})
+\item 
+subroutine \hyperlink{classmodio_a5ac9b7de3c680868d2114731e0dd67f2}{readconegravdat} (file, ifile)
+\item 
+subroutine \hyperlink{classmodio_a25a01a0565ebacb543ff8a55b5a51351}{h5writeconegrav} ()
+\item 
+subroutine \hyperlink{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{h5readshellinfo} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then perform a reduction to get the total number of particles for each cubic group. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodio_acea0b6ec3974ee8b8e31264ce9002d89}{h5writemap} (factor, proc\-N\-B, dims)
+\begin{DoxyCompactList}\small\item\em This subroutine writes a map for pfof\-\_\-cone, this map contains the id of the shell cubes and the proc\-I\-D of the neighbours for each pfof\-\_\-cone process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{classmodio_a62b213d7b9f52071f903b877ee52c86b}{ioerr}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodio_a4a7b05300378789a7f94a217ba703153}{nparttab}
+\item 
+integer(kind=4) \hyperlink{classmodio_a0bf1df6ff1e675aabce26f3d7289a700}{npartloc}
+\item 
+character(len=200), dimension(\-:), \\*
+allocatable \hyperlink{classmodio_a31e8a393faa96e92df4d56794cd2eadd}{filelist}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodio_a0a0852674d63f2d9f6c23969d3f7016c}{ncelltab}
+\item 
+integer(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodio_a541838a88faeed3af974f875bd73ee00}{ncellperleveltab}
+\item 
+integer(kind=4) \hyperlink{classmodio_a1c862995bd67ce8f4a3305dad6022064}{ncellloc}
+\item 
+integer(kind=4) \hyperlink{classmodio_a6661d8a6f911c13b15cebca52e76b6fc}{nstride}
+\item 
+character(len=50) \hyperlink{classmodio_a12ada16137589f81ccc218e3b77f25c6}{origin}
+\item 
+integer(kind=4) \hyperlink{classmodio_a2eee1b20e9f6d0c4ab4e219d76aefc9a}{first\-\_\-file}
+\item 
+integer(kind=4) \hyperlink{classmodio_a3e203a61ede6084d5dd96d438500b155}{last\-\_\-file}
+\item 
+integer \hyperlink{classmodio_aea2235cb150c2f86e8564ce3d2e606a1}{ioerr}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines used for I/\-O. Authors\-: F. Roy, V. Bouillot. 
+
+This module contains the subroutines and common variables used for I/\-O in p\-Fo\-F\-\_\-cone.
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 6 of file modio.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodio_ab1437ccb79bbe8815d8fbc76860c18d2}{\index{modio@{modio}!h5readmap@{h5readmap}}
+\index{h5readmap@{h5readmap}!modio@{modio}}
+\subsubsection[{h5readmap}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::h5readmap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_ab1437ccb79bbe8815d8fbc76860c18d2}
+
+
+This subroutine reads the map file. 
+
+
+
+Definition at line 242 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), modhdf5\-::hdf5\-\_\-open\-\_\-group(), and modmpicom\-::settopology().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classmodio_ab1437ccb79bbe8815d8fbc76860c18d2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodio_ab1437ccb79bbe8815d8fbc76860c18d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a7958a19d4d9ca80051c50762faa5da83}{\index{modio@{modio}!h5readparticles@{h5readparticles}}
+\index{h5readparticles@{h5readparticles}!modio@{modio}}
+\subsubsection[{h5readparticles}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::h5readparticles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a7958a19d4d9ca80051c50762faa5da83}
+
+
+This subroutine reads the particles from the shell files. 
+
+
+
+Definition at line 308 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a7958a19d4d9ca80051c50762faa5da83_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classmodio_a7958a19d4d9ca80051c50762faa5da83_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a39ae1a37db7810874544f24f5e481e75}{\index{modio@{modio}!h5readshellinfo@{h5readshellinfo}}
+\index{h5readshellinfo@{h5readshellinfo}!modio@{modio}}
+\subsubsection[{h5readshellinfo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::h5readshellinfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a39ae1a37db7810874544f24f5e481e75}
+
+
+This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. 
+
+
+
+Definition at line 109 of file modio.\-f90.
+
+
+
+References modiocommons\-::h5read\-\_\-meta\-\_\-common(), modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-ramses(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a39ae1a37db7810874544f24f5e481e75_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classmodio_a39ae1a37db7810874544f24f5e481e75_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{\index{modio@{modio}!h5readshellinfo@{h5readshellinfo}}
+\index{h5readshellinfo@{h5readshellinfo}!modio@{modio}}
+\subsubsection[{h5readshellinfo}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5readshellinfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}
+
+
+This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then perform a reduction to get the total number of particles for each cubic group. 
+
+
+
+Definition at line 45 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a756eae4b92791daadf54d68094c44c8b}{\index{modio@{modio}!h5writecone@{h5writecone}}
+\index{h5writecone@{h5writecone}!modio@{modio}}
+\subsubsection[{h5writecone}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5writecone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a756eae4b92791daadf54d68094c44c8b}
+
+
+Definition at line 343 of file modio.\-f90.
+
+
+
+References modiocommons\-::h5write\-\_\-meta\-\_\-common(), modiocommons\-::h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-ramses(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-close\-\_\-mpi\-\_\-file(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-mpi\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a756eae4b92791daadf54d68094c44c8b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classmodio_a756eae4b92791daadf54d68094c44c8b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a25a01a0565ebacb543ff8a55b5a51351}{\index{modio@{modio}!h5writeconegrav@{h5writeconegrav}}
+\index{h5writeconegrav@{h5writeconegrav}!modio@{modio}}
+\subsubsection[{h5writeconegrav}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5writeconegrav (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a25a01a0565ebacb543ff8a55b5a51351}
+
+
+Definition at line 342 of file modio.\-f90.
+
+
+
+References modiocommons\-::h5write\-\_\-meta\-\_\-common(), modiocommons\-::h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-ramses(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-close\-\_\-mpi\-\_\-file(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-create\-\_\-mpi\-\_\-file().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a25a01a0565ebacb543ff8a55b5a51351_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{classmodio_a25a01a0565ebacb543ff8a55b5a51351_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_acea0b6ec3974ee8b8e31264ce9002d89}{\index{modio@{modio}!h5writemap@{h5writemap}}
+\index{h5writemap@{h5writemap}!modio@{modio}}
+\subsubsection[{h5writemap}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::h5writemap (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{factor, }
+\item[{integer(kind=4), intent(in)}]{proc\-N\-B, }
+\item[{integer(kind=4), dimension(3), intent(in)}]{dims}
+\end{DoxyParamCaption}
+)}}\label{classmodio_acea0b6ec3974ee8b8e31264ce9002d89}
+
+
+This subroutine writes a map for pfof\-\_\-cone, this map contains the id of the shell cubes and the proc\-I\-D of the neighbours for each pfof\-\_\-cone process. 
+
+
+
+Definition at line 131 of file modio.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-file(), and modhdf5\-::hdf5\-\_\-create\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_acea0b6ec3974ee8b8e31264ce9002d89_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_acea0b6ec3974ee8b8e31264ce9002d89_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a8a43ba0374a36e27ff444cb286703135}{\index{modio@{modio}!print\-\_\-screen\-\_\-parameters@{print\-\_\-screen\-\_\-parameters}}
+\index{print\-\_\-screen\-\_\-parameters@{print\-\_\-screen\-\_\-parameters}!modio@{modio}}
+\subsubsection[{print\-\_\-screen\-\_\-parameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::print\-\_\-screen\-\_\-parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a8a43ba0374a36e27ff444cb286703135}
+
+
+This subroutine writes the input parameters in a .nml file, print them on screen and writes them in the .log file. It should be called only from process 0. 
+
+
+
+Definition at line 113 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classmodio_a8a43ba0374a36e27ff444cb286703135_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_ace8fcccb287d2dd5f356ec1ef317aa61}{\index{modio@{modio}!ramses\-\_\-lecture@{ramses\-\_\-lecture}}
+\index{ramses\-\_\-lecture@{ramses\-\_\-lecture}!modio@{modio}}
+\subsubsection[{ramses\-\_\-lecture}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::ramses\-\_\-lecture (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_ace8fcccb287d2dd5f356ec1ef317aa61}
+
+
+This subroutine reads the particles files created by R\-A\-M\-S\-E\-S that p\-F\-O\-F has to analyze. 
+
+
+
+Definition at line 221 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses(), modmpicommons\-::emergencystop(), and modreadinfo\-::readinforamses().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_ace8fcccb287d2dd5f356ec1ef317aa61_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodio_ace8fcccb287d2dd5f356ec1ef317aa61_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a15ba57a85caae734e0b917de58988acd}{\index{modio@{modio}!readconedat@{readconedat}}
+\index{readconedat@{readconedat}!modio@{modio}}
+\subsubsection[{readconedat}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readconedat (
+\begin{DoxyParamCaption}
+\item[{character(len=401), intent(in)}]{file, }
+\item[{integer(kind=4), intent(in)}]{ifile}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a15ba57a85caae734e0b917de58988acd}
+
+
+Definition at line 252 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a15ba57a85caae734e0b917de58988acd_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a5ac9b7de3c680868d2114731e0dd67f2}{\index{modio@{modio}!readconegravdat@{readconegravdat}}
+\index{readconegravdat@{readconegravdat}!modio@{modio}}
+\subsubsection[{readconegravdat}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readconegravdat (
+\begin{DoxyParamCaption}
+\item[{character(len=401), intent(in)}]{file, }
+\item[{integer(kind=4), intent(in)}]{ifile}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a5ac9b7de3c680868d2114731e0dd67f2}
+
+
+Definition at line 244 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a5ac9b7de3c680868d2114731e0dd67f2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a781355181afb550bcc570313df840da4}{\index{modio@{modio}!readconegravhdr@{readconegravhdr}}
+\index{readconegravhdr@{readconegravhdr}!modio@{modio}}
+\subsubsection[{readconegravhdr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readconegravhdr (
+\begin{DoxyParamCaption}
+\item[{character(len=401), intent(in)}]{file, }
+\item[{integer(kind=4), intent(out)}]{ncellloc}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a781355181afb550bcc570313df840da4}
+
+
+Definition at line 218 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a781355181afb550bcc570313df840da4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_ac8d9a9aea4bf8df27247c29c816df78c}{\index{modio@{modio}!readconehdr@{readconehdr}}
+\index{readconehdr@{readconehdr}!modio@{modio}}
+\subsubsection[{readconehdr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readconehdr (
+\begin{DoxyParamCaption}
+\item[{character(len=401), intent(in)}]{file, }
+\item[{integer(kind=4), intent(out)}]{npartloc}
+\end{DoxyParamCaption}
+)}}\label{classmodio_ac8d9a9aea4bf8df27247c29c816df78c}
+
+
+Definition at line 225 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_ac8d9a9aea4bf8df27247c29c816df78c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_add45280540db1513b0ec12d80d94481d}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_add45280540db1513b0ec12d80d94481d}
+
+
+This subroutine reads the input parameters from pfof\-\_\-snap.\-nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. 
+
+
+
+Definition at line 65 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-snap(), modmpicommons\-::emergencystop(), and modreadparameters\-::read\-\_\-pfof\-\_\-snap\-\_\-parameters().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_add45280540db1513b0ec12d80d94481d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{classmodio_add45280540db1513b0ec12d80d94481d_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}
+
+
+Definition at line 30 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-grav(), and retrievefilelist().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a3822b26d7d81e96e4c7e885466fd82e4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a3822b26d7d81e96e4c7e885466fd82e4}
+
+
+Definition at line 24 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-cone\-\_\-part(), and retrievefilelist().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a3822b26d7d81e96e4c7e885466fd82e4_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}
+
+
+This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. 
+
+
+
+Definition at line 18 of file modio.\-f90.
+
+
+
+References modreadparameters\-::read\-\_\-pfof\-\_\-cone\-\_\-parameters().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_add45280540db1513b0ec12d80d94481d}{\index{modio@{modio}!readparameters@{readparameters}}
+\index{readparameters@{readparameters}!modio@{modio}}
+\subsubsection[{readparameters}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::readparameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_add45280540db1513b0ec12d80d94481d}
+
+
+This subroutine reads the parameters from the file pfof\-\_\-cone.\-nml. 
+
+
+
+Definition at line 59 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-param\-\_\-pfof\-\_\-cone(), modmpicommons\-::emergencystop(), and modreadparameters\-::read\-\_\-pfof\-\_\-cone\-\_\-parameters().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_add45280540db1513b0ec12d80d94481d_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}{\index{modio@{modio}!readramsesfiles@{readramsesfiles}}
+\index{readramsesfiles@{readramsesfiles}!modio@{modio}}
+\subsubsection[{readramsesfiles}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readramsesfiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}
+
+
+Definition at line 131 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part(), modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses(), modmpicommons\-::emergencystop(), readconegravdat(), readconegravhdr(), modreadinfo\-::readinfoconegrav(), and modreadinfo\-::readinforamses().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a65b2a30853dd9ec7641c578cb220a3fe_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}{\index{modio@{modio}!readramsesfiles@{readramsesfiles}}
+\index{readramsesfiles@{readramsesfiles}!modio@{modio}}
+\subsubsection[{readramsesfiles}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::readramsesfiles (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a65b2a30853dd9ec7641c578cb220a3fe}
+
+
+Definition at line 137 of file modio.\-f90.
+
+
+
+References modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-cone\-\_\-part(), modmpicommons\-::create\-\_\-mpi\-\_\-type\-\_\-info\-\_\-ramses(), modmpicommons\-::emergencystop(), readconedat(), readconehdr(), modreadinfo\-::readinfoconepart(), and modreadinfo\-::readinforamses().
+
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodio_a65b2a30853dd9ec7641c578cb220a3fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{classmodio_a65b2a30853dd9ec7641c578cb220a3fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}{\index{modio@{modio}!retrievefilelist@{retrievefilelist}}
+\index{retrievefilelist@{retrievefilelist}!modio@{modio}}
+\subsubsection[{retrievefilelist}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::retrievefilelist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}
+
+
+Definition at line 104 of file modio.\-f90.
+
+\hypertarget{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}{\index{modio@{modio}!retrievefilelist@{retrievefilelist}}
+\index{retrievefilelist@{retrievefilelist}!modio@{modio}}
+\subsubsection[{retrievefilelist}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modio\-::retrievefilelist (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a49a42a212fba0853ef61f4f3360e6cb8}
+
+
+Definition at line 107 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classmodio_a49a42a212fba0853ef61f4f3360e6cb8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a90c33edbc534da99fc29b95e36133d18}{\index{modio@{modio}!title@{title}}
+\index{title@{title}!modio@{modio}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a90c33edbc534da99fc29b95e36133d18}
+
+
+Definition at line 28 of file modio.\-f90.
+
+\hypertarget{classmodio_a90c33edbc534da99fc29b95e36133d18}{\index{modio@{modio}!title@{title}}
+\index{title@{title}!modio@{modio}}
+\subsubsection[{title}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::title (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a90c33edbc534da99fc29b95e36133d18}
+
+
+Definition at line 28 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{classmodio_a90c33edbc534da99fc29b95e36133d18_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodio_a4ae2c63c80099d6d657525db263669b4}{\index{modio@{modio}!writetimings@{writetimings}}
+\index{writetimings@{writetimings}!modio@{modio}}
+\subsubsection[{writetimings}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modio\-::writetimings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodio_a4ae2c63c80099d6d657525db263669b4}
+
+
+This subroutine writes timings in the log file and prints them on screen. It should be called only by process 0. It also closes the log file. 
+
+
+
+Definition at line 163 of file modio.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{classmodio_a4ae2c63c80099d6d657525db263669b4_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodio_a31e8a393faa96e92df4d56794cd2eadd}{\index{modio@{modio}!filelist@{filelist}}
+\index{filelist@{filelist}!modio@{modio}}
+\subsubsection[{filelist}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200), dimension(\-:), allocatable modio\-::filelist}}\label{classmodio_a31e8a393faa96e92df4d56794cd2eadd}
+
+
+Definition at line 18 of file modio.\-f90.
+
+\hypertarget{classmodio_a2eee1b20e9f6d0c4ab4e219d76aefc9a}{\index{modio@{modio}!first\-\_\-file@{first\-\_\-file}}
+\index{first\-\_\-file@{first\-\_\-file}!modio@{modio}}
+\subsubsection[{first\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::first\-\_\-file}}\label{classmodio_a2eee1b20e9f6d0c4ab4e219d76aefc9a}
+
+
+Definition at line 23 of file modio.\-f90.
+
+\hypertarget{classmodio_a62b213d7b9f52071f903b877ee52c86b}{\index{modio@{modio}!ioerr@{ioerr}}
+\index{ioerr@{ioerr}!modio@{modio}}
+\subsubsection[{ioerr}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::ioerr}}\label{classmodio_a62b213d7b9f52071f903b877ee52c86b}
+
+
+Definition at line 18 of file modio.\-f90.
+
+\hypertarget{classmodio_aea2235cb150c2f86e8564ce3d2e606a1}{\index{modio@{modio}!ioerr@{ioerr}}
+\index{ioerr@{ioerr}!modio@{modio}}
+\subsubsection[{ioerr}]{\setlength{\rightskip}{0pt plus 5cm}integer modio\-::ioerr}}\label{classmodio_aea2235cb150c2f86e8564ce3d2e606a1}
+
+
+Definition at line 12 of file modio.\-f90.
+
+\hypertarget{classmodio_a3e203a61ede6084d5dd96d438500b155}{\index{modio@{modio}!last\-\_\-file@{last\-\_\-file}}
+\index{last\-\_\-file@{last\-\_\-file}!modio@{modio}}
+\subsubsection[{last\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::last\-\_\-file}}\label{classmodio_a3e203a61ede6084d5dd96d438500b155}
+
+
+Definition at line 24 of file modio.\-f90.
+
+\hypertarget{classmodio_a1c862995bd67ce8f4a3305dad6022064}{\index{modio@{modio}!ncellloc@{ncellloc}}
+\index{ncellloc@{ncellloc}!modio@{modio}}
+\subsubsection[{ncellloc}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::ncellloc}}\label{classmodio_a1c862995bd67ce8f4a3305dad6022064}
+
+
+Definition at line 17 of file modio.\-f90.
+
+\hypertarget{classmodio_a541838a88faeed3af974f875bd73ee00}{\index{modio@{modio}!ncellperleveltab@{ncellperleveltab}}
+\index{ncellperleveltab@{ncellperleveltab}!modio@{modio}}
+\subsubsection[{ncellperleveltab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:,\-:), allocatable modio\-::ncellperleveltab}}\label{classmodio_a541838a88faeed3af974f875bd73ee00}
+
+
+Definition at line 15 of file modio.\-f90.
+
+\hypertarget{classmodio_a0a0852674d63f2d9f6c23969d3f7016c}{\index{modio@{modio}!ncelltab@{ncelltab}}
+\index{ncelltab@{ncelltab}!modio@{modio}}
+\subsubsection[{ncelltab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modio\-::ncelltab}}\label{classmodio_a0a0852674d63f2d9f6c23969d3f7016c}
+
+
+Definition at line 14 of file modio.\-f90.
+
+\hypertarget{classmodio_a0bf1df6ff1e675aabce26f3d7289a700}{\index{modio@{modio}!npartloc@{npartloc}}
+\index{npartloc@{npartloc}!modio@{modio}}
+\subsubsection[{npartloc}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::npartloc}}\label{classmodio_a0bf1df6ff1e675aabce26f3d7289a700}
+
+
+Definition at line 16 of file modio.\-f90.
+
+\hypertarget{classmodio_a4a7b05300378789a7f94a217ba703153}{\index{modio@{modio}!nparttab@{nparttab}}
+\index{nparttab@{nparttab}!modio@{modio}}
+\subsubsection[{nparttab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modio\-::nparttab}}\label{classmodio_a4a7b05300378789a7f94a217ba703153}
+
+
+Definition at line 14 of file modio.\-f90.
+
+\hypertarget{classmodio_a6661d8a6f911c13b15cebca52e76b6fc}{\index{modio@{modio}!nstride@{nstride}}
+\index{nstride@{nstride}!modio@{modio}}
+\subsubsection[{nstride}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modio\-::nstride}}\label{classmodio_a6661d8a6f911c13b15cebca52e76b6fc}
+
+
+Definition at line 18 of file modio.\-f90.
+
+\hypertarget{classmodio_a12ada16137589f81ccc218e3b77f25c6}{\index{modio@{modio}!origin@{origin}}
+\index{origin@{origin}!modio@{modio}}
+\subsubsection[{origin}]{\setlength{\rightskip}{0pt plus 5cm}character(len=50) modio\-::origin}}\label{classmodio_a12ada16137589f81ccc218e3b77f25c6}
+
+
+Definition at line 20 of file modio.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/pfof\-\_\-snap/src/\hyperlink{pfof__snap_2src_2modio_8f90}{modio.\-f90}\end{DoxyCompactItemize}

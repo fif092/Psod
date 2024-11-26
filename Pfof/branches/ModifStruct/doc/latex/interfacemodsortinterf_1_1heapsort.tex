@@ -1,0 +1,347 @@
+\hypertarget{interfacemodsortinterf_1_1heapsort}{\section{modsortinterf\-:\-:heapsort Interface Reference}
+\label{interfacemodsortinterf_1_1heapsort}\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}}
+}
+
+
+Generic inteface used to sort arrays with heapsort algorithm.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a5cbbb5add647e60a3338d4d5aa5bc0c4}{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi} (n, tref, tx, tv, tid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_acf802a187b3156217c5189914fc3c5dc}{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi} (n, tref, tx, tv, tp, tid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a1b0496cffffd026ecd963c6c940f74c1}{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi} (n, tref, tx, tv, tf, tp, tid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a0ba1556a756726e4b7f9339970f089b1}{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi} (n, tref, tx, tv, tf, tid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a2660aea691c9178df3aa11af9a6cc8f3}{heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi} (n, tref, tx, tv, tid, trid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a495a6f6342a96d0bc2c5fcb731f0dd2f}{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi} (n, tref, tx, tv, tp, tid, trid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a002758c8edf00e36596148059c845a3b}{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi} (n, tref, tx, tv, tf, tp, tid, trid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodsortinterf_1_1heapsort_a10a0ffdd549dc88c7787c43899c321b0}{heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi} (n, tref, tx, tv, tf, tid, trid)
+\begin{DoxyCompactList}\small\item\em Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic inteface used to sort arrays with heapsort algorithm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em n} & Lenght of the arrays \\
+\hline
+\mbox{\tt in}  & {\em tref} & Reference array\-: this array will be sorted in increasing order, the other arrays will be sorted following this one \\
+\hline
+\mbox{\tt in}  & {\em \mbox{[}tx,tv,tid\mbox{]}} & Arrays to sort \\
+\hline
+\mbox{\tt in}  & {\em \mbox{[}tp,tf,trid\mbox{]}} & Optional arrays to sort \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file modsortinterf.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{interfacemodsortinterf_1_1heapsort_a5cbbb5add647e60a3338d4d5aa5bc0c4}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi}}
+\index{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a5cbbb5add647e60a3338d4d5aa5bc0c4}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 664 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_acf802a187b3156217c5189914fc3c5dc}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi}}
+\index{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_acf802a187b3156217c5189914fc3c5dc}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 494 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a495a6f6342a96d0bc2c5fcb731f0dd2f}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi}}
+\index{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-2x3r\-\_\-1xr\-\_\-2xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{trid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a495a6f6342a96d0bc2c5fcb731f0dd2f}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in,out}  & {\em trid} & ramses particle id array (for cone)\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1172 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a2660aea691c9178df3aa11af9a6cc8f3}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi}}
+\index{heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi@{heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-2x3r\-\_\-2xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{trid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a2660aea691c9178df3aa11af9a6cc8f3}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in,out}  & {\em trid} & ramses particle id array (for cone)\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1347 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a0ba1556a756726e4b7f9339970f089b1}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi}}
+\index{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a0ba1556a756726e4b7f9339970f089b1}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & gravitational field array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1003 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a1b0496cffffd026ecd963c6c940f74c1}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi}}
+\index{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-1xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a1b0496cffffd026ecd963c6c940f74c1}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & gravitational field array\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 825 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a002758c8edf00e36596148059c845a3b}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi}}
+\index{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-3x3r\-\_\-1xr\-\_\-2xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{real (kind=4), dimension($\ast$), intent(inout)}]{tp, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{trid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a002758c8edf00e36596148059c845a3b}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in,out}  & {\em trid} & ramses particle id array (for cone)\\
+\hline
+\mbox{\tt in,out}  & {\em tp} & potential array\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & gravitational field array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1513 of file modsortinterf.\-f90.
+
+\hypertarget{interfacemodsortinterf_1_1heapsort_a10a0ffdd549dc88c7787c43899c321b0}{\index{modsortinterf\-::heapsort@{modsortinterf\-::heapsort}!heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi}}
+\index{heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi@{heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi}!modsortinterf::heapsort@{modsortinterf\-::heapsort}}
+\subsubsection[{heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modsortinterf\-::heapsort\-::heapsort\-\_\-refi\-\_\-3x3r\-\_\-2xi (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{n, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tref, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tx, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tv, }
+\item[{real (kind=4), dimension(3,$\ast$), intent(inout)}]{tf, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{tid, }
+\item[{integer(kind=pri), dimension($\ast$), intent(inout)}]{trid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodsortinterf_1_1heapsort_a10a0ffdd549dc88c7787c43899c321b0}
+
+
+Heap sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tx} & positions array\\
+\hline
+\mbox{\tt in,out}  & {\em tv} & velocities array\\
+\hline
+\mbox{\tt in,out}  & {\em tref} & halo id array\\
+\hline
+\mbox{\tt in,out}  & {\em tid} & particle id array\\
+\hline
+\mbox{\tt in,out}  & {\em trid} & ramses particle id array (for cone)\\
+\hline
+\mbox{\tt in,out}  & {\em tf} & gravitational field array\\
+\hline
+\mbox{\tt in}  & {\em n} & length of the arrays \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1696 of file modsortinterf.\-f90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modsortinterf_8f90}{modsortinterf.\-f90}\end{DoxyCompactItemize}

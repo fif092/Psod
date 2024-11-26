@@ -1,0 +1,37 @@
+include ../../../Make.inc
+
+VPATH=../../../common/src:.
+
+EXE=haloreader
+
+SRC = modhdf5.f90 	\
+	modconstant.f90	\
+	modreadhalo.f90	\
+	haloreader.f90
+
+OBJ=$(SRC:%.f90=%.o)
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<  
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $< 
+
+all : $(EXE)
+
+$(EXE) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -o $(EXE) $(OBJ)  $(LDFLAGS)
+
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE)

@@ -1,0 +1,74 @@
+\hypertarget{namespacemodreadhalo}{}\section{modreadhalo Module Reference}
+\label{namespacemodreadhalo}\index{modreadhalo@{modreadhalo}}
+
+
+This module contains routines to read H\+D\+F5 halo files created with pfof and pfof\+\_\+cone.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}{h5readhalomass} (filename)
+\begin{DoxyCompactList}\small\item\em Reads a H\+D\+F5 halomass file created with pfof. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \hyperlink{namespacemodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}{pri} = 8
+\begin{DoxyCompactList}\small\item\em Precision used for ID; must match the value used to create the H\+D\+F5 file you are reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains routines to read H\+D\+F5 halo files created with pfof and pfof\+\_\+cone. 
+
+Authors\+: F. Roy 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modreadhalo@{modreadhalo}!h5readhalomass@{h5readhalomass}}
+\index{h5readhalomass@{h5readhalomass}!modreadhalo@{modreadhalo}}
+\subsubsection[{\texorpdfstring{h5readhalomass(filename)}{h5readhalomass(filename)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadhalo\+::h5readhalomass (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}{}\label{namespacemodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}
+
+
+Reads a H\+D\+F5 halomass file created with pfof. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & Name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file modreadhalo.\+f90.
+
+
+
+References modhdf5\+::hdf5\+\_\+close\+\_\+file(), and modhdf5\+::hdf5\+\_\+open\+\_\+file().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadhalo_a5e581ff805da170ad66cbd51e3b4967e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modreadhalo@{modreadhalo}!pri@{pri}}
+\index{pri@{pri}!modreadhalo@{modreadhalo}}
+\subsubsection[{\texorpdfstring{pri}{pri}}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter modreadhalo\+::pri = 8}\hypertarget{namespacemodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}{}\label{namespacemodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}
+
+
+Precision used for ID; must match the value used to create the H\+D\+F5 file you are reading. 
+
+
+
+Definition at line 10 of file modreadhalo.\+f90.
+

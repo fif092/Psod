@@ -1,0 +1,32 @@
+&inputparameters
+code_index = 'RA3'
+inputpath  = '/obs/roy/Cosmo/Data/output_00013'
+part_inputfile = 'part_00013.out'
+info_inputfile = 'info_00013.txt'
+grpsize = 00
+do_skip_star = .false.
+do_skip_metal = .false. 
+do_read_potential = .false.
+do_read_force = .false.
+do_read_from_cube = .false.
+gatherread_factor = 1
+/
+
+&fofparameters
+percolation_length = 0.20
+mmin = 100 
+mmax = 100000000
+do_fof = .true.
+do_unbinding = .false.
+do_subhalo = .false.
+/
+ 
+&outputparameters
+simulation_name = 'teststarlight'
+snapshot = 9
+do_write_cube = .true.
+gatherwrite_factor = 1
+do_sort_cube = .true.
+do_timings = .true.
+/
+

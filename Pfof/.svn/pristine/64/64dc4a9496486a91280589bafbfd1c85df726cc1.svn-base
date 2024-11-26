@@ -1,0 +1,72 @@
+WITHHDF5 = 0
+
+ifdef WITHHDF5
+MPIFC = h5pfc
+else
+MPIFC = mpiifort
+endif
+
+OPTS = -O2 -g  -Wall   -I/usr/local/include -cpp -DLONGINT  -fconvert=big-endian -fbacktrace
+LDFLAGS = -g
+
+VPATH = ../../common/src:.
+
+ifdef WITHHDF5
+SRC = modhdf5.f90 	\
+	modconst.f90	\
+	modvariable.f90	\
+	modtiming.f90	\
+	modparam.f90	\
+	modmpicom.f90	\
+	modxdmf.f90	\
+	modio.f90	\
+	modsort.f90	\
+	modfofpara.f90	\
+	fof.f90
+
+OBJ = $(SRC:%.f90=%.o)
+FCFLAGS = $(OPTS) -DWITHHDF5
+EXE = pfofhdf5
+
+else
+SRC = modconst.f90	\
+	modvariable.f90	\
+	modtiming.f90	\
+	modparam.f90	\
+	modmpicom.f90	\
+	modxdmf.f90	\
+	modio.f90	\
+	modsort.f90	\
+	modfofpara.f90	\
+	fof.f90
+
+OBJS = $(SRC:%.f90=%.o)
+FCFLAGS = $(OPTS)
+EXE = pfof
+endif
+
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<  
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $< 
+
+all : $(EXE)
+
+$(EXE) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -o $(EXE) $(OBJ)  $(LDFLAGS)
+	svnversion > pfof.version
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE)
+

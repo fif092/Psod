@@ -1,0 +1,482 @@
+\hypertarget{namespacemodfofmpi}{}\section{modfofmpi Module Reference}
+\label{namespacemodfofmpi}\index{modfofmpi@{modfofmpi}}
+
+
+This module contains the initialisation and the communication functions that merge the halo parts of haloes that extend across several processes.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb}{mergehaloes} (perco2, mpicomm, periodic)
+\begin{DoxyCompactList}\small\item\em This routine merges haloes that extends across several process by setting their halo ID to the same value. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ac5a219c1a82d90230bcb2b1260adc4b4}{initmerging} ()
+\begin{DoxyCompactList}\small\item\em This routine initializes the merging of halo parts. If the flag value is not 0, the position and halo ID of the particle are saved in specific arrays (one array per face). \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ad3a945459cf7b001e4c4e51429eb8f31}{findbridge} (nloc, nrecv, pos1, pos2, nbridge1, bridge1, nbridge2, bridge2, r2, v1, v2, mpicomm, periodic)
+\begin{DoxyCompactList}\small\item\em Finds the pairs of particles that should be linked through the merging procedure. ~\newline
+ two directions are considered simultaneously by the local process\+: ~\newline
+ 1= back 2= front ~\newline
+ 1= left 2= right ~\newline
+ 1= bottom 2= top ~\newline
+ meaning that the local process exchanges information with the processes located in these two directions. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ae5663edf5a2902f952f8d6d3f5c4c8a5}{setcommonhaloid} (mpicomm)
+\begin{DoxyCompactList}\small\item\em Exchanges the halo\+ID of the particles located near the faces and edges and set the same halo\+ID to each particles that are in the same halo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a91f992ee7447a7fb3c5430233f3f39ab}{posava}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a240c326e64798f0d4f7fd2a785eaddfb}{posarr}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_abd8afe0852ff1d0298955d285cb4f001}{posbas}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a1ca3754d2490a28a6596589818c19aba}{posdro}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a420a314f84492aec68a773c09730981d}{posgau}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a940b15087397a154e933785ff862d1aa}{poshau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a2cc07767e1b2a2462fc2eeaaef5f5b0a}{strava}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_adc11b8c24e402c222ddf9d339aece63c}{strarr}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a18f63a61d3cf10a560030f18385646d6}{strbas}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a6f52fb3f19368ce1dbad562162f6d4b5}{strdro}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a59d3a040e03ea0312701cf16ded04071}{strgau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a9ace6e4f0b23785f3b93fe1812b07c08}{strhau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_ada00af1a25f50e826521e9b2a7ecb633}{strrec}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a887d577430624ed6c6e8952b089e0576}{nbridgearr}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a2ce30cec8604582ad8aaa26ef19b41cb}{nbridgeava}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a000b4f4f0140c24648780b86d56698cf}{nbridgegau}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a0253e42a34623e4816f27522252d1e29}{nbridgedro}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_ad71e96722537b8de69afdb8f68028e8b}{nbridgebas}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a81ecc186519e9addf2dbf7ec92e32d23}{nbridgehau}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a3dffef2edd7b2899179cb3ffffd62430}{bridgearr}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a9891331c8f9f2ef3b5532b96129683ac}{bridgeava}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a157af8da53311980e23d05748e181a7f}{bridgegau}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a400402d1fc58970ecda00536a07c021c}{bridgedro}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a2bdd3864a996f2afb8e49bbcdbd120e5}{bridgebas}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a5a9577c42a1c3c53db8eb603945b530b}{bridgehau}
+\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodfofmpi_aa8c0fc08baf8d208d7e2cddd0600ff99}{nflagrecv}
+\item 
+integer(kind=4), dimension(6), public \hyperlink{namespacemodfofmpi_a9b2252c09a83a3f47fc6aec6462a68dc}{nflagloc}
+\item 
+integer(kind=1), dimension(\+:), allocatable, public \hyperlink{namespacemodfofmpi_adb1afd2b26b96173f56ab37495e99e99}{border}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the initialisation and the communication functions that merge the halo parts of haloes that extend across several processes. 
+
+Authors\+: F. Roy, V. Bouillot 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modfofmpi@{modfofmpi}!findbridge@{findbridge}}
+\index{findbridge@{findbridge}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{findbridge(nloc, nrecv, pos1, pos2, nbridge1, bridge1, nbridge2, bridge2, r2, v1, v2, mpicomm, periodic)}{findbridge(nloc, nrecv, pos1, pos2, nbridge1, bridge1, nbridge2, bridge2, r2, v1, v2, mpicomm, periodic)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofmpi\+::findbridge (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), dimension(6), intent(in)}]{nloc, }
+\item[{integer(kind=4), dimension(6), intent(in)}]{nrecv, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(in)}]{pos1, }
+\item[{real(kind=4), dimension(3,$\ast$), intent(in)}]{pos2, }
+\item[{integer(kind=4), intent(inout)}]{nbridge1, }
+\item[{integer(kind=pri), dimension(\+:,\+:), intent(inout), allocatable}]{bridge1, }
+\item[{integer(kind=4), intent(inout)}]{nbridge2, }
+\item[{integer(kind=pri), dimension(\+:,\+:), intent(inout), allocatable}]{bridge2, }
+\item[{real(kind=4), intent(in)}]{r2, }
+\item[{integer(kind=4), intent(in)}]{v1, }
+\item[{integer(kind=4), intent(in)}]{v2, }
+\item[{integer, intent(in)}]{mpicomm, }
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodfofmpi_ad3a945459cf7b001e4c4e51429eb8f31}{}\label{namespacemodfofmpi_ad3a945459cf7b001e4c4e51429eb8f31}
+
+
+Finds the pairs of particles that should be linked through the merging procedure. ~\newline
+ two directions are considered simultaneously by the local process\+: ~\newline
+ 1= back 2= front ~\newline
+ 1= left 2= right ~\newline
+ 1= bottom 2= top ~\newline
+ meaning that the local process exchanges information with the processes located in these two directions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em nloc} & local number of particles flagged for link detection in direction 1\\
+\hline
+\mbox{\tt in}  & {\em nrecv} & local number of particles flagged for link detection in direction 2\\
+\hline
+\mbox{\tt in}  & {\em v1} & neighbour index in direction 1\\
+\hline
+\mbox{\tt in}  & {\em v2} & neighbour index in direction 2\\
+\hline
+\mbox{\tt in}  & {\em pos1} & positions of local particles flagged for link detection in direction 1\\
+\hline
+\mbox{\tt in}  & {\em pos2} & positions of distant particles flagged for link detection in direction 2\\
+\hline
+\mbox{\tt in}  & {\em r2} & percolation length\\
+\hline
+\mbox{\tt in}  & {\em mpicomm} & M\+PI communicator used in this subroutine\\
+\hline
+\mbox{\tt in}  & {\em periodic} & .true. for standard p\+FoF and .false. for cone version\\
+\hline
+\mbox{\tt in,out}  & {\em nbridge1} & number of \char`\"{}bridges\char`\"{} found, e.\+g. pairs of particles that should be linked, in direction 1\\
+\hline
+\mbox{\tt in,out}  & {\em nbridge2} & number of \char`\"{}bridges\char`\"{} found, e.\+g. pairs of particles that should be linked, in direction 2\\
+\hline
+\mbox{\tt in,out}  & {\em bridge1} & array of indices of the particles forming a bridge in direction 1\\
+\hline
+\mbox{\tt in,out}  & {\em bridge2} & array of indices of the particles forming a bridge in direction 2 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 184 of file modfofmpi.\+f90.
+
+
+
+References modmpicom\+::mpierr, modmpicom\+::mpireqr1, modmpicom\+::mpireqs1, and modmpicom\+::neighbours.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodfofmpi_ad3a945459cf7b001e4c4e51429eb8f31_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modfofmpi@{modfofmpi}!initmerging@{initmerging}}
+\index{initmerging@{initmerging}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{initmerging()}{initmerging()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofmpi\+::initmerging (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodfofmpi_ac5a219c1a82d90230bcb2b1260adc4b4}{}\label{namespacemodfofmpi_ac5a219c1a82d90230bcb2b1260adc4b4}
+
+
+This routine initializes the merging of halo parts. If the flag value is not 0, the position and halo ID of the particle are saved in specific arrays (one array per face). 
+
+
+
+Definition at line 99 of file modfofmpi.\+f90.
+
+
+
+References border, nflagloc, modvariables\+::pos, posarr, posava, posbas, posdro, posgau, poshau, strarr, strava, strbas, strdro, strgau, strhau, and modvariables\+::structure.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodfofmpi_ac5a219c1a82d90230bcb2b1260adc4b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modfofmpi@{modfofmpi}!mergehaloes@{mergehaloes}}
+\index{mergehaloes@{mergehaloes}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{mergehaloes(perco2, mpicomm, periodic)}{mergehaloes(perco2, mpicomm, periodic)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modfofmpi\+::mergehaloes (
+\begin{DoxyParamCaption}
+\item[{real(kind=4), intent(in)}]{perco2, }
+\item[{integer, intent(in)}]{mpicomm, }
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb}{}\label{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb}
+
+
+This routine merges haloes that extends across several process by setting their halo ID to the same value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em perco2} & Value of the percolation length to the square in normalized units (where the box length in equal to 1.\+0)\\
+\hline
+\mbox{\tt in}  & {\em mpicomm} & M\+PI communicator used in this subroutine\\
+\hline
+\mbox{\tt in}  & {\em periodic} & .true. for standard p\+FoF and .false. for cone version \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file modfofmpi.\+f90.
+
+
+
+References bridgearr, bridgeava, bridgebas, bridgedro, bridgegau, bridgehau, findbridge(), initmerging(), modmpicom\+::mpierr, nbridgearr, nbridgeava, nbridgebas, nbridgedro, nbridgegau, nbridgehau, modmpicom\+::neighbours, nflagloc, nflagrecv, posarr, posava, posbas, posdro, posgau, poshau, and setcommonhaloid().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modfofmpi@{modfofmpi}!setcommonhaloid@{setcommonhaloid}}
+\index{setcommonhaloid@{setcommonhaloid}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{setcommonhaloid(mpicomm)}{setcommonhaloid(mpicomm)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modfofmpi\+::setcommonhaloid (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{mpicomm}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodfofmpi_ae5663edf5a2902f952f8d6d3f5c4c8a5}{}\label{namespacemodfofmpi_ae5663edf5a2902f952f8d6d3f5c4c8a5}
+
+
+Exchanges the halo\+ID of the particles located near the faces and edges and set the same halo\+ID to each particles that are in the same halo. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mpicomm} & M\+PI communicator used in this subroutine \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 324 of file modfofmpi.\+f90.
+
+
+
+References bridgearr, bridgeava, bridgebas, bridgedro, bridgegau, bridgehau, modconstant\+::mpi\+\_\+pri, modmpicom\+::mpierr, modmpicom\+::mpireqr1, modmpicom\+::mpireqs1, nbridgearr, nbridgeava, nbridgebas, nbridgedro, nbridgegau, nbridgehau, modmpicom\+::neighbours, nflagloc, nflagrecv, modmpicom\+::procid, strarr, strava, strbas, strdro, strgau, strhau, strrec, and modvariables\+::structure.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodfofmpi_ae5663edf5a2902f952f8d6d3f5c4c8a5_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modfofmpi@{modfofmpi}!border@{border}}
+\index{border@{border}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{border}{border}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=1), dimension(\+:), allocatable, public modfofmpi\+::border}\hypertarget{namespacemodfofmpi_adb1afd2b26b96173f56ab37495e99e99}{}\label{namespacemodfofmpi_adb1afd2b26b96173f56ab37495e99e99}
+
+
+Definition at line 23 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgearr@{bridgearr}}
+\index{bridgearr@{bridgearr}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgearr}{bridgearr}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgearr}\hypertarget{namespacemodfofmpi_a3dffef2edd7b2899179cb3ffffd62430}{}\label{namespacemodfofmpi_a3dffef2edd7b2899179cb3ffffd62430}
+
+
+Definition at line 19 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgeava@{bridgeava}}
+\index{bridgeava@{bridgeava}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgeava}{bridgeava}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgeava}\hypertarget{namespacemodfofmpi_a9891331c8f9f2ef3b5532b96129683ac}{}\label{namespacemodfofmpi_a9891331c8f9f2ef3b5532b96129683ac}
+
+
+Definition at line 19 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgebas@{bridgebas}}
+\index{bridgebas@{bridgebas}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgebas}{bridgebas}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgebas}\hypertarget{namespacemodfofmpi_a2bdd3864a996f2afb8e49bbcdbd120e5}{}\label{namespacemodfofmpi_a2bdd3864a996f2afb8e49bbcdbd120e5}
+
+
+Definition at line 20 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgedro@{bridgedro}}
+\index{bridgedro@{bridgedro}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgedro}{bridgedro}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgedro}\hypertarget{namespacemodfofmpi_a400402d1fc58970ecda00536a07c021c}{}\label{namespacemodfofmpi_a400402d1fc58970ecda00536a07c021c}
+
+
+Definition at line 20 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgegau@{bridgegau}}
+\index{bridgegau@{bridgegau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgegau}{bridgegau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgegau}\hypertarget{namespacemodfofmpi_a157af8da53311980e23d05748e181a7f}{}\label{namespacemodfofmpi_a157af8da53311980e23d05748e181a7f}
+
+
+Definition at line 19 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!bridgehau@{bridgehau}}
+\index{bridgehau@{bridgehau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{bridgehau}{bridgehau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:,\+:), allocatable modfofmpi\+::bridgehau}\hypertarget{namespacemodfofmpi_a5a9577c42a1c3c53db8eb603945b530b}{}\label{namespacemodfofmpi_a5a9577c42a1c3c53db8eb603945b530b}
+
+
+Definition at line 20 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgearr@{nbridgearr}}
+\index{nbridgearr@{nbridgearr}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgearr}{nbridgearr}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgearr}\hypertarget{namespacemodfofmpi_a887d577430624ed6c6e8952b089e0576}{}\label{namespacemodfofmpi_a887d577430624ed6c6e8952b089e0576}
+
+
+Definition at line 17 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgeava@{nbridgeava}}
+\index{nbridgeava@{nbridgeava}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgeava}{nbridgeava}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgeava}\hypertarget{namespacemodfofmpi_a2ce30cec8604582ad8aaa26ef19b41cb}{}\label{namespacemodfofmpi_a2ce30cec8604582ad8aaa26ef19b41cb}
+
+
+Definition at line 17 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgebas@{nbridgebas}}
+\index{nbridgebas@{nbridgebas}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgebas}{nbridgebas}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgebas}\hypertarget{namespacemodfofmpi_ad71e96722537b8de69afdb8f68028e8b}{}\label{namespacemodfofmpi_ad71e96722537b8de69afdb8f68028e8b}
+
+
+Definition at line 18 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgedro@{nbridgedro}}
+\index{nbridgedro@{nbridgedro}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgedro}{nbridgedro}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgedro}\hypertarget{namespacemodfofmpi_a0253e42a34623e4816f27522252d1e29}{}\label{namespacemodfofmpi_a0253e42a34623e4816f27522252d1e29}
+
+
+Definition at line 18 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgegau@{nbridgegau}}
+\index{nbridgegau@{nbridgegau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgegau}{nbridgegau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgegau}\hypertarget{namespacemodfofmpi_a000b4f4f0140c24648780b86d56698cf}{}\label{namespacemodfofmpi_a000b4f4f0140c24648780b86d56698cf}
+
+
+Definition at line 17 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nbridgehau@{nbridgehau}}
+\index{nbridgehau@{nbridgehau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nbridgehau}{nbridgehau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modfofmpi\+::nbridgehau}\hypertarget{namespacemodfofmpi_a81ecc186519e9addf2dbf7ec92e32d23}{}\label{namespacemodfofmpi_a81ecc186519e9addf2dbf7ec92e32d23}
+
+
+Definition at line 18 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nflagloc@{nflagloc}}
+\index{nflagloc@{nflagloc}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nflagloc}{nflagloc}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6), public modfofmpi\+::nflagloc}\hypertarget{namespacemodfofmpi_a9b2252c09a83a3f47fc6aec6462a68dc}{}\label{namespacemodfofmpi_a9b2252c09a83a3f47fc6aec6462a68dc}
+
+
+Definition at line 22 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!nflagrecv@{nflagrecv}}
+\index{nflagrecv@{nflagrecv}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{nflagrecv}{nflagrecv}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6) modfofmpi\+::nflagrecv}\hypertarget{namespacemodfofmpi_aa8c0fc08baf8d208d7e2cddd0600ff99}{}\label{namespacemodfofmpi_aa8c0fc08baf8d208d7e2cddd0600ff99}
+
+
+Definition at line 21 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!posarr@{posarr}}
+\index{posarr@{posarr}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{posarr}{posarr}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::posarr}\hypertarget{namespacemodfofmpi_a240c326e64798f0d4f7fd2a785eaddfb}{}\label{namespacemodfofmpi_a240c326e64798f0d4f7fd2a785eaddfb}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!posava@{posava}}
+\index{posava@{posava}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{posava}{posava}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::posava}\hypertarget{namespacemodfofmpi_a91f992ee7447a7fb3c5430233f3f39ab}{}\label{namespacemodfofmpi_a91f992ee7447a7fb3c5430233f3f39ab}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!posbas@{posbas}}
+\index{posbas@{posbas}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{posbas}{posbas}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::posbas}\hypertarget{namespacemodfofmpi_abd8afe0852ff1d0298955d285cb4f001}{}\label{namespacemodfofmpi_abd8afe0852ff1d0298955d285cb4f001}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!posdro@{posdro}}
+\index{posdro@{posdro}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{posdro}{posdro}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::posdro}\hypertarget{namespacemodfofmpi_a1ca3754d2490a28a6596589818c19aba}{}\label{namespacemodfofmpi_a1ca3754d2490a28a6596589818c19aba}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!posgau@{posgau}}
+\index{posgau@{posgau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{posgau}{posgau}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::posgau}\hypertarget{namespacemodfofmpi_a420a314f84492aec68a773c09730981d}{}\label{namespacemodfofmpi_a420a314f84492aec68a773c09730981d}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!poshau@{poshau}}
+\index{poshau@{poshau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{poshau}{poshau}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), dimension(\+:,\+:), allocatable modfofmpi\+::poshau}\hypertarget{namespacemodfofmpi_a940b15087397a154e933785ff862d1aa}{}\label{namespacemodfofmpi_a940b15087397a154e933785ff862d1aa}
+
+
+Definition at line 15 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strarr@{strarr}}
+\index{strarr@{strarr}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strarr}{strarr}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strarr}\hypertarget{namespacemodfofmpi_adc11b8c24e402c222ddf9d339aece63c}{}\label{namespacemodfofmpi_adc11b8c24e402c222ddf9d339aece63c}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strava@{strava}}
+\index{strava@{strava}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strava}{strava}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strava}\hypertarget{namespacemodfofmpi_a2cc07767e1b2a2462fc2eeaaef5f5b0a}{}\label{namespacemodfofmpi_a2cc07767e1b2a2462fc2eeaaef5f5b0a}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strbas@{strbas}}
+\index{strbas@{strbas}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strbas}{strbas}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strbas}\hypertarget{namespacemodfofmpi_a18f63a61d3cf10a560030f18385646d6}{}\label{namespacemodfofmpi_a18f63a61d3cf10a560030f18385646d6}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strdro@{strdro}}
+\index{strdro@{strdro}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strdro}{strdro}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strdro}\hypertarget{namespacemodfofmpi_a6f52fb3f19368ce1dbad562162f6d4b5}{}\label{namespacemodfofmpi_a6f52fb3f19368ce1dbad562162f6d4b5}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strgau@{strgau}}
+\index{strgau@{strgau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strgau}{strgau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strgau}\hypertarget{namespacemodfofmpi_a59d3a040e03ea0312701cf16ded04071}{}\label{namespacemodfofmpi_a59d3a040e03ea0312701cf16ded04071}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strhau@{strhau}}
+\index{strhau@{strhau}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strhau}{strhau}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strhau}\hypertarget{namespacemodfofmpi_a9ace6e4f0b23785f3b93fe1812b07c08}{}\label{namespacemodfofmpi_a9ace6e4f0b23785f3b93fe1812b07c08}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+
+\index{modfofmpi@{modfofmpi}!strrec@{strrec}}
+\index{strrec@{strrec}!modfofmpi@{modfofmpi}}
+\subsubsection[{\texorpdfstring{strrec}{strrec}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modfofmpi\+::strrec}\hypertarget{namespacemodfofmpi_ada00af1a25f50e826521e9b2a7ecb633}{}\label{namespacemodfofmpi_ada00af1a25f50e826521e9b2a7ecb633}
+
+
+Definition at line 16 of file modfofmpi.\+f90.
+

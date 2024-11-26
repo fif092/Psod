@@ -1,0 +1,24 @@
+\hypertarget{index_intro_sec}{}\section{Introduction}\label{index_intro_sec}
+p\-F\-O\-F is a distributed implementation of the Friends-\/of-\/\-Friends halo finder algorithm. \par
+ It can be used to analyze output from the R\-A\-M\-S\-E\-S code. \par
+ This parallel Friend of Friend implementation is based on a sequential implementation written by Edouard Audit (C\-E\-A). \par
+ It has been written by Fabrice Roy and Vincent Bouillot -- C\-N\-R\-S / L\-U\-T\-H (Observatoire de Paris). \par
+ mail\-: \href{mailto:fabrice.roy@obspm.fr}{\tt fabrice.\-roy@obspm.\-fr} \par
+
+
+The code has been designed, tested and optimized in collaboration with Yann Rasera. \par
+ mail\-: \href{mailto:yann.rasera@obspm.fr}{\tt yann.\-rasera@obspm.\-fr} \par
+ The code is described in the journal note \char`\"{}p\-Fo\-F\-: a highly scalable halo-\/finder for large cosmological data sets\char`\"{}, F. Roy, V. Bouillot, Y. Rasera, A\&A 564, A13 (2014).\hypertarget{index_install_sec}{}\section{Installation}\label{index_install_sec}
+p\-F\-O\-F is written in Fortran and uses M\-P\-I. \par
+ Parallel H\-D\-F5 is required for H\-D\-F5 I/\-O. \par
+ The H\-D\-F5 I/\-O subroutines use some Fortran 2003 features. \par
+ A standard Makefile is provided. \hypertarget{index_running}{}\subsection{Running the program}\label{index_running}
+p\-F\-O\-F is an M\-P\-I application. You should run it using your system M\-P\-I launcher, e.\-g. \par
+ mpirun -\/np 8 ./pfof
+
+p\-F\-O\-F input parameters are read from pfof.\-nml text file.\hypertarget{index_copyright}{}\section{Copyright and License}\label{index_copyright}
+This license applies to etc etc...
+
+\par
+\par
+ 

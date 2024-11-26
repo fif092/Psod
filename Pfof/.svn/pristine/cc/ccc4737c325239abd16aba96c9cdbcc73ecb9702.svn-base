@@ -1,0 +1,14 @@
+MPIFC=h5pfc
+SVNVERSION=0
+
+# Intel release flags
+#FCFLAGS= -O3 -avx -g -cpp -DLONGINT -DSVNREV=$(SVNVERSION)
+# Intel debug flags
+#FCFLAGS= -O0 -g -warn all -C -traceback -cpp -DDEBUG -DLONGINT -DSVNREV=$(SVNVERSION)
+
+# GNU release flags
+#FCFLAGS= -O3 -g -cpp -DLONGINT -DSVNREV=$(SVNVERSION)
+# GNU debug flags
+FCFLAGS= -O0 -g -Wall -fcheck=all -fbacktrace -cpp -DDEBUG -DLONGINT -DSVNREV=$(SVNVERSION)
+
+LDFLAGS= -g

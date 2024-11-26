@@ -1,0 +1,11 @@
+digraph "modfofpara::init"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="modfofpara::init",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="modfofpara::fofparacone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacemodfofpara.html#a033a2820dd29f107782b566ca298bde4",tooltip="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="pfof_cone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pfof__cone_8f90.html#addc770475dc2e497bf70a10ebc158aed",tooltip="pFOF_cone is a distributed implementation of the Friends-of-Friends halo finder algorithm designed fo..."];
+}

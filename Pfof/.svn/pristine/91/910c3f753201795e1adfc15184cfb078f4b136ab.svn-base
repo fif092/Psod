@@ -1,0 +1,41 @@
+!> @file
+!! This file contains the subroutines and the variables used to prepare MPI communications 
+!! and a routine used to broadcast the input parameters.
+
+!> This module contains the subroutines and the variables used to prepare MPI communications 
+!> and a routine used to broadcast the input parameters.
+!>
+!> Authors: F. Roy, V. Bouillot
+
+Module modmpicom
+  
+  Use mpi
+  Use modmpicommons
+
+  Integer(kind=4) :: dims(3) !< dimensions of the processes grid
+  Integer(kind=4) :: CubeCoord(3)  !< coordinates of the process in the MpiCube communicator
+!  Integer(kind=4), dimension(6) :: neighbours  !< array containing the id of the neighboor of the local process in the MpiCube communicator
+
+  Private
+  Public :: dims,&
+       settopology
+
+Contains
+
+  !=======================================================================
+  !> This subroutine create a processes topology that maps the lightcone.
+  Subroutine settopology()
+
+    Implicit None
+
+    Integer :: in
+
+    Do in = 1, 6
+       If(neighbours(in) == -1) Then
+          neighbours(in) = MPI_PROC_NULL
+       End If
+    End Do
+
+  End Subroutine settopology
+
+End Module modmpicom

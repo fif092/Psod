@@ -1,0 +1,581 @@
+\hypertarget{classmodvariables}{\section{modvariables Module Reference}
+\label{classmodvariables}\index{modvariables@{modvariables}}
+}
+
+
+This module contains the common variables used in p\-Fo\-F\-\_\-cone and a subroutine used to deallocate all allocatable arrays.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodvariables_a3129973de5d2d861f0c48902ad5a9dd1}{deallocall} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=pri), public \hyperlink{classmodvariables_ac94629517df3c5cfa8a31f61b2cd0725}{ngrid}
+\begin{DoxyCompactList}\small\item\em total number of grid points\-: ngrid = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+real(kind=4), public \hyperlink{classmodvariables_afe10f659f4ebb9350a8ecd40e8d3716d}{xmin}
+\item 
+real(kind=4), public \hyperlink{classmodvariables_aa6894507e1844677f7c2908093f61950}{xmax}
+\item 
+real(kind=4), public \hyperlink{classmodvariables_acac6fa087befdc79eb687a91bc4a9efa}{ymin}
+\item 
+real(kind=4), public \hyperlink{classmodvariables_af6d344bd3756f326eb587c1497871da7}{ymax}
+\item 
+real(kind=4), public \hyperlink{classmodvariables_aa7cab7253a8166f7c81ee25238e89b9a}{zmin}
+\item 
+real(kind=4), public \hyperlink{classmodvariables_a5eed021bf6f608663c0259105d78dab1}{zmax}
+\begin{DoxyCompactList}\small\item\em min and max (x,y,z) for each process \end{DoxyCompactList}\item 
+type(type\-\_\-parameter\-\_\-pfof\-\_\-snap), \\*
+public \hyperlink{classmodvariables_a582ad50b5bf32797acb78e1df3d62208}{param}
+\item 
+type(type\-\_\-info\-\_\-ramses), public \hyperlink{classmodvariables_a7d9b154c81790b61636ec708d445b14c}{inforamses}
+\item 
+type(type\-\_\-common\-\_\-metadata), public \hyperlink{classmodvariables_a11cf222c240e4152287181f343d97e4c}{common\-\_\-meta}
+\item 
+integer(kind=4), public \hyperlink{classmodvariables_a56011f110cb607bad4e96bbf7426d6d6}{shell\-\_\-nb}
+\item 
+integer(kind=4), dimension(\-:,\-:), \\*
+allocatable, public \hyperlink{classmodvariables_a71f7a5aeca39e755788217f3b8093f9a}{indexcube}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable, public \hyperlink{classmodvariables_a16ace0f388a2561105bd96f1a1af77b4}{ictable}
+\item 
+integer(kind=4), public \hyperlink{classmodvariables_a79023913d4487b1b36fb2aa2dca94506}{shellcubes\-\_\-size}
+\item 
+real(kind=8), dimension(6), public \hyperlink{classmodvariables_a1befa48bffc98e4022545362ad70c3ea}{boundaries}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable, public \hyperlink{classmodvariables_ab4fedc63b2d055a809f7d9d90dabf305}{cubepershell}
+\item 
+real(kind=pr), dimension(3), public \hyperlink{classmodvariables_a103c50d97008cd05f4781b820a51e4cb}{partmin}
+\item 
+real(kind=pr), dimension(3), public \hyperlink{classmodvariables_aa4d6e284cd4d33fbf81f05c0f7604fd0}{partmax}
+\item 
+integer(kind=4), public \hyperlink{classmodvariables_af8737100fdfbf6c331be1bb7c5ab0925}{ncube}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable, public \hyperlink{classmodvariables_a550c917b1362f35e62480385b6ae8863}{npart\-\_\-tab}
+\item 
+type(type\-\_\-info\-\_\-cone\-\_\-part), public \hyperlink{classmodvariables_a48325a5fd368cb5c42b94981c0b2fb51}{infocone}
+\item 
+type(type\-\_\-parameter\-\_\-pfof\-\_\-cone), \\*
+public \hyperlink{classmodvariables_ae13e648c61e7efdc91f1485b2c3b3e5e}{param}
+\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}{id}
+\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{pos}
+\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{vel}
+\item 
+integer(kind=pri), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}{ramsespartid}
+\item 
+real(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a872451e872cc528b38bd43f2ed09b446}{pot}
+\item 
+real(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}{field}
+\item 
+integer \hyperlink{classmodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}{procid}
+\item 
+integer \hyperlink{classmodvariables_ae51b502acd90a80a0134e81f92fbac15}{procnb}
+\item 
+integer \hyperlink{classmodvariables_ab580e2bdf8eff875402911526f873de2}{mpierr}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a32098f5e276eab031b1feebf7124f8bf}{npartcubeloc}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a8cd49c574b692bbeae7029e8d138f58e}{npartcube}
+\item 
+integer(kind=4), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a22925cb23ea4a80a06b3f4b67b62102e}{idcube}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_ab3c5e83108d2cc8318f235c1f889a162}{ncx}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_a1c1ff1a91ab25fd963a4ce5302249978}{ncy}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_ab75f9f5dd0ce07892cca908373a51ddc}{ncz}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_ab094334ab9c4ab8644017abf18dcd25f}{ncube}
+\item 
+real(kind=8) \hyperlink{classmodvariables_a31a775c0bcadfce141cc3cebf22df9ff}{hy}
+\item 
+real(kind=8) \hyperlink{classmodvariables_a26d18952766121089d4309f2449d8b29}{hz}
+\item 
+integer \hyperlink{classmodvariables_a64644f9282a9c19faf8ccb44b0e60877}{req\-\_\-sumnpc}
+\item 
+integer(kind=4), dimension(mpi\-\_\-status\-\_\-size) \hyperlink{classmodvariables_af6d0e7b2912dcb50b21940d5f8658be4}{mpistat}
+\item 
+type(type\-\_\-info\-\_\-cone\-\_\-part) \hyperlink{classmodvariables_ad22024085a623d456c41ca16222120a6}{infocone}
+\item 
+type(type\-\_\-info\-\_\-ramses) \hyperlink{classmodvariables_ac5c429dcac062e12390685db02e3ae8a}{inforamses}
+\item 
+type(type\-\_\-parameter\-\_\-pfof\-\_\-cone) \hyperlink{classmodvariables_a3a05eb7a0d11075c67b3f7c927170b48}{parameters}
+\item 
+integer(kind=4) \hyperlink{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{shell\-\_\-nb}
+\item 
+integer(kind=8), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}{npartcubefof}
+\item 
+integer(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_aa09a585a04de1f8fba311a2f440db992}{pictable}
+\item 
+integer(kind=4), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a8602ecbf617fcd3d1c712a4ace68843c}{neigh}
+\item 
+integer(kind=8), dimension(\-:), \\*
+allocatable \hyperlink{classmodvariables_a64ba80f97884e73fedc7341570a93bd9}{my\-\_\-npart\-\_\-tab}
+\item 
+integer(kind=4), dimension(3) \hyperlink{classmodvariables_a0a00ccc148897945f3defb5f775e4c18}{nctab}
+\item 
+integer(kind=8) \hyperlink{classmodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}{npart}
+\item 
+real(kind=8) \hyperlink{classmodvariables_a12af092709e4d0b68394a217d16c4489}{cubesize}
+\item 
+real(kind=8), dimension(\-:,\-:), \\*
+allocatable \hyperlink{classmodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}{boundaries}
+\item 
+logical \hyperlink{classmodvariables_ace518a722b9c63f8c88c4915aa9a7549}{fullsky}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the common variables used in p\-Fo\-F\-\_\-cone and a subroutine used to deallocate all allocatable arrays. 
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 6 of file modvariables.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodvariables_a3129973de5d2d861f0c48902ad5a9dd1}{\index{modvariables@{modvariables}!deallocall@{deallocall}}
+\index{deallocall@{deallocall}!modvariables@{modvariables}}
+\subsubsection[{deallocall}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modvariables\-::deallocall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodvariables_a3129973de5d2d861f0c48902ad5a9dd1}
+
+
+Definition at line 51 of file modvariables.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=298pt]{classmodvariables_a3129973de5d2d861f0c48902ad5a9dd1_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodvariables_a1befa48bffc98e4022545362ad70c3ea}{\index{modvariables@{modvariables}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!modvariables@{modvariables}}
+\subsubsection[{boundaries}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(6), public modvariables\-::boundaries}}\label{classmodvariables_a1befa48bffc98e4022545362ad70c3ea}
+
+
+Definition at line 19 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}{\index{modvariables@{modvariables}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!modvariables@{modvariables}}
+\subsubsection[{boundaries}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\-:,\-:), allocatable modvariables\-::boundaries}}\label{classmodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a11cf222c240e4152287181f343d97e4c}{\index{modvariables@{modvariables}!common\-\_\-meta@{common\-\_\-meta}}
+\index{common\-\_\-meta@{common\-\_\-meta}!modvariables@{modvariables}}
+\subsubsection[{common\-\_\-meta}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-common\-\_\-metadata), public modvariables\-::common\-\_\-meta}}\label{classmodvariables_a11cf222c240e4152287181f343d97e4c}
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab4fedc63b2d055a809f7d9d90dabf305}{\index{modvariables@{modvariables}!cubepershell@{cubepershell}}
+\index{cubepershell@{cubepershell}!modvariables@{modvariables}}
+\subsubsection[{cubepershell}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable, public modvariables\-::cubepershell}}\label{classmodvariables_ab4fedc63b2d055a809f7d9d90dabf305}
+
+
+Definition at line 20 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a12af092709e4d0b68394a217d16c4489}{\index{modvariables@{modvariables}!cubesize@{cubesize}}
+\index{cubesize@{cubesize}!modvariables@{modvariables}}
+\subsubsection[{cubesize}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\-::cubesize}}\label{classmodvariables_a12af092709e4d0b68394a217d16c4489}
+
+
+Definition at line 21 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}{\index{modvariables@{modvariables}!field@{field}}
+\index{field@{field}!modvariables@{modvariables}}
+\subsubsection[{field}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::field}}\label{classmodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ace518a722b9c63f8c88c4915aa9a7549}{\index{modvariables@{modvariables}!fullsky@{fullsky}}
+\index{fullsky@{fullsky}!modvariables@{modvariables}}
+\subsubsection[{fullsky}]{\setlength{\rightskip}{0pt plus 5cm}logical modvariables\-::fullsky}}\label{classmodvariables_ace518a722b9c63f8c88c4915aa9a7549}
+
+
+Definition at line 23 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a31a775c0bcadfce141cc3cebf22df9ff}{\index{modvariables@{modvariables}!hy@{hy}}
+\index{hy@{hy}!modvariables@{modvariables}}
+\subsubsection[{hy}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\-::hy}}\label{classmodvariables_a31a775c0bcadfce141cc3cebf22df9ff}
+
+
+Definition at line 30 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a26d18952766121089d4309f2449d8b29}{\index{modvariables@{modvariables}!hz@{hz}}
+\index{hz@{hz}!modvariables@{modvariables}}
+\subsubsection[{hz}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\-::hz}}\label{classmodvariables_a26d18952766121089d4309f2449d8b29}
+
+
+Definition at line 31 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a16ace0f388a2561105bd96f1a1af77b4}{\index{modvariables@{modvariables}!ictable@{ictable}}
+\index{ictable@{ictable}!modvariables@{modvariables}}
+\subsubsection[{ictable}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable, public modvariables\-::ictable}}\label{classmodvariables_a16ace0f388a2561105bd96f1a1af77b4}
+
+
+Definition at line 17 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}{\index{modvariables@{modvariables}!id@{id}}
+\index{id@{id}!modvariables@{modvariables}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::id}}\label{classmodvariables_ac2069a0665c46610db9e57a5d5eaf195}
+
+
+Definition at line 11 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a22925cb23ea4a80a06b3f4b67b62102e}{\index{modvariables@{modvariables}!idcube@{idcube}}
+\index{idcube@{idcube}!modvariables@{modvariables}}
+\subsubsection[{idcube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modvariables\-::idcube}}\label{classmodvariables_a22925cb23ea4a80a06b3f4b67b62102e}
+
+
+Definition at line 23 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a71f7a5aeca39e755788217f3b8093f9a}{\index{modvariables@{modvariables}!indexcube@{indexcube}}
+\index{indexcube@{indexcube}!modvariables@{modvariables}}
+\subsubsection[{indexcube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:,\-:), allocatable, public modvariables\-::indexcube}}\label{classmodvariables_a71f7a5aeca39e755788217f3b8093f9a}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ad22024085a623d456c41ca16222120a6}{\index{modvariables@{modvariables}!infocone@{infocone}}
+\index{infocone@{infocone}!modvariables@{modvariables}}
+\subsubsection[{infocone}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-info\-\_\-cone\-\_\-part) modvariables\-::infocone}}\label{classmodvariables_ad22024085a623d456c41ca16222120a6}
+
+
+Definition at line 37 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a48325a5fd368cb5c42b94981c0b2fb51}{\index{modvariables@{modvariables}!infocone@{infocone}}
+\index{infocone@{infocone}!modvariables@{modvariables}}
+\subsubsection[{infocone}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-info\-\_\-cone\-\_\-part), public modvariables\-::infocone}}\label{classmodvariables_a48325a5fd368cb5c42b94981c0b2fb51}
+
+
+Definition at line 28 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a7d9b154c81790b61636ec708d445b14c}{\index{modvariables@{modvariables}!inforamses@{inforamses}}
+\index{inforamses@{inforamses}!modvariables@{modvariables}}
+\subsubsection[{inforamses}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-info\-\_\-ramses), public modvariables\-::inforamses}}\label{classmodvariables_a7d9b154c81790b61636ec708d445b14c}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ac5c429dcac062e12390685db02e3ae8a}{\index{modvariables@{modvariables}!inforamses@{inforamses}}
+\index{inforamses@{inforamses}!modvariables@{modvariables}}
+\subsubsection[{inforamses}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-info\-\_\-ramses) modvariables\-::inforamses}}\label{classmodvariables_ac5c429dcac062e12390685db02e3ae8a}
+
+
+Definition at line 38 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab580e2bdf8eff875402911526f873de2}{\index{modvariables@{modvariables}!mpierr@{mpierr}}
+\index{mpierr@{mpierr}!modvariables@{modvariables}}
+\subsubsection[{mpierr}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\-::mpierr}}\label{classmodvariables_ab580e2bdf8eff875402911526f873de2}
+
+
+Definition at line 20 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_af6d0e7b2912dcb50b21940d5f8658be4}{\index{modvariables@{modvariables}!mpistat@{mpistat}}
+\index{mpistat@{mpistat}!modvariables@{modvariables}}
+\subsubsection[{mpistat}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(mpi\-\_\-status\-\_\-size) modvariables\-::mpistat}}\label{classmodvariables_af6d0e7b2912dcb50b21940d5f8658be4}
+
+
+Definition at line 35 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a64ba80f97884e73fedc7341570a93bd9}{\index{modvariables@{modvariables}!my\-\_\-npart\-\_\-tab@{my\-\_\-npart\-\_\-tab}}
+\index{my\-\_\-npart\-\_\-tab@{my\-\_\-npart\-\_\-tab}!modvariables@{modvariables}}
+\subsubsection[{my\-\_\-npart\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8), dimension(\-:), allocatable modvariables\-::my\-\_\-npart\-\_\-tab}}\label{classmodvariables_a64ba80f97884e73fedc7341570a93bd9}
+
+
+Definition at line 17 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a0a00ccc148897945f3defb5f775e4c18}{\index{modvariables@{modvariables}!nctab@{nctab}}
+\index{nctab@{nctab}!modvariables@{modvariables}}
+\subsubsection[{nctab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3) modvariables\-::nctab}}\label{classmodvariables_a0a00ccc148897945f3defb5f775e4c18}
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_af8737100fdfbf6c331be1bb7c5ab0925}{\index{modvariables@{modvariables}!ncube@{ncube}}
+\index{ncube@{ncube}!modvariables@{modvariables}}
+\subsubsection[{ncube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modvariables\-::ncube}}\label{classmodvariables_af8737100fdfbf6c331be1bb7c5ab0925}
+
+
+Definition at line 24 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab094334ab9c4ab8644017abf18dcd25f}{\index{modvariables@{modvariables}!ncube@{ncube}}
+\index{ncube@{ncube}!modvariables@{modvariables}}
+\subsubsection[{ncube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::ncube}}\label{classmodvariables_ab094334ab9c4ab8644017abf18dcd25f}
+
+
+Definition at line 28 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab3c5e83108d2cc8318f235c1f889a162}{\index{modvariables@{modvariables}!ncx@{ncx}}
+\index{ncx@{ncx}!modvariables@{modvariables}}
+\subsubsection[{ncx}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::ncx}}\label{classmodvariables_ab3c5e83108d2cc8318f235c1f889a162}
+
+
+Definition at line 25 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a1c1ff1a91ab25fd963a4ce5302249978}{\index{modvariables@{modvariables}!ncy@{ncy}}
+\index{ncy@{ncy}!modvariables@{modvariables}}
+\subsubsection[{ncy}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::ncy}}\label{classmodvariables_a1c1ff1a91ab25fd963a4ce5302249978}
+
+
+Definition at line 26 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ab75f9f5dd0ce07892cca908373a51ddc}{\index{modvariables@{modvariables}!ncz@{ncz}}
+\index{ncz@{ncz}!modvariables@{modvariables}}
+\subsubsection[{ncz}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::ncz}}\label{classmodvariables_ab75f9f5dd0ce07892cca908373a51ddc}
+
+
+Definition at line 27 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8602ecbf617fcd3d1c712a4ace68843c}{\index{modvariables@{modvariables}!neigh@{neigh}}
+\index{neigh@{neigh}!modvariables@{modvariables}}
+\subsubsection[{neigh}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:,\-:), allocatable modvariables\-::neigh}}\label{classmodvariables_a8602ecbf617fcd3d1c712a4ace68843c}
+
+
+Definition at line 16 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ac94629517df3c5cfa8a31f61b2cd0725}{\index{modvariables@{modvariables}!ngrid@{ngrid}}
+\index{ngrid@{ngrid}!modvariables@{modvariables}}
+\subsubsection[{ngrid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), public modvariables\-::ngrid}}\label{classmodvariables_ac94629517df3c5cfa8a31f61b2cd0725}
+
+
+total number of grid points\-: ngrid = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 11 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}{\index{modvariables@{modvariables}!npart@{npart}}
+\index{npart@{npart}!modvariables@{modvariables}}
+\subsubsection[{npart}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8) modvariables\-::npart}}\label{classmodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}
+
+
+Definition at line 20 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a550c917b1362f35e62480385b6ae8863}{\index{modvariables@{modvariables}!npart\-\_\-tab@{npart\-\_\-tab}}
+\index{npart\-\_\-tab@{npart\-\_\-tab}!modvariables@{modvariables}}
+\subsubsection[{npart\-\_\-tab}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable, public modvariables\-::npart\-\_\-tab}}\label{classmodvariables_a550c917b1362f35e62480385b6ae8863}
+
+
+Definition at line 25 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8cd49c574b692bbeae7029e8d138f58e}{\index{modvariables@{modvariables}!npartcube@{npartcube}}
+\index{npartcube@{npartcube}!modvariables@{modvariables}}
+\subsubsection[{npartcube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modvariables\-::npartcube}}\label{classmodvariables_a8cd49c574b692bbeae7029e8d138f58e}
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}{\index{modvariables@{modvariables}!npartcubefof@{npartcubefof}}
+\index{npartcubefof@{npartcubefof}!modvariables@{modvariables}}
+\subsubsection[{npartcubefof}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8), dimension(\-:), allocatable modvariables\-::npartcubefof}}\label{classmodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}
+
+
+Definition at line 14 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a32098f5e276eab031b1feebf7124f8bf}{\index{modvariables@{modvariables}!npartcubeloc@{npartcubeloc}}
+\index{npartcubeloc@{npartcubeloc}!modvariables@{modvariables}}
+\subsubsection[{npartcubeloc}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:), allocatable modvariables\-::npartcubeloc}}\label{classmodvariables_a32098f5e276eab031b1feebf7124f8bf}
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a582ad50b5bf32797acb78e1df3d62208}{\index{modvariables@{modvariables}!param@{param}}
+\index{param@{param}!modvariables@{modvariables}}
+\subsubsection[{param}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-parameter\-\_\-pfof\-\_\-snap), public modvariables\-::param}}\label{classmodvariables_a582ad50b5bf32797acb78e1df3d62208}
+
+
+Definition at line 13 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ae13e648c61e7efdc91f1485b2c3b3e5e}{\index{modvariables@{modvariables}!param@{param}}
+\index{param@{param}!modvariables@{modvariables}}
+\subsubsection[{param}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-parameter\-\_\-pfof\-\_\-cone), public modvariables\-::param}}\label{classmodvariables_ae13e648c61e7efdc91f1485b2c3b3e5e}
+
+
+Definition at line 29 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a3a05eb7a0d11075c67b3f7c927170b48}{\index{modvariables@{modvariables}!parameters@{parameters}}
+\index{parameters@{parameters}!modvariables@{modvariables}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}type(type\-\_\-parameter\-\_\-pfof\-\_\-cone) modvariables\-::parameters}}\label{classmodvariables_a3a05eb7a0d11075c67b3f7c927170b48}
+
+
+Definition at line 11 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa4d6e284cd4d33fbf81f05c0f7604fd0}{\index{modvariables@{modvariables}!partmax@{partmax}}
+\index{partmax@{partmax}!modvariables@{modvariables}}
+\subsubsection[{partmax}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3), public modvariables\-::partmax}}\label{classmodvariables_aa4d6e284cd4d33fbf81f05c0f7604fd0}
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a103c50d97008cd05f4781b820a51e4cb}{\index{modvariables@{modvariables}!partmin@{partmin}}
+\index{partmin@{partmin}!modvariables@{modvariables}}
+\subsubsection[{partmin}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3), public modvariables\-::partmin}}\label{classmodvariables_a103c50d97008cd05f4781b820a51e4cb}
+
+
+Definition at line 22 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa09a585a04de1f8fba311a2f440db992}{\index{modvariables@{modvariables}!pictable@{pictable}}
+\index{pictable@{pictable}!modvariables@{modvariables}}
+\subsubsection[{pictable}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\-:,\-:), allocatable modvariables\-::pictable}}\label{classmodvariables_aa09a585a04de1f8fba311a2f440db992}
+
+
+Definition at line 15 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{\index{modvariables@{modvariables}!pos@{pos}}
+\index{pos@{pos}!modvariables@{modvariables}}
+\subsubsection[{pos}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::pos}}\label{classmodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a872451e872cc528b38bd43f2ed09b446}{\index{modvariables@{modvariables}!pot@{pot}}
+\index{pot@{pot}!modvariables@{modvariables}}
+\subsubsection[{pot}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:), allocatable modvariables\-::pot}}\label{classmodvariables_a872451e872cc528b38bd43f2ed09b446}
+
+
+Definition at line 15 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}{\index{modvariables@{modvariables}!procid@{procid}}
+\index{procid@{procid}!modvariables@{modvariables}}
+\subsubsection[{procid}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\-::procid}}\label{classmodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_ae51b502acd90a80a0134e81f92fbac15}{\index{modvariables@{modvariables}!procnb@{procnb}}
+\index{procnb@{procnb}!modvariables@{modvariables}}
+\subsubsection[{procnb}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\-::procnb}}\label{classmodvariables_ae51b502acd90a80a0134e81f92fbac15}
+
+
+Definition at line 19 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}{\index{modvariables@{modvariables}!ramsespartid@{ramsespartid}}
+\index{ramsespartid@{ramsespartid}!modvariables@{modvariables}}
+\subsubsection[{ramsespartid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\-:), allocatable modvariables\-::ramsespartid}}\label{classmodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}
+
+
+Definition at line 14 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a64644f9282a9c19faf8ccb44b0e60877}{\index{modvariables@{modvariables}!req\-\_\-sumnpc@{req\-\_\-sumnpc}}
+\index{req\-\_\-sumnpc@{req\-\_\-sumnpc}!modvariables@{modvariables}}
+\subsubsection[{req\-\_\-sumnpc}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\-::req\-\_\-sumnpc}}\label{classmodvariables_a64644f9282a9c19faf8ccb44b0e60877}
+
+
+Definition at line 34 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{\index{modvariables@{modvariables}!shell\-\_\-nb@{shell\-\_\-nb}}
+\index{shell\-\_\-nb@{shell\-\_\-nb}!modvariables@{modvariables}}
+\subsubsection[{shell\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\-::shell\-\_\-nb}}\label{classmodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a56011f110cb607bad4e96bbf7426d6d6}{\index{modvariables@{modvariables}!shell\-\_\-nb@{shell\-\_\-nb}}
+\index{shell\-\_\-nb@{shell\-\_\-nb}!modvariables@{modvariables}}
+\subsubsection[{shell\-\_\-nb}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modvariables\-::shell\-\_\-nb}}\label{classmodvariables_a56011f110cb607bad4e96bbf7426d6d6}
+
+
+Definition at line 15 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a79023913d4487b1b36fb2aa2dca94506}{\index{modvariables@{modvariables}!shellcubes\-\_\-size@{shellcubes\-\_\-size}}
+\index{shellcubes\-\_\-size@{shellcubes\-\_\-size}!modvariables@{modvariables}}
+\subsubsection[{shellcubes\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modvariables\-::shellcubes\-\_\-size}}\label{classmodvariables_a79023913d4487b1b36fb2aa2dca94506}
+
+
+Definition at line 18 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{\index{modvariables@{modvariables}!vel@{vel}}
+\index{vel@{vel}!modvariables@{modvariables}}
+\subsubsection[{vel}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\-:,\-:), allocatable modvariables\-::vel}}\label{classmodvariables_a9f11e44143a4c5cd47740e58712bbe1c}
+
+
+Definition at line 13 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa6894507e1844677f7c2908093f61950}{\index{modvariables@{modvariables}!xmax@{xmax}}
+\index{xmax@{xmax}!modvariables@{modvariables}}
+\subsubsection[{xmax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::xmax}}\label{classmodvariables_aa6894507e1844677f7c2908093f61950}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_afe10f659f4ebb9350a8ecd40e8d3716d}{\index{modvariables@{modvariables}!xmin@{xmin}}
+\index{xmin@{xmin}!modvariables@{modvariables}}
+\subsubsection[{xmin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::xmin}}\label{classmodvariables_afe10f659f4ebb9350a8ecd40e8d3716d}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_af6d344bd3756f326eb587c1497871da7}{\index{modvariables@{modvariables}!ymax@{ymax}}
+\index{ymax@{ymax}!modvariables@{modvariables}}
+\subsubsection[{ymax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::ymax}}\label{classmodvariables_af6d344bd3756f326eb587c1497871da7}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_acac6fa087befdc79eb687a91bc4a9efa}{\index{modvariables@{modvariables}!ymin@{ymin}}
+\index{ymin@{ymin}!modvariables@{modvariables}}
+\subsubsection[{ymin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::ymin}}\label{classmodvariables_acac6fa087befdc79eb687a91bc4a9efa}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_a5eed021bf6f608663c0259105d78dab1}{\index{modvariables@{modvariables}!zmax@{zmax}}
+\index{zmax@{zmax}!modvariables@{modvariables}}
+\subsubsection[{zmax}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::zmax}}\label{classmodvariables_a5eed021bf6f608663c0259105d78dab1}
+
+
+min and max (x,y,z) for each process 
+
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+\hypertarget{classmodvariables_aa7cab7253a8166f7c81ee25238e89b9a}{\index{modvariables@{modvariables}!zmin@{zmin}}
+\index{zmin@{zmin}!modvariables@{modvariables}}
+\subsubsection[{zmin}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4), public modvariables\-::zmin}}\label{classmodvariables_aa7cab7253a8166f7c81ee25238e89b9a}
+
+
+Definition at line 12 of file modvariables.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/pfof\-\_\-snap/src/\hyperlink{pfof__snap_2src_2modvariables_8f90}{modvariables.\-f90}\end{DoxyCompactItemize}

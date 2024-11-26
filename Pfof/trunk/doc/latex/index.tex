@@ -1,0 +1,46 @@
+\hypertarget{index_intro_sec}{}\section{Introduction}\label{index_intro_sec}
+p\+F\+OF is a software package based on a distributed implementation of the Friends-\/of-\/\+Friends halo finder algorithm. ~\newline
+ It can be used to analyze output from the R\+A\+M\+S\+ES code. ~\newline
+ This parallel Friend of Friend implementation is based on a sequential implementation written by Edouard Audit (C\+EA). ~\newline
+ It has been written by Fabrice Roy and Vincent Bouillot -- C\+N\+RS / L\+U\+TH (Observatoire de Paris). ~\newline
+ mail\+: \href{mailto:fabrice.roy@obspm.fr}{\tt fabrice.\+roy@obspm.\+fr} ~\newline
+ The tools have been written by Fabrice Roy. ~\newline
+
+
+The package has been designed, tested and optimized in collaboration with Yann Rasera. ~\newline
+ mail\+: \href{mailto:yann.rasera@obspm.fr}{\tt yann.\+rasera@obspm.\+fr} ~\newline
+ The first version of the code is described in the journal note \char`\"{}p\+Fo\+F\+: a highly scalable halo-\/finder for large cosmological data sets\char`\"{}, F. Roy, V. Bouillot, Y. Rasera, A\&A 564, A13 (2014). ~\newline
+\hypertarget{index_content_sec}{}\section{Content of the package}\label{index_content_sec}
+p\+F\+OF contains several softwares\+:
+\begin{DoxyItemize}
+\item pfof\+\_\+snap\+: \textquotesingle{}snapshot\textquotesingle{} version, used to detect dark matter halos in Ramses snapshots;
+\item pfof\+\_\+cone\+: \textquotesingle{}cone\textquotesingle{} version, used to detect dark matter halos in Ramses lightcones;
+\item conepartcreator\+: creates hdf5 containing shells of particles from Ramses output\+\_\+ncoarse files;
+\item conegravcreator\+: creates hdf5 containing shells of cells from Ramses output\+\_\+ncoarse files;
+\item conemapper\+: creates a mapping files from hdf5 shells to prepare a pfof\+\_\+cone analyzis;
+\item regionextractor\+: extract the particles from cubes files (created by pfof\+\_\+snap) given a position and the size of the region to extract;
+\item haloanalyzer; skeleton of a tool that can be used to further analysis of the halos detected by pfof\+\_\+snap or pfof\+\_\+cone.
+\end{DoxyItemize}\hypertarget{index_install_sec}{}\section{Installation}\label{index_install_sec}
+p\+F\+OF is written in Fortran 2003 and uses M\+PI. ~\newline
+ Parallel H\+D\+F5 is required for H\+D\+F5 I/O. ~\newline
+ The H\+D\+F5 I/O subroutines use some Fortran 2003 features. ~\newline
+ H\+D\+F5 should be configured with the flags --enable-\/parallel and --enable-\/fortran (and --enable-\/fortran2003 for versions $<$ 1.\+10.\+0).~\newline
+ A standard Makefile is provided for each software in the package.\hypertarget{index_running}{}\subsection{Running the program}\label{index_running}
+Running pfof\+\_\+snap to analyze Ramses snapshots is straightforward\+:~\newline
+ mpirun -\/np 8 ./pfof~\newline
+ Note that you should use a cubic power as the number of processes (i.\+e. 8, 27, 64, 125, 216, etc.).~\newline
+
+
+pfof\+\_\+snap input parameters are read from pfof\+\_\+snap.\+nml text file.~\newline
+
+
+To run a lightcone analysis you should first create the shell files with conepartcreator, the create the mapping with conemapper, then copy the mapping that requires an adequate number of processes to procmap.\+h5, then run pfof\+\_\+cone with the required number of processes.\hypertarget{index_test_sec}{}\subsection{Test}\label{index_test_sec}
+You can download some data set to test your installation.~\newline
+ You can run every software in the package with this dataset.~\newline
+ You just have to modify the pathes in the ~\newline
+\hypertarget{index_copyright}{}\section{Copyright and License}\label{index_copyright}
+This license applies to etc etc...
+
+~\newline
+~\newline
+ 

@@ -1,0 +1,17 @@
+Module modparam
+
+  Use modconst
+  Character(len=80) :: root, pathinput
+  Character(len=80) :: nameinfo, namepart
+  Character(len=3)  :: code_index
+  Integer(kind=4)   :: Mmin, Mmax, grpsize, gatherwrite, gatherread
+  Real(kind=SP)     :: perco
+  Logical           :: outcube, star, metal, dofof, readfromcube, dotimings, usehdf5
+
+  ! Namelist for input file
+  Namelist / ramsesinput / code_index, pathinput, namepart, nameinfo, grpsize, star, metal, readfromcube
+  Namelist / fofparam / perco, Mmin, Mmax, dofof
+  Namelist / outputparam / root, outcube, usehdf5, gatherwrite, gatherread, dotimings
+
+
+End Module modparam

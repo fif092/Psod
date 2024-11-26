@@ -1,0 +1,154 @@
+\hypertarget{classmodreadinfo}{\section{modreadinfo Module Reference}
+\label{classmodreadinfo}\index{modreadinfo@{modreadinfo}}
+}
+
+
+This module contains subroutines to read info files written by R\-A\-M\-S\-E\-S for snapshot and light cone.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodreadinfo_a6b1960d0fb1f7800a425f5b1faea27de}{readinforamses} (filename, inforamses, ierr, errormessage)
+\begin{DoxyCompactList}\small\item\em Read R\-A\-M\-S\-E\-S snapshot info file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodreadinfo_a436889f23a31abe9a2794adf382ed2ff}{readinfoconepart} (filename, infocone, ierr, errormessage)
+\begin{DoxyCompactList}\small\item\em Read R\-A\-M\-S\-E\-S particles light cone info file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodreadinfo_a101c52b11351822adad865d03b999f4e}{readinfoconegrav} (filename, infocone, ierr, errormessage)
+\begin{DoxyCompactList}\small\item\em Read R\-A\-M\-S\-E\-S cells light cone info file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines to read info files written by R\-A\-M\-S\-E\-S for snapshot and light cone. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modreadinfo.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodreadinfo_a101c52b11351822adad865d03b999f4e}{\index{modreadinfo@{modreadinfo}!readinfoconegrav@{readinfoconegrav}}
+\index{readinfoconegrav@{readinfoconegrav}!modreadinfo@{modreadinfo}}
+\subsubsection[{readinfoconegrav}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modreadinfo\-::readinfoconegrav (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{type(type\-\_\-info\-\_\-cone\-\_\-grav), intent(out)}]{infocone, }
+\item[{integer(kind=4), intent(out)}]{ierr, }
+\item[{character(len=500), intent(out)}]{errormessage}
+\end{DoxyParamCaption}
+)}}\label{classmodreadinfo_a101c52b11351822adad865d03b999f4e}
+
+
+Read R\-A\-M\-S\-E\-S cells light cone info file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & info file name\\
+\hline
+\mbox{\tt out}  & {\em infocone} & info structure\\
+\hline
+\mbox{\tt out}  & {\em ierr} & error code\\
+\hline
+\mbox{\tt out}  & {\em errormessage} & error message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 141 of file modreadinfo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadinfo_a101c52b11351822adad865d03b999f4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadinfo_a436889f23a31abe9a2794adf382ed2ff}{\index{modreadinfo@{modreadinfo}!readinfoconepart@{readinfoconepart}}
+\index{readinfoconepart@{readinfoconepart}!modreadinfo@{modreadinfo}}
+\subsubsection[{readinfoconepart}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modreadinfo\-::readinfoconepart (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{type(type\-\_\-info\-\_\-cone\-\_\-part), intent(out)}]{infocone, }
+\item[{integer(kind=4), intent(out)}]{ierr, }
+\item[{character(len=500), intent(out)}]{errormessage}
+\end{DoxyParamCaption}
+)}}\label{classmodreadinfo_a436889f23a31abe9a2794adf382ed2ff}
+
+
+Read R\-A\-M\-S\-E\-S particles light cone info file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & info file name\\
+\hline
+\mbox{\tt out}  & {\em infocone} & info structure\\
+\hline
+\mbox{\tt out}  & {\em ierr} & error code\\
+\hline
+\mbox{\tt out}  & {\em errormessage} & error message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file modreadinfo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadinfo_a436889f23a31abe9a2794adf382ed2ff_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodreadinfo_a6b1960d0fb1f7800a425f5b1faea27de}{\index{modreadinfo@{modreadinfo}!readinforamses@{readinforamses}}
+\index{readinforamses@{readinforamses}!modreadinfo@{modreadinfo}}
+\subsubsection[{readinforamses}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modreadinfo\-::readinforamses (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(out)}]{inforamses, }
+\item[{integer(kind=4), intent(out)}]{ierr, }
+\item[{character(len=500), intent(out)}]{errormessage}
+\end{DoxyParamCaption}
+)}}\label{classmodreadinfo_a6b1960d0fb1f7800a425f5b1faea27de}
+
+
+Read R\-A\-M\-S\-E\-S snapshot info file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & info file name\\
+\hline
+\mbox{\tt out}  & {\em inforamses} & info structure\\
+\hline
+\mbox{\tt out}  & {\em ierr} & error code\\
+\hline
+\mbox{\tt out}  & {\em errormessage} & error message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 24 of file modreadinfo.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadinfo_a6b1960d0fb1f7800a425f5b1faea27de_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modreadinfo_8f90}{modreadinfo.\-f90}\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+<map id="modreadcube::selectcubetype" name="modreadcube::selectcubetype">
+<area shape="rect" id="node2" href="$namespacemodmpicom.html#a75a2de7a16fce78b94bd79731a2fbd81" title="The subroutine is used to abort the execution if something wrong is happening. " alt="" coords="567,88,757,114"/>
+<area shape="rect" id="node3" href="$namespacemodreadcube.html#a9b00396dd9eab642a275a7aa06d9cd20" title="Reads a standard hdf5 cube file created by pfof_snap. " alt="" coords="278,341,453,368"/>
+<area shape="rect" id="node5" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="843,359,985,400"/>
+<area shape="rect" id="node6" href="$namespacemodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="844,519,984,560"/>
+<area shape="rect" id="node7" href="$namespacemodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="579,392,745,418"/>
+<area shape="rect" id="node8" href="$namespacemodhdf5.html#a11539d06d180bff29d3c56ba198451d4" title="Open an existing hdf5 file. " alt="" coords="580,240,744,266"/>
+<area shape="rect" id="node9" href="$namespacemodreadcube.html#a30050fd5631222b0125e7917cc8ae547" title="Reads a hdf5 sorted cube file created by pfof_snap. " alt="" coords="260,240,471,266"/>
+<area shape="rect" id="node10" href="$namespacemodreadcube.html#af92f4077b7cf70887bb67a38909f1a27" title="Reads a parallel HDF5 cube file created by pfof_snap. " alt="" coords="267,544,463,570"/>
+<area shape="rect" id="node12" href="$namespacemodreadcube.html#afc147b0f2e67c88cc8d7d0dd06ae8ff7" title="Reads a parallel and sorted HDF5 cube file created by pfof_snap. " alt="" coords="249,442,481,469"/>
+<area shape="rect" id="node4" href="$namespacemodiocommons.html#a303306d620ca4d1ab28ec77613894994" title="modiocommons::h5readcommonmetadata" alt="" coords="529,442,795,469"/>
+<area shape="rect" id="node11" href="$namespacemodhdf5.html#a9f6976ee158485f6b203635df23156e3" title="Open an existing &#39;parallel&#39; hdf5 file shared by the communicator comm. " alt="" coords="592,696,732,738"/>
+</map>

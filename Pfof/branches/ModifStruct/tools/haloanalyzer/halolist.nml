@@ -1,0 +1,8 @@
+&Size
+halolistsize=10 /
+
+&File
+basename = 'test_halo' /
+
+&List
+halolist = 262296, 262346, 271116, 272916, 281382, 284056, 288036, 297324, 738788, 758460 /

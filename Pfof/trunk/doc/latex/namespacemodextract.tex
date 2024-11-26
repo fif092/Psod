@@ -1,0 +1,188 @@
+\hypertarget{namespacemodextract}{}\section{modextract Module Reference}
+\label{namespacemodextract}\index{modextract@{modextract}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodextract_ab52bfa146aa7f8575cb591e9920e9ff8}{extract\+\_\+cuboid} ()
+\item 
+recursive subroutine \hyperlink{namespacemodextract_ae2727d931e75af1a5b9d77819493e6d0}{quicksort} (p, r, tab)
+\begin{DoxyCompactList}\small\item\em Quick sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodextract_ab98682bafefede4abc0ad57bd1288abf}{partition} (p, r, q, tab)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4), dimension(3) \hyperlink{namespacemodextract_a58cf95edf95f11f9e6d8f589d4d93c8a}{center}
+\item 
+character(len=8) \hyperlink{namespacemodextract_af65545877ed74e44b340c563fb91e81c}{type}
+\item 
+real(kind=4), dimension(3) \hyperlink{namespacemodextract_ab5bee6c90bf98302903d0eee1434ea93}{dimensions}
+\item 
+character(len=400) \hyperlink{namespacemodextract_ab30082cee9f7c8893bad2fc07cd9a65c}{filename}
+\item 
+logical(kind=4) \hyperlink{namespacemodextract_a0bd93be7d411f7058ed49057de38d60f}{potential} = .false.
+\item 
+logical(kind=4) \hyperlink{namespacemodextract_a7b759ca92c494942296f343b61e4b2eb}{force} = .false.
+\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modextract@{modextract}!extract\+\_\+cuboid@{extract\+\_\+cuboid}}
+\index{extract\+\_\+cuboid@{extract\+\_\+cuboid}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{extract\+\_\+cuboid()}{extract_cuboid()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modextract\+::extract\+\_\+cuboid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodextract_ab52bfa146aa7f8575cb591e9920e9ff8}{}\label{namespacemodextract_ab52bfa146aa7f8575cb591e9920e9ff8}
+
+
+Definition at line 23 of file modextract.\+f90.
+
+
+
+References center, dimensions, filename, modvariables\+::for, force, modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+finalize(), modhdf5\+::hdf5\+\_\+init(), modhdf5\+::hdf5\+\_\+open\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::pos, modvariables\+::pot, potential, quicksort(), and modvariables\+::vel.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodextract_ab52bfa146aa7f8575cb591e9920e9ff8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{namespacemodextract_ab52bfa146aa7f8575cb591e9920e9ff8_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modextract@{modextract}!partition@{partition}}
+\index{partition@{partition}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{partition(p, r, q, tab)}{partition(p, r, q, tab)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modextract\+::partition (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=4), intent(out)}]{q, }
+\item[{integer(kind=4), dimension(2,$\ast$), intent(inout)}]{tab}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodextract_ab98682bafefede4abc0ad57bd1288abf}{}\label{namespacemodextract_ab98682bafefede4abc0ad57bd1288abf}
+
+
+Definition at line 304 of file modextract.\+f90.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodextract_ab98682bafefede4abc0ad57bd1288abf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modextract@{modextract}!quicksort@{quicksort}}
+\index{quicksort@{quicksort}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{quicksort(p, r, tab)}{quicksort(p, r, tab)}}]{\setlength{\rightskip}{0pt plus 5cm}recursive subroutine modextract\+::quicksort (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{p, }
+\item[{integer(kind=4), intent(in)}]{r, }
+\item[{integer(kind=4), dimension(2,$\ast$), intent(inout)}]{tab}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodextract_ae2727d931e75af1a5b9d77819493e6d0}{}\label{namespacemodextract_ae2727d931e75af1a5b9d77819493e6d0}
+
+
+Quick sort as described in Introduction to algorithms (Cormen, Leiserson, Rivest, Stein) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & index of the first element of the array to be sorted\\
+\hline
+\mbox{\tt in}  & {\em r} & index of the last element of the array to be sorted\\
+\hline
+\mbox{\tt in,out}  & {\em tab} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file modextract.\+f90.
+
+
+
+References partition().
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{namespacemodextract_ae2727d931e75af1a5b9d77819493e6d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodextract_ae2727d931e75af1a5b9d77819493e6d0_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modextract@{modextract}!center@{center}}
+\index{center@{center}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{center}{center}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(3) modextract\+::center}\hypertarget{namespacemodextract_a58cf95edf95f11f9e6d8f589d4d93c8a}{}\label{namespacemodextract_a58cf95edf95f11f9e6d8f589d4d93c8a}
+
+
+Definition at line 12 of file modextract.\+f90.
+
+\index{modextract@{modextract}!dimensions@{dimensions}}
+\index{dimensions@{dimensions}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{dimensions}{dimensions}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(3) modextract\+::dimensions}\hypertarget{namespacemodextract_ab5bee6c90bf98302903d0eee1434ea93}{}\label{namespacemodextract_ab5bee6c90bf98302903d0eee1434ea93}
+
+
+Definition at line 14 of file modextract.\+f90.
+
+\index{modextract@{modextract}!filename@{filename}}
+\index{filename@{filename}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{filename}{filename}}]{\setlength{\rightskip}{0pt plus 5cm}character(len=400) modextract\+::filename}\hypertarget{namespacemodextract_ab30082cee9f7c8893bad2fc07cd9a65c}{}\label{namespacemodextract_ab30082cee9f7c8893bad2fc07cd9a65c}
+
+
+Definition at line 15 of file modextract.\+f90.
+
+\index{modextract@{modextract}!force@{force}}
+\index{force@{force}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{force}{force}}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modextract\+::force = .false.}\hypertarget{namespacemodextract_a7b759ca92c494942296f343b61e4b2eb}{}\label{namespacemodextract_a7b759ca92c494942296f343b61e4b2eb}
+
+
+Definition at line 17 of file modextract.\+f90.
+
+\index{modextract@{modextract}!potential@{potential}}
+\index{potential@{potential}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{potential}{potential}}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modextract\+::potential = .false.}\hypertarget{namespacemodextract_a0bd93be7d411f7058ed49057de38d60f}{}\label{namespacemodextract_a0bd93be7d411f7058ed49057de38d60f}
+
+
+Definition at line 16 of file modextract.\+f90.
+
+\index{modextract@{modextract}!type@{type}}
+\index{type@{type}!modextract@{modextract}}
+\subsubsection[{\texorpdfstring{type}{type}}]{\setlength{\rightskip}{0pt plus 5cm}character(len=8) modextract\+::type}\hypertarget{namespacemodextract_af65545877ed74e44b340c563fb91e81c}{}\label{namespacemodextract_af65545877ed74e44b340c563fb91e81c}
+
+
+Definition at line 13 of file modextract.\+f90.
+

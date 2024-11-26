@@ -1,0 +1,84 @@
+!> @file
+!! This file contains routines to read HDF5 halo files created with pfof and pfof_cone.
+
+!> This module contains routines to read HDF5 halo files created with pfof and pfof_cone.
+!>
+!> Authors: F. Roy
+
+Module modreadhalo
+
+  Integer, parameter :: PRI = 8 !< Precision used for ID; must match the value used to create the HDF5 file you are reading
+
+Contains
+  !> Reads a HDF5 halo hfprop file created with pfof
+  Subroutine h5read_halo_hfprop(filename, common_metadata, parameter_pfof, info_ramses, info_cone, &
+       position_halo, velocity_halo, rmax_halo, identity_halo, npart_halo)
+    
+    Use modhdf5
+
+    Implicit None
+    
+    ! input/output variables
+    Character(len=400), intent(in) :: filename !< Name of the file
+    Type(Type_common_metadata), intent(out) :: common_metadata
+    Real(kind=8), dimension(:,:), allocatable, intent(out), optional :: position_halo, velocity_halo
+    Real(kind=8), dimension(:), allocatable, intent(out), optional :: rmax_halo
+    Integer(kind=PRI), dimension(:), allocatable, intent(out), optional :: identity_halo 
+    Integer(kind=4), dimension(:), allocatable, intent(out), optional :: npart_halo
+    Class(Type_parameter_pfof), intent(out), optional :: parameter_pfof
+    Type(Type_info_ramses), intent(out), optional :: info_ramses
+    Type(Type_info_cone_part), intent(out), optional :: info_cone
+    
+    ! local variables
+    Integer(hid_t) :: file_id, data_id, meta_id
+    Character(len=H5STRLEN) :: dname, groupname
+    Integer(kind=4) :: nhalo
+
+
+    ! Open the file
+    Call hdf5_open_file(filename, file_id)
+
+    ! open metadata group
+    groupname='metadata'
+    Call hdf5_open_group(file_id, groupname, meta_id)
+    
+    ! read metadata
+    ! Read the number of halos
+    dname = 'nhalo_file'
+    Call hdf5_read_attr(meta_id, dname, nhalo)
+    Call hdf5_close_group(meta_id)
+
+    ! open data group
+    groupname='data'
+    Call hdf5_open_group(file_id, groupname, data_id)
+
+    ! read data
+    If(present(position_halo)) Then
+       If(.not.Allocated(position_halo)) Allocate(position_halo(3,haloNB))
+       
+       ! Read position of the halos
+       dname = 'pos_halo'
+       Call hdf5_read_data(data_id, dname, 3, haloNB, halocomPos)
+
+    End If
+
+!!$    ! Read velocity of the halos
+!!$    dname = 'vel_halo'
+!!$    Call hdf5_read_data(file_id, dname, 3, haloNB, halocomVel)
+!!$
+!!$    ! Read ID of the halos
+!!$    dname = 'id_halo'
+!!$    Call hdf5_read_data(file_id, dname, haloNB, haloID)
+!!$
+!!$    ! Read mass of the halos
+!!$    dname = 'npart_halo'
+!!$    Call hdf5_read_data(file_id, dname, haloNB, haloMass)
+
+    Call hdf5_close_group(data_id)
+
+    ! Close file
+    Call hdf5_close_file(file_id)
+
+  End Subroutine h5read_halo_hfprop
+
+End Module modreadhalo

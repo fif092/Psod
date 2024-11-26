@@ -1,0 +1,74 @@
+\hypertarget{classmodreadhalo}{\section{modreadhalo Module Reference}
+\label{classmodreadhalo}\index{modreadhalo@{modreadhalo}}
+}
+
+
+This module contains routines to read H\-D\-F5 halo files created with pfof and pfof\-\_\-cone.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodreadhalo_a1a011c42c3cd4dbb53fd4a10342a5a09}{h5read\-\_\-halo\-\_\-hfprop} (filename, common\-\_\-metadata, parameter\-\_\-pfof, info\-\_\-ramses, info\-\_\-cone, position\-\_\-halo, velocity\-\_\-halo, rmax\-\_\-halo, identity\-\_\-halo, npart\-\_\-halo)
+\begin{DoxyCompactList}\small\item\em Reads a H\-D\-F5 halo hfprop file created with pfof. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains routines to read H\-D\-F5 halo files created with pfof and pfof\-\_\-cone. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modreadhalo.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodreadhalo_a1a011c42c3cd4dbb53fd4a10342a5a09}{\index{modreadhalo@{modreadhalo}!h5read\-\_\-halo\-\_\-hfprop@{h5read\-\_\-halo\-\_\-hfprop}}
+\index{h5read\-\_\-halo\-\_\-hfprop@{h5read\-\_\-halo\-\_\-hfprop}!modreadhalo@{modreadhalo}}
+\subsubsection[{h5read\-\_\-halo\-\_\-hfprop}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modreadhalo\-::h5read\-\_\-halo\-\_\-hfprop (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{type(type\-\_\-common\-\_\-metadata), intent(out)}]{common\-\_\-metadata, }
+\item[{class(type\-\_\-parameter\-\_\-pfof), intent(out), optional}]{parameter\-\_\-pfof, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(out), optional}]{info\-\_\-ramses, }
+\item[{type(type\-\_\-info\-\_\-cone\-\_\-part), intent(out), optional}]{info\-\_\-cone, }
+\item[{real(kind=8), dimension(\-:,\-:), intent(out), optional, allocatable}]{position\-\_\-halo, }
+\item[{real(kind=8), dimension(\-:,\-:), intent(out), optional, allocatable}]{velocity\-\_\-halo, }
+\item[{real(kind=8), dimension(\-:), intent(out), optional, allocatable}]{rmax\-\_\-halo, }
+\item[{integer(kind=pri), dimension(\-:), intent(out), optional, allocatable}]{identity\-\_\-halo, }
+\item[{integer(kind=4), dimension(\-:), intent(out), optional, allocatable}]{npart\-\_\-halo}
+\end{DoxyParamCaption}
+)}}\label{classmodreadhalo_a1a011c42c3cd4dbb53fd4a10342a5a09}
+
+
+Reads a H\-D\-F5 halo hfprop file created with pfof. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & Name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file modreadhalo.\-f90.
+
+
+
+References modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-ramses(), modiocommons\-::h5read\-\_\-meta\-\_\-pfof\-\_\-parameter(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-open\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadhalo_a1a011c42c3cd4dbb53fd4a10342a5a09_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modreadhalo_8f90}{modreadhalo.\-f90}\end{DoxyCompactItemize}

@@ -1,0 +1,336 @@
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr}{\section{modhdf5\-:\-:hdf5\-\_\-write\-\_\-attr Interface Reference}
+\label{interfacemodhdf5_1_1hdf5__write__attr}\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+}
+
+
+Generic inteface used to write attributes in a hdf5 file.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a3959ef2486c4c456e76584168da85aba}{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write an integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_aa621d5efc77049d6ee8dab8b8a1e7ebe}{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a38454d655e553e07bfaba67da14fd578}{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_adb6eff5c1284cf4fed9bd8a331a219fd}{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a962f1050530d43822075bb646e631411}{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_aae8bb567dcb75727d39619cfae14043f}{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a867dca47b84260259e3a7fef99298dc8}{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a105da78bee8590ebd4014d9950b2251f}{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_ad858843f21c092410756a7b22d504c40}{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__write__attr_a8f365b16166c853d262252695f699d76}{hdf5\-\_\-write\-\_\-char\-\_\-attr} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a string as attribute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic inteface used to write attributes in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written \\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute \\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array (optional) \\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array (optional) \\
+\hline
+\mbox{\tt in}  & {\em data} & 0-\/\-D, 1-\/\-D or 2-\/\-D attribute of type Integer(4), Real(4), Real(8) or Character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 50 of file modhdf5.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a8f365b16166c853d262252695f699d76}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-char\-\_\-attr@{hdf5\-\_\-write\-\_\-char\-\_\-attr}}
+\index{hdf5\-\_\-write\-\_\-char\-\_\-attr@{hdf5\-\_\-write\-\_\-char\-\_\-attr}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-char\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-char\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{character($\ast$), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a8f365b16166c853d262252695f699d76}
+
+
+Write a string as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2991 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a3959ef2486c4c456e76584168da85aba}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a3959ef2486c4c456e76584168da85aba}
+
+
+Write an integer4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2668 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_aa621d5efc77049d6ee8dab8b8a1e7ebe}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_aa621d5efc77049d6ee8dab8b8a1e7ebe}
+
+
+Write a 1-\/\-D array of integer4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2708 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a38454d655e553e07bfaba67da14fd578}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a38454d655e553e07bfaba67da14fd578}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2743 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_adb6eff5c1284cf4fed9bd8a331a219fd}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{real(kind=4), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_adb6eff5c1284cf4fed9bd8a331a219fd}
+
+
+Write a real4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2779 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a962f1050530d43822075bb646e631411}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a962f1050530d43822075bb646e631411}
+
+
+Write a 1-\/\-D array of real4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2813 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_aae8bb567dcb75727d39619cfae14043f}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_aae8bb567dcb75727d39619cfae14043f}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2848 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a867dca47b84260259e3a7fef99298dc8}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{real(kind=8), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a867dca47b84260259e3a7fef99298dc8}
+
+
+Write a real8 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2885 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_a105da78bee8590ebd4014d9950b2251f}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_a105da78bee8590ebd4014d9950b2251f}
+
+
+Write a 1-\/\-D array of real8 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2919 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__write__attr_ad858843f21c092410756a7b22d504c40}{\index{modhdf5\-::hdf5\-\_\-write\-\_\-attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}!hdf5\-\_\-write\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}!modhdf5::hdf5_write_attr@{modhdf5\-::hdf5\-\_\-write\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-attr\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__write__attr_ad858843f21c092410756a7b22d504c40}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2954 of file modhdf5.\-f90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modhdf5_8f90}{modhdf5.\-f90}\end{DoxyCompactItemize}

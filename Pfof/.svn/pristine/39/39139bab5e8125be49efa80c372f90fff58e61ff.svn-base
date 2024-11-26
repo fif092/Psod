@@ -1,0 +1,109 @@
+include ../../Make.inc
+
+EXE = pfof_snap
+
+VPATH= ../../common/src/:.
+
+
+SRC = modhdf5.f90 		\
+	modconstant.f90 	\
+	modmpicommons.f90 	\
+	modreadinfo.f90 	\
+	modvariables.f90	\
+	modtiming.f90		\
+	modparameters.f90	\
+	modmpicom.f90		\
+	modiocommons.f90	\
+	modwritehalo.f90	\
+	modsort.f90		\
+	modsortinterf.f90 	\
+	modreadcube.f90 	\
+	modwritecube.f90 	\
+	modio.f90		\
+	modhalo.f90		\
+	modfofmpi.f90 		\
+	modfofpara.f90		\
+	pfof_snap.f90
+
+OBJS = $(SRC:%.f90=%.o)
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+release: $(EXE)
+all: release
+
+$(EXE) : $(MODS) $(OBJS)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -g -o $(EXE) $(OBJS) $(LDFLAGS)
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) 
+
+
+# common
+modconstant.o: modconstant.f90
+modconstant.mod: modconstant.f90
+
+modhdf5.o : modhdf5.f90
+modhdf5.mod : modhdf5.f90
+
+modtiming.o : modtiming.f90
+modtiming.mod : modtiming.f90
+
+modmpicommons.o : modmpicommons.f90 modconstant.mod
+modmpicommons.mod : modmpicommons.f90 modconstant.mod
+
+modreadinfo.o : modreadinfo.f90 modconstant.mod modmpicommons.mod
+modreadinfo.mod : modreadinfo.f90 modconstant.mod modmpicommons.mod
+
+modsortinterf.o : modsortinterf.f90 modconstant.mod modmpicommons.mod
+modsortinterf.mod : modsortinterf.f90 modconstant.mod modmpicommons.mod
+
+modiocommons.o : modiocommons.f90 modconstant.mod modhdf5.mod
+modiocommons.mod : modiocommons.f90 modconstant.mod modhdf5.mod
+
+modhalo.o : modhalo.f90 modconstant.mod modvariables.mod modmpicommons.mod modtiming.mod 
+modhalo.mod : modhalo.f90 modconstant.mod modvariables.mod modmpicommons.mod modtiming.mod 
+
+modfofmpi.o : modfofmpi.f90 modconstant.mod modmpicommons.mod modio.mod modvariables.mod
+modfofmpi.mod : modfofmpi.f90 modconstant.mod modmpicommons.mod modio.mod modvariables.mod
+
+modwritehalo.o : modwritehalo.f90 modiocommons.mod modhdf5.mod modparameters.mod modmpicommons.mod
+modwritehalo.mod : modwritehalo.f90 modiocommons.mod modhdf5.mod modparameters.mod modmpicommons.mod
+
+# pfof_snap
+modparameters.o : modparameters.f90 modconstant.mod
+modparameters.mod : modparameters.f90 modconstant.mod
+
+modmpicom.o : modmpicom.f90 modparameters.mod modmpicommons.mod
+modmpicom.mod : modmpicom.f90 modparameters.mod modmpicommons.mod
+
+modvariables.o : modvariables.f90 modconstant.mod
+modvariables.mod : modvariables.f90 modconstant.mod
+
+modreadcube.o : modreadcube.f90 modconstant.mod modhdf5.mod modmpicom.mod modparameters.mod modvariables.mod modiocommons.mod
+modreadcube.mod : modreadcube.f90 modconstant.mod modhdf5.mod modmpicom.mod modparameters.mod modvariables.mod modiocommons.mod
+
+modwritecube.o : modwritecube.f90 modconstant.mod modhdf5.mod modmpicom.mod modparameters.mod modvariables.mod modiocommons.mod modsortinterf.mod
+modwritecube.mod : modwritecube.f90 modconstant.mod modhdf5.mod modmpicom.mod modparameters.mod modvariables.mod modiocommons.mod modsortinterf.mod
+
+modio.o : modio.f90 modconstant.mod modvariables.mod modreadinfo.mod modmpicom.mod modparameters.mod modmpicommons.mod modmpicom.mod modtiming.mod 
+modio.mod : modio.f90 modconstant.mod modvariables.mod modreadinfo.mod modmpicom.mod modparameters.mod modmpicommons.mod modmpicom.mod modtiming.mod 
+
+modfofpara.o : modfofpara.f90 modmpicom.mod modfofmpi.mod modparameters.mod modhalo.mod modio.mod modwritehalo.mod modtiming.mod modsortinterf.mod modvariables.mod 
+modfofpara.mod : modfofpara.f90 modmpicom.mod modfofmpi.mod modparameters.mod modhalo.mod modio.mod modwritehalo.mod modtiming.mod modsortinterf.mod modvariables.mod 
+
+pfof_snap.o : pfof_snap.f90 modhdf5.mod modvariables.mod modparameters.mod modmpicom.mod modfofpara.mod modreadcube.mod modwritecube.mod modio.mod modtiming.mod

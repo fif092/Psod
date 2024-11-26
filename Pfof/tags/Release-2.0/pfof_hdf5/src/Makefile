@@ -1,0 +1,55 @@
+MPIFC=h5pfc
+
+#OPTS = -O2 -g -traceback -warn all -fpp -I/usr/local/include
+#OPTS = -O3 -xHost -ipo -g -traceback -warn all -convert big_endian -assume byterecl -fpp -DLONGINT -I/usr/local/include
+#OPTS = -O2 -g -Wall -fconvert=big-endian  -I/usr/local/include -cpp -DLONGINT 
+OPTS = -O2 -g -Wall -cpp -DLONGINT 
+
+FCFLAGS = $(OPTS) 
+EXE = pfofhdf5
+
+VPATH= ../../common/src/:.
+
+SRC = modhdf5.f90 	\
+	modconstant.f90 \
+	modvariables.f90	\
+	modtiming.f90	\
+	modparameters.f90	\
+	modmpicom.f90	\
+	modxdmf.f90	\
+	modwritehalo.f90	\
+	modsort.f90	\
+	modsortinterf.f90 	\
+	modio.f90	\
+	modhalo.f90	\
+	modfofmpi.f90 	\
+	modfofpara.f90	\
+	pfof.f90
+
+OBJS = $(SRC:%.f90=%.o)
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+release:$(EXE)
+all:release
+
+$(EXE) : $(MODS) $(OBJS)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -g -o $(EXE) $(OBJS) $(LDFLAGS)
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) 
+

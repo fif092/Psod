@@ -1,0 +1,23 @@
+&infocone
+rmax   = 0.137872413991991E+01
+thetay = 0.100000000000000E+02
+thetaz = 0.100000000000000E+02
+ncell  = 1204203
+nlevel   = 7
+levelmin = 7
+fullsky = .false.
+/
+
+&infofile
+dirname  = '/obs/roy/Cosmo/Data/ConeGrav/output_ncoarse_00171'
+filename = 'cone_grav_narrow_pastnfut_00001_ncoarse_00171_proc'
+filenb   = 12
+ffile    = 1
+lfile    = 16
+nstride  = 8192
+/
+
+&infooutput
+shellname = 'shellgrav_00171.h5'
+cubesize = 1.0d-1
+/

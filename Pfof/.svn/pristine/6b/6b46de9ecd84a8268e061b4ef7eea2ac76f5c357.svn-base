@@ -1,0 +1,135 @@
+#!/usr/bin/env python3
+# Regression test for the pfof package
+import argparse
+import os
+import shutil
+import fileinput
+
+homepath=os.environ.get("HOME")
+trunkpath=homepath+"/Travail/Devel/Cosmologie/Pfof/trunk"
+releasepath=homepath+"/Travail/Devel/Cosmologie/Pfof/tags/Release-1.0"
+datapath=homepath+"/Travail/Devel/Cosmologie/test/Data/output_00013"
+testpath=homepath+"/Travail/Devel/Cosmologie/test"
+
+def editnamelist( filename, parametername, parametervalue ):
+    "Edit a pfof namelist .nml file"
+    
+    for line in fileinput.input(filename,inplace=True):
+        info=line.split("=")
+        if info[0].strip() == parametername:
+            print(line.replace(info[1].strip(), parametervalue),end="")
+        else:
+            print(line,end="")
+    return ;
+
+
+def comparepfofhdf5( filetype ):
+    "Compare trunk and release version of a type of HDF5 pfof output"
+
+    return;
+
+def testpfofhdf5( ):
+    "Regression test for pfofhdf5."
+    print("Regression test for pfofhdf5.")
+    print("This test in not fully implemented.")
+
+    cwd = os.getcwd() # get current directory
+
+    build_dir = trunkpath+"/pfof_hdf5/src"
+    try:
+        os.chdir(build_dir)
+        os.system("make")
+        trunkexe=testpath+"/pfofhdf5trunk"
+        shutil.copy2("pfofhdf5",trunkexe)
+        shutil.copy2("../pfof.nml",testpath+"/pfoftrunk.nml")
+    finally:
+        os.chdir(cwd)
+
+    build_dir = releasepath+"/pfof_hdf5/src"
+    try:
+        os.chdir(build_dir)
+        os.system("make")
+        releaseexe=testpath+"/pfofhdf5release"
+        shutil.copy2("pfofhdf5",releaseexe)
+        shutil.copy2("../pfof.nml",testpath+"/pfofrelease.nml")
+    finally:
+        os.chdir(cwd)
+
+    print("1st test: read from Ramses, HDF5 output, b=0.2, Mmin=100")
+    shutil.copy2("pfoftrunk.nml","pfof.nml")
+    editnamelist( "pfof.nml","output_root","'trunk'" )
+    editnamelist( "pfof.nml","pathinput","'"+datapath+"'")
+    os.system("mpirun -np 8 "+trunkexe+" > trunk1.log")
+
+    shutil.copy2("pfofrelease.nml","pfof.nml")
+    editnamelist( "pfof.nml","root","'release'" )
+    editnamelist( "pfof.nml","pathinput","'"+datapath+"'")
+    os.system("mpirun -np 8 "+releaseexe+" > release1.log")
+
+    comparehdf5("cube")
+    comparehdf5("halo")
+    comparehdf5("halomass")
+
+    return;
+
+def testpfofcone( ):
+    "Regression test for pfofcone."
+    print("Regression test for pfofcone.")
+    print("This test in not fully implemented.")
+    return;
+
+def testconecreator( ):
+    "Regression test for conecreator."
+    print("Regression test for conecreator.")
+    print("This test in not fully implemented.")
+    return;
+
+def testconemapper( ):
+    "Regression test for conemapper."
+    print("Regression test for conemapper.")
+    print("This test in not fully implemented.")
+    return;
+
+def testhaloanalyzer( ):
+    "Regression test for haloanalyzer."
+    print("Regression test for haloanalyzer.")
+    print("This test in not fully implemented.")
+    return;
+
+
+
+# options: name of the code 
+codelist = ["all","pfofcone","pfofhdf5","conecreator",
+                             "conemapper","haloanalyzer"]
+
+parser = argparse.ArgumentParser(description="Regression test for the pfof package",
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+
+parser.add_argument("-c","--code",
+                    default="all",
+                    choices=codelist,
+                    help="Code to test. Default value is %(default)s. Allowed values are "+
+                    ", ".join(codelist), metavar='')
+
+args = parser.parse_args()
+
+print ("Regression test for the pfof package.")
+print (" ")
+
+if args.code == "pfofhdf5":
+    testpfofhdf5();
+elif args.code == "pfofcone":
+    testpfofcone();
+elif args.code == "conecreator":
+    testconecreator();
+elif args.code == "conemapper":
+    testconemapper();
+elif args.code == "haloanalyzer":
+    testhaloanalyzer();
+elif args.code == "all":
+    testpfofhdf5();
+    testpfofcone();
+    testconecreator();
+    testconemapper();
+    testhaloanalyzer();
+

@@ -1,0 +1,83 @@
+\hypertarget{modvariables_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modvariables.f90 File Reference}
+\label{modvariables_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modvariables.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modvariables.\+f90}}
+
+
+This file contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodvariables}{modvariables}
+\begin{DoxyCompactList}\small\item\em This module contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}{modvariables\+::deallocall} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{modvariables\+::shell\+\_\+nb}
+\item 
+integer(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a46e17f78883958892917ac536b4ab1b1}{modvariables\+::indexcube}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a2de620524061386e6addabfa15a6b020}{modvariables\+::ictable}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}{modvariables\+::shellcubes\+\_\+size}
+\item 
+real(kind=8), dimension(6) \hyperlink{namespacemodvariables_a45ca9fc03093230dfc1beb56cacb8e80}{modvariables\+::boundaries}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}{modvariables\+::cubepershell}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{modvariables\+::mynpart}
+\item 
+integer(kind=pri) \hyperlink{namespacemodvariables_a003cd4a3edf99a1c8f83cef4c61eb690}{modvariables\+::npart}
+\item 
+real(kind=pr), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a1eb22f6b56e0963ff4d88a5114903517}{modvariables\+::pos}
+\item 
+real(kind=pr), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_aea9c591211b0b8c19d6ab8d5b017c789}{modvariables\+::vel}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ac2069a0665c46610db9e57a5d5eaf195}{modvariables\+::id}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a93c25eb46b5370bd8153733e03f3008d}{modvariables\+::structure}
+\item 
+real(kind=pr), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a9076676c4847d18b42f53f70868d9242}{modvariables\+::pot}
+\item 
+real(kind=pr), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a4c6b0b1717ed4089025045d3ef290104}{modvariables\+::for}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ae6b45a68a4cbf0ccbbf7c08ee87e3573}{modvariables\+::ramsesid}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a7528c234a190760e036921b956ec9fe8}{modvariables\+::posf}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{modvariables\+::velf}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a74cd7fb485e34ae685664db5b2629aa9}{modvariables\+::idf}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a5b99e0cc82073c06969e0fe6caa06357}{modvariables\+::stf}
+\item 
+real(kind=pr), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a719beead34fb4c6c7c70e7f51f1dfc78}{modvariables\+::potf}
+\item 
+real(kind=pr), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a1f2453280a3af1c380a1c3ad4797dc4b}{modvariables\+::forf}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a960cf3d5497024438caba54185cd7793}{modvariables\+::ramsesidf}
+\item 
+real(kind=pr), dimension(3) \hyperlink{namespacemodvariables_a70ddcf7f533c219df5c249774ff81df1}{modvariables\+::partmin}
+\item 
+real(kind=pr), dimension(3) \hyperlink{namespacemodvariables_abeabad3e2598f3abb4a4fa74adca7743}{modvariables\+::partmax}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{modvariables\+::nres}
+\item 
+type(type\+\_\+inforamses) \hyperlink{namespacemodvariables_ac84b14c43266126c4d7120ba0b8f48f4}{modvariables\+::inforamses}
+\item 
+type(type\+\_\+inforamses) \hyperlink{namespacemodvariables_a0640750979390f0e918c322d27b0bf74}{modvariables\+::inforamseslast}
+\item 
+type(type\+\_\+infocone\+\_\+part) \hyperlink{namespacemodvariables_a9c451543a6252b72d4a5352333c718b9}{modvariables\+::infocone}
+\item 
+type(type\+\_\+infocone\+\_\+part) \hyperlink{namespacemodvariables_acecda25ec5fba6f5f5fcaa09b2aba3a2}{modvariables\+::infoconelast}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays. 
+

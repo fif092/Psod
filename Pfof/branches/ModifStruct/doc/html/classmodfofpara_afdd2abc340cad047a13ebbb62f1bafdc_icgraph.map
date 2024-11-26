@@ -1,0 +1,4 @@
+<map id="modfofpara::init" name="modfofpara::init">
+<area shape="rect" id="node2" href="$classmodfofpara.html#a033a2820dd29f107782b566ca298bde4" title="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..." alt="" coords="165,5,328,32"/>
+<area shape="rect" id="node3" href="$pfof__cone_8f90.html#addc770475dc2e497bf70a10ebc158aed" title="pFOF_cone is a distributed implementation of the Friends&#45;of&#45;Friends halo finder algorithm designed fo..." alt="" coords="377,5,455,32"/>
+</map>

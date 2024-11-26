@@ -1,0 +1,36 @@
+#!python
+import os, os.path, sys, fnmatch
+
+env = DefaultEnvironment( ENV = os.environ )
+env = Environment(F90='h5pfc ',FORTRAN='h5pfc ',F90FLAGS=' -cpp -DLONGINT')
+#env = Environment(FORTRAN='h5pfc')
+#env = Environment(F90FLAGS='-g -cpp')
+#env = env.Clone( FORTRAN = [ 'h5pfc' ] )
+#env = env.Clone( F90 = [ 'h5pfc' ] )
+#env = env.Clone( F90FLAGS = '-g -cpp' )
+#env = env.Clone( FORTRANMODDIR = '#/mods' , FORTRANMODDIRPREFIX = '-J' )
+
+srcpfofhdf5 = [ '#/common/src/modhdf5.f90',
+	    '#/common/src/modconstant.f90',
+	    '#/common/src/modutils.f90',
+	    '#/pfof_hdf5/src/modvariables.f90',
+	    '#/common/src/modtiming.f90',
+	    '#/pfof_hdf5/src/modparameters.f90',
+	    '#/pfof_hdf5/src/modmpicom.f90',
+	    '#/pfof_hdf5/src/modxdmf.f90',
+	    '#/common/src/modwritehalo.f90',
+	    '#/common/src/modsortinterf.f90',
+	    '#/pfof_hdf5/src/modio.f90',
+	    '#/common/src/modhalo.f90',
+	    '#/common/src/modfofmpi.f90',
+	    '#/pfof_hdf5/src/modfofpara.f90',
+	    '#/pfof_hdf5/src/pfof.f90' ]
+
+Depends('#/common/src/modhalo.o',[ '#/common/src/modutils.o', '#/common/src/modtiming.o' ])
+
+srcpfofcone = [ '#/common/src/modcom.f90','#/code2/src/main2.f90' ]
+
+env.Program( 'pfofhdf5', srcpfofhdf5 )
+#env.Program( 'test2', src2 )
+
+

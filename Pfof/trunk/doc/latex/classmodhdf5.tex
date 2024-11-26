@@ -1,0 +1,2168 @@
+\hypertarget{classmodhdf5}{\section{modhdf5 Module Reference}
+\label{classmodhdf5}\index{modhdf5@{modhdf5}}
+}
+
+
+This module contains wrappers for H\-D\-F5 serial and M\-P\-I I/\-O functions.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__attr}{hdf5\-\_\-read\-\_\-attr}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read attributes from a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__data}{hdf5\-\_\-read\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read data from a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__read__mpi__data}{hdf5\-\_\-read\-\_\-mpi\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to read data from a parallel hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__attr}{hdf5\-\_\-write\-\_\-attr}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write attributes in a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__data}{hdf5\-\_\-write\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write data in a hdf5 file. \end{DoxyCompactList}\item 
+interface \hyperlink{interfacemodhdf5_1_1hdf5__write__mpi__data}{hdf5\-\_\-write\-\_\-mpi\-\_\-data}
+\begin{DoxyCompactList}\small\item\em Generic inteface used to write data in a parallel hdf5 file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodhdf5_a78ec7a0bfdcd60f1ce1ecf0c88bb7cd9}{hdf5\-\_\-init} ()
+\begin{DoxyCompactList}\small\item\em Open the hdf5 interface. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_ace643e6a3e592dbe1be4d158888eb477}{hdf5\-\_\-finalize} ()
+\begin{DoxyCompactList}\small\item\em Close the hdf5 interface. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a11539d06d180bff29d3c56ba198451d4}{hdf5\-\_\-open\-\_\-file} (filename, file\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Open an existing hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a9f6976ee158485f6b203635df23156e3}{hdf5\-\_\-open\-\_\-mpi\-\_\-file} (filename, comm, file\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Open an existing 'parallel' hdf5 file shared by the communicator comm. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a0382a4721335fbb49e1cb9cd48cfea0a}{hdf5\-\_\-create\-\_\-mpi\-\_\-file} (filename, comm, file\-\_\-id, origin)
+\begin{DoxyCompactList}\small\item\em Create and open a 'parallel' hdf5 file shared by the communicator comm. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a72cb805582425e8633c70c5db85df8bc}{hdf5\-\_\-close\-\_\-mpi\-\_\-file} (file\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Close a 'parallel' hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a4108148cefef713392f3f1da426e75d2}{hdf5\-\_\-create\-\_\-file} (filename, file\-\_\-id, origin)
+\begin{DoxyCompactList}\small\item\em Create and open a hdf5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_af70ee678ccdc5ce829431ebe909264a9}{hdf5\-\_\-close\-\_\-file} (file\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Close a h5 file. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_ae547666d0167e2a78d6529e11c1faa92}{hdf5\-\_\-open\-\_\-group} (id, name, group\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Open an existing hdf5 group. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_a5486f9c861f7b8ee2060015acf0169a4}{hdf5\-\_\-create\-\_\-group} (id, name, group\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Create and open a hdf5 group. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodhdf5_aba547bfdd3dc38385069b0885ab5d526}{hdf5\-\_\-close\-\_\-group} (group\-\_\-id)
+\begin{DoxyCompactList}\small\item\em Close a hdf5 group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodhdf5_a85487dfda18b03bd8b48100b016240b3}{hdf5\-\_\-write\-\_\-int4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_af39615b3539b84afc3890884aafec217}{hdf5\-\_\-write\-\_\-int8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ab39fa5690f5f029a8beea46dd8030b1d}{hdf5\-\_\-write\-\_\-int4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_abcc24e701a795a92f16c6d4c1eb034c7}{hdf5\-\_\-write\-\_\-int8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a5f075a274076e480eee835fd3b9573af}{hdf5\-\_\-write\-\_\-real4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_aed41c10954f7cb054d46df0c012d147d}{hdf5\-\_\-write\-\_\-real8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a71a612d3c6bc8959576fe46d7bab679f}{hdf5\-\_\-write\-\_\-real4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=4) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a86d263896481bcb679282cede10ab4a1}{hdf5\-\_\-write\-\_\-real8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=8) array in a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_af38c097f92a373ed47962ec1e02f4cb3}{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a727abaf04f522d9a2a2accdbf3512a96}{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a3402bae4c5e2b0e315c1728b264798da}{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D integer(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a2ca2e47f5fe959ef8cbf3bdad5bef7f8}{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D integer(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_aa5b200799b385418068f6c916bbbad34}{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=4) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a6c880adf75b8b8a5ad56120effed2f6a}{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=4) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a6fe25705d9c64cf43c06c885a71878e2}{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d} (id, name, n1, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D real(kind=8) array in a parallel file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a670313739a46ec4d9006d8761d35157a}{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d} (id, name, n1, n2, data, comm, empty)
+\begin{DoxyCompactList}\small\item\em Write a 2-\/\-D real(kind=8) array in a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_afda2e44922def0d140ce850c12ef2f48}{hdf5\-\_\-read\-\_\-int4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a640df6ccea7f28d6ed6b578d8018d7d7}{hdf5\-\_\-read\-\_\-int8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a29f383042b1dc2b1fc1155af48fc98a3}{hdf5\-\_\-read\-\_\-int4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a4ac00fa4fbae4c8a8f936ee48292e114}{hdf5\-\_\-read\-\_\-int8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ae087ad5b47b31640a477e5056aaf97e9}{hdf5\-\_\-read\-\_\-real4\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a584fb8f065f2c6675049794e856b5085}{hdf5\-\_\-read\-\_\-real8\-\_\-1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a36acd2df481965d7cb9c1b312fdff7b0}{hdf5\-\_\-read\-\_\-real4\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real(kind=4) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a7ba4b99f85945770344cdd73b713ea3a}{hdf5\-\_\-read\-\_\-real8\-\_\-2d} (id, name, n1, n2, data)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real(kind=8) array from a serial file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a18b987f7a44198ccc7dd893cbdc322fc}{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ac96ae5057bcd6745840c716a232d4b66}{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a2847f70176f88d95e8e6e1bec3a2539e}{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a41bc63b78ce861c9898ef45642514a9d}{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a7c2f69141e8a85768536e7c8f79f6348}{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a406b07a6320d4dd08a12ca4b8d6b9e9d}{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real4 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_afaf6a2a85551a1a7e9638d597c39dc32}{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d} (id, name, n1, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a29c6c1a0c3de14678ed8eebe304b3255}{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d} (id, name, n1, n2, data, comm)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real8 array from a parallel file The array is distributed along the 2nd dimension. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a1f5aac5704c10accbb39476926a4a7aa}{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write an integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a41e511ab23277132cad7aa447804eee4}{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of integer4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a902380b589c35be03e33f0ae8ebdc0dc}{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{classmodhdf5_abadf683caad48e7acd96f916246bf778}{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a6158884984b6690aad27d75c6d5f58a7}{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of real4 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ad682a858bcaec8fcd21f646d44d76208}{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{classmodhdf5_a28db26cc0b827091ab455d2419c88b10}{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ad55b7cffc861305840d5f160ba6fa1fd}{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d} (id, name, n1, data)
+\begin{DoxyCompactList}\small\item\em Write a 1-\/\-D array of real8 as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a71ef9213132fb3f757d29f58f9c20966}{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d} (id, name, n1, n2, data)
+\item 
+subroutine \hyperlink{classmodhdf5_ad6fea34611cf76b56b5143cd182b8484}{hdf5\-\_\-write\-\_\-char\-\_\-attr} (id, name, data)
+\begin{DoxyCompactList}\small\item\em Write a string as attribute. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a10a4b5212d77e52dba2616ba3abb7df1}{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read an integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a2ff1b28dd896cc37583e97a52348039f}{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a4ca8f47995bf9df5b6c892781c87dd95}{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a6cf3b8369d7cbc96e8639439eb7c51ff}{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_acd7e7ad91ecc73c632ddc76468dbd083}{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a783cb12e2d85f812c506fff7cc69f37a}{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_ad2a6c1b4f0229be1ac9f4e4eb0556af4}{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a5010be0e91c8d56afbd40530b8064d6a}{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a85144bc1c41d08550379f855b3974507}{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{classmodhdf5_a2da336bc6d0ebbf1e6d582469b741a63}{hdf5\-\_\-read\-\_\-char\-\_\-attr} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read string attribute in a hdf5 file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer \hyperlink{classmodhdf5_a3521606545551f2d5b2222712873b228}{h5err}
+\begin{DoxyCompactList}\small\item\em hdf5 error code \end{DoxyCompactList}\item 
+integer \hyperlink{classmodhdf5_a2d3fcdf78d1a95860d10644e0bef1bf7}{mpierr}
+\begin{DoxyCompactList}\small\item\em mpi error code \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains wrappers for H\-D\-F5 serial and M\-P\-I I/\-O functions. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modhdf5.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodhdf5_af70ee678ccdc5ce829431ebe909264a9}{\index{modhdf5@{modhdf5}!hdf5\-\_\-close\-\_\-file@{hdf5\-\_\-close\-\_\-file}}
+\index{hdf5\-\_\-close\-\_\-file@{hdf5\-\_\-close\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-close\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-close\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{file\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_af70ee678ccdc5ce829431ebe909264a9}
+
+
+Close a h5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-\_\-id} & hdf5 identifier of the file to close \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 499 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_af70ee678ccdc5ce829431ebe909264a9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_aba547bfdd3dc38385069b0885ab5d526}{\index{modhdf5@{modhdf5}!hdf5\-\_\-close\-\_\-group@{hdf5\-\_\-close\-\_\-group}}
+\index{hdf5\-\_\-close\-\_\-group@{hdf5\-\_\-close\-\_\-group}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-close\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-close\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{group\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_aba547bfdd3dc38385069b0885ab5d526}
+
+
+Close a hdf5 group. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em group\-\_\-id} & group identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 570 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_aba547bfdd3dc38385069b0885ab5d526_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a72cb805582425e8633c70c5db85df8bc}{\index{modhdf5@{modhdf5}!hdf5\-\_\-close\-\_\-mpi\-\_\-file@{hdf5\-\_\-close\-\_\-mpi\-\_\-file}}
+\index{hdf5\-\_\-close\-\_\-mpi\-\_\-file@{hdf5\-\_\-close\-\_\-mpi\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-close\-\_\-mpi\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-close\-\_\-mpi\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{file\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a72cb805582425e8633c70c5db85df8bc}
+
+
+Close a 'parallel' hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em file\-\_\-id} & hdf5 identifier of the parallel file to close \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 376 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a72cb805582425e8633c70c5db85df8bc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a4108148cefef713392f3f1da426e75d2}{\index{modhdf5@{modhdf5}!hdf5\-\_\-create\-\_\-file@{hdf5\-\_\-create\-\_\-file}}
+\index{hdf5\-\_\-create\-\_\-file@{hdf5\-\_\-create\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-create\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-create\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{integer(hid\-\_\-t), intent(out)}]{file\-\_\-id, }
+\item[{character(len=50), optional}]{origin}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a4108148cefef713392f3f1da426e75d2}
+
+
+Create and open a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & name of the parallel file to create\\
+\hline
+\mbox{\tt out}  & {\em file\-\_\-id} & hdf5 identifier of the parallel file\\
+\hline
+ & {\em origin} & origin of the file (code+version) \-: optional argument \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 397 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a4108148cefef713392f3f1da426e75d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a5486f9c861f7b8ee2060015acf0169a4}{\index{modhdf5@{modhdf5}!hdf5\-\_\-create\-\_\-group@{hdf5\-\_\-create\-\_\-group}}
+\index{hdf5\-\_\-create\-\_\-group@{hdf5\-\_\-create\-\_\-group}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-create\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-create\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(hid\-\_\-t), intent(out)}]{group\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a5486f9c861f7b8ee2060015acf0169a4}
+
+
+Create and open a hdf5 group. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & \char`\"{}parent\char`\"{} identifier\\
+\hline
+\mbox{\tt in}  & {\em name} & group name\\
+\hline
+\mbox{\tt out}  & {\em group\-\_\-id} & group identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 547 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a5486f9c861f7b8ee2060015acf0169a4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a0382a4721335fbb49e1cb9cd48cfea0a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-create\-\_\-mpi\-\_\-file@{hdf5\-\_\-create\-\_\-mpi\-\_\-file}}
+\index{hdf5\-\_\-create\-\_\-mpi\-\_\-file@{hdf5\-\_\-create\-\_\-mpi\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-create\-\_\-mpi\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-create\-\_\-mpi\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{integer, intent(in)}]{comm, }
+\item[{integer(hid\-\_\-t), intent(out)}]{file\-\_\-id, }
+\item[{character(len=50), optional}]{origin}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a0382a4721335fbb49e1cb9cd48cfea0a}
+
+
+Create and open a 'parallel' hdf5 file shared by the communicator comm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & name of the parallel file to create\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used for the file access\\
+\hline
+\mbox{\tt out}  & {\em file\-\_\-id} & hdf5 id of the created file\\
+\hline
+ & {\em origin} & origin of the file (code+version) \-: optional argument \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 265 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a0382a4721335fbb49e1cb9cd48cfea0a_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_ace643e6a3e592dbe1be4d158888eb477}{\index{modhdf5@{modhdf5}!hdf5\-\_\-finalize@{hdf5\-\_\-finalize}}
+\index{hdf5\-\_\-finalize@{hdf5\-\_\-finalize}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-finalize}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_ace643e6a3e592dbe1be4d158888eb477}
+
+
+Close the hdf5 interface. 
+
+
+
+Definition at line 175 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classmodhdf5_ace643e6a3e592dbe1be4d158888eb477_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a78ec7a0bfdcd60f1ce1ecf0c88bb7cd9}{\index{modhdf5@{modhdf5}!hdf5\-\_\-init@{hdf5\-\_\-init}}
+\index{hdf5\-\_\-init@{hdf5\-\_\-init}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a78ec7a0bfdcd60f1ce1ecf0c88bb7cd9}
+
+
+Open the hdf5 interface. 
+
+
+
+Definition at line 157 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classmodhdf5_a78ec7a0bfdcd60f1ce1ecf0c88bb7cd9_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a11539d06d180bff29d3c56ba198451d4}{\index{modhdf5@{modhdf5}!hdf5\-\_\-open\-\_\-file@{hdf5\-\_\-open\-\_\-file}}
+\index{hdf5\-\_\-open\-\_\-file@{hdf5\-\_\-open\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-open\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-open\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{integer(kind=hid\-\_\-t), intent(out)}]{file\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a11539d06d180bff29d3c56ba198451d4}
+
+
+Open an existing hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & name of the file to open\\
+\hline
+\mbox{\tt out}  & {\em file\-\_\-id} & hdf5 id of the opened file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 197 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a11539d06d180bff29d3c56ba198451d4_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_ae547666d0167e2a78d6529e11c1faa92}{\index{modhdf5@{modhdf5}!hdf5\-\_\-open\-\_\-group@{hdf5\-\_\-open\-\_\-group}}
+\index{hdf5\-\_\-open\-\_\-group@{hdf5\-\_\-open\-\_\-group}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-open\-\_\-group}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-open\-\_\-group (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(hid\-\_\-t), intent(out)}]{group\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_ae547666d0167e2a78d6529e11c1faa92}
+
+
+Open an existing hdf5 group. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & \char`\"{}parent\char`\"{} identifier\\
+\hline
+\mbox{\tt in}  & {\em name} & group name\\
+\hline
+\mbox{\tt out}  & {\em group\-\_\-id} & group identifier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 524 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_ae547666d0167e2a78d6529e11c1faa92_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a9f6976ee158485f6b203635df23156e3}{\index{modhdf5@{modhdf5}!hdf5\-\_\-open\-\_\-mpi\-\_\-file@{hdf5\-\_\-open\-\_\-mpi\-\_\-file}}
+\index{hdf5\-\_\-open\-\_\-mpi\-\_\-file@{hdf5\-\_\-open\-\_\-mpi\-\_\-file}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-open\-\_\-mpi\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modhdf5\-::hdf5\-\_\-open\-\_\-mpi\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{integer(kind=hid\-\_\-t), intent(out)}]{file\-\_\-id}
+\end{DoxyParamCaption}
+)}}\label{classmodhdf5_a9f6976ee158485f6b203635df23156e3}
+
+
+Open an existing 'parallel' hdf5 file shared by the communicator comm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & name of the parallel file to open\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used for the file access\\
+\hline
+\mbox{\tt out}  & {\em file\-\_\-id} & hdf5 id of the opened file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 219 of file modhdf5.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodhdf5_a9f6976ee158485f6b203635df23156e3_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodhdf5_a2da336bc6d0ebbf1e6d582469b741a63}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-char\-\_\-attr@{hdf5\-\_\-read\-\_\-char\-\_\-attr}}
+\index{hdf5\-\_\-read\-\_\-char\-\_\-attr@{hdf5\-\_\-read\-\_\-char\-\_\-attr}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-char\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-char\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{character(len=n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a2da336bc6d0ebbf1e6d582469b741a63}
+
+
+Read string attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute string\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3207 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_afda2e44922def0d140ce850c12ef2f48}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int4\-\_\-1d@{hdf5\-\_\-read\-\_\-int4\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-1d@{hdf5\-\_\-read\-\_\-int4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_afda2e44922def0d140ce850c12ef2f48}
+
+
+Read a 1-\/\-D integer(kind=4) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1729 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a29f383042b1dc2b1fc1155af48fc98a3}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int4\-\_\-2d@{hdf5\-\_\-read\-\_\-int4\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-2d@{hdf5\-\_\-read\-\_\-int4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a29f383042b1dc2b1fc1155af48fc98a3}
+
+
+Read a 2-\/\-D integer(kind=4) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1791 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a10a4b5212d77e52dba2616ba3abb7df1}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a10a4b5212d77e52dba2616ba3abb7df1}
+
+
+Read an integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2979 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a2ff1b28dd896cc37583e97a52348039f}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a2ff1b28dd896cc37583e97a52348039f}
+
+
+Read a 1-\/\-D integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3003 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a4ca8f47995bf9df5b6c892781c87dd95}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a4ca8f47995bf9df5b6c892781c87dd95}
+
+
+Read a 2-\/\-D integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3028 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a640df6ccea7f28d6ed6b578d8018d7d7}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int8\-\_\-1d@{hdf5\-\_\-read\-\_\-int8\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-int8\-\_\-1d@{hdf5\-\_\-read\-\_\-int8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a640df6ccea7f28d6ed6b578d8018d7d7}
+
+
+Read a 1-\/\-D integer(kind=8) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1760 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a4ac00fa4fbae4c8a8f936ee48292e114}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-int8\-\_\-2d@{hdf5\-\_\-read\-\_\-int8\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-int8\-\_\-2d@{hdf5\-\_\-read\-\_\-int8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-int8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a4ac00fa4fbae4c8a8f936ee48292e114}
+
+
+Read a 2-\/\-D integer(kind=8) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1823 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a18b987f7a44198ccc7dd893cbdc322fc}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a18b987f7a44198ccc7dd893cbdc322fc}
+
+
+Read a 1-\/\-D integer4 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1987 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ac96ae5057bcd6745840c716a232d4b66}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-int4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ac96ae5057bcd6745840c716a232d4b66}
+
+
+Read a 2-\/\-D integer4 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2063 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a2847f70176f88d95e8e6e1bec3a2539e}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a2847f70176f88d95e8e6e1bec3a2539e}
+
+
+Read a 1-\/\-D integer8 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2143 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a41bc63b78ce861c9898ef45642514a9d}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-int8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a41bc63b78ce861c9898ef45642514a9d}
+
+
+Read a 2-\/\-D integer8 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2220 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a7c2f69141e8a85768536e7c8f79f6348}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a7c2f69141e8a85768536e7c8f79f6348}
+
+
+Read a 1-\/\-D real4 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2300 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a406b07a6320d4dd08a12ca4b8d6b9e9d}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-real4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a406b07a6320d4dd08a12ca4b8d6b9e9d}
+
+
+Read a 2-\/\-D real4 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2376 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_afaf6a2a85551a1a7e9638d597c39dc32}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_afaf6a2a85551a1a7e9638d597c39dc32}
+
+
+Read a 1-\/\-D real8 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2460 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a29c6c1a0c3de14678ed8eebe304b3255}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d@{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-mpi\-\_\-real8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(inout), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a29c6c1a0c3de14678ed8eebe304b3255}
+
+
+Read a 2-\/\-D real8 array from a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2537 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ae087ad5b47b31640a477e5056aaf97e9}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real4\-\_\-1d@{hdf5\-\_\-read\-\_\-real4\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-1d@{hdf5\-\_\-read\-\_\-real4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ae087ad5b47b31640a477e5056aaf97e9}
+
+
+Read a 1-\/\-D real(kind=4) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1855 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a36acd2df481965d7cb9c1b312fdff7b0}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real4\-\_\-2d@{hdf5\-\_\-read\-\_\-real4\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-2d@{hdf5\-\_\-read\-\_\-real4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a36acd2df481965d7cb9c1b312fdff7b0}
+
+
+Read a 2-\/\-D real(kind=4) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1917 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a6cf3b8369d7cbc96e8639439eb7c51ff}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{real(kind=4), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a6cf3b8369d7cbc96e8639439eb7c51ff}
+
+
+Read a real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3055 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_acd7e7ad91ecc73c632ddc76468dbd083}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_acd7e7ad91ecc73c632ddc76468dbd083}
+
+
+Read a 1-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3079 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a783cb12e2d85f812c506fff7cc69f37a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a783cb12e2d85f812c506fff7cc69f37a}
+
+
+Read a 2-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3104 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a584fb8f065f2c6675049794e856b5085}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real8\-\_\-1d@{hdf5\-\_\-read\-\_\-real8\-\_\-1d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-1d@{hdf5\-\_\-read\-\_\-real8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a584fb8f065f2c6675049794e856b5085}
+
+
+Read a 1-\/\-D real(kind=8) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1886 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a7ba4b99f85945770344cdd73b713ea3a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real8\-\_\-2d@{hdf5\-\_\-read\-\_\-real8\-\_\-2d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-2d@{hdf5\-\_\-read\-\_\-real8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(inout), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a7ba4b99f85945770344cdd73b713ea3a}
+
+
+Read a 2-\/\-D real(kind=8) array from a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the array to read\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the array to read\\
+\hline
+\mbox{\tt in,out}  & {\em data} & array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1949 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ad2a6c1b4f0229be1ac9f4e4eb0556af4}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{real(kind=8), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ad2a6c1b4f0229be1ac9f4e4eb0556af4}
+
+
+Read a real8 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3131 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a5010be0e91c8d56afbd40530b8064d6a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a5010be0e91c8d56afbd40530b8064d6a}
+
+
+Read a 1-\/\-D real8 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3155 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a85144bc1c41d08550379f855b3974507}{\index{modhdf5@{modhdf5}!hdf5\-\_\-read\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a85144bc1c41d08550379f855b3974507}
+
+
+Read a 2-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3180 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ad6fea34611cf76b56b5143cd182b8484}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-char\-\_\-attr@{hdf5\-\_\-write\-\_\-char\-\_\-attr}}
+\index{hdf5\-\_\-write\-\_\-char\-\_\-attr@{hdf5\-\_\-write\-\_\-char\-\_\-attr}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-char\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-char\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{character($\ast$), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ad6fea34611cf76b56b5143cd182b8484}
+
+
+Write a string as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2944 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a85487dfda18b03bd8b48100b016240b3}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-int4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-int4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a85487dfda18b03bd8b48100b016240b3}
+
+
+Write a 1-\/\-D integer(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 589 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ab39fa5690f5f029a8beea46dd8030b1d}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-int4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-int4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ab39fa5690f5f029a8beea46dd8030b1d}
+
+
+Write a 2-\/\-D integer(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 669 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a1f5aac5704c10accbb39476926a4a7aa}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a1f5aac5704c10accbb39476926a4a7aa}
+
+
+Write an integer4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2621 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a41e511ab23277132cad7aa447804eee4}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a41e511ab23277132cad7aa447804eee4}
+
+
+Write a 1-\/\-D array of integer4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2661 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a902380b589c35be03e33f0ae8ebdc0dc}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a902380b589c35be03e33f0ae8ebdc0dc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2696 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_af39615b3539b84afc3890884aafec217}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-int8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-int8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_af39615b3539b84afc3890884aafec217}
+
+
+Write a 1-\/\-D integer(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 629 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_abcc24e701a795a92f16c6d4c1eb034c7}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-int8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-int8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-int8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-int8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_abcc24e701a795a92f16c6d4c1eb034c7}
+
+
+Write a 2-\/\-D integer(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 711 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_af38c097f92a373ed47962ec1e02f4cb3}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_af38c097f92a373ed47962ec1e02f4cb3}
+
+
+Write a 1-\/\-D integer(kind=4) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 922 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a727abaf04f522d9a2a2accdbf3512a96}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-int4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a727abaf04f522d9a2a2accdbf3512a96}
+
+
+Write a 2-\/\-D integer(kind=4) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1019 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a3402bae4c5e2b0e315c1728b264798da}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=8), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a3402bae4c5e2b0e315c1728b264798da}
+
+
+Write a 1-\/\-D integer(kind=8) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1120 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a2ca2e47f5fe959ef8cbf3bdad5bef7f8}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-int8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=8), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a2ca2e47f5fe959ef8cbf3bdad5bef7f8}
+
+
+Write a 2-\/\-D integer(kind=8) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1220 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_aa5b200799b385418068f6c916bbbad34}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_aa5b200799b385418068f6c916bbbad34}
+
+
+Write a 1-\/\-D real(kind=4) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1321 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a6c880adf75b8b8a5ad56120effed2f6a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-real4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a6c880adf75b8b8a5ad56120effed2f6a}
+
+
+Write a 2-\/\-D real(kind=4) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1419 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a6fe25705d9c64cf43c06c885a71878e2}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a6fe25705d9c64cf43c06c885a71878e2}
+
+
+Write a 1-\/\-D real(kind=8) array in a parallel file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1525 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a670313739a46ec4d9006d8761d35157a}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-mpi\-\_\-real8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in), target}]{data, }
+\item[{integer(kind=4), intent(in)}]{comm, }
+\item[{logical, intent(in), optional}]{empty}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a670313739a46ec4d9006d8761d35157a}
+
+
+Write a 2-\/\-D real(kind=8) array in a parallel file The array is distributed along the 2nd dimension. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the local data\\
+\hline
+\mbox{\tt in}  & {\em data} & local data array\\
+\hline
+\mbox{\tt in}  & {\em comm} & M\-P\-I communicator used \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1623 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a5f075a274076e480eee835fd3b9573af}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-real4\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-1d@{hdf5\-\_\-write\-\_\-real4\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real4\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a5f075a274076e480eee835fd3b9573af}
+
+
+Write a 1-\/\-D real(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 753 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a71a612d3c6bc8959576fe46d7bab679f}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-real4\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-2d@{hdf5\-\_\-write\-\_\-real4\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real4\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a71a612d3c6bc8959576fe46d7bab679f}
+
+
+Write a 2-\/\-D real(kind=4) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 833 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_abadf683caad48e7acd96f916246bf778}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{real(kind=4), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_abadf683caad48e7acd96f916246bf778}
+
+
+Write a real4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2732 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a6158884984b6690aad27d75c6d5f58a7}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a6158884984b6690aad27d75c6d5f58a7}
+
+
+Write a 1-\/\-D array of real4 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2766 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ad682a858bcaec8fcd21f646d44d76208}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ad682a858bcaec8fcd21f646d44d76208}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2801 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_aed41c10954f7cb054d46df0c012d147d}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-real8\-\_\-1d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-1d@{hdf5\-\_\-write\-\_\-real8\-\_\-1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real8\-\_\-1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_aed41c10954f7cb054d46df0c012d147d}
+
+
+Write a 1-\/\-D real(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 793 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a86d263896481bcb679282cede10ab4a1}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-real8\-\_\-2d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-2d@{hdf5\-\_\-write\-\_\-real8\-\_\-2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real8\-\_\-2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer, intent(in)}]{n1, }
+\item[{integer, intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in), target}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a86d263896481bcb679282cede10ab4a1}
+
+
+Write a 2-\/\-D real(kind=8) array in a serial file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the dataset will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the dataset\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the data\\
+\hline
+\mbox{\tt in}  & {\em data} & data array \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 875 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a28db26cc0b827091ab455d2419c88b10}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{real(kind=8), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a28db26cc0b827091ab455d2419c88b10}
+
+
+Write a real8 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2838 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_ad55b7cffc861305840d5f160ba6fa1fd}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_ad55b7cffc861305840d5f160ba6fa1fd}
+
+
+Write a 1-\/\-D array of real8 as attribute. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2872 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a71ef9213132fb3f757d29f58f9c20966}{\index{modhdf5@{modhdf5}!hdf5\-\_\-write\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}}
+\index{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}!modhdf5@{modhdf5}}
+\subsubsection[{hdf5\-\_\-write\-\_\-real8\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-write\-\_\-real8\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len=16), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(in)}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a71ef9213132fb3f757d29f58f9c20966}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be written\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em data} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 2907 of file modhdf5.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodhdf5_a3521606545551f2d5b2222712873b228}{\index{modhdf5@{modhdf5}!h5err@{h5err}}
+\index{h5err@{h5err}!modhdf5@{modhdf5}}
+\subsubsection[{h5err}]{\setlength{\rightskip}{0pt plus 5cm}integer modhdf5\-::h5err\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a3521606545551f2d5b2222712873b228}
+
+
+hdf5 error code 
+
+
+
+Definition at line 17 of file modhdf5.\-f90.
+
+\hypertarget{classmodhdf5_a2d3fcdf78d1a95860d10644e0bef1bf7}{\index{modhdf5@{modhdf5}!mpierr@{mpierr}}
+\index{mpierr@{mpierr}!modhdf5@{modhdf5}}
+\subsubsection[{mpierr}]{\setlength{\rightskip}{0pt plus 5cm}integer modhdf5\-::mpierr\hspace{0.3cm}{\ttfamily [private]}}}\label{classmodhdf5_a2d3fcdf78d1a95860d10644e0bef1bf7}
+
+
+mpi error code 
+
+
+
+Definition at line 18 of file modhdf5.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/common/src/\hyperlink{modhdf5_8f90}{modhdf5.\-f90}\end{DoxyCompactItemize}

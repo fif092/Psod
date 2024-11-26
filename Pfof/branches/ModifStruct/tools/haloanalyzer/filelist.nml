@@ -1,0 +1,7 @@
+&Size
+filelistsize=3  /
+
+&List
+filelist(1) = 'test_halo_00000.h5'
+filelist(2) = 'test_halo_00002.h5'
+filelist(3) = 'test_halo_00004.h5' /

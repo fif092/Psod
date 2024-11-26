@@ -1,0 +1,28 @@
+!> @file 
+!! This file contains the definition of the 3 arrays containing the position, 
+!! the velocity and the id of the particles.
+!> Authors: F. Roy, V. Bouillot
+
+Module modvariables
+
+  Use modconstant
+  Implicit None
+
+  Integer(kind=PRI) :: ngrid       !< total number of grid points: ngrid = nres ** 3
+  Real   (kind=4)   :: xmin, xmax, ymin, ymax, zmin, zmax  !< min and max (x,y,z) for each process
+  Type(Type_parameter_pfof_snap) :: param
+
+  ! information read from Ramses info file:
+  Type(Type_info_ramses) :: inforamses
+
+  Type(Type_common_metadata) :: common_meta
+
+  Private
+
+  Public :: ngrid, &
+       xmin, xmax, ymin, ymax, zmin, zmax, &
+       param, &
+       inforamses,&
+       common_meta
+
+End Module modvariables

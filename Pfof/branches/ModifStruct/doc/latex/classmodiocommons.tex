@@ -1,0 +1,458 @@
+\hypertarget{classmodiocommons}{\section{modiocommons Module Reference}
+\label{classmodiocommons}\index{modiocommons@{modiocommons}}
+}
+
+
+Common input/output procedures.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodiocommons_aafba4b5ca834c55dd741c4040e971e5b}{h5write\-\_\-meta\-\_\-common} (file\-\_\-id, codename, npart)
+\begin{DoxyCompactList}\small\item\em Write metadata common to every hdf5 ouput files of the pfof toolbox. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a6c7b87aedd57a36d2f5b643cb3fc7c12}{h5write\-\_\-meta\-\_\-pfof\-\_\-parameter} (file\-\_\-id, param\-\_\-pfof)
+\begin{DoxyCompactList}\small\item\em Write pfof input parameters as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_ac97d3aa8a31a87167c05ecbe841397cc}{h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter} (file\-\_\-id, param\-\_\-cone)
+\begin{DoxyCompactList}\small\item\em Write conecreator input parameters as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a88b4f4949433f00d81d86b9b1e031646}{h5write\-\_\-meta\-\_\-info\-\_\-ramses} (file\-\_\-id, inforamses)
+\begin{DoxyCompactList}\small\item\em Write ramses info as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a7357bab67b152d137d4b2d43f30263e5}{h5write\-\_\-meta\-\_\-info\-\_\-cone} (file\-\_\-id, infocone)
+\begin{DoxyCompactList}\small\item\em Write light cone info as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a1796f14ec35efbff3a4e692077c8bcf8}{h5read\-\_\-meta\-\_\-info\-\_\-ramses} (file\-\_\-id, inforamses)
+\begin{DoxyCompactList}\small\item\em Read ramses info as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a23c194ca7b22b69dcf0bd2ea01b499d2}{h5read\-\_\-meta\-\_\-info\-\_\-cone} (file\-\_\-id, infocone)
+\begin{DoxyCompactList}\small\item\em Read light cone info as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a05a591c82f587de8857aa9749786a9ed}{h5read\-\_\-meta\-\_\-pfof\-\_\-parameter} (file\-\_\-id, param\-\_\-pfof)
+\begin{DoxyCompactList}\small\item\em Read pfof input parameters as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a5c8a5f561313ee8e555927237d405438}{h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter} (file\-\_\-id, param\-\_\-cone)
+\begin{DoxyCompactList}\small\item\em Read conecreator input parameters as metadata. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodiocommons_a653750d9160eb5e93a252a8da5aa09d6}{h5read\-\_\-meta\-\_\-common} (file\-\_\-id, common)
+\begin{DoxyCompactList}\small\item\em Read metadata common to every hdf5 ouput files of the pfof toolbox. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common input/output procedures. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modiocommons.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodiocommons_a653750d9160eb5e93a252a8da5aa09d6}{\index{modiocommons@{modiocommons}!h5read\-\_\-meta\-\_\-common@{h5read\-\_\-meta\-\_\-common}}
+\index{h5read\-\_\-meta\-\_\-common@{h5read\-\_\-meta\-\_\-common}!modiocommons@{modiocommons}}
+\subsubsection[{h5read\-\_\-meta\-\_\-common}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5read\-\_\-meta\-\_\-common (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{type(type\-\_\-common\-\_\-metadata), intent(out)}]{common}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a653750d9160eb5e93a252a8da5aa09d6}
+
+
+Read metadata common to every hdf5 ouput files of the pfof toolbox. 
+
+
+
+Definition at line 1343 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodiocommons_a653750d9160eb5e93a252a8da5aa09d6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a653750d9160eb5e93a252a8da5aa09d6_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a5c8a5f561313ee8e555927237d405438}{\index{modiocommons@{modiocommons}!h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter@{h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter}}
+\index{h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter@{h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter}!modiocommons@{modiocommons}}
+\subsubsection[{h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5read\-\_\-meta\-\_\-conecreator\-\_\-parameter (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-parameter\-\_\-conecreator), intent(out)}]{param\-\_\-cone}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a5c8a5f561313ee8e555927237d405438}
+
+
+Read conecreator input parameters as metadata. 
+
+
+
+Definition at line 1245 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a5c8a5f561313ee8e555927237d405438_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a23c194ca7b22b69dcf0bd2ea01b499d2}{\index{modiocommons@{modiocommons}!h5read\-\_\-meta\-\_\-info\-\_\-cone@{h5read\-\_\-meta\-\_\-info\-\_\-cone}}
+\index{h5read\-\_\-meta\-\_\-info\-\_\-cone@{h5read\-\_\-meta\-\_\-info\-\_\-cone}!modiocommons@{modiocommons}}
+\subsubsection[{h5read\-\_\-meta\-\_\-info\-\_\-cone}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-cone (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-info\-\_\-cone), intent(out)}]{infocone}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a23c194ca7b22b69dcf0bd2ea01b499d2}
+
+
+Read light cone info as metadata. 
+
+
+
+Definition at line 918 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodiocommons_a23c194ca7b22b69dcf0bd2ea01b499d2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a23c194ca7b22b69dcf0bd2ea01b499d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a1796f14ec35efbff3a4e692077c8bcf8}{\index{modiocommons@{modiocommons}!h5read\-\_\-meta\-\_\-info\-\_\-ramses@{h5read\-\_\-meta\-\_\-info\-\_\-ramses}}
+\index{h5read\-\_\-meta\-\_\-info\-\_\-ramses@{h5read\-\_\-meta\-\_\-info\-\_\-ramses}!modiocommons@{modiocommons}}
+\subsubsection[{h5read\-\_\-meta\-\_\-info\-\_\-ramses}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5read\-\_\-meta\-\_\-info\-\_\-ramses (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(out)}]{inforamses}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a1796f14ec35efbff3a4e692077c8bcf8}
+
+
+Read ramses info as metadata. 
+
+
+
+Definition at line 839 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodiocommons_a1796f14ec35efbff3a4e692077c8bcf8_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a1796f14ec35efbff3a4e692077c8bcf8_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a05a591c82f587de8857aa9749786a9ed}{\index{modiocommons@{modiocommons}!h5read\-\_\-meta\-\_\-pfof\-\_\-parameter@{h5read\-\_\-meta\-\_\-pfof\-\_\-parameter}}
+\index{h5read\-\_\-meta\-\_\-pfof\-\_\-parameter@{h5read\-\_\-meta\-\_\-pfof\-\_\-parameter}!modiocommons@{modiocommons}}
+\subsubsection[{h5read\-\_\-meta\-\_\-pfof\-\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5read\-\_\-meta\-\_\-pfof\-\_\-parameter (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-parameter\-\_\-pfof), intent(out)}]{param\-\_\-pfof}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a05a591c82f587de8857aa9749786a9ed}
+
+
+Read pfof input parameters as metadata. 
+
+
+
+Definition at line 1073 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodiocommons_a05a591c82f587de8857aa9749786a9ed_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{classmodiocommons_a05a591c82f587de8857aa9749786a9ed_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_aafba4b5ca834c55dd741c4040e971e5b}{\index{modiocommons@{modiocommons}!h5write\-\_\-meta\-\_\-common@{h5write\-\_\-meta\-\_\-common}}
+\index{h5write\-\_\-meta\-\_\-common@{h5write\-\_\-meta\-\_\-common}!modiocommons@{modiocommons}}
+\subsubsection[{h5write\-\_\-meta\-\_\-common}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5write\-\_\-meta\-\_\-common (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{character(len=h5strlen), intent(in)}]{codename, }
+\item[{integer(kind=8), intent(in)}]{npart}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_aafba4b5ca834c55dd741c4040e971e5b}
+
+
+Write metadata common to every hdf5 ouput files of the pfof toolbox. 
+
+
+
+Definition at line 30 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{classmodiocommons_aafba4b5ca834c55dd741c4040e971e5b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_aafba4b5ca834c55dd741c4040e971e5b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_ac97d3aa8a31a87167c05ecbe841397cc}{\index{modiocommons@{modiocommons}!h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter@{h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter}}
+\index{h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter@{h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter}!modiocommons@{modiocommons}}
+\subsubsection[{h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5write\-\_\-meta\-\_\-conecreator\-\_\-parameter (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-parameter\-\_\-conecreator), intent(in)}]{param\-\_\-cone}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_ac97d3aa8a31a87167c05ecbe841397cc}
+
+
+Write conecreator input parameters as metadata. 
+
+
+
+Definition at line 279 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_ac97d3aa8a31a87167c05ecbe841397cc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_ac97d3aa8a31a87167c05ecbe841397cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a7357bab67b152d137d4b2d43f30263e5}{\index{modiocommons@{modiocommons}!h5write\-\_\-meta\-\_\-info\-\_\-cone@{h5write\-\_\-meta\-\_\-info\-\_\-cone}}
+\index{h5write\-\_\-meta\-\_\-info\-\_\-cone@{h5write\-\_\-meta\-\_\-info\-\_\-cone}!modiocommons@{modiocommons}}
+\subsubsection[{h5write\-\_\-meta\-\_\-info\-\_\-cone}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-cone (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-info\-\_\-cone), intent(in)}]{infocone}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a7357bab67b152d137d4b2d43f30263e5}
+
+
+Write light cone info as metadata. 
+
+
+
+Definition at line 458 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a7357bab67b152d137d4b2d43f30263e5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a7357bab67b152d137d4b2d43f30263e5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a88b4f4949433f00d81d86b9b1e031646}{\index{modiocommons@{modiocommons}!h5write\-\_\-meta\-\_\-info\-\_\-ramses@{h5write\-\_\-meta\-\_\-info\-\_\-ramses}}
+\index{h5write\-\_\-meta\-\_\-info\-\_\-ramses@{h5write\-\_\-meta\-\_\-info\-\_\-ramses}!modiocommons@{modiocommons}}
+\subsubsection[{h5write\-\_\-meta\-\_\-info\-\_\-ramses}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-ramses (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(in)}]{inforamses}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a88b4f4949433f00d81d86b9b1e031646}
+
+
+Write ramses info as metadata. 
+
+
+
+Definition at line 378 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a88b4f4949433f00d81d86b9b1e031646_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a88b4f4949433f00d81d86b9b1e031646_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodiocommons_a6c7b87aedd57a36d2f5b643cb3fc7c12}{\index{modiocommons@{modiocommons}!h5write\-\_\-meta\-\_\-pfof\-\_\-parameter@{h5write\-\_\-meta\-\_\-pfof\-\_\-parameter}}
+\index{h5write\-\_\-meta\-\_\-pfof\-\_\-parameter@{h5write\-\_\-meta\-\_\-pfof\-\_\-parameter}!modiocommons@{modiocommons}}
+\subsubsection[{h5write\-\_\-meta\-\_\-pfof\-\_\-parameter}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modiocommons\-::h5write\-\_\-meta\-\_\-pfof\-\_\-parameter (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{file\-\_\-id, }
+\item[{class(type\-\_\-parameter\-\_\-pfof), intent(in)}]{param\-\_\-pfof}
+\end{DoxyParamCaption}
+)}}\label{classmodiocommons_a6c7b87aedd57a36d2f5b643cb3fc7c12}
+
+
+Write pfof input parameters as metadata. 
+
+
+
+Definition at line 82 of file modiocommons.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a6c7b87aedd57a36d2f5b643cb3fc7c12_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodiocommons_a6c7b87aedd57a36d2f5b643cb3fc7c12_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modiocommons_8f90}{modiocommons.\-f90}\end{DoxyCompactItemize}

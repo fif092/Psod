@@ -1,0 +1,7 @@
+g tout pris dans commons 
+
+sauf dans extract (modvariables+inforamsesajoute, modextract)
+et dans pfof_snap (modmpicom (presque rien eventuellement passer dans modvariables), modparameters (tout petit fichier eventuellement aussi dans modvariables)) 
+
+TODO: changer le vpath du makefile
+

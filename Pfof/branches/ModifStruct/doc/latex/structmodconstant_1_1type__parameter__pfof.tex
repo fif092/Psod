@@ -1,0 +1,169 @@
+\hypertarget{structmodconstant_1_1type__parameter__pfof}{\section{modconstant\-:\-:type\-\_\-parameter\-\_\-pfof Type Reference}
+\label{structmodconstant_1_1type__parameter__pfof}\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+}
+
+
+Type for pfof input parameters common to snapshot and cone versions.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+character(len=200) \hyperlink{structmodconstant_1_1type__parameter__pfof_a4ec6b9cf9beb861220a74b20d513dc99}{input\-\_\-path}
+\begin{DoxyCompactList}\small\item\em path to the directory containing the R\-A\-M\-S\-E\-S files \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{structmodconstant_1_1type__parameter__pfof_ac6d921f4e7cea83883c15e106de98adf}{part\-\_\-input\-\_\-file}
+\begin{DoxyCompactList}\small\item\em name of the files containing the particles data \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{structmodconstant_1_1type__parameter__pfof_a47ac45f599246d74572f1e8ca85803c0}{simulation\-\_\-name}
+\begin{DoxyCompactList}\small\item\em Simulation name to be written in output files. \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_ac284b2b966517e18568a1410337b8bc5}{mmin}
+\begin{DoxyCompactList}\small\item\em minimum mass of the haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_a1140f2035cbceedd46862b69e347edf2}{mmax}
+\begin{DoxyCompactList}\small\item\em maximum mass of the haloes \end{DoxyCompactList}\item 
+logical(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_aba812b01af16a40aa26a33136619786a}{do\-\_\-read\-\_\-potential}
+\begin{DoxyCompactList}\small\item\em do the R\-A\-M\-S\-E\-S files contain potential? \end{DoxyCompactList}\item 
+logical(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_aa8c19ebe7cca7545effc17c2162557cb}{do\-\_\-read\-\_\-gravitational\-\_\-field}
+\begin{DoxyCompactList}\small\item\em do the R\-A\-M\-S\-E\-S files contain force? \end{DoxyCompactList}\item 
+logical(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_a4d8097905d8490a45d84b471ae1f5bb8}{do\-\_\-unbinding}
+\begin{DoxyCompactList}\small\item\em Unbinding process? (not implemented yet) \end{DoxyCompactList}\item 
+logical(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_a9f6178ca41c0ae971922f15f5399b2b5}{do\-\_\-subhalo}
+\begin{DoxyCompactList}\small\item\em Sub\-Halo detection? (not implemented yet) \end{DoxyCompactList}\item 
+logical(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_af646b4ae96b024905287fdb0b75305da}{do\-\_\-timings}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F perform timings (imply extra synchronizations) \end{DoxyCompactList}\item 
+real(kind=4) \hyperlink{structmodconstant_1_1type__parameter__pfof_aa62ddf1e2fd4d2d5d5f6fb9381268784}{percolation\-\_\-length}
+\begin{DoxyCompactList}\small\item\em F\-O\-F percolation length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Type for pfof input parameters common to snapshot and cone versions. 
+
+Definition at line 119 of file modconstant.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{structmodconstant_1_1type__parameter__pfof_aa8c19ebe7cca7545effc17c2162557cb}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!do\-\_\-read\-\_\-gravitational\-\_\-field@{do\-\_\-read\-\_\-gravitational\-\_\-field}}
+\index{do\-\_\-read\-\_\-gravitational\-\_\-field@{do\-\_\-read\-\_\-gravitational\-\_\-field}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{do\-\_\-read\-\_\-gravitational\-\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::do\-\_\-read\-\_\-gravitational\-\_\-field}}\label{structmodconstant_1_1type__parameter__pfof_aa8c19ebe7cca7545effc17c2162557cb}
+
+
+do the R\-A\-M\-S\-E\-S files contain force? 
+
+
+
+Definition at line 126 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_aba812b01af16a40aa26a33136619786a}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!do\-\_\-read\-\_\-potential@{do\-\_\-read\-\_\-potential}}
+\index{do\-\_\-read\-\_\-potential@{do\-\_\-read\-\_\-potential}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{do\-\_\-read\-\_\-potential}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::do\-\_\-read\-\_\-potential}}\label{structmodconstant_1_1type__parameter__pfof_aba812b01af16a40aa26a33136619786a}
+
+
+do the R\-A\-M\-S\-E\-S files contain potential? 
+
+
+
+Definition at line 125 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_a9f6178ca41c0ae971922f15f5399b2b5}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!do\-\_\-subhalo@{do\-\_\-subhalo}}
+\index{do\-\_\-subhalo@{do\-\_\-subhalo}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{do\-\_\-subhalo}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::do\-\_\-subhalo}}\label{structmodconstant_1_1type__parameter__pfof_a9f6178ca41c0ae971922f15f5399b2b5}
+
+
+Sub\-Halo detection? (not implemented yet) 
+
+
+
+Definition at line 128 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_af646b4ae96b024905287fdb0b75305da}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!do\-\_\-timings@{do\-\_\-timings}}
+\index{do\-\_\-timings@{do\-\_\-timings}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{do\-\_\-timings}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::do\-\_\-timings}}\label{structmodconstant_1_1type__parameter__pfof_af646b4ae96b024905287fdb0b75305da}
+
+
+should p\-F\-O\-F perform timings (imply extra synchronizations) 
+
+
+
+Definition at line 129 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_a4d8097905d8490a45d84b471ae1f5bb8}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!do\-\_\-unbinding@{do\-\_\-unbinding}}
+\index{do\-\_\-unbinding@{do\-\_\-unbinding}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{do\-\_\-unbinding}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::do\-\_\-unbinding}}\label{structmodconstant_1_1type__parameter__pfof_a4d8097905d8490a45d84b471ae1f5bb8}
+
+
+Unbinding process? (not implemented yet) 
+
+
+
+Definition at line 127 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_a4ec6b9cf9beb861220a74b20d513dc99}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!input\-\_\-path@{input\-\_\-path}}
+\index{input\-\_\-path@{input\-\_\-path}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{input\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::input\-\_\-path}}\label{structmodconstant_1_1type__parameter__pfof_a4ec6b9cf9beb861220a74b20d513dc99}
+
+
+path to the directory containing the R\-A\-M\-S\-E\-S files 
+
+
+
+Definition at line 120 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_a1140f2035cbceedd46862b69e347edf2}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!mmax@{mmax}}
+\index{mmax@{mmax}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{mmax}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::mmax}}\label{structmodconstant_1_1type__parameter__pfof_a1140f2035cbceedd46862b69e347edf2}
+
+
+maximum mass of the haloes 
+
+
+
+Definition at line 124 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_ac284b2b966517e18568a1410337b8bc5}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!mmin@{mmin}}
+\index{mmin@{mmin}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{mmin}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::mmin}}\label{structmodconstant_1_1type__parameter__pfof_ac284b2b966517e18568a1410337b8bc5}
+
+
+minimum mass of the haloes 
+
+
+
+Definition at line 123 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_ac6d921f4e7cea83883c15e106de98adf}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!part\-\_\-input\-\_\-file@{part\-\_\-input\-\_\-file}}
+\index{part\-\_\-input\-\_\-file@{part\-\_\-input\-\_\-file}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{part\-\_\-input\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::part\-\_\-input\-\_\-file}}\label{structmodconstant_1_1type__parameter__pfof_ac6d921f4e7cea83883c15e106de98adf}
+
+
+name of the files containing the particles data 
+
+
+
+Definition at line 121 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_aa62ddf1e2fd4d2d5d5f6fb9381268784}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!percolation\-\_\-length@{percolation\-\_\-length}}
+\index{percolation\-\_\-length@{percolation\-\_\-length}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{percolation\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::percolation\-\_\-length}}\label{structmodconstant_1_1type__parameter__pfof_aa62ddf1e2fd4d2d5d5f6fb9381268784}
+
+
+F\-O\-F percolation length. 
+
+
+
+Definition at line 130 of file modconstant.\-f90.
+
+\hypertarget{structmodconstant_1_1type__parameter__pfof_a47ac45f599246d74572f1e8ca85803c0}{\index{modconstant\-::type\-\_\-parameter\-\_\-pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}!simulation\-\_\-name@{simulation\-\_\-name}}
+\index{simulation\-\_\-name@{simulation\-\_\-name}!modconstant::type_parameter_pfof@{modconstant\-::type\-\_\-parameter\-\_\-pfof}}
+\subsubsection[{simulation\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modconstant\-::type\-\_\-parameter\-\_\-pfof\-::simulation\-\_\-name}}\label{structmodconstant_1_1type__parameter__pfof_a47ac45f599246d74572f1e8ca85803c0}
+
+
+Simulation name to be written in output files. 
+
+
+
+Definition at line 122 of file modconstant.\-f90.
+
+
+
+The documentation for this type was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modconstant_8f90}{modconstant.\-f90}\end{DoxyCompactItemize}

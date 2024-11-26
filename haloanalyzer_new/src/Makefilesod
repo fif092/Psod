@@ -1,0 +1,45 @@
+MPIFC = h5pfc
+
+OPTS = -O2 -g    -I/usr/local/include -cpp -DLONGINT  -DWITHMPI -DSOD
+LDFLAGS = -g
+
+VPATH = ../../:.
+
+EXE = haloanalyzersod
+SRC =	modhdf5.f90		\
+	modvariables.f90		\
+	modreadhalo.f90         \
+	modfunctions.f90	\
+        modiocommons.f90	\
+	modanalyzeengines.f90	\
+	haloanalyzer.f90
+
+OBJ = $(SRC:%.f90=%.o)
+FCFLAGS = $(OPTS)
+
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<  
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $< 
+
+all : $(EXE)
+
+$(EXE) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -o $(EXE) $(OBJ)  $(LDFLAGS)
+	svnversion > haloanalyzer.version
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) haloanalyzer.version
+

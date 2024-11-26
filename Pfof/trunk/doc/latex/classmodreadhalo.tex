@@ -1,0 +1,84 @@
+\hypertarget{classmodreadhalo}{\section{modreadhalo Module Reference}
+\label{classmodreadhalo}\index{modreadhalo@{modreadhalo}}
+}
+
+
+This module contains routines to read H\-D\-F5 halo files created with pfof and pfof\-\_\-cone.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{classmodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}{h5readhalomass} (filename)
+\begin{DoxyCompactList}\small\item\em Reads a H\-D\-F5 halomass file created with pfof. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \hyperlink{classmodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}{pri} = 8
+\begin{DoxyCompactList}\small\item\em Precision used for I\-D; must match the value used to create the H\-D\-F5 file you are reading. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains routines to read H\-D\-F5 halo files created with pfof and pfof\-\_\-cone. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modreadhalo.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}{\index{modreadhalo@{modreadhalo}!h5readhalomass@{h5readhalomass}}
+\index{h5readhalomass@{h5readhalomass}!modreadhalo@{modreadhalo}}
+\subsubsection[{h5readhalomass}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadhalo\-::h5readhalomass (
+\begin{DoxyParamCaption}
+\item[{character(len=400), intent(in)}]{filename}
+\end{DoxyParamCaption}
+)}}\label{classmodreadhalo_a5e581ff805da170ad66cbd51e3b4967e}
+
+
+Reads a H\-D\-F5 halomass file created with pfof. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & Name of the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file modreadhalo.\-f90.
+
+
+
+References modhdf5\-::hdf5\-\_\-close\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-file().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodreadhalo_a5e581ff805da170ad66cbd51e3b4967e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}{\index{modreadhalo@{modreadhalo}!pri@{pri}}
+\index{pri@{pri}!modreadhalo@{modreadhalo}}
+\subsubsection[{pri}]{\setlength{\rightskip}{0pt plus 5cm}integer, parameter modreadhalo\-::pri = 8}}\label{classmodreadhalo_ad55bcc6ce90e0b688319fd72bf579b36}
+
+
+Precision used for I\-D; must match the value used to create the H\-D\-F5 file you are reading. 
+
+
+
+Definition at line 10 of file modreadhalo.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/common/src/\hyperlink{modreadhalo_8f90}{modreadhalo.\-f90}\end{DoxyCompactItemize}

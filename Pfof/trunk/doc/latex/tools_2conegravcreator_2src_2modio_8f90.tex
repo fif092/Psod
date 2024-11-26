@@ -1,0 +1,41 @@
+\hypertarget{tools_2conegravcreator_2src_2modio_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conegravcreator/src/modio.f90 File Reference}
+\label{tools_2conegravcreator_2src_2modio_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conegravcreator/src/modio.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conegravcreator/src/modio.\+f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodio}{modio}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used for I/O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodio_a2688770b2d08498c14ef3212e61d74bf}{modio\+::theend} ()
+\item 
+subroutine \hyperlink{namespacemodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{modio\+::readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\+\_\+snap.\+nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a49a42a212fba0853ef61f4f3360e6cb8}{modio\+::retrievefilelist} ()
+\item 
+subroutine \hyperlink{namespacemodio_a65b2a30853dd9ec7641c578cb220a3fe}{modio\+::readramsesfiles} ()
+\item 
+subroutine \hyperlink{namespacemodio_a781355181afb550bcc570313df840da4}{modio\+::readconegravhdr} (file, ncellloc)
+\item 
+subroutine \hyperlink{namespacemodio_a5ac9b7de3c680868d2114731e0dd67f2}{modio\+::readconegravdat} (file, ifile)
+\item 
+subroutine \hyperlink{namespacemodio_a25a01a0565ebacb543ff8a55b5a51351}{modio\+::h5writeconegrav} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodio_a0a0852674d63f2d9f6c23969d3f7016c}{modio\+::ncelltab}
+\item 
+integer(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodio_a541838a88faeed3af974f875bd73ee00}{modio\+::ncellperleveltab}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_a1c862995bd67ce8f4a3305dad6022064}{modio\+::ncellloc}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_a6661d8a6f911c13b15cebca52e76b6fc}{modio\+::nstride}
+\item 
+character(len=50) \hyperlink{namespacemodio_a12ada16137589f81ccc218e3b77f25c6}{modio\+::origin}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_a2eee1b20e9f6d0c4ab4e219d76aefc9a}{modio\+::first\+\_\+file}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_a3e203a61ede6084d5dd96d438500b155}{modio\+::last\+\_\+file}
+\end{DoxyCompactItemize}

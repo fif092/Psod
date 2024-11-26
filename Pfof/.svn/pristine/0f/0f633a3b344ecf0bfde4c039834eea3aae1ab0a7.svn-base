@@ -1,0 +1,72 @@
+H5PFC=h5pfc
+
+# Intel compilers flags
+intel:FCFLAGS= -O3 -g -warn all -fpp -DLONGINT
+intel:LDFLAGS= -g -warn all
+inteldebug:FCFLAGS= -O0 -g -warn all -check all -fpp -DDEBUG -DLONGINT -traceback
+inteldebug:LDFLAGS= -g -traceback -check all -warn all
+
+# GNU compilers flags
+gnu:FCFLAGS=-O3 -g -Wall -cpp -DLONGINT
+gnu:LDFLAGS=-g -Wall
+gnudebug:FCFLAGS=-O0 -g -Wall -cpp -DLONGINT -DDEBUG -fconvert=big-endian -fbacktrace -fcheck=all
+gnudebug:LDFLAGS=-g -Wall -fbacktrace -fcheck=all
+
+VPATH = ../../common/src:.
+
+SRC = modhdf5.f90 		\
+	modconstant.f90		\
+	modvariables.f90	\
+	modtiming.f90		\
+	modparameters.f90	\
+	modmpicom.f90		\
+	modxdmf.f90		\
+	modwritehalo.f90	\
+	modsort.f90		\
+	modsortinterf.f90 	\
+	modio.f90		\
+	modhalo.f90		\
+	modfofmpi.f90 		\
+	modfofpara.f90		\
+	pfof.f90
+
+OBJ = $(SRC:%.f90=%.o)
+EXE = pfofhdf5
+EXEDBG = pfofhdf5.dbg
+
+all:gnu
+
+intel:$(EXE)
+inteldebug:$(EXEDBG)
+gnu:$(EXE)
+gnudebug:$(EXEDBG)
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(H5PFC), FCFLAGS=$(FCFLAGS)
+	$(H5PFC) -c $(FCFLAGS) $<  
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(H5PFC), FCFLAGS=$(FCFLAGS)
+	$(H5PFC) -c $(FCFLAGS) $< 
+
+$(EXE) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(H5PFC) -o $(EXE) $(OBJ) $(LDFLAGS)
+	svnversion > pfof.version
+
+$(EXEDBG) : $(OBJ)
+	@echo "--------------------------------"
+	@echo building $(EXEDBG) 
+	$(H5PFC) -o $(EXEDBG) $(OBJ) $(LDFLAGS)
+	svnversion > pfof.version
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) $(EXEDBG) pfof.version
+

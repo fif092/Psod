@@ -1,0 +1,13 @@
+#! /bin/bash
+
+list=$(grep -i "use mod" pfof_snap.f90 | sed 's/use //ig' )
+
+echo ${list} 
+
+echo -n "pfof_snap.o: pfof_snap.f90 " >> depend.log
+for mod in $(echo ${list}) ; do
+    echo ${mod}
+    echo -n "${mod}.mod " >> depend.log
+done
+echo " " >> depend.log
+

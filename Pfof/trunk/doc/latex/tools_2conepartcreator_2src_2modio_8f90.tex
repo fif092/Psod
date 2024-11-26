@@ -1,0 +1,33 @@
+\hypertarget{tools_2conepartcreator_2src_2modio_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conepartcreator/src/modio.f90 File Reference}
+\label{tools_2conepartcreator_2src_2modio_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conepartcreator/src/modio.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/tools/conepartcreator/src/modio.\+f90}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodio}{modio}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used for I/O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodio_a2688770b2d08498c14ef3212e61d74bf}{modio\+::theend} ()
+\item 
+subroutine \hyperlink{namespacemodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{modio\+::readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\+\_\+snap.\+nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a49a42a212fba0853ef61f4f3360e6cb8}{modio\+::retrievefilelist} ()
+\item 
+subroutine \hyperlink{namespacemodio_a65b2a30853dd9ec7641c578cb220a3fe}{modio\+::readramsesfiles} ()
+\item 
+subroutine \hyperlink{namespacemodio_ac8d9a9aea4bf8df27247c29c816df78c}{modio\+::readconehdr} (file, npartloc)
+\item 
+subroutine \hyperlink{namespacemodio_a15ba57a85caae734e0b917de58988acd}{modio\+::readconedat} (file, ifile)
+\item 
+subroutine \hyperlink{namespacemodio_a756eae4b92791daadf54d68094c44c8b}{modio\+::h5writecone} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodio_a4a7b05300378789a7f94a217ba703153}{modio\+::nparttab}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_a0bf1df6ff1e675aabce26f3d7289a700}{modio\+::npartloc}
+\item 
+character(len=200), dimension(\+:), allocatable \hyperlink{namespacemodio_a31e8a393faa96e92df4d56794cd2eadd}{modio\+::filelist}
+\end{DoxyCompactItemize}

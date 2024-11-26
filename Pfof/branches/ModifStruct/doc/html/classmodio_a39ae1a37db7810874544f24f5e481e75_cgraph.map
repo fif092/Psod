@@ -1,0 +1,9 @@
+<map id="modio::h5readshellinfo" name="modio::h5readshellinfo">
+<area shape="rect" id="node2" href="$classmodiocommons.html#a653750d9160eb5e93a252a8da5aa09d6" title="Read metadata common to every hdf5 ouput files of the pfof toolbox. " alt="" coords="209,37,370,78"/>
+<area shape="rect" id="node3" href="$classmodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="423,70,563,112"/>
+<area shape="rect" id="node4" href="$classmodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="422,136,565,177"/>
+<area shape="rect" id="node5" href="$classmodiocommons.html#a23c194ca7b22b69dcf0bd2ea01b499d2" title="Read light cone info as metadata. " alt="" coords="209,102,370,144"/>
+<area shape="rect" id="node6" href="$classmodiocommons.html#a1796f14ec35efbff3a4e692077c8bcf8" title="Read ramses info as metadata. " alt="" coords="209,168,370,209"/>
+<area shape="rect" id="node7" href="$classmodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="206,284,373,311"/>
+<area shape="rect" id="node8" href="$classmodhdf5.html#a11539d06d180bff29d3c56ba198451d4" title="Open an existing hdf5 file. " alt="" coords="207,335,371,362"/>
+</map>

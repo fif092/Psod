@@ -1,0 +1,29 @@
+\hypertarget{modfofpara_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modfofpara.f90 File Reference}
+\label{modfofpara_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modfofpara.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modfofpara.\+f90}}
+
+
+This file contains the serial F\+OF algorithm.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodfofpara}{modfofpara}
+\begin{DoxyCompactList}\small\item\em This module contains the serial F\+OF algorithm. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodfofpara_a033a2820dd29f107782b566ca298bde4}{modfofpara\+::fofparacone} ()
+\begin{DoxyCompactList}\small\item\em Parallel F\+OF subroutine Finds haloes on each process then apply the merging process for haloes that extend across several processes. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofpara_afdd2abc340cad047a13ebbb62f1bafdc}{modfofpara\+::init} (n, np, ngpp, x, pile, adfirst, npcase, xmin, ymin, zmin, t, edgem1)
+\begin{DoxyCompactList}\small\item\em Initialize the stacks of pointers for local friends of friends.~\newline
+ The whole domain is divided into t$^\wedge$3 cubes, where t is the resolution of the simulation analized times the refine\+\_\+fof factor.~\newline
+ Each process will implicitly considere only its subdomains because every particles treated by the process is located in the same subdomain.~\newline
+ This routine initializes one stack of \char`\"{}pointers\char`\"{} to the index of the particles located in each cube. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofpara_aae8bee067b5066b64d8799e78efa239c}{modfofpara\+::computeminmax} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the serial F\+OF algorithm. 
+

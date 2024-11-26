@@ -1,0 +1,10 @@
+<map id="modwritecube::mpih5writecube" name="modwritecube::mpih5writecube">
+<area shape="rect" id="node2" href="$namespacemodiocommons.html#a34d5806274712591a9d885c1d926af57" title="modiocommons::h5write\l_meta_common" alt="" coords="256,35,420,76"/>
+<area shape="rect" id="node3" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="471,52,613,93"/>
+<area shape="rect" id="node4" href="$namespacemodhdf5.html#ae547666d0167e2a78d6529e11c1faa92" title="Open an existing hdf5 group. " alt="" coords="472,149,612,191"/>
+<area shape="rect" id="node5" href="$namespacemodiocommons.html#aa0393a317c75eb21189d5d381c3cf591" title="modiocommons::h5write\l_meta_info_ramses" alt="" coords="256,100,420,141"/>
+<area shape="rect" id="node6" href="$namespacemodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="468,245,616,287"/>
+<area shape="rect" id="node7" href="$namespacemodiocommons.html#a27eabdb687af381e608f120d19dfa997" title="modiocommons::h5write\l_meta_pfof_parameter" alt="" coords="256,165,420,207"/>
+<area shape="rect" id="node8" href="$namespacemodhdf5.html#a72cb805582425e8633c70c5db85df8bc" title="Close a &#39;parallel&#39; hdf5 file. " alt="" coords="267,399,409,440"/>
+<area shape="rect" id="node9" href="$namespacemodhdf5.html#aba50f37e2c24ac3271cdfc8877ebdcd9" title="Create and open a &#39;parallel&#39; hdf5 file shared by the communicator comm. " alt="" coords="264,333,412,375"/>
+</map>

@@ -1,0 +1,34 @@
+&ramsesinput
+simulationName = 'teststarlight'
+snapshot = 9
+code_index = 'RA3'
+pathinput = '/obs/roy/Cosmo/Data/output_00013'
+namepart = 'part_00013.out'
+nameinfo = 'info_00013.txt'
+grpsize = 00
+star = .false.
+metal = .false. 
+potential = .false.
+force = .false.
+readfromcube = .false.
+readfromsortedcube = .true.
+gatherread = 1
+/
+
+&fofparam
+perco = 0.20
+Mmin = 100 
+Mmax = 100000000
+dofof = .true.
+doUnbinding = .false.
+doSubHalo = .false.
+/
+ 
+&outputparam
+output_root = 'test'
+outcube = .true.
+gatherwrite = 1
+sortcube = .true.
+dotimings = .true.
+/
+

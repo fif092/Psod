@@ -1,0 +1,41 @@
+\hypertarget{pfof__cone_2src_2modio_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modio.f90 File Reference}
+\label{pfof__cone_2src_2modio_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modio.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+cone/src/modio.\+f90}}
+
+
+This file contains the subroutines and common variables used for I/O in p\+Fo\+F\+\_\+cone.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodio}{modio}
+\begin{DoxyCompactList}\small\item\em This module contains subroutines used for I/O. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodio_aefab9476e94da81a75351dbeee74e623}{modio\+::title} ()
+\item 
+subroutine \hyperlink{namespacemodio_a2688770b2d08498c14ef3212e61d74bf}{modio\+::theend} ()
+\item 
+subroutine \hyperlink{namespacemodio_aa5e6b5f45cf8cfc091e8e7ff25a97c68}{modio\+::readparameters} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the input parameters from pfof\+\_\+snap.\+nml file (default name) with process 0 and broadcasts them to every processes. It also writes the parameters in a log file and in a backup .nml file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a5f1cc94eaee9d1f4f7bdca4cb63ee5bc}{modio\+::h5readshellinfo} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the cone size and the number of particles in each cubic group from each shell file, then writes an index of the cubes found in each shell file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a0d3522f20c353a57b002c3120bc266f2}{modio\+::h5readmap} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the map file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodio_a8f70f66bd5285c807b17e0c89a6e0e4a}{modio\+::h5readparticles} ()
+\begin{DoxyCompactList}\small\item\em This subroutine reads the particles from the shell files. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_af7ac0e60c49f16bf08605237dd728508}{modio\+::ncube}
+\item 
+integer(kind=4) \hyperlink{namespacemodio_aea2235cb150c2f86e8564ce3d2e606a1}{modio\+::ioerr}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodio_a0bb05c9005df17b314c2a7e0f43e758c}{modio\+::npart\+\_\+tab}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the subroutines and common variables used for I/O in p\+Fo\+F\+\_\+cone. 
+

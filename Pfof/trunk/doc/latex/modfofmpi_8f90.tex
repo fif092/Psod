@@ -1,0 +1,92 @@
+\hypertarget{modfofmpi_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modfofmpi.f90 File Reference}
+\label{modfofmpi_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modfofmpi.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modfofmpi.\+f90}}
+
+
+This file contains the initialisation and the communication functions that merge the halo parts of haloes that extend across several processes.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodfofmpi}{modfofmpi}
+\begin{DoxyCompactList}\small\item\em This module contains the initialisation and the communication functions that merge the halo parts of haloes that extend across several processes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{namespacemodfofmpi_a8fbc997f93fd71798027bc6946d3bddb}{modfofmpi\+::mergehaloes} (perco2, mpicomm, periodic)
+\begin{DoxyCompactList}\small\item\em This routine merges haloes that extends across several process by setting their halo ID to the same value. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ac5a219c1a82d90230bcb2b1260adc4b4}{modfofmpi\+::initmerging} ()
+\begin{DoxyCompactList}\small\item\em This routine initializes the merging of halo parts. If the flag value is not 0, the position and halo ID of the particle are saved in specific arrays (one array per face). \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ad3a945459cf7b001e4c4e51429eb8f31}{modfofmpi\+::findbridge} (nloc, nrecv, pos1, pos2, nbridge1, bridge1, nbridge2, bridge2, r2, v1, v2, mpicomm, periodic)
+\begin{DoxyCompactList}\small\item\em Finds the pairs of particles that should be linked through the merging procedure. ~\newline
+ two directions are considered simultaneously by the local process\+: ~\newline
+ 1= back 2= front ~\newline
+ 1= left 2= right ~\newline
+ 1= bottom 2= top ~\newline
+ meaning that the local process exchanges information with the processes located in these two directions. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodfofmpi_ae5663edf5a2902f952f8d6d3f5c4c8a5}{modfofmpi\+::setcommonhaloid} (mpicomm)
+\begin{DoxyCompactList}\small\item\em Exchanges the halo\+ID of the particles located near the faces and edges and set the same halo\+ID to each particles that are in the same halo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a91f992ee7447a7fb3c5430233f3f39ab}{modfofmpi\+::posava}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a240c326e64798f0d4f7fd2a785eaddfb}{modfofmpi\+::posarr}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_abd8afe0852ff1d0298955d285cb4f001}{modfofmpi\+::posbas}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a1ca3754d2490a28a6596589818c19aba}{modfofmpi\+::posdro}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a420a314f84492aec68a773c09730981d}{modfofmpi\+::posgau}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a940b15087397a154e933785ff862d1aa}{modfofmpi\+::poshau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a2cc07767e1b2a2462fc2eeaaef5f5b0a}{modfofmpi\+::strava}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_adc11b8c24e402c222ddf9d339aece63c}{modfofmpi\+::strarr}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a18f63a61d3cf10a560030f18385646d6}{modfofmpi\+::strbas}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a6f52fb3f19368ce1dbad562162f6d4b5}{modfofmpi\+::strdro}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a59d3a040e03ea0312701cf16ded04071}{modfofmpi\+::strgau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_a9ace6e4f0b23785f3b93fe1812b07c08}{modfofmpi\+::strhau}
+\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodfofmpi_ada00af1a25f50e826521e9b2a7ecb633}{modfofmpi\+::strrec}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a887d577430624ed6c6e8952b089e0576}{modfofmpi\+::nbridgearr}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a2ce30cec8604582ad8aaa26ef19b41cb}{modfofmpi\+::nbridgeava}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a000b4f4f0140c24648780b86d56698cf}{modfofmpi\+::nbridgegau}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a0253e42a34623e4816f27522252d1e29}{modfofmpi\+::nbridgedro}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_ad71e96722537b8de69afdb8f68028e8b}{modfofmpi\+::nbridgebas}
+\item 
+integer(kind=4) \hyperlink{namespacemodfofmpi_a81ecc186519e9addf2dbf7ec92e32d23}{modfofmpi\+::nbridgehau}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a3dffef2edd7b2899179cb3ffffd62430}{modfofmpi\+::bridgearr}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a9891331c8f9f2ef3b5532b96129683ac}{modfofmpi\+::bridgeava}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a157af8da53311980e23d05748e181a7f}{modfofmpi\+::bridgegau}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a400402d1fc58970ecda00536a07c021c}{modfofmpi\+::bridgedro}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a2bdd3864a996f2afb8e49bbcdbd120e5}{modfofmpi\+::bridgebas}
+\item 
+integer(kind=pri), dimension(\+:,\+:), allocatable \hyperlink{namespacemodfofmpi_a5a9577c42a1c3c53db8eb603945b530b}{modfofmpi\+::bridgehau}
+\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodfofmpi_aa8c0fc08baf8d208d7e2cddd0600ff99}{modfofmpi\+::nflagrecv}
+\item 
+integer(kind=4), dimension(6), public \hyperlink{namespacemodfofmpi_a9b2252c09a83a3f47fc6aec6462a68dc}{modfofmpi\+::nflagloc}
+\item 
+integer(kind=1), dimension(\+:), allocatable, public \hyperlink{namespacemodfofmpi_adb1afd2b26b96173f56ab37495e99e99}{modfofmpi\+::border}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the initialisation and the communication functions that merge the halo parts of haloes that extend across several processes. 
+

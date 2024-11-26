@@ -1,0 +1,6 @@
+<map id="modio::h5writemap" name="modio::h5writemap">
+<area shape="rect" id="node2" href="$namespacemodhdf5.html#af70ee678ccdc5ce829431ebe909264a9" title="Close a h5 file. " alt="" coords="188,5,355,32"/>
+<area shape="rect" id="node3" href="$namespacemodhdf5.html#aba547bfdd3dc38385069b0885ab5d526" title="Close a hdf5 group. " alt="" coords="200,57,343,98"/>
+<area shape="rect" id="node4" href="$namespacemodhdf5.html#a66cf3f318aafac811c2422f8155f7ae1" title="Create and open a hdf5 file. " alt="" coords="185,123,357,149"/>
+<area shape="rect" id="node5" href="$namespacemodhdf5.html#a5486f9c861f7b8ee2060015acf0169a4" title="Create and open a hdf5 group. " alt="" coords="405,141,553,182"/>
+</map>

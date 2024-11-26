@@ -1,0 +1,41 @@
+ Hz=  0.853085205526405     
+ convdens   3.13003486275785     
+ aexp  0.903640895892252     
+ delta_matter   200.000000000000     
+ delta_critz   63.8970518762151     
+ compute_halos_properties_boxlen82.03125_n128_lcdmw7.param
+   82.03000    
+   200.000000000000     
+ /data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/ramses_input_lcdmw7.dat     
+                                                                                
+                                           
+          64
+           3
+           7
+          14
+     1000000
+         288
+   1.00000000000000     
+ -0.109902518148153     
+  0.903640895892252     
+   72.0000000000000     
+  0.257299989461899     
+  0.742699980735779     
+  2.980232238769530E-008
+  0.000000000000000E+000
+  3.176827155237380E+026
+  3.398403780103950E-030
+  3.499533410416050E+017
+ rho_crit0=  9.740736000000001E-030
+ Hubble(z)=  0.853085205526405     
+ nhalo_file=           1         104
+ ifile,haloNB:           1         104
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ version of haloanalyzer not defined: file not found
+ Run completed

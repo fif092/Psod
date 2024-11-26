@@ -1,0 +1,68 @@
+MPIFC=h5pfc
+SVNVERSION=0
+##SVNVERSION=`svnversion -n | sed "s/M/ /"`
+##SVNVERSION=$$(svnversion | sed "s/M/ /")  ; if [ $$? -ne 0 ] ; then SVNVERSION=0 ; fi 
+
+# GNU compilers options
+OPTS = -O3 -g -Wall -cpp -fconvert=big-endian -DLONGINT -DSVNREV=$(SVNVERSION)
+#OPTS = -O0 -g -Wall -cpp -DLONGINT -DDEBUG -DSVNREV=$(SVNVERSION) -fconvert=big-endian -fbacktrace -fcheck=all
+
+# INTEL compilers options
+# OPTS = -O3 -g -warn -cpp DLONGINT
+# OPTS = -O0 -g -warn -cpp DLONGINT -DDEBUG -traceback
+
+LDFLAGS = -g
+FCFLAGS = $(OPTS) 
+
+EXE = pfof_hdf5
+
+VPATH= ../../common/src/:.
+
+SRC = modhdf5.f90 	\
+	modconstant.f90 \
+	modmpicommons.f90 \
+ 	modreadinfo.f90 	\
+	modvariables.f90	\
+	modtiming.f90	\
+	modparameters.f90	\
+	modmpicom.f90	\
+	modiocommons.f90	\
+	modwritehalo.f90	\
+	modsort.f90	\
+	modsortinterf.f90 	\
+	modreadcube.f90 	\
+	modwritecube.f90 	\
+	modio.f90	\
+	modhalo.f90	\
+	modfofmpi.f90 	\
+	modfofpara.f90	\
+	pfof.f90
+
+OBJS = $(SRC:%.f90=%.o)
+
+
+%.o:%.f90
+	@echo "--------------------------------"
+	@echo building $*.o with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+%.mod:%.f90
+	@echo "--------------------------------"
+	@echo building $*.mod with parameters \
+	FC=$(MPIFC), FCFLAGS=$(FCFLAGS)
+	$(MPIFC) -c $(FCFLAGS) $<
+
+release: $(EXE)
+all: release
+
+$(EXE) : $(MODS) $(OBJS)
+	@echo "--------------------------------"
+	@echo building $(EXE) 
+	$(MPIFC) -g -o $(EXE) $(OBJS) $(LDFLAGS)
+
+clean :
+	@echo "--------------------------------"
+	@echo cleaning compiled objects, modules and executable 
+	rm -f *.o *.mod *~ $(EXE) 
+

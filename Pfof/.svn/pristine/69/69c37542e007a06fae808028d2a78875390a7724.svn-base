@@ -1,0 +1,20 @@
+#!/bin/bash
+
+HDF5FC=$(h5pfc -show)
+if [ $? -ne 0 ] ; then
+    echo 'Could not find h5pfc HDF5 Parallel Fortran compiler wrapper.'
+else
+    echo ${HDF5FC}
+fi
+
+MPIFC=$(echo ${HDF5FC} | awk '{ print $1}' )
+echo ${MPIFC}
+
+FC=$( ${MPIFC} -show | awk '{print $1}' )
+echo ${FC}
+
+if [ ${FC} == 'gfortran' ] ; then
+    echo 'GNU Compiler'
+    make -f Makefile.new -DGNU
+fi
+

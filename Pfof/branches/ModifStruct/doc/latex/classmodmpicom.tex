@@ -1,0 +1,263 @@
+\hypertarget{classmodmpicom}{\section{modmpicom Module Reference}
+\label{classmodmpicom}\index{modmpicom@{modmpicom}}
+}
+
+
+This module contains the subroutines and the variables used for M\-P\-I communications. Authors\-: F. Roy, V. Bouillot.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodmpicom_a7cbb93c720bce9f56e7482758ab348c5}{setcommunicators} ()
+\begin{DoxyCompactList}\small\item\em This subroutine creates the global cartesian grid of processes. It also creates the communicators used for the parallel hdf5 i/o if they are needed. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodmpicom_abc2ffa06e3665781143ba0241350b976}{settopology} ()
+\begin{DoxyCompactList}\small\item\em This subroutine create a processes topology that maps the lightcone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4), dimension(3), \\*
+public \hyperlink{classmodmpicom_ab53b6d73e6ad2ed312af8e9fcacdcd39}{dims}
+\begin{DoxyCompactList}\small\item\em dimensions of the processes grid \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_a98a18237a2ccfdfdfd230104e90e9b5d}{mpicube}
+\begin{DoxyCompactList}\small\item\em cartesian global communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_aa4714e524c20e853ca0d8eee443a3eaa}{mpisubcubewrite}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel output \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_a0e30077f764b1d64af266f38546eb11b}{mpisubcuberead}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel input \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3), \\*
+public \hyperlink{classmodmpicom_a82b7ffcc29d150ab9a64cbf53757feca}{cubecoord}
+\begin{DoxyCompactList}\small\item\em coordinates of the process in the Mpi\-Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_ac492fd7b2b0e1274ab259b5377a8a907}{commcolorwrite}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\-Sub\-Cube\-Write communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_ab58830af4e3abbec4491393d1f151ca8}{commcolorread}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\-Sub\-Cube\-Read communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_abebf60043baa916259ad148a0856c87a}{scprocidwrite}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\-Sub\-Cube\-Write communicator \end{DoxyCompactList}\item 
+integer(kind=4), public \hyperlink{classmodmpicom_af5dc4e2e2c054269623303e30bb81ee4}{scprocidread}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\-Sub\-Cube\-Read communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodmpicom_a8281c8567826b44d76d7a801203c99a8}{scprocnbwrite}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\-Sub\-Cube\-Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodmpicom_a8fde31beaf4b43228d7f93325630cefa}{scprocnbread}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\-Sub\-Cube\-Read communicator \end{DoxyCompactList}\item 
+logical(kind=4), dimension(3) \hyperlink{classmodmpicom_a0347e6d8a15028132a57953e6ff823a2}{periods}
+\begin{DoxyCompactList}\small\item\em periodicity of the global cartesian processes grid \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3) \hyperlink{classmodmpicom_a533718abb8ce3f03b430dfbf9f821069}{cubecoord}
+\begin{DoxyCompactList}\small\item\em coordinates of the process in the Mpi\-Cube communicator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the subroutines and the variables used for M\-P\-I communications. Authors\-: F. Roy, V. Bouillot. 
+
+This module contains the subroutines and the variables used to prepare M\-P\-I communications and a routine used to broadcast the input parameters.
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 6 of file modmpicom.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodmpicom_a7cbb93c720bce9f56e7482758ab348c5}{\index{modmpicom@{modmpicom}!setcommunicators@{setcommunicators}}
+\index{setcommunicators@{setcommunicators}!modmpicom@{modmpicom}}
+\subsubsection[{setcommunicators}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicom\-::setcommunicators (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicom_a7cbb93c720bce9f56e7482758ab348c5}
+
+
+This subroutine creates the global cartesian grid of processes. It also creates the communicators used for the parallel hdf5 i/o if they are needed. 
+
+
+
+Definition at line 46 of file modmpicom.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{classmodmpicom_a7cbb93c720bce9f56e7482758ab348c5_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodmpicom_abc2ffa06e3665781143ba0241350b976}{\index{modmpicom@{modmpicom}!settopology@{settopology}}
+\index{settopology@{settopology}!modmpicom@{modmpicom}}
+\subsubsection[{settopology}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modmpicom\-::settopology (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classmodmpicom_abc2ffa06e3665781143ba0241350b976}
+
+
+This subroutine create a processes topology that maps the lightcone. 
+
+
+
+Definition at line 27 of file modmpicom.\-f90.
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodmpicom_abc2ffa06e3665781143ba0241350b976_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodmpicom_ab58830af4e3abbec4491393d1f151ca8}{\index{modmpicom@{modmpicom}!commcolorread@{commcolorread}}
+\index{commcolorread@{commcolorread}!modmpicom@{modmpicom}}
+\subsubsection[{commcolorread}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::commcolorread}}\label{classmodmpicom_ab58830af4e3abbec4491393d1f151ca8}
+
+
+parameter used to create the Mpi\-Sub\-Cube\-Read communicator 
+
+
+
+Definition at line 19 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_ac492fd7b2b0e1274ab259b5377a8a907}{\index{modmpicom@{modmpicom}!commcolorwrite@{commcolorwrite}}
+\index{commcolorwrite@{commcolorwrite}!modmpicom@{modmpicom}}
+\subsubsection[{commcolorwrite}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::commcolorwrite}}\label{classmodmpicom_ac492fd7b2b0e1274ab259b5377a8a907}
+
+
+parameter used to create the Mpi\-Sub\-Cube\-Write communicator 
+
+
+
+Definition at line 18 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a533718abb8ce3f03b430dfbf9f821069}{\index{modmpicom@{modmpicom}!cubecoord@{cubecoord}}
+\index{cubecoord@{cubecoord}!modmpicom@{modmpicom}}
+\subsubsection[{cubecoord}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3) modmpicom\-::cubecoord}}\label{classmodmpicom_a533718abb8ce3f03b430dfbf9f821069}
+
+
+coordinates of the process in the Mpi\-Cube communicator 
+
+
+
+Definition at line 16 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a82b7ffcc29d150ab9a64cbf53757feca}{\index{modmpicom@{modmpicom}!cubecoord@{cubecoord}}
+\index{cubecoord@{cubecoord}!modmpicom@{modmpicom}}
+\subsubsection[{cubecoord}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3), public modmpicom\-::cubecoord}}\label{classmodmpicom_a82b7ffcc29d150ab9a64cbf53757feca}
+
+
+coordinates of the process in the Mpi\-Cube communicator 
+
+
+
+Definition at line 16 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_ab53b6d73e6ad2ed312af8e9fcacdcd39}{\index{modmpicom@{modmpicom}!dims@{dims}}
+\index{dims@{dims}!modmpicom@{modmpicom}}
+\subsubsection[{dims}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3), public modmpicom\-::dims}}\label{classmodmpicom_ab53b6d73e6ad2ed312af8e9fcacdcd39}
+
+
+dimensions of the processes grid 
+
+
+
+Definition at line 12 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a98a18237a2ccfdfdfd230104e90e9b5d}{\index{modmpicom@{modmpicom}!mpicube@{mpicube}}
+\index{mpicube@{mpicube}!modmpicom@{modmpicom}}
+\subsubsection[{mpicube}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::mpicube}}\label{classmodmpicom_a98a18237a2ccfdfdfd230104e90e9b5d}
+
+
+cartesian global communicator 
+
+
+
+Definition at line 13 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a0e30077f764b1d64af266f38546eb11b}{\index{modmpicom@{modmpicom}!mpisubcuberead@{mpisubcuberead}}
+\index{mpisubcuberead@{mpisubcuberead}!modmpicom@{modmpicom}}
+\subsubsection[{mpisubcuberead}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::mpisubcuberead}}\label{classmodmpicom_a0e30077f764b1d64af266f38546eb11b}
+
+
+local communicator used for hdf5 parallel input 
+
+
+
+Definition at line 15 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_aa4714e524c20e853ca0d8eee443a3eaa}{\index{modmpicom@{modmpicom}!mpisubcubewrite@{mpisubcubewrite}}
+\index{mpisubcubewrite@{mpisubcubewrite}!modmpicom@{modmpicom}}
+\subsubsection[{mpisubcubewrite}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::mpisubcubewrite}}\label{classmodmpicom_aa4714e524c20e853ca0d8eee443a3eaa}
+
+
+local communicator used for hdf5 parallel output 
+
+
+
+Definition at line 14 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a0347e6d8a15028132a57953e6ff823a2}{\index{modmpicom@{modmpicom}!periods@{periods}}
+\index{periods@{periods}!modmpicom@{modmpicom}}
+\subsubsection[{periods}]{\setlength{\rightskip}{0pt plus 5cm}logical(kind=4), dimension(3) modmpicom\-::periods}}\label{classmodmpicom_a0347e6d8a15028132a57953e6ff823a2}
+
+
+periodicity of the global cartesian processes grid 
+
+
+
+Definition at line 24 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_af5dc4e2e2c054269623303e30bb81ee4}{\index{modmpicom@{modmpicom}!scprocidread@{scprocidread}}
+\index{scprocidread@{scprocidread}!modmpicom@{modmpicom}}
+\subsubsection[{scprocidread}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::scprocidread}}\label{classmodmpicom_af5dc4e2e2c054269623303e30bb81ee4}
+
+
+process id in the Mpi\-Sub\-Cube\-Read communicator 
+
+
+
+Definition at line 21 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_abebf60043baa916259ad148a0856c87a}{\index{modmpicom@{modmpicom}!scprocidwrite@{scprocidwrite}}
+\index{scprocidwrite@{scprocidwrite}!modmpicom@{modmpicom}}
+\subsubsection[{scprocidwrite}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), public modmpicom\-::scprocidwrite}}\label{classmodmpicom_abebf60043baa916259ad148a0856c87a}
+
+
+process id in the Mpi\-Sub\-Cube\-Write communicator 
+
+
+
+Definition at line 20 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a8fde31beaf4b43228d7f93325630cefa}{\index{modmpicom@{modmpicom}!scprocnbread@{scprocnbread}}
+\index{scprocnbread@{scprocnbread}!modmpicom@{modmpicom}}
+\subsubsection[{scprocnbread}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\-::scprocnbread}}\label{classmodmpicom_a8fde31beaf4b43228d7f93325630cefa}
+
+
+process number in the Mpi\-Sub\-Cube\-Read communicator 
+
+
+
+Definition at line 23 of file modmpicom.\-f90.
+
+\hypertarget{classmodmpicom_a8281c8567826b44d76d7a801203c99a8}{\index{modmpicom@{modmpicom}!scprocnbwrite@{scprocnbwrite}}
+\index{scprocnbwrite@{scprocnbwrite}!modmpicom@{modmpicom}}
+\subsubsection[{scprocnbwrite}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modmpicom\-::scprocnbwrite}}\label{classmodmpicom_a8281c8567826b44d76d7a801203c99a8}
+
+
+process number in the Mpi\-Sub\-Cube\-Write communicator 
+
+
+
+Definition at line 22 of file modmpicom.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/pfof\-\_\-snap/src/\hyperlink{pfof__snap_2src_2modmpicom_8f90}{modmpicom.\-f90}\end{DoxyCompactItemize}

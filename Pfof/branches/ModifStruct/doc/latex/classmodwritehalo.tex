@@ -1,0 +1,183 @@
+\hypertarget{classmodwritehalo}{\section{modwritehalo Module Reference}
+\label{classmodwritehalo}\index{modwritehalo@{modwritehalo}}
+}
+
+
+This module contains routines to write H\-D\-F5 halo files created with pfof and pfof\-\_\-cone.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine, public \hyperlink{classmodwritehalo_afd37f5189cf5f5ebe43de6b2c0959258}{h5writehalopart} (mpicomm, param\-\_\-pfof, halo\-N\-B, halopart\-N\-B, halo\-Mass, halo\-I\-D, halopart\-Pos, halopart\-Vel, halopart\-I\-D, halopart\-For, halopart\-Pot, halopart\-Ramses\-I\-D, inforamses, infocone)
+\begin{DoxyCompactList}\small\item\em This subroutine writes for each halo the position, the velocity and the id of each particle in this halo in a hdf5 file. One file is written per M\-P\-I process and several halos per file. There is one group per halo, the name of the group is the I\-D of the halo. \end{DoxyCompactList}\item 
+subroutine, public \hyperlink{classmodwritehalo_a4504dad75b760d800dd55e3cb9b90e71}{mpih5writehalomass} (mpicomm, param\-\_\-pfof, halo\-N\-B\-\_\-all, halo\-N\-B, nh, halo\-Mass, halocom\-Pos, halocom\-Vel, halo\-I\-D, halo\-Radius, halo\-Sub\-Halo\-N\-B, inforamses, infocone)
+\begin{DoxyCompactList}\small\item\em This subroutine writes, for each halo, its mass (number of particles), the position and the velocity of its center of mass and its I\-D in only one hdf5 file using parallel H\-D\-F5. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains routines to write H\-D\-F5 halo files created with pfof and pfof\-\_\-cone. 
+
+Authors\-: F. Roy 
+
+Definition at line 8 of file modwritehalo.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{classmodwritehalo_afd37f5189cf5f5ebe43de6b2c0959258}{\index{modwritehalo@{modwritehalo}!h5writehalopart@{h5writehalopart}}
+\index{h5writehalopart@{h5writehalopart}!modwritehalo@{modwritehalo}}
+\subsubsection[{h5writehalopart}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modwritehalo\-::h5writehalopart (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{mpicomm, }
+\item[{class(type\-\_\-parameter\-\_\-pfof), intent(in)}]{param\-\_\-pfof, }
+\item[{integer(kind=4), intent(in)}]{halo\-N\-B, }
+\item[{integer(kind=4), intent(in)}]{halopart\-N\-B, }
+\item[{integer(kind=4), dimension(halonb), intent(in)}]{halo\-Mass, }
+\item[{integer(kind=pri), dimension(halonb), intent(in)}]{halo\-I\-D, }
+\item[{real (kind=4), dimension(3,halopartnb), intent(in), target}]{halopart\-Pos, }
+\item[{real (kind=4), dimension(3,halopartnb), intent(in), target}]{halopart\-Vel, }
+\item[{integer(kind=pri), dimension(halopartnb), intent(in), target}]{halopart\-I\-D, }
+\item[{real (kind=4), dimension(3,halopartnb), intent(in), optional, target}]{halopart\-For, }
+\item[{real (kind=4), dimension(halopartnb), intent(in), optional, target}]{halopart\-Pot, }
+\item[{integer(kind=pri), dimension(halopartnb), intent(in), optional, target}]{halopart\-Ramses\-I\-D, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(in)}]{inforamses, }
+\item[{class(type\-\_\-info\-\_\-cone), intent(in), optional}]{infocone}
+\end{DoxyParamCaption}
+)}}\label{classmodwritehalo_afd37f5189cf5f5ebe43de6b2c0959258}
+
+
+This subroutine writes for each halo the position, the velocity and the id of each particle in this halo in a hdf5 file. One file is written per M\-P\-I process and several halos per file. There is one group per halo, the name of the group is the I\-D of the halo. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mpicomm} & M\-P\-I communicator used to gather informations\\
+\hline
+\mbox{\tt in}  & {\em halonb} & Number of halos\\
+\hline
+\mbox{\tt in}  & {\em halopartnb} & Number of particles belonging to the halos\\
+\hline
+\mbox{\tt in}  & {\em haloid} & Array containing the I\-D of the halos\\
+\hline
+\mbox{\tt in}  & {\em halopartid} & Array containing the I\-D of the particles belonging to the halos\\
+\hline
+\mbox{\tt in}  & {\em halomass} & Array containing the mass of the halos\\
+\hline
+\mbox{\tt in}  & {\em halopartvel} & Array containing the position and velocity of the particles belonging to the halos\\
+\hline
+\mbox{\tt in}  & {\em halopartpot} & Array containing the potential of the particles belonging to the halos, this argument is optional\\
+\hline
+\mbox{\tt in}  & {\em halopartfor} & Array containing the force on the particles belonging to the halos, this argument is optional\\
+\hline
+\mbox{\tt in}  & {\em halopartramsesid} & Array containing the \char`\"{}\-Ramses\char`\"{} I\-D of the particles belonging to the halos detected in lightcones \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file modwritehalo.\-f90.
+
+
+
+References modiocommons\-::h5write\-\_\-meta\-\_\-common(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-ramses(), modiocommons\-::h5write\-\_\-meta\-\_\-pfof\-\_\-parameter(), modhdf5\-::hdf5\-\_\-close\-\_\-file(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-file(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodwritehalo_afd37f5189cf5f5ebe43de6b2c0959258_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodwritehalo_afd37f5189cf5f5ebe43de6b2c0959258_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classmodwritehalo_a4504dad75b760d800dd55e3cb9b90e71}{\index{modwritehalo@{modwritehalo}!mpih5writehalomass@{mpih5writehalomass}}
+\index{mpih5writehalomass@{mpih5writehalomass}!modwritehalo@{modwritehalo}}
+\subsubsection[{mpih5writehalomass}]{\setlength{\rightskip}{0pt plus 5cm}subroutine, public modwritehalo\-::mpih5writehalomass (
+\begin{DoxyParamCaption}
+\item[{integer(kind=4), intent(in)}]{mpicomm, }
+\item[{class(type\-\_\-parameter\-\_\-pfof), intent(in)}]{param\-\_\-pfof, }
+\item[{integer(kind=4), intent(in)}]{halo\-N\-B\-\_\-all, }
+\item[{integer(kind=4), intent(in)}]{halo\-N\-B, }
+\item[{integer(kind=4), intent(in)}]{nh, }
+\item[{integer(kind=4), dimension(nh), intent(in), target}]{halo\-Mass, }
+\item[{real(kind=8), dimension(3,nh), intent(in), target}]{halocom\-Pos, }
+\item[{real(kind=8), dimension(3,nh), intent(in), target}]{halocom\-Vel, }
+\item[{integer(kind=pri), dimension(nh), intent(in), target}]{halo\-I\-D, }
+\item[{real(kind=8), dimension(nh), intent(in), target}]{halo\-Radius, }
+\item[{integer(kind=4), dimension(nh), intent(in), target}]{halo\-Sub\-Halo\-N\-B, }
+\item[{type(type\-\_\-info\-\_\-ramses), intent(in)}]{inforamses, }
+\item[{class(type\-\_\-info\-\_\-cone), intent(in), optional}]{infocone}
+\end{DoxyParamCaption}
+)}}\label{classmodwritehalo_a4504dad75b760d800dd55e3cb9b90e71}
+
+
+This subroutine writes, for each halo, its mass (number of particles), the position and the velocity of its center of mass and its I\-D in only one hdf5 file using parallel H\-D\-F5. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em halonb\-\_\-all} & Total number of halos (sum over all processes)\\
+\hline
+\mbox{\tt in}  & {\em halonb} & Number of halos\\
+\hline
+\mbox{\tt in}  & {\em halomass} & Mass of the halos\\
+\hline
+\mbox{\tt in}  & {\em halocompos} & Position of the center of mass of the halos\\
+\hline
+\mbox{\tt in}  & {\em halocomvel} & Velocity of the center of mass of the halos\\
+\hline
+\mbox{\tt in}  & {\em haloid} & I\-D of the halos\\
+\hline
+\mbox{\tt in}  & {\em haloradius} & Radius of the halos\\
+\hline
+\mbox{\tt in}  & {\em halosubhalonb} & Number of subhalos in each halo\\
+\hline
+\mbox{\tt in}  & {\em mpicomm} & M\-P\-I communicator used to create and write the file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 229 of file modwritehalo.\-f90.
+
+
+
+References modiocommons\-::h5write\-\_\-meta\-\_\-common(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-cone(), modiocommons\-::h5write\-\_\-meta\-\_\-info\-\_\-ramses(), modiocommons\-::h5write\-\_\-meta\-\_\-pfof\-\_\-parameter(), modhdf5\-::hdf5\-\_\-close\-\_\-group(), modhdf5\-::hdf5\-\_\-close\-\_\-mpi\-\_\-file(), modhdf5\-::hdf5\-\_\-create\-\_\-group(), modhdf5\-::hdf5\-\_\-create\-\_\-mpi\-\_\-file(), and modhdf5\-::hdf5\-\_\-open\-\_\-group().
+
+
+
+Here is the call graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodwritehalo_a4504dad75b760d800dd55e3cb9b90e71_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmodwritehalo_a4504dad75b760d800dd55e3cb9b90e71_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modwritehalo_8f90}{modwritehalo.\-f90}\end{DoxyCompactItemize}

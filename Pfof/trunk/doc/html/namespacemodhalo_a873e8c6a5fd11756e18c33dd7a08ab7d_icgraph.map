@@ -1,0 +1,6 @@
+<map id="modhalo::computeradius" name="modhalo::computeradius">
+<area shape="rect" id="node2" href="$namespacemodfofpara.html#a0e76e564f41683dc0c0104fc789718b0" title="Serial FOF subroutine. " alt="" coords="231,5,366,32"/>
+<area shape="rect" id="node4" href="$namespacemodfofpara.html#a033a2820dd29f107782b566ca298bde4" title="Parallel FOF subroutine Finds haloes on each process then apply the merging process for haloes that e..." alt="" coords="217,56,380,83"/>
+<area shape="rect" id="node3" href="$pfof__snap_8f90.html#ae44d28f09de4222a58811986e6e2a1d5" title="friend" alt="" coords="440,5,495,32"/>
+<area shape="rect" id="node5" href="$pfof__cone_8f90.html#addc770475dc2e497bf70a10ebc158aed" title="pFOF_cone is a distributed implementation of the Friends&#45;of&#45;Friends halo finder algorithm designed fo..." alt="" coords="428,56,507,83"/>
+</map>

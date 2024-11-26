@@ -1,0 +1,71 @@
+\hypertarget{modconstant_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modconstant.f90 File Reference}
+\label{modconstant_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modconstant.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/common/src/modconstant.\+f90}}
+
+
+This file contains some constant parameters definition.  
+
+
+\subsection*{Data Types}
+\begin{DoxyCompactItemize}
+\item 
+type \hyperlink{structmodconstant_1_1type__infocone}{modconstant\+::type\+\_\+infocone}
+\item 
+type \hyperlink{structmodconstant_1_1type__infocone__part}{modconstant\+::type\+\_\+infocone\+\_\+part}
+\item 
+type \hyperlink{structmodconstant_1_1type__infocone__grav}{modconstant\+::type\+\_\+infocone\+\_\+grav}
+\item 
+type \hyperlink{structmodconstant_1_1type__inforamses}{modconstant\+::type\+\_\+inforamses}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof}{modconstant\+::type\+\_\+parameter\+\_\+pfof}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__psod__snap}{modconstant\+::type\+\_\+parameter\+\_\+psod\+\_\+snap}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof__snap}{modconstant\+::type\+\_\+parameter\+\_\+pfof\+\_\+snap}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__pfof__cone}{modconstant\+::type\+\_\+parameter\+\_\+pfof\+\_\+cone}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator}{modconstant\+::type\+\_\+parameter\+\_\+conecreator}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator__part}{modconstant\+::type\+\_\+parameter\+\_\+conecreator\+\_\+part}
+\item 
+type \hyperlink{structmodconstant_1_1type__parameter__conecreator__grav}{modconstant\+::type\+\_\+parameter\+\_\+conecreator\+\_\+grav}
+\end{DoxyCompactItemize}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodconstant}{modconstant}
+\begin{DoxyCompactList}\small\item\em Constant parameters definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer, parameter \hyperlink{namespacemodconstant_a54966a555666da051c8c851545e11ff7}{modconstant\+::pr} =8
+\begin{DoxyCompactList}\small\item\em Precision for real arrays read from Ramses simulations (position/velocities) \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_a3463d55217ae4b194f21c061a619c48e}{modconstant\+::pri} = 8
+\begin{DoxyCompactList}\small\item\em Precision for integer arrays (id) \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_a4c7b1b69a38bfb69c932e4a770dae783}{modconstant\+::mpi\+\_\+pri} = Mpi\+\_\+\+Integer8
+\begin{DoxyCompactList}\small\item\em M\+PI precision for integer arrays. \end{DoxyCompactList}\item 
+character(len=16), parameter \hyperlink{namespacemodconstant_a6afcef14340a8cd5b8736b89385ab062}{modconstant\+::name\+\_\+conecreator\+\_\+part} =\textquotesingle{}conecreator\+\_\+part\textquotesingle{}
+\item 
+character(len=16), parameter \hyperlink{namespacemodconstant_ad761f8ece8de325d4dc3d9cb425fedc5}{modconstant\+::name\+\_\+conecreator\+\_\+grav} =\textquotesingle{}conecreator\+\_\+grav\textquotesingle{}
+\item 
+character(len=16), parameter \hyperlink{namespacemodconstant_affe7d9379bfee250c843169c7bb10f1c}{modconstant\+::name\+\_\+pfof\+\_\+snap} =\textquotesingle{}pfof\+\_\+snap\textquotesingle{}
+\item 
+character(len=16), parameter \hyperlink{namespacemodconstant_a7fbb091f14c29c3ca972099325219e3c}{modconstant\+::name\+\_\+pfof\+\_\+cone} =\textquotesingle{}\hyperlink{pfof__cone_8f90_addc770475dc2e497bf70a10ebc158aed}{pfof\+\_\+cone}\textquotesingle{}
+\item 
+character(len=32) \hyperlink{namespacemodconstant_a56d13db2836a9091e5e89be74deaedd6}{modconstant\+::svn\+\_\+version} =S\+V\+N\+R\+EV
+\item 
+integer, parameter \hyperlink{namespacemodconstant_a6921eef21b749faf744304003fa3ac63}{modconstant\+::ulog} =50
+\begin{DoxyCompactList}\small\item\em I/O unit for text log file. \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_acb8d6ab8e571b34dcb11638e425e57db}{modconstant\+::ucub} =51
+\begin{DoxyCompactList}\small\item\em I/O unit for binary cube file. \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_a542f50ea5e4225b1340cbcbca9eb30ee}{modconstant\+::umas} =52
+\begin{DoxyCompactList}\small\item\em I/O unit for binary mass file. \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_a7ad4db4111cceef61b48e40126488f2d}{modconstant\+::ustr} =53
+\begin{DoxyCompactList}\small\item\em I/O unit for binary haloes file. \end{DoxyCompactList}\item 
+integer, parameter \hyperlink{namespacemodconstant_a545e6e3d5c24f9ce81e3f88999f57b41}{modconstant\+::uopa} =54
+\begin{DoxyCompactList}\small\item\em I/O unit for text input parameter log file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains some constant parameters definition. 
+

@@ -1,0 +1,242 @@
+\hypertarget{namespacemodreadcube}{}\section{modreadcube Module Reference}
+\label{namespacemodreadcube}\index{modreadcube@{modreadcube}}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218}{selectcubetype} ()
+\begin{DoxyCompactList}\small\item\em Opens a cube file, reads the file\+\_\+type metadata, and selects the corresponding reading subroutine. Sets the readcube procedure pointer to the right subroutine. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}{h5readcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a standard hdf5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547}{h5readsortedcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a hdf5 sorted cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27}{mpih5readcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a parallel H\+D\+F5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}{mpih5readsortedcube} ()
+\begin{DoxyCompactList}\small\item\em Reads a parallel and sorted H\+D\+F5 cube file created by pfof\+\_\+snap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+procedure(), pointer \hyperlink{namespacemodreadcube_af4018b3e5809ee7ec7974a7601f2b304}{readcube}
+\begin{DoxyCompactList}\small\item\em Procedure pointer pointing to the cube reading subroutine selected from the \char`\"{}file\+\_\+type\char`\"{} metadata in the H\+D\+F5 cube file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modreadcube@{modreadcube}!h5readcube@{h5readcube}}
+\index{h5readcube@{h5readcube}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{h5readcube()}{h5readcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\+::h5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}{}\label{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20}
+
+
+Reads a standard hdf5 cube file created by pfof\+\_\+snap. 
+
+
+
+Definition at line 79 of file modreadcube.\+f90.
+
+
+
+References modvariables\+::for, modiocommons\+::h5readcommonmetadata(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modvariables\+::mynpart, modvariables\+::ngrid, modvariables\+::npart, modvariables\+::nres, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_a9b00396dd9eab642a275a7aa06d9cd20_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modreadcube@{modreadcube}!h5readsortedcube@{h5readsortedcube}}
+\index{h5readsortedcube@{h5readsortedcube}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{h5readsortedcube()}{h5readsortedcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\+::h5readsortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547}{}\label{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547}
+
+
+Reads a hdf5 sorted cube file created by pfof\+\_\+snap. 
+
+
+
+Definition at line 181 of file modreadcube.\+f90.
+
+
+
+References modmpicom\+::emergencystop(), modvariables\+::for, modiocommons\+::h5readcommonmetadata(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modvariables\+::mynpart, modvariables\+::ngrid, modvariables\+::npart, modvariables\+::nres, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_a30050fd5631222b0125e7917cc8ae547_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modreadcube@{modreadcube}!mpih5readcube@{mpih5readcube}}
+\index{mpih5readcube@{mpih5readcube}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{mpih5readcube()}{mpih5readcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\+::mpih5readcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27}{}\label{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27}
+
+
+Reads a parallel H\+D\+F5 cube file created by pfof\+\_\+snap. 
+
+
+
+Definition at line 320 of file modreadcube.\+f90.
+
+
+
+References modmpicom\+::commcolorread, modvariables\+::for, modiocommons\+::h5readcommonmetadata(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+mpi\+\_\+file(), modvariables\+::id, modvariables\+::inforamses, modmpicom\+::mpierr, modmpicom\+::mpisubcuberead, modvariables\+::mynpart, modvariables\+::ngrid, modvariables\+::npart, modvariables\+::nres, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::scprocidread, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_af92f4077b7cf70887bb67a38909f1a27_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modreadcube@{modreadcube}!mpih5readsortedcube@{mpih5readsortedcube}}
+\index{mpih5readsortedcube@{mpih5readsortedcube}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{mpih5readsortedcube()}{mpih5readsortedcube()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\+::mpih5readsortedcube (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}{}\label{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7}
+
+
+Reads a parallel and sorted H\+D\+F5 cube file created by pfof\+\_\+snap. 
+
+
+
+Definition at line 465 of file modreadcube.\+f90.
+
+
+
+References modmpicom\+::commcolorread, modvariables\+::for, modiocommons\+::h5readcommonmetadata(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modvariables\+::id, modvariables\+::inforamses, modmpicom\+::mpierr, modvariables\+::mynpart, modvariables\+::ngrid, modvariables\+::npart, modvariables\+::nres, modparameters\+::param, modvariables\+::pos, modvariables\+::pot, modmpicom\+::procid, modmpicom\+::scprocidread, modvariables\+::vel, modvariables\+::xmax, modvariables\+::xmin, modvariables\+::ymax, modvariables\+::ymin, modvariables\+::zmax, and modvariables\+::zmin.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_afc147b0f2e67c88cc8d7d0dd06ae8ff7_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modreadcube@{modreadcube}!selectcubetype@{selectcubetype}}
+\index{selectcubetype@{selectcubetype}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{selectcubetype()}{selectcubetype()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modreadcube\+::selectcubetype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218}{}\label{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218}
+
+
+Opens a cube file, reads the file\+\_\+type metadata, and selects the corresponding reading subroutine. Sets the readcube procedure pointer to the right subroutine. 
+
+
+
+Definition at line 38 of file modreadcube.\+f90.
+
+
+
+References modmpicom\+::emergencystop(), h5readcube(), h5readsortedcube(), modhdf5\+::hdf5\+\_\+close\+\_\+file(), modhdf5\+::hdf5\+\_\+close\+\_\+group(), modhdf5\+::hdf5\+\_\+open\+\_\+file(), modhdf5\+::hdf5\+\_\+open\+\_\+group(), modmpicom\+::mpierr, mpih5readcube(), mpih5readsortedcube(), modparameters\+::param, modmpicom\+::procid, and readcube.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=304pt]{namespacemodreadcube_a9c2a086c3d23dcb886817558a3592218_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modreadcube@{modreadcube}!readcube@{readcube}}
+\index{readcube@{readcube}!modreadcube@{modreadcube}}
+\subsubsection[{\texorpdfstring{readcube}{readcube}}]{\setlength{\rightskip}{0pt plus 5cm}procedure(), pointer modreadcube\+::readcube}\hypertarget{namespacemodreadcube_af4018b3e5809ee7ec7974a7601f2b304}{}\label{namespacemodreadcube_af4018b3e5809ee7ec7974a7601f2b304}
+
+
+Procedure pointer pointing to the cube reading subroutine selected from the \char`\"{}file\+\_\+type\char`\"{} metadata in the H\+D\+F5 cube file. 
+
+
+
+Definition at line 29 of file modreadcube.\+f90.
+

@@ -1,0 +1,374 @@
+\hypertarget{classmodparameters}{\section{modparameters Module Reference}
+\label{classmodparameters}\index{modparameters@{modparameters}}
+}
+
+
+This module contains the definition of the input parameters.  
+
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+character(len=200) \hyperlink{classmodparameters_a8e3087ed26ddd977f3b7214948ebf62b}{simulationname}
+\begin{DoxyCompactList}\small\item\em Simulation name to be written in output files. \end{DoxyCompactList}\item 
+integer \hyperlink{classmodparameters_a87dfe1d42999b2cfebdae2ca4e3671f6}{outputnb}
+\begin{DoxyCompactList}\small\item\em Ramses output number to be written in output files. \end{DoxyCompactList}\item 
+character(len=3) \hyperlink{classmodparameters_ac0cde1e01b079fda34684162c34a2ac9}{code\-\_\-index}
+\begin{DoxyCompactList}\small\item\em version of R\-A\-M\-S\-E\-S used to produce the R\-A\-M\-S\-E\-S files to analyze \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{classmodparameters_afd21f9138d2720f8990c6e62a65457be}{pathinput}
+\begin{DoxyCompactList}\small\item\em path to the directory containing the R\-A\-M\-S\-E\-S files \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{classmodparameters_a2c7cfce7809c8ff9dc10ab6db6d99cc0}{namepart}
+\begin{DoxyCompactList}\small\item\em base name of the files containing the particles information \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{classmodparameters_a755742d02a709ed5c570a3f380604fbb}{nameinfo}
+\begin{DoxyCompactList}\small\item\em name of the R\-A\-M\-S\-E\-S info file \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodparameters_a6a42cee2694995ca6ca39decb47a6303}{grpsize}
+\begin{DoxyCompactList}\small\item\em size of the I/\-O group used for the R\-A\-M\-S\-E\-S simulation \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_a5c425cedc8a349e31a559939e8887419}{star}
+\begin{DoxyCompactList}\small\item\em do the R\-A\-M\-S\-E\-S files contain stars? \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_a354e77e79b0b7309df87f45c994adea8}{metal}
+\begin{DoxyCompactList}\small\item\em do the R\-A\-M\-S\-E\-S files contain metalicities? \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_aef43d9e55952a11ab38b7ec4b793eeee}{readfromcube}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F read particles information from previously created cube files? \end{DoxyCompactList}\item 
+real(kind=4) \hyperlink{classmodparameters_a555c497cb7980e89a34876df62f2b22b}{perco}
+\begin{DoxyCompactList}\small\item\em F\-O\-F percolation length. \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodparameters_a4f5bb13705cae2bfb6255cf7b498aacc}{mmin}
+\begin{DoxyCompactList}\small\item\em minimum mass of the haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodparameters_a1dc1488fae7094ded9408953a21ada2f}{mmax}
+\begin{DoxyCompactList}\small\item\em maximum mass of the haloes \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_aac53717e97639df9afa75e2947a66f9e}{dofof}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F perform F\-O\-F halo finding? (if not, it can still write cube files) \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_a80bb718489050f3b3c056aae1774984d}{dounbinding}
+\begin{DoxyCompactList}\small\item\em Unbinding process? (not implemented yet) \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_ae2628157b1f65431117f867006409948}{dosubhalo}
+\begin{DoxyCompactList}\small\item\em Sub\-Halo detection? (not implemented yet) \end{DoxyCompactList}\item 
+character(len=400) \hyperlink{classmodparameters_aa1b8579820672ba40e918b0bed1abfc2}{output\-\_\-root}
+\begin{DoxyCompactList}\small\item\em base name of the output files \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_ad796cf0d67c6d8c47ce651fe7ec0f967}{outcube}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F write cube files? \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_a035ec12524f64b196a2244ba913b5677}{usehdf5}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F use hdf5 file format for output (and also cube input) \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodparameters_af4816764e904006783425cbe7a1d2498}{gatherwrite}
+\begin{DoxyCompactList}\small\item\em gather parameter for parallel hdf5 output \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{classmodparameters_a84036969384f84bc7f548da8e1a4fe56}{gatherread}
+\begin{DoxyCompactList}\small\item\em gather parameter for parallel hdf5 input \end{DoxyCompactList}\item 
+logical \hyperlink{classmodparameters_a3d21125b69403e3097f85434aa2bb08d}{dotimings}
+\begin{DoxyCompactList}\small\item\em should p\-F\-O\-F perform timings (imply extra synchronizations) \end{DoxyCompactList}\item 
+character(len=50) \hyperlink{classmodparameters_a912b8c25f0bccd646bbc63f8ecc2b052}{origin}
+\begin{DoxyCompactList}\small\item\em version number of the software (read from a .version text file) \end{DoxyCompactList}\item 
+character(len=200) \hyperlink{classmodparameters_adb57a3540b1d0caa308f50ac8f56d99f}{shell\-\_\-dir}
+\item 
+character(len=200) \hyperlink{classmodparameters_a308c50059015f7278785da01f4a9f99b}{shell\-\_\-filename}
+\item 
+integer(kind=4) \hyperlink{classmodparameters_ab8116a893043284dd7f4c7d54d179af6}{shell\-\_\-fid}
+\item 
+integer(kind=4) \hyperlink{classmodparameters_a669111d8b0ac2247e89f14c8778d77d5}{shell\-\_\-lid}
+\item 
+integer(kind=4) \hyperlink{classmodparameters_af1cb485d0a4ab3c8e0c54b81973aff9a}{nres}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the definition of the input parameters. 
+
+This module contains the parameters read from pfof\-\_\-cone.\-nml and the version number read from pfof.\-version.
+
+Authors\-: F. Roy, V. Bouillot 
+
+Definition at line 5 of file modparameters.\-f90.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classmodparameters_ac0cde1e01b079fda34684162c34a2ac9}{\index{modparameters@{modparameters}!code\-\_\-index@{code\-\_\-index}}
+\index{code\-\_\-index@{code\-\_\-index}!modparameters@{modparameters}}
+\subsubsection[{code\-\_\-index}]{\setlength{\rightskip}{0pt plus 5cm}character(len=3) modparameters\-::code\-\_\-index}}\label{classmodparameters_ac0cde1e01b079fda34684162c34a2ac9}
+
+
+version of R\-A\-M\-S\-E\-S used to produce the R\-A\-M\-S\-E\-S files to analyze 
+
+
+
+Definition at line 10 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_aac53717e97639df9afa75e2947a66f9e}{\index{modparameters@{modparameters}!dofof@{dofof}}
+\index{dofof@{dofof}!modparameters@{modparameters}}
+\subsubsection[{dofof}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::dofof}}\label{classmodparameters_aac53717e97639df9afa75e2947a66f9e}
+
+
+should p\-F\-O\-F perform F\-O\-F halo finding? (if not, it can still write cube files) 
+
+
+
+Definition at line 21 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_ae2628157b1f65431117f867006409948}{\index{modparameters@{modparameters}!dosubhalo@{dosubhalo}}
+\index{dosubhalo@{dosubhalo}!modparameters@{modparameters}}
+\subsubsection[{dosubhalo}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::dosubhalo}}\label{classmodparameters_ae2628157b1f65431117f867006409948}
+
+
+Sub\-Halo detection? (not implemented yet) 
+
+
+
+Definition at line 23 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a3d21125b69403e3097f85434aa2bb08d}{\index{modparameters@{modparameters}!dotimings@{dotimings}}
+\index{dotimings@{dotimings}!modparameters@{modparameters}}
+\subsubsection[{dotimings}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::dotimings}}\label{classmodparameters_a3d21125b69403e3097f85434aa2bb08d}
+
+
+should p\-F\-O\-F perform timings (imply extra synchronizations) 
+
+
+
+Definition at line 29 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a80bb718489050f3b3c056aae1774984d}{\index{modparameters@{modparameters}!dounbinding@{dounbinding}}
+\index{dounbinding@{dounbinding}!modparameters@{modparameters}}
+\subsubsection[{dounbinding}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::dounbinding}}\label{classmodparameters_a80bb718489050f3b3c056aae1774984d}
+
+
+Unbinding process? (not implemented yet) 
+
+
+
+Definition at line 22 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a84036969384f84bc7f548da8e1a4fe56}{\index{modparameters@{modparameters}!gatherread@{gatherread}}
+\index{gatherread@{gatherread}!modparameters@{modparameters}}
+\subsubsection[{gatherread}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::gatherread}}\label{classmodparameters_a84036969384f84bc7f548da8e1a4fe56}
+
+
+gather parameter for parallel hdf5 input 
+
+
+
+Definition at line 28 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_af4816764e904006783425cbe7a1d2498}{\index{modparameters@{modparameters}!gatherwrite@{gatherwrite}}
+\index{gatherwrite@{gatherwrite}!modparameters@{modparameters}}
+\subsubsection[{gatherwrite}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::gatherwrite}}\label{classmodparameters_af4816764e904006783425cbe7a1d2498}
+
+
+gather parameter for parallel hdf5 output 
+
+
+
+Definition at line 27 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a6a42cee2694995ca6ca39decb47a6303}{\index{modparameters@{modparameters}!grpsize@{grpsize}}
+\index{grpsize@{grpsize}!modparameters@{modparameters}}
+\subsubsection[{grpsize}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::grpsize}}\label{classmodparameters_a6a42cee2694995ca6ca39decb47a6303}
+
+
+size of the I/\-O group used for the R\-A\-M\-S\-E\-S simulation 
+
+
+
+Definition at line 14 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a354e77e79b0b7309df87f45c994adea8}{\index{modparameters@{modparameters}!metal@{metal}}
+\index{metal@{metal}!modparameters@{modparameters}}
+\subsubsection[{metal}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::metal}}\label{classmodparameters_a354e77e79b0b7309df87f45c994adea8}
+
+
+do the R\-A\-M\-S\-E\-S files contain metalicities? 
+
+
+
+Definition at line 16 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a1dc1488fae7094ded9408953a21ada2f}{\index{modparameters@{modparameters}!mmax@{mmax}}
+\index{mmax@{mmax}!modparameters@{modparameters}}
+\subsubsection[{mmax}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::mmax}}\label{classmodparameters_a1dc1488fae7094ded9408953a21ada2f}
+
+
+maximum mass of the haloes 
+
+
+
+Definition at line 20 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a4f5bb13705cae2bfb6255cf7b498aacc}{\index{modparameters@{modparameters}!mmin@{mmin}}
+\index{mmin@{mmin}!modparameters@{modparameters}}
+\subsubsection[{mmin}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::mmin}}\label{classmodparameters_a4f5bb13705cae2bfb6255cf7b498aacc}
+
+
+minimum mass of the haloes 
+
+
+
+Definition at line 19 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a755742d02a709ed5c570a3f380604fbb}{\index{modparameters@{modparameters}!nameinfo@{nameinfo}}
+\index{nameinfo@{nameinfo}!modparameters@{modparameters}}
+\subsubsection[{nameinfo}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::nameinfo}}\label{classmodparameters_a755742d02a709ed5c570a3f380604fbb}
+
+
+name of the R\-A\-M\-S\-E\-S info file 
+
+
+
+Definition at line 13 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a2c7cfce7809c8ff9dc10ab6db6d99cc0}{\index{modparameters@{modparameters}!namepart@{namepart}}
+\index{namepart@{namepart}!modparameters@{modparameters}}
+\subsubsection[{namepart}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::namepart}}\label{classmodparameters_a2c7cfce7809c8ff9dc10ab6db6d99cc0}
+
+
+base name of the files containing the particles information 
+
+
+
+Definition at line 12 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_af1cb485d0a4ab3c8e0c54b81973aff9a}{\index{modparameters@{modparameters}!nres@{nres}}
+\index{nres@{nres}!modparameters@{modparameters}}
+\subsubsection[{nres}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::nres}}\label{classmodparameters_af1cb485d0a4ab3c8e0c54b81973aff9a}
+
+
+Definition at line 23 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a912b8c25f0bccd646bbc63f8ecc2b052}{\index{modparameters@{modparameters}!origin@{origin}}
+\index{origin@{origin}!modparameters@{modparameters}}
+\subsubsection[{origin}]{\setlength{\rightskip}{0pt plus 5cm}character(len=50) modparameters\-::origin}}\label{classmodparameters_a912b8c25f0bccd646bbc63f8ecc2b052}
+
+
+version number of the software (read from a .version text file) 
+
+
+
+Definition at line 31 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_ad796cf0d67c6d8c47ce651fe7ec0f967}{\index{modparameters@{modparameters}!outcube@{outcube}}
+\index{outcube@{outcube}!modparameters@{modparameters}}
+\subsubsection[{outcube}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::outcube}}\label{classmodparameters_ad796cf0d67c6d8c47ce651fe7ec0f967}
+
+
+should p\-F\-O\-F write cube files? 
+
+
+
+Definition at line 25 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_aa1b8579820672ba40e918b0bed1abfc2}{\index{modparameters@{modparameters}!output\-\_\-root@{output\-\_\-root}}
+\index{output\-\_\-root@{output\-\_\-root}!modparameters@{modparameters}}
+\subsubsection[{output\-\_\-root}]{\setlength{\rightskip}{0pt plus 5cm}character(len=400) modparameters\-::output\-\_\-root}}\label{classmodparameters_aa1b8579820672ba40e918b0bed1abfc2}
+
+
+base name of the output files 
+
+
+
+Definition at line 24 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a87dfe1d42999b2cfebdae2ca4e3671f6}{\index{modparameters@{modparameters}!outputnb@{outputnb}}
+\index{outputnb@{outputnb}!modparameters@{modparameters}}
+\subsubsection[{outputnb}]{\setlength{\rightskip}{0pt plus 5cm}integer modparameters\-::outputnb}}\label{classmodparameters_a87dfe1d42999b2cfebdae2ca4e3671f6}
+
+
+Ramses output number to be written in output files. 
+
+Ramses output number to be written in output files\-: first output\-\_\-ncoarse in the cone. 
+
+Definition at line 9 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_afd21f9138d2720f8990c6e62a65457be}{\index{modparameters@{modparameters}!pathinput@{pathinput}}
+\index{pathinput@{pathinput}!modparameters@{modparameters}}
+\subsubsection[{pathinput}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::pathinput}}\label{classmodparameters_afd21f9138d2720f8990c6e62a65457be}
+
+
+path to the directory containing the R\-A\-M\-S\-E\-S files 
+
+
+
+Definition at line 11 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a555c497cb7980e89a34876df62f2b22b}{\index{modparameters@{modparameters}!perco@{perco}}
+\index{perco@{perco}!modparameters@{modparameters}}
+\subsubsection[{perco}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4) modparameters\-::perco}}\label{classmodparameters_a555c497cb7980e89a34876df62f2b22b}
+
+
+F\-O\-F percolation length. 
+
+
+
+Definition at line 18 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_aef43d9e55952a11ab38b7ec4b793eeee}{\index{modparameters@{modparameters}!readfromcube@{readfromcube}}
+\index{readfromcube@{readfromcube}!modparameters@{modparameters}}
+\subsubsection[{readfromcube}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::readfromcube}}\label{classmodparameters_aef43d9e55952a11ab38b7ec4b793eeee}
+
+
+should p\-F\-O\-F read particles information from previously created cube files? 
+
+
+
+Definition at line 17 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_adb57a3540b1d0caa308f50ac8f56d99f}{\index{modparameters@{modparameters}!shell\-\_\-dir@{shell\-\_\-dir}}
+\index{shell\-\_\-dir@{shell\-\_\-dir}!modparameters@{modparameters}}
+\subsubsection[{shell\-\_\-dir}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::shell\-\_\-dir}}\label{classmodparameters_adb57a3540b1d0caa308f50ac8f56d99f}
+
+
+Definition at line 15 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_ab8116a893043284dd7f4c7d54d179af6}{\index{modparameters@{modparameters}!shell\-\_\-fid@{shell\-\_\-fid}}
+\index{shell\-\_\-fid@{shell\-\_\-fid}!modparameters@{modparameters}}
+\subsubsection[{shell\-\_\-fid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::shell\-\_\-fid}}\label{classmodparameters_ab8116a893043284dd7f4c7d54d179af6}
+
+
+Definition at line 17 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a308c50059015f7278785da01f4a9f99b}{\index{modparameters@{modparameters}!shell\-\_\-filename@{shell\-\_\-filename}}
+\index{shell\-\_\-filename@{shell\-\_\-filename}!modparameters@{modparameters}}
+\subsubsection[{shell\-\_\-filename}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::shell\-\_\-filename}}\label{classmodparameters_a308c50059015f7278785da01f4a9f99b}
+
+
+Definition at line 16 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a669111d8b0ac2247e89f14c8778d77d5}{\index{modparameters@{modparameters}!shell\-\_\-lid@{shell\-\_\-lid}}
+\index{shell\-\_\-lid@{shell\-\_\-lid}!modparameters@{modparameters}}
+\subsubsection[{shell\-\_\-lid}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modparameters\-::shell\-\_\-lid}}\label{classmodparameters_a669111d8b0ac2247e89f14c8778d77d5}
+
+
+Definition at line 18 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a8e3087ed26ddd977f3b7214948ebf62b}{\index{modparameters@{modparameters}!simulationname@{simulationname}}
+\index{simulationname@{simulationname}!modparameters@{modparameters}}
+\subsubsection[{simulationname}]{\setlength{\rightskip}{0pt plus 5cm}character(len=200) modparameters\-::simulationname}}\label{classmodparameters_a8e3087ed26ddd977f3b7214948ebf62b}
+
+
+Simulation name to be written in output files. 
+
+Simulation name to be written in output files\-: contains the name of the cone (narrow or fullsky for instance) 
+
+Definition at line 8 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a5c425cedc8a349e31a559939e8887419}{\index{modparameters@{modparameters}!star@{star}}
+\index{star@{star}!modparameters@{modparameters}}
+\subsubsection[{star}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::star}}\label{classmodparameters_a5c425cedc8a349e31a559939e8887419}
+
+
+do the R\-A\-M\-S\-E\-S files contain stars? 
+
+
+
+Definition at line 15 of file modparameters.\-f90.
+
+\hypertarget{classmodparameters_a035ec12524f64b196a2244ba913b5677}{\index{modparameters@{modparameters}!usehdf5@{usehdf5}}
+\index{usehdf5@{usehdf5}!modparameters@{modparameters}}
+\subsubsection[{usehdf5}]{\setlength{\rightskip}{0pt plus 5cm}logical modparameters\-::usehdf5}}\label{classmodparameters_a035ec12524f64b196a2244ba913b5677}
+
+
+should p\-F\-O\-F use hdf5 file format for output (and also cube input) 
+
+
+
+Definition at line 26 of file modparameters.\-f90.
+
+
+
+The documentation for this module was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/trunk/pfof\-\_\-hdf5/src/\hyperlink{pfof__hdf5_2src_2modparameters_8f90}{modparameters.\-f90}\end{DoxyCompactItemize}

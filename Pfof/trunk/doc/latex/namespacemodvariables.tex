@@ -1,0 +1,691 @@
+\hypertarget{namespacemodvariables}{}\section{modvariables Module Reference}
+\label{namespacemodvariables}\index{modvariables@{modvariables}}
+
+
+This module contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}{deallocall} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{mynpart}
+\begin{DoxyCompactList}\small\item\em local particle number \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{nres}
+\begin{DoxyCompactList}\small\item\em 1-\/D resolution\+: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}) \hyperlink{namespacemodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}{npart}
+\begin{DoxyCompactList}\small\item\em total particle number\+: npart = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}) \hyperlink{namespacemodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}{ngrid}
+\begin{DoxyCompactList}\small\item\em total number of grid points\+: ngrid = nres $\ast$$\ast$ 3 \end{DoxyCompactList}\item 
+real(kind=4) \hyperlink{namespacemodvariables_aaa639d561a94ae000546755b6863b6be}{xmin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_a9112a5edebd73d310c4594fca429a757}{xmax}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_af09b8e9f670d2074a46c55ed90661609}{ymin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_aa84922c68231d1c3496d3a7d210a62e7}{ymax}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_aa88314239681eb1c24673391f4612eb3}{zmin}
+\item 
+real(kind=4) \hyperlink{namespacemodvariables_ab9a39f4e4f686b80011f46a2f88617c1}{zmax}
+\begin{DoxyCompactList}\small\item\em min and max (x,y,z) for each process \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodvariables_ad84b74b636d64be51d7aba857b4b5c05}{neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighbours of the local process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{pos}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{vel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a81417dbf044e4c170e3b3ae6eebcd6a1}{for}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a872451e872cc528b38bd43f2ed09b446}{pot}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ac2069a0665c46610db9e57a5d5eaf195}{id}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a93c25eb46b5370bd8153733e03f3008d}{structure}
+\begin{DoxyCompactList}\small\item\em Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a7528c234a190760e036921b956ec9fe8}{posf}
+\begin{DoxyCompactList}\small\item\em position of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{velf}
+\begin{DoxyCompactList}\small\item\em velocity of the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a1f2453280a3af1c380a1c3ad4797dc4b}{forf}
+\begin{DoxyCompactList}\small\item\em force on the particles \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a719beead34fb4c6c7c70e7f51f1dfc78}{potf}
+\begin{DoxyCompactList}\small\item\em potential at the position of the particles (optional) \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a74cd7fb485e34ae685664db5b2629aa9}{idf}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a5b99e0cc82073c06969e0fe6caa06357}{stf}
+\begin{DoxyCompactList}\small\item\em Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. \end{DoxyCompactList}\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_ae6b45a68a4cbf0ccbbf7c08ee87e3573}{ramsesid}
+\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a960cf3d5497024438caba54185cd7793}{ramsesidf}
+\item 
+character(len=50) \hyperlink{namespacemodvariables_a9f9928f8307cdd707b3a7d360a992f9f}{origin}
+\item 
+type(\hyperlink{structmodconstant_1_1type__inforamses}{type\+\_\+inforamses}) \hyperlink{namespacemodvariables_ac84b14c43266126c4d7120ba0b8f48f4}{inforamses}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{shell\+\_\+nb}
+\item 
+integer(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a46e17f78883958892917ac536b4ab1b1}{indexcube}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a2de620524061386e6addabfa15a6b020}{ictable}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}{shellcubes\+\_\+size}
+\item 
+real(kind=8), dimension(6) \hyperlink{namespacemodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}{boundaries}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}{cubepershell}
+\item 
+real(kind=pr), dimension(3) \hyperlink{namespacemodvariables_a70ddcf7f533c219df5c249774ff81df1}{partmin}
+\item 
+real(kind=pr), dimension(3) \hyperlink{namespacemodvariables_abeabad3e2598f3abb4a4fa74adca7743}{partmax}
+\item 
+type(\hyperlink{structmodconstant_1_1type__inforamses}{type\+\_\+inforamses}) \hyperlink{namespacemodvariables_a0640750979390f0e918c322d27b0bf74}{inforamseslast}
+\item 
+type(\hyperlink{structmodconstant_1_1type__infocone__part}{type\+\_\+infocone\+\_\+part}) \hyperlink{namespacemodvariables_a9c451543a6252b72d4a5352333c718b9}{infocone}
+\item 
+type(\hyperlink{structmodconstant_1_1type__infocone__part}{type\+\_\+infocone\+\_\+part}) \hyperlink{namespacemodvariables_acecda25ec5fba6f5f5fcaa09b2aba3a2}{infoconelast}
+\item 
+type(\hyperlink{structmodconstant_1_1type__parameter__pfof__cone}{type\+\_\+parameter\+\_\+pfof\+\_\+cone}) \hyperlink{namespacemodvariables_a3a05eb7a0d11075c67b3f7c927170b48}{parameters}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a8cd49c574b692bbeae7029e8d138f58e}{npartcube}
+\item 
+integer(kind=8), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}{npartcubefof}
+\item 
+integer(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_aa09a585a04de1f8fba311a2f440db992}{pictable}
+\item 
+integer(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a8602ecbf617fcd3d1c712a4ace68843c}{neigh}
+\item 
+integer(kind=8), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a64ba80f97884e73fedc7341570a93bd9}{my\+\_\+npart\+\_\+tab}
+\item 
+integer(kind=4), dimension(3) \hyperlink{namespacemodvariables_a0a00ccc148897945f3defb5f775e4c18}{nctab}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_ab094334ab9c4ab8644017abf18dcd25f}{ncube}
+\item 
+real(kind=8) \hyperlink{namespacemodvariables_a12af092709e4d0b68394a217d16c4489}{cubesize}
+\item 
+logical \hyperlink{namespacemodvariables_ace518a722b9c63f8c88c4915aa9a7549}{fullsky}
+\item 
+integer(kind=\hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri}), dimension(\+:), allocatable \hyperlink{namespacemodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}{ramsespartid}
+\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}{field}
+\item 
+integer \hyperlink{namespacemodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}{procid}
+\item 
+integer \hyperlink{namespacemodvariables_ae51b502acd90a80a0134e81f92fbac15}{procnb}
+\item 
+integer \hyperlink{namespacemodvariables_ab580e2bdf8eff875402911526f873de2}{mpierr}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a32098f5e276eab031b1feebf7124f8bf}{npartcubeloc}
+\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodvariables_a22925cb23ea4a80a06b3f4b67b62102e}{idcube}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_ab3c5e83108d2cc8318f235c1f889a162}{ncx}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_a1c1ff1a91ab25fd963a4ce5302249978}{ncy}
+\item 
+integer(kind=4) \hyperlink{namespacemodvariables_ab75f9f5dd0ce07892cca908373a51ddc}{ncz}
+\item 
+real(kind=8) \hyperlink{namespacemodvariables_a31a775c0bcadfce141cc3cebf22df9ff}{hy}
+\item 
+real(kind=8) \hyperlink{namespacemodvariables_a26d18952766121089d4309f2449d8b29}{hz}
+\item 
+integer \hyperlink{namespacemodvariables_a64644f9282a9c19faf8ccb44b0e60877}{req\+\_\+sumnpc}
+\item 
+integer(kind=4), dimension(mpi\+\_\+status\+\_\+size) \hyperlink{namespacemodvariables_af6d0e7b2912dcb50b21940d5f8658be4}{mpistat}
+\item 
+integer(kind=4), parameter \hyperlink{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{pri} =8
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains the common variables used in p\+Fo\+F\+\_\+cone and a subroutine used to deallocate all allocatable arrays. 
+
+Authors\+: F. Roy, V. Bouillot 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modvariables@{modvariables}!deallocall@{deallocall}}
+\index{deallocall@{deallocall}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{deallocall()}{deallocall()}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modvariables\+::deallocall (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}{}\label{namespacemodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17}
+
+
+Definition at line 49 of file modvariables.\+f90.
+
+
+
+References cubepershell, for, ictable, id, indexcube, pos, pot, ramsesid, and vel.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{namespacemodvariables_a1b90ef0a0d8979fdfc0a578bbd2f3e17_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modvariables@{modvariables}!boundaries@{boundaries}}
+\index{boundaries@{boundaries}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{boundaries}{boundaries}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\+:,\+:), allocatable modvariables\+::boundaries}\hypertarget{namespacemodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}{}\label{namespacemodvariables_a0dd99db73cadd4dfd2c39cdc09b6da9b}
+
+
+Definition at line 18 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!cubepershell@{cubepershell}}
+\index{cubepershell@{cubepershell}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{cubepershell}{cubepershell}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modvariables\+::cubepershell}\hypertarget{namespacemodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}{}\label{namespacemodvariables_a2c3c2168db3dc7c7b511d9c5a2715de5}
+
+
+Definition at line 19 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!cubesize@{cubesize}}
+\index{cubesize@{cubesize}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{cubesize}{cubesize}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\+::cubesize}\hypertarget{namespacemodvariables_a12af092709e4d0b68394a217d16c4489}{}\label{namespacemodvariables_a12af092709e4d0b68394a217d16c4489}
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!field@{field}}
+\index{field@{field}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{field}{field}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::field}\hypertarget{namespacemodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}{}\label{namespacemodvariables_a07bff5345df2040ae2d0f7e6d67f9a5c}
+
+
+Definition at line 16 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!for@{for}}
+\index{for@{for}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{for}{for}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::for}\hypertarget{namespacemodvariables_a81417dbf044e4c170e3b3ae6eebcd6a1}{}\label{namespacemodvariables_a81417dbf044e4c170e3b3ae6eebcd6a1}
+
+
+force on the particles 
+
+
+
+Definition at line 27 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!forf@{forf}}
+\index{forf@{forf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{forf}{forf}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(\+:,\+:), allocatable modvariables\+::forf}\hypertarget{namespacemodvariables_a1f2453280a3af1c380a1c3ad4797dc4b}{}\label{namespacemodvariables_a1f2453280a3af1c380a1c3ad4797dc4b}
+
+
+force on the particles 
+
+
+
+Definition at line 36 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!fullsky@{fullsky}}
+\index{fullsky@{fullsky}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{fullsky}{fullsky}}]{\setlength{\rightskip}{0pt plus 5cm}logical modvariables\+::fullsky}\hypertarget{namespacemodvariables_ace518a722b9c63f8c88c4915aa9a7549}{}\label{namespacemodvariables_ace518a722b9c63f8c88c4915aa9a7549}
+
+
+Definition at line 23 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!hy@{hy}}
+\index{hy@{hy}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{hy}{hy}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\+::hy}\hypertarget{namespacemodvariables_a31a775c0bcadfce141cc3cebf22df9ff}{}\label{namespacemodvariables_a31a775c0bcadfce141cc3cebf22df9ff}
+
+
+Definition at line 30 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!hz@{hz}}
+\index{hz@{hz}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{hz}{hz}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8) modvariables\+::hz}\hypertarget{namespacemodvariables_a26d18952766121089d4309f2449d8b29}{}\label{namespacemodvariables_a26d18952766121089d4309f2449d8b29}
+
+
+Definition at line 31 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ictable@{ictable}}
+\index{ictable@{ictable}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ictable}{ictable}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modvariables\+::ictable}\hypertarget{namespacemodvariables_a2de620524061386e6addabfa15a6b020}{}\label{namespacemodvariables_a2de620524061386e6addabfa15a6b020}
+
+
+Definition at line 16 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!id@{id}}
+\index{id@{id}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{id}{id}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::id}\hypertarget{namespacemodvariables_ac2069a0665c46610db9e57a5d5eaf195}{}\label{namespacemodvariables_ac2069a0665c46610db9e57a5d5eaf195}
+
+
+R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 29 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!idcube@{idcube}}
+\index{idcube@{idcube}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{idcube}{idcube}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modvariables\+::idcube}\hypertarget{namespacemodvariables_a22925cb23ea4a80a06b3f4b67b62102e}{}\label{namespacemodvariables_a22925cb23ea4a80a06b3f4b67b62102e}
+
+
+Definition at line 23 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!idf@{idf}}
+\index{idf@{idf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{idf}{idf}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::idf}\hypertarget{namespacemodvariables_a74cd7fb485e34ae685664db5b2629aa9}{}\label{namespacemodvariables_a74cd7fb485e34ae685664db5b2629aa9}
+
+
+R\+A\+M\+S\+ES id of the particles; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 38 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!indexcube@{indexcube}}
+\index{indexcube@{indexcube}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{indexcube}{indexcube}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:,\+:), allocatable modvariables\+::indexcube}\hypertarget{namespacemodvariables_a46e17f78883958892917ac536b4ab1b1}{}\label{namespacemodvariables_a46e17f78883958892917ac536b4ab1b1}
+
+
+Definition at line 15 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!infocone@{infocone}}
+\index{infocone@{infocone}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{infocone}{infocone}}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf type\+\_\+infocone\+\_\+part}) modvariables\+::infocone}\hypertarget{namespacemodvariables_a9c451543a6252b72d4a5352333c718b9}{}\label{namespacemodvariables_a9c451543a6252b72d4a5352333c718b9}
+
+
+Definition at line 44 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!infoconelast@{infoconelast}}
+\index{infoconelast@{infoconelast}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{infoconelast}{infoconelast}}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf type\+\_\+infocone\+\_\+part}) modvariables\+::infoconelast}\hypertarget{namespacemodvariables_acecda25ec5fba6f5f5fcaa09b2aba3a2}{}\label{namespacemodvariables_acecda25ec5fba6f5f5fcaa09b2aba3a2}
+
+
+Definition at line 44 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!inforamses@{inforamses}}
+\index{inforamses@{inforamses}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{inforamses}{inforamses}}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf type\+\_\+inforamses}) modvariables\+::inforamses}\hypertarget{namespacemodvariables_ac84b14c43266126c4d7120ba0b8f48f4}{}\label{namespacemodvariables_ac84b14c43266126c4d7120ba0b8f48f4}
+
+
+Definition at line 47 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!inforamseslast@{inforamseslast}}
+\index{inforamseslast@{inforamseslast}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{inforamseslast}{inforamseslast}}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf type\+\_\+inforamses}) modvariables\+::inforamseslast}\hypertarget{namespacemodvariables_a0640750979390f0e918c322d27b0bf74}{}\label{namespacemodvariables_a0640750979390f0e918c322d27b0bf74}
+
+
+Definition at line 43 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!mpierr@{mpierr}}
+\index{mpierr@{mpierr}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{mpierr}{mpierr}}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\+::mpierr}\hypertarget{namespacemodvariables_ab580e2bdf8eff875402911526f873de2}{}\label{namespacemodvariables_ab580e2bdf8eff875402911526f873de2}
+
+
+Definition at line 20 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!mpistat@{mpistat}}
+\index{mpistat@{mpistat}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{mpistat}{mpistat}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(mpi\+\_\+status\+\_\+size) modvariables\+::mpistat}\hypertarget{namespacemodvariables_af6d0e7b2912dcb50b21940d5f8658be4}{}\label{namespacemodvariables_af6d0e7b2912dcb50b21940d5f8658be4}
+
+
+Definition at line 35 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!my\+\_\+npart\+\_\+tab@{my\+\_\+npart\+\_\+tab}}
+\index{my\+\_\+npart\+\_\+tab@{my\+\_\+npart\+\_\+tab}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{my\+\_\+npart\+\_\+tab}{my_npart_tab}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8), dimension(\+:), allocatable modvariables\+::my\+\_\+npart\+\_\+tab}\hypertarget{namespacemodvariables_a64ba80f97884e73fedc7341570a93bd9}{}\label{namespacemodvariables_a64ba80f97884e73fedc7341570a93bd9}
+
+
+Definition at line 17 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!mynpart@{mynpart}}
+\index{mynpart@{mynpart}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{mynpart}{mynpart}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::mynpart}\hypertarget{namespacemodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}{}\label{namespacemodvariables_a6b2f4aac9da282a26d2ff36628fa0c7b}
+
+
+local particle number 
+
+
+
+Definition at line 17 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!nctab@{nctab}}
+\index{nctab@{nctab}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{nctab}{nctab}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(3) modvariables\+::nctab}\hypertarget{namespacemodvariables_a0a00ccc148897945f3defb5f775e4c18}{}\label{namespacemodvariables_a0a00ccc148897945f3defb5f775e4c18}
+
+
+Definition at line 18 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ncube@{ncube}}
+\index{ncube@{ncube}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ncube}{ncube}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::ncube}\hypertarget{namespacemodvariables_ab094334ab9c4ab8644017abf18dcd25f}{}\label{namespacemodvariables_ab094334ab9c4ab8644017abf18dcd25f}
+
+
+Definition at line 19 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ncx@{ncx}}
+\index{ncx@{ncx}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ncx}{ncx}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::ncx}\hypertarget{namespacemodvariables_ab3c5e83108d2cc8318f235c1f889a162}{}\label{namespacemodvariables_ab3c5e83108d2cc8318f235c1f889a162}
+
+
+Definition at line 25 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ncy@{ncy}}
+\index{ncy@{ncy}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ncy}{ncy}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::ncy}\hypertarget{namespacemodvariables_a1c1ff1a91ab25fd963a4ce5302249978}{}\label{namespacemodvariables_a1c1ff1a91ab25fd963a4ce5302249978}
+
+
+Definition at line 26 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ncz@{ncz}}
+\index{ncz@{ncz}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ncz}{ncz}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::ncz}\hypertarget{namespacemodvariables_ab75f9f5dd0ce07892cca908373a51ddc}{}\label{namespacemodvariables_ab75f9f5dd0ce07892cca908373a51ddc}
+
+
+Definition at line 27 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!neigh@{neigh}}
+\index{neigh@{neigh}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{neigh}{neigh}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:,\+:), allocatable modvariables\+::neigh}\hypertarget{namespacemodvariables_a8602ecbf617fcd3d1c712a4ace68843c}{}\label{namespacemodvariables_a8602ecbf617fcd3d1c712a4ace68843c}
+
+
+Definition at line 16 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!neighbours@{neighbours}}
+\index{neighbours@{neighbours}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{neighbours}{neighbours}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(6) modvariables\+::neighbours}\hypertarget{namespacemodvariables_ad84b74b636d64be51d7aba857b4b5c05}{}\label{namespacemodvariables_ad84b74b636d64be51d7aba857b4b5c05}
+
+
+array containing the id of the neighbours of the local process in the Mpi\+Cube communicator 
+
+
+
+Definition at line 23 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ngrid@{ngrid}}
+\index{ngrid@{ngrid}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ngrid}{ngrid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}) modvariables\+::ngrid}\hypertarget{namespacemodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}{}\label{namespacemodvariables_afeecc1a4b626f4eb8e48767dbf41d0a2}
+
+
+total number of grid points\+: ngrid = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 20 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!npart@{npart}}
+\index{npart@{npart}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{npart}{npart}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8) modvariables\+::npart}\hypertarget{namespacemodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}{}\label{namespacemodvariables_a8c3df9e10fb71cff536986d2a33fa2c7}
+
+
+total particle number\+: npart = nres $\ast$$\ast$ 3 
+
+
+
+Definition at line 19 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!npartcube@{npartcube}}
+\index{npartcube@{npartcube}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{npartcube}{npartcube}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modvariables\+::npartcube}\hypertarget{namespacemodvariables_a8cd49c574b692bbeae7029e8d138f58e}{}\label{namespacemodvariables_a8cd49c574b692bbeae7029e8d138f58e}
+
+
+Definition at line 13 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!npartcubefof@{npartcubefof}}
+\index{npartcubefof@{npartcubefof}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{npartcubefof}{npartcubefof}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=8), dimension(\+:), allocatable modvariables\+::npartcubefof}\hypertarget{namespacemodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}{}\label{namespacemodvariables_a5e0afff3c4cb1ac79dd8ec2f3a7752d9}
+
+
+Definition at line 14 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!npartcubeloc@{npartcubeloc}}
+\index{npartcubeloc@{npartcubeloc}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{npartcubeloc}{npartcubeloc}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modvariables\+::npartcubeloc}\hypertarget{namespacemodvariables_a32098f5e276eab031b1feebf7124f8bf}{}\label{namespacemodvariables_a32098f5e276eab031b1feebf7124f8bf}
+
+
+Definition at line 22 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!nres@{nres}}
+\index{nres@{nres}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{nres}{nres}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::nres}\hypertarget{namespacemodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}{}\label{namespacemodvariables_aa678ff0ebe26f3b0510eba5a59a69e61}
+
+
+1-\/D resolution\+: number of grid points in each dimension ; nres = 2 $\ast$$\ast$ lmin 
+
+
+
+Definition at line 18 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!origin@{origin}}
+\index{origin@{origin}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{origin}{origin}}]{\setlength{\rightskip}{0pt plus 5cm}character(len=50) modvariables\+::origin}\hypertarget{namespacemodvariables_a9f9928f8307cdd707b3a7d360a992f9f}{}\label{namespacemodvariables_a9f9928f8307cdd707b3a7d360a992f9f}
+
+
+Definition at line 44 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!parameters@{parameters}}
+\index{parameters@{parameters}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{parameters}{parameters}}]{\setlength{\rightskip}{0pt plus 5cm}type({\bf type\+\_\+parameter\+\_\+pfof\+\_\+cone}) modvariables\+::parameters}\hypertarget{namespacemodvariables_a3a05eb7a0d11075c67b3f7c927170b48}{}\label{namespacemodvariables_a3a05eb7a0d11075c67b3f7c927170b48}
+
+
+Definition at line 11 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!partmax@{partmax}}
+\index{partmax@{partmax}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{partmax}{partmax}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3) modvariables\+::partmax}\hypertarget{namespacemodvariables_abeabad3e2598f3abb4a4fa74adca7743}{}\label{namespacemodvariables_abeabad3e2598f3abb4a4fa74adca7743}
+
+
+Definition at line 39 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!partmin@{partmin}}
+\index{partmin@{partmin}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{partmin}{partmin}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(3) modvariables\+::partmin}\hypertarget{namespacemodvariables_a70ddcf7f533c219df5c249774ff81df1}{}\label{namespacemodvariables_a70ddcf7f533c219df5c249774ff81df1}
+
+
+Definition at line 39 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!pictable@{pictable}}
+\index{pictable@{pictable}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{pictable}{pictable}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:,\+:), allocatable modvariables\+::pictable}\hypertarget{namespacemodvariables_aa09a585a04de1f8fba311a2f440db992}{}\label{namespacemodvariables_aa09a585a04de1f8fba311a2f440db992}
+
+
+Definition at line 15 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!pos@{pos}}
+\index{pos@{pos}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{pos}{pos}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::pos}\hypertarget{namespacemodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}{}\label{namespacemodvariables_a2f72d5750b0cf2e9bfa6e139d09c6862}
+
+
+position of the particles 
+
+
+
+Definition at line 25 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!posf@{posf}}
+\index{posf@{posf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{posf}{posf}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::posf}\hypertarget{namespacemodvariables_a7528c234a190760e036921b956ec9fe8}{}\label{namespacemodvariables_a7528c234a190760e036921b956ec9fe8}
+
+
+position of the particles 
+
+
+
+Definition at line 34 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!pot@{pot}}
+\index{pot@{pot}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{pot}{pot}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:), allocatable modvariables\+::pot}\hypertarget{namespacemodvariables_a872451e872cc528b38bd43f2ed09b446}{}\label{namespacemodvariables_a872451e872cc528b38bd43f2ed09b446}
+
+
+potential at the position of the particles (optional) 
+
+
+
+Definition at line 28 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!potf@{potf}}
+\index{potf@{potf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{potf}{potf}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=pr), dimension(\+:), allocatable modvariables\+::potf}\hypertarget{namespacemodvariables_a719beead34fb4c6c7c70e7f51f1dfc78}{}\label{namespacemodvariables_a719beead34fb4c6c7c70e7f51f1dfc78}
+
+
+potential at the position of the particles (optional) 
+
+
+
+Definition at line 37 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!pri@{pri}}
+\index{pri@{pri}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{pri}{pri}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), parameter modvariables\+::pri =8}\hypertarget{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}{}\label{namespacemodvariables_a51e0b900e05f4302a36ddf33b6df0649}
+
+
+Definition at line 6 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!procid@{procid}}
+\index{procid@{procid}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{procid}{procid}}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\+::procid}\hypertarget{namespacemodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}{}\label{namespacemodvariables_a27cda3ac7f6a8948a5f95e7dfa724167}
+
+
+Definition at line 18 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!procnb@{procnb}}
+\index{procnb@{procnb}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{procnb}{procnb}}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\+::procnb}\hypertarget{namespacemodvariables_ae51b502acd90a80a0134e81f92fbac15}{}\label{namespacemodvariables_ae51b502acd90a80a0134e81f92fbac15}
+
+
+Definition at line 19 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ramsesid@{ramsesid}}
+\index{ramsesid@{ramsesid}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ramsesid}{ramsesid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::ramsesid}\hypertarget{namespacemodvariables_ae6b45a68a4cbf0ccbbf7c08ee87e3573}{}\label{namespacemodvariables_ae6b45a68a4cbf0ccbbf7c08ee87e3573}
+
+
+Definition at line 43 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ramsesidf@{ramsesidf}}
+\index{ramsesidf@{ramsesidf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ramsesidf}{ramsesidf}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::ramsesidf}\hypertarget{namespacemodvariables_a960cf3d5497024438caba54185cd7793}{}\label{namespacemodvariables_a960cf3d5497024438caba54185cd7793}
+
+
+Definition at line 43 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ramsespartid@{ramsespartid}}
+\index{ramsespartid@{ramsespartid}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ramsespartid}{ramsespartid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::ramsespartid}\hypertarget{namespacemodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}{}\label{namespacemodvariables_aad55ee2cd6f458e86f0f8fa31339fac1}
+
+
+Definition at line 14 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!req\+\_\+sumnpc@{req\+\_\+sumnpc}}
+\index{req\+\_\+sumnpc@{req\+\_\+sumnpc}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{req\+\_\+sumnpc}{req_sumnpc}}]{\setlength{\rightskip}{0pt plus 5cm}integer modvariables\+::req\+\_\+sumnpc}\hypertarget{namespacemodvariables_a64644f9282a9c19faf8ccb44b0e60877}{}\label{namespacemodvariables_a64644f9282a9c19faf8ccb44b0e60877}
+
+
+Definition at line 34 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!shell\+\_\+nb@{shell\+\_\+nb}}
+\index{shell\+\_\+nb@{shell\+\_\+nb}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{shell\+\_\+nb}{shell_nb}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::shell\+\_\+nb}\hypertarget{namespacemodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}{}\label{namespacemodvariables_a8e749d6e70dade5cb6d75a09a99cefd7}
+
+
+Definition at line 14 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!shellcubes\+\_\+size@{shellcubes\+\_\+size}}
+\index{shellcubes\+\_\+size@{shellcubes\+\_\+size}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{shellcubes\+\_\+size}{shellcubes_size}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modvariables\+::shellcubes\+\_\+size}\hypertarget{namespacemodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}{}\label{namespacemodvariables_a9b7ba2cda6114449e99e9f7f348d4c32}
+
+
+Definition at line 17 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!stf@{stf}}
+\index{stf@{stf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{stf}{stf}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::stf}\hypertarget{namespacemodvariables_a5b99e0cc82073c06969e0fe6caa06357}{}\label{namespacemodvariables_a5b99e0cc82073c06969e0fe6caa06357}
+
+
+Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 40 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!structure@{structure}}
+\index{structure@{structure}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{structure}{structure}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind={\bf pri}), dimension(\+:), allocatable modvariables\+::structure}\hypertarget{namespacemodvariables_a93c25eb46b5370bd8153733e03f3008d}{}\label{namespacemodvariables_a93c25eb46b5370bd8153733e03f3008d}
+
+
+Halo ID of the partickes; Integer8 if particle number exceeds 2$^\wedge$31-\/1. 
+
+
+
+Definition at line 31 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!vel@{vel}}
+\index{vel@{vel}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{vel}{vel}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::vel}\hypertarget{namespacemodvariables_a9f11e44143a4c5cd47740e58712bbe1c}{}\label{namespacemodvariables_a9f11e44143a4c5cd47740e58712bbe1c}
+
+
+velocity of the particles 
+
+
+
+Definition at line 26 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!velf@{velf}}
+\index{velf@{velf}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{velf}{velf}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modvariables\+::velf}\hypertarget{namespacemodvariables_a99c2bd91d22daa7bfaa3491624db7f14}{}\label{namespacemodvariables_a99c2bd91d22daa7bfaa3491624db7f14}
+
+
+velocity of the particles 
+
+
+
+Definition at line 35 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!xmax@{xmax}}
+\index{xmax@{xmax}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{xmax}{xmax}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::xmax}\hypertarget{namespacemodvariables_a9112a5edebd73d310c4594fca429a757}{}\label{namespacemodvariables_a9112a5edebd73d310c4594fca429a757}
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!xmin@{xmin}}
+\index{xmin@{xmin}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{xmin}{xmin}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::xmin}\hypertarget{namespacemodvariables_aaa639d561a94ae000546755b6863b6be}{}\label{namespacemodvariables_aaa639d561a94ae000546755b6863b6be}
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ymax@{ymax}}
+\index{ymax@{ymax}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ymax}{ymax}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::ymax}\hypertarget{namespacemodvariables_aa84922c68231d1c3496d3a7d210a62e7}{}\label{namespacemodvariables_aa84922c68231d1c3496d3a7d210a62e7}
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!ymin@{ymin}}
+\index{ymin@{ymin}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{ymin}{ymin}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::ymin}\hypertarget{namespacemodvariables_af09b8e9f670d2074a46c55ed90661609}{}\label{namespacemodvariables_af09b8e9f670d2074a46c55ed90661609}
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!zmax@{zmax}}
+\index{zmax@{zmax}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{zmax}{zmax}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::zmax}\hypertarget{namespacemodvariables_ab9a39f4e4f686b80011f46a2f88617c1}{}\label{namespacemodvariables_ab9a39f4e4f686b80011f46a2f88617c1}
+
+
+min and max (x,y,z) for each process 
+
+
+
+Definition at line 21 of file modvariables.\+f90.
+
+\index{modvariables@{modvariables}!zmin@{zmin}}
+\index{zmin@{zmin}!modvariables@{modvariables}}
+\subsubsection[{\texorpdfstring{zmin}{zmin}}]{\setlength{\rightskip}{0pt plus 5cm}real (kind=4) modvariables\+::zmin}\hypertarget{namespacemodvariables_aa88314239681eb1c24673391f4612eb3}{}\label{namespacemodvariables_aa88314239681eb1c24673391f4612eb3}
+
+
+Definition at line 21 of file modvariables.\+f90.
+

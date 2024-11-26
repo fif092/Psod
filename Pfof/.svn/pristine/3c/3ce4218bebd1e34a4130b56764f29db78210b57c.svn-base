@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ -z "$PFOFHOME" ]; then
+    echo "PFOFHOME not set"
+    export PFOFHOME=$( realpath ../../)
+    echo "We assume that PFOFHOME is $PFOFHOME"
+fi  
+current=$(grep "svn_version" ${PFOFHOME}/common/src/modconstant.f90 | awk -F\' '{ print $2 }')
+#echo $current
+real=$(svnversion -n .)
+#echo $real
+if [ $current != $real ] ; then
+    echo "SVN_VERSION updated in modconstant.f90"
+    sed -i "s/$current/$real/" ${PFOFHOME}/common/src/modconstant.f90
+else
+    echo "SVN_VERSION in modconstant.f90 up to date."
+fi
+
+exit 0

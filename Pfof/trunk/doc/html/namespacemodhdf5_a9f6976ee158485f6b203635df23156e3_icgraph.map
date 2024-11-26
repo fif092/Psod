@@ -1,0 +1,5 @@
+<map id="modhdf5::hdf5_open_mpi_file" name="modhdf5::hdf5_open_mpi_file">
+<area shape="rect" id="node2" href="$namespacemodreadcube.html#af92f4077b7cf70887bb67a38909f1a27" title="Reads a parallel HDF5 cube file created by pfof_snap. " alt="" coords="193,13,389,39"/>
+<area shape="rect" id="node3" href="$namespacemodreadcube.html#a9c2a086c3d23dcb886817558a3592218" title="Opens a cube file, reads the file_type metadata, and selects the corresponding reading subroutine..." alt="" coords="437,13,633,39"/>
+<area shape="rect" id="node4" href="$pfof__snap_8f90.html#ae44d28f09de4222a58811986e6e2a1d5" title="friend" alt="" coords="681,13,736,39"/>
+</map>

@@ -1,0 +1,27 @@
+Module modvarcommons
+  
+  Use modconstant
+
+  Implicit none
+
+  Integer(kind=4) :: local_npart  !< local particle number
+  Integer(kind=4) :: nres     !< 1-D resolution: number of grid points in each dimension ; nres = 2 ** lmin
+  Integer(kind=PRI) :: global_npart       !< total particle number: npart = nres ** 3
+
+  Real(kind=4), dimension(:,:), allocatable :: position  !< position of the particles
+  Real(kind=4), dimension(:,:), allocatable :: velocity  !< velocity of the particles
+  Real(kind=4), dimension(:,:), allocatable :: field    !< force on the particles
+  Real(kind=4), dimension(:), allocatable :: potential      !< potential at the position of the particles (optional)
+  Integer(kind=PRI), dimension(:), allocatable :: pfof_id  !< ID of the particles created by pfof for lightcones
+  Integer(kind=PRI), dimension(:), allocatable :: structure_id !< Halo ID of the partickes; Integer8 if particle number exceeds 2^31-1
+  Integer(kind=PRI), dimension(:), allocatable :: ramses_id !< RAMSES id of the particles; Integer8 if particle number exceeds 2^31-1 
+
+  Real(kind=4), dimension(:,:), allocatable :: fposition  !< position of the particles
+  Real(kind=4), dimension(:,:), allocatable :: fvelocity  !< velocity of the particles
+  Real(kind=4), dimension(:,:), allocatable :: ffield    !< force on the particles
+  Real(kind=4), dimension(:), allocatable :: fpotential      !< potential at the position of the particles (optional)
+  Integer(kind=PRI), dimension(:), allocatable :: fpfof_id  !< ID of the particles created by pfof for lightcones
+  Integer(kind=PRI), dimension(:), allocatable :: fstructure_id  !< Halo ID of the particles; Integer8 if particle number exceeds 2^31-1
+  Integer(kind=PRI), dimension(:), allocatable :: framses_id !< RAMSES id of the particles; Integer8 if particle number exceeds 2^31-1
+
+End Module modvarcommons

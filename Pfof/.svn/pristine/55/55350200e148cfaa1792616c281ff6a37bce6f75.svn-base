@@ -1,0 +1,12 @@
+!=======================================================================
+! Author: Fabrice Roy (LUTH/CNRS/Observatoire de Paris)
+! Fabrice.Roy@obspm.fr
+!=======================================================================
+Module modparameters
+  
+  Use modconstant
+  Implicit None
+
+  Type(Type_parameter_pfof_cone) :: parameters
+
+End Module modparameters

@@ -1,0 +1,12 @@
+&Size
+filelistsize=8 /
+
+&List
+filelist(1) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00000.h5'
+filelist(2) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00001.h5'
+filelist(3) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00002.h5'
+filelist(4) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00003.h5'
+filelist(5) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00004.h5'
+filelist(6) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00005.h5'
+filelist(7) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00006.h5'
+filelist(8) = '/data/yrasera/prepa4096/boxlen82.03125_n128_lcdmw7/post/sod/test_00011/psod_halo_snap_part_data_boxlen82.03125_n128_lcdmw7_00007.h5' / 

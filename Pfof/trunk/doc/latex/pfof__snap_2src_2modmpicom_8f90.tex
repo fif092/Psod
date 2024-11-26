@@ -1,0 +1,92 @@
+\hypertarget{pfof__snap_2src_2modmpicom_8f90}{}\section{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modmpicom.f90 File Reference}
+\label{pfof__snap_2src_2modmpicom_8f90}\index{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modmpicom.\+f90@{/home/roy/\+Travail/\+Devel/\+Cosmologie/\+Pfof/trunk/pfof\+\_\+snap/src/modmpicom.\+f90}}
+
+
+This file contains the subroutines and the variables used for M\+PI communications.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+module \hyperlink{namespacemodmpicom}{modmpicom}
+\begin{DoxyCompactList}\small\item\em This module contains the subroutines and the variables used for M\+PI communications. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodmpicom_a95ff384e42736ca3e2ccef78d7d8554a}{modmpicom\+::setcommunicators} ()
+\begin{DoxyCompactList}\small\item\em This subroutine creates the global cartesian grid of processes. It also creates the communicators used for the parallel hdf5 i/o if they are needed. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodmpicom_a75a2de7a16fce78b94bd79731a2fbd81}{modmpicom\+::emergencystop} (message, errcode)
+\begin{DoxyCompactList}\small\item\em The subroutine is used to abort the execution if something wrong is happening. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a500c48035640d6e5b49b1b694372bcd3}{modmpicom\+::mpierr}
+\begin{DoxyCompactList}\small\item\em M\+PI error code. \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a34052e13410e6236c45dcfc1b5563200}{modmpicom\+::mpireqs1}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a24670bd8507b230a6be2c2f3afabf5c1}{modmpicom\+::mpireqs2}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a7105e5547fa246381624c998c59249b9}{modmpicom\+::mpireqs3}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a848fe3dd718230ed7fb98e58796619ea}{modmpicom\+::mpireqs4}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a74eac9af638b6438f5a6e0ba77997f33}{modmpicom\+::mpireqs5}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_adad671e20507f6639f50d87ec487534b}{modmpicom\+::mpireqs6}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a42cc3c99615d14140b7b8088760ca8bd}{modmpicom\+::mpireqs7}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_ac22bfba3e611102e10fdfd1de038f25f}{modmpicom\+::mpireqr1}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a825f1ba2f76e8ca1c71b11f4e7b29815}{modmpicom\+::mpireqr2}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a3d9bf986389786c043540894df1ad003}{modmpicom\+::mpireqr3}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a7a50a2ea228f57406a2f246a57016fa9}{modmpicom\+::mpireqr4}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_afd68da48bf63f3f360384fa66e7453bd}{modmpicom\+::mpireqr5}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a9b3e05d2267d77a7a4af942c9db7f204}{modmpicom\+::mpireqr6}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_ad55af2a3154bdc4be9156046d29af59d}{modmpicom\+::mpireqr7}
+\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0a592a5f03c3c0d61e07b5a56fd161d1}{modmpicom\+::procid}
+\begin{DoxyCompactList}\small\item\em process id in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a5e40853b0f15e4c14658ea56fb1b9b73}{modmpicom\+::procnb}
+\begin{DoxyCompactList}\small\item\em process number in the global communicator \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a8762b65024b222a0c5bfab4f8af21d7d}{modmpicom\+::dims}
+\begin{DoxyCompactList}\small\item\em dimensions of the processes grid \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a85f71373d318b169e73b6a0221dc62f1}{modmpicom\+::mpicube}
+\begin{DoxyCompactList}\small\item\em cartesian global communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_aa950234af9f6bdf930d8c4e61a76ca96}{modmpicom\+::mpisubcubewrite}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel output \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_afee5305bd782226daffc69f8db2af8a7}{modmpicom\+::mpisubcuberead}
+\begin{DoxyCompactList}\small\item\em local communicator used for hdf5 parallel input \end{DoxyCompactList}\item 
+integer(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a533718abb8ce3f03b430dfbf9f821069}{modmpicom\+::cubecoord}
+\begin{DoxyCompactList}\small\item\em coordinates of the process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4), dimension(6) \hyperlink{namespacemodmpicom_a818e6dbfc3705e5d5bddb752f2aeb5aa}{modmpicom\+::neighbours}
+\begin{DoxyCompactList}\small\item\em array containing the id of the neighboor of the local process in the Mpi\+Cube communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a10897435b88ede934389b5099b4a2f7f}{modmpicom\+::commcolorwrite}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0ba0397b7d92b456e11a65bce1f86e7c}{modmpicom\+::commcolorread}
+\begin{DoxyCompactList}\small\item\em parameter used to create the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a0bade7a409f7af1432be0253a6262442}{modmpicom\+::scprocidwrite}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a23d8fed28f6705c564d6a10038de36c7}{modmpicom\+::scprocidread}
+\begin{DoxyCompactList}\small\item\em process id in the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a8281c8567826b44d76d7a801203c99a8}{modmpicom\+::scprocnbwrite}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\+Sub\+Cube\+Write communicator \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodmpicom_a8fde31beaf4b43228d7f93325630cefa}{modmpicom\+::scprocnbread}
+\begin{DoxyCompactList}\small\item\em process number in the Mpi\+Sub\+Cube\+Read communicator \end{DoxyCompactList}\item 
+logical(kind=4), dimension(3) \hyperlink{namespacemodmpicom_a0347e6d8a15028132a57953e6ff823a2}{modmpicom\+::periods}
+\begin{DoxyCompactList}\small\item\em periodicity of the global cartesian processes grid \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This file contains the subroutines and the variables used for M\+PI communications. 
+
+\begin{DoxyAuthor}{Author}
+Fabrice Roy 
+
+Vincent Bouillot 
+\end{DoxyAuthor}

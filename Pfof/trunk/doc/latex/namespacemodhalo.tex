@@ -1,0 +1,365 @@
+\hypertarget{namespacemodhalo}{}\section{modhalo Module Reference}
+\label{namespacemodhalo}\index{modhalo@{modhalo}}
+
+
+This module contains subroutines used to gather haloes on the differents processes and compute some observables.  
+
+
+\subsection*{Functions/\+Subroutines}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{namespacemodhalo_acf1576354acf16b205a17c83983b248a}{gatherhaloes} (mpicomm, param)
+\begin{DoxyCompactList}\small\item\em Exchange the particles so that particles belonging to one halo are gathered on the same process. \end{DoxyCompactList}\item 
+subroutine \hyperlink{namespacemodhalo_a4af0af98272044df8ab650e79d2516d6}{selecthaloes} (param)
+\item 
+subroutine \hyperlink{namespacemodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}{computecom} (periodic)
+\item 
+subroutine \hyperlink{namespacemodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}{computeradius} (periodic)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a7a64076c8448a822872da06cfb3e98f6}{halonb}
+\begin{DoxyCompactList}\small\item\em local number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}{halonb\+\_\+all}
+\begin{DoxyCompactList}\small\item\em global number of haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a026b99d5d7dc52fa2755b516c9947514}{halopartnb}
+\begin{DoxyCompactList}\small\item\em number of particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+integer(kind=4) \hyperlink{namespacemodhalo_a52f1f25dcc26f652f137e54813e02309}{myfinalnpart}
+\begin{DoxyCompactList}\small\item\em number of particles after the particles have been exchanged to gather them by haloes \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a22da1dc93c68210ac3c692f1fb545bc0}{halomass}
+\begin{DoxyCompactList}\small\item\em mass of the haloes \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a28d1d14569d3cd370d375aca76fd838c}{haloid}
+\begin{DoxyCompactList}\small\item\em ID of the haloes. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a6c47abc5102dc629247c7b90831b1030}{halopartid}
+\begin{DoxyCompactList}\small\item\em ID of the particles belonging to a halo. \end{DoxyCompactList}\item 
+integer(kind=pri), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a5b68c60e3d37130087e8314a89f8f880}{halopartramsesid}
+\begin{DoxyCompactList}\small\item\em R\+A\+M\+S\+ES ID of the particles belonging to a halo, used only for lightcone halo. \end{DoxyCompactList}\item 
+integer(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_a5047e50f3939eaf91496eb430ea12952}{halosubhalonb}
+\begin{DoxyCompactList}\small\item\em number of subhalo for each halo \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a935d49a97e72fe931ab0e2cee84d1523}{halopartpos}
+\begin{DoxyCompactList}\small\item\em position of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a9d88ee4555aab3eb3cc4626800de250b}{halopartvel}
+\begin{DoxyCompactList}\small\item\em velocity of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:), allocatable \hyperlink{namespacemodhalo_ae632dc8638ef825d9db5997b21fd3b63}{halopartpot}
+\begin{DoxyCompactList}\small\item\em potential of the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=4), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_aa850def902800d1eb780c6e4bd47edb9}{halopartfor}
+\begin{DoxyCompactList}\small\item\em force on the particles belonging to one of the local haloes \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_a872c41ce5ed017bb6f443156dd18d0af}{halocompos}
+\begin{DoxyCompactList}\small\item\em position of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:,\+:), allocatable \hyperlink{namespacemodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}{halocomvel}
+\begin{DoxyCompactList}\small\item\em velocity of the center of mass of each halo \end{DoxyCompactList}\item 
+real(kind=8), dimension(\+:), allocatable \hyperlink{namespacemodhalo_ac245616b2bd1db72ab7891e811f668de}{haloradius}
+\begin{DoxyCompactList}\small\item\em radius of each halo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module contains subroutines used to gather haloes on the differents processes and compute some observables. 
+
+Authors\+: F. Roy, V. Bouillot 
+
+\subsection{Function/\+Subroutine Documentation}
+\index{modhalo@{modhalo}!computecom@{computecom}}
+\index{computecom@{computecom}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{computecom(periodic)}{computecom(periodic)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\+::computecom (
+\begin{DoxyParamCaption}
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}{}\label{namespacemodhalo_ac4afe524dd9d15d21ce67171c4a7ba70}
+
+
+Definition at line 378 of file modhalo.\+f90.
+
+
+
+References halocompos, halocomvel, halomass, halonb, halonb\+\_\+all, halopartpos, halopartvel, and modmpicom\+::mpierr.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodhalo_ac4afe524dd9d15d21ce67171c4a7ba70_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modhalo@{modhalo}!computeradius@{computeradius}}
+\index{computeradius@{computeradius}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{computeradius(periodic)}{computeradius(periodic)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\+::computeradius (
+\begin{DoxyParamCaption}
+\item[{logical, intent(in)}]{periodic}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}{}\label{namespacemodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d}
+
+
+Definition at line 442 of file modhalo.\+f90.
+
+
+
+References halocompos, halomass, halonb, halopartpos, halopartvel, and haloradius.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodhalo_a873e8c6a5fd11756e18c33dd7a08ab7d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modhalo@{modhalo}!gatherhaloes@{gatherhaloes}}
+\index{gatherhaloes@{gatherhaloes}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{gatherhaloes(mpicomm, param)}{gatherhaloes(mpicomm, param)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\+::gatherhaloes (
+\begin{DoxyParamCaption}
+\item[{integer, intent(in)}]{mpicomm, }
+\item[{class({\bf type\+\_\+parameter\+\_\+pfof}), intent(in)}]{param}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodhalo_acf1576354acf16b205a17c83983b248a}{}\label{namespacemodhalo_acf1576354acf16b205a17c83983b248a}
+
+
+Exchange the particles so that particles belonging to one halo are gathered on the same process. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em mpicomm} & M\+PI communicator used for the communications \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 37 of file modhalo.\+f90.
+
+
+
+References modmpicom\+::emergencystop(), modvariables\+::for, modvariables\+::forf, modvariables\+::id, modvariables\+::idf, modmpicom\+::mpierr, modmpicom\+::mpireqr1, modmpicom\+::mpireqr2, modmpicom\+::mpireqr3, modmpicom\+::mpireqr4, modmpicom\+::mpireqr5, modmpicom\+::mpireqr6, modmpicom\+::mpireqr7, modmpicom\+::mpireqs1, modmpicom\+::mpireqs2, modmpicom\+::mpireqs3, modmpicom\+::mpireqs4, modmpicom\+::mpireqs5, modmpicom\+::mpireqs6, modmpicom\+::mpireqs7, myfinalnpart, modvariables\+::mynpart, modvariables\+::npart, modvariables\+::pos, modvariables\+::posf, modvariables\+::pot, modvariables\+::potf, modconstant\+::pri, modmpicom\+::procid, modmpicom\+::procnb, modvariables\+::ramsesid, modvariables\+::ramsesidf, modvariables\+::stf, modvariables\+::structure, modvariables\+::vel, and modvariables\+::velf.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodhalo_acf1576354acf16b205a17c83983b248a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodhalo_acf1576354acf16b205a17c83983b248a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{modhalo@{modhalo}!selecthaloes@{selecthaloes}}
+\index{selecthaloes@{selecthaloes}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{selecthaloes(param)}{selecthaloes(param)}}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhalo\+::selecthaloes (
+\begin{DoxyParamCaption}
+\item[{class({\bf type\+\_\+parameter\+\_\+pfof}), intent(in)}]{param}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacemodhalo_a4af0af98272044df8ab650e79d2516d6}{}\label{namespacemodhalo_a4af0af98272044df8ab650e79d2516d6}
+
+
+Definition at line 252 of file modhalo.\+f90.
+
+
+
+References modvariables\+::forf, haloid, halomass, halonb, halopartfor, halopartid, halopartnb, halopartpos, halopartpot, halopartramsesid, halopartvel, halosubhalonb, modvariables\+::idf, myfinalnpart, modvariables\+::posf, modvariables\+::potf, modmpicom\+::procid, modvariables\+::ramsesidf, modvariables\+::stf, and modvariables\+::velf.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacemodhalo_a4af0af98272044df8ab650e79d2516d6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Variable Documentation}
+\index{modhalo@{modhalo}!halocompos@{halocompos}}
+\index{halocompos@{halocompos}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halocompos}{halocompos}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\+:,\+:), allocatable modhalo\+::halocompos}\hypertarget{namespacemodhalo_a872c41ce5ed017bb6f443156dd18d0af}{}\label{namespacemodhalo_a872c41ce5ed017bb6f443156dd18d0af}
+
+
+position of the center of mass of each halo 
+
+
+
+Definition at line 28 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halocomvel@{halocomvel}}
+\index{halocomvel@{halocomvel}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halocomvel}{halocomvel}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\+:,\+:), allocatable modhalo\+::halocomvel}\hypertarget{namespacemodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}{}\label{namespacemodhalo_ad9aa6bd557e4766c0d1d612e203a1e67}
+
+
+velocity of the center of mass of each halo 
+
+
+
+Definition at line 29 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!haloid@{haloid}}
+\index{haloid@{haloid}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{haloid}{haloid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modhalo\+::haloid}\hypertarget{namespacemodhalo_a28d1d14569d3cd370d375aca76fd838c}{}\label{namespacemodhalo_a28d1d14569d3cd370d375aca76fd838c}
+
+
+ID of the haloes. 
+
+
+
+Definition at line 19 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halomass@{halomass}}
+\index{halomass@{halomass}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halomass}{halomass}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modhalo\+::halomass}\hypertarget{namespacemodhalo_a22da1dc93c68210ac3c692f1fb545bc0}{}\label{namespacemodhalo_a22da1dc93c68210ac3c692f1fb545bc0}
+
+
+mass of the haloes 
+
+
+
+Definition at line 18 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halonb@{halonb}}
+\index{halonb@{halonb}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halonb}{halonb}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\+::halonb}\hypertarget{namespacemodhalo_a7a64076c8448a822872da06cfb3e98f6}{}\label{namespacemodhalo_a7a64076c8448a822872da06cfb3e98f6}
+
+
+local number of haloes 
+
+
+
+Definition at line 14 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halonb\+\_\+all@{halonb\+\_\+all}}
+\index{halonb\+\_\+all@{halonb\+\_\+all}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halonb\+\_\+all}{halonb_all}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\+::halonb\+\_\+all}\hypertarget{namespacemodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}{}\label{namespacemodhalo_a8e5ab9d4d7316b9c26af34ac45a088ef}
+
+
+global number of haloes 
+
+
+
+Definition at line 15 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartfor@{halopartfor}}
+\index{halopartfor@{halopartfor}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartfor}{halopartfor}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modhalo\+::halopartfor}\hypertarget{namespacemodhalo_aa850def902800d1eb780c6e4bd47edb9}{}\label{namespacemodhalo_aa850def902800d1eb780c6e4bd47edb9}
+
+
+force on the particles belonging to one of the local haloes 
+
+
+
+Definition at line 27 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartid@{halopartid}}
+\index{halopartid@{halopartid}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartid}{halopartid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modhalo\+::halopartid}\hypertarget{namespacemodhalo_a6c47abc5102dc629247c7b90831b1030}{}\label{namespacemodhalo_a6c47abc5102dc629247c7b90831b1030}
+
+
+ID of the particles belonging to a halo. 
+
+
+
+Definition at line 20 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartnb@{halopartnb}}
+\index{halopartnb@{halopartnb}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartnb}{halopartnb}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\+::halopartnb}\hypertarget{namespacemodhalo_a026b99d5d7dc52fa2755b516c9947514}{}\label{namespacemodhalo_a026b99d5d7dc52fa2755b516c9947514}
+
+
+number of particles belonging to one of the local haloes 
+
+
+
+Definition at line 16 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartpos@{halopartpos}}
+\index{halopartpos@{halopartpos}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartpos}{halopartpos}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modhalo\+::halopartpos}\hypertarget{namespacemodhalo_a935d49a97e72fe931ab0e2cee84d1523}{}\label{namespacemodhalo_a935d49a97e72fe931ab0e2cee84d1523}
+
+
+position of the particles belonging to one of the local haloes 
+
+
+
+Definition at line 24 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartpot@{halopartpot}}
+\index{halopartpot@{halopartpot}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartpot}{halopartpot}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:), allocatable modhalo\+::halopartpot}\hypertarget{namespacemodhalo_ae632dc8638ef825d9db5997b21fd3b63}{}\label{namespacemodhalo_ae632dc8638ef825d9db5997b21fd3b63}
+
+
+potential of the particles belonging to one of the local haloes 
+
+
+
+Definition at line 26 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartramsesid@{halopartramsesid}}
+\index{halopartramsesid@{halopartramsesid}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartramsesid}{halopartramsesid}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=pri), dimension(\+:), allocatable modhalo\+::halopartramsesid}\hypertarget{namespacemodhalo_a5b68c60e3d37130087e8314a89f8f880}{}\label{namespacemodhalo_a5b68c60e3d37130087e8314a89f8f880}
+
+
+R\+A\+M\+S\+ES ID of the particles belonging to a halo, used only for lightcone halo. 
+
+
+
+Definition at line 21 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halopartvel@{halopartvel}}
+\index{halopartvel@{halopartvel}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halopartvel}{halopartvel}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=4), dimension(\+:,\+:), allocatable modhalo\+::halopartvel}\hypertarget{namespacemodhalo_a9d88ee4555aab3eb3cc4626800de250b}{}\label{namespacemodhalo_a9d88ee4555aab3eb3cc4626800de250b}
+
+
+velocity of the particles belonging to one of the local haloes 
+
+
+
+Definition at line 25 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!haloradius@{haloradius}}
+\index{haloradius@{haloradius}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{haloradius}{haloradius}}]{\setlength{\rightskip}{0pt plus 5cm}real(kind=8), dimension(\+:), allocatable modhalo\+::haloradius}\hypertarget{namespacemodhalo_ac245616b2bd1db72ab7891e811f668de}{}\label{namespacemodhalo_ac245616b2bd1db72ab7891e811f668de}
+
+
+radius of each halo 
+
+
+
+Definition at line 30 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!halosubhalonb@{halosubhalonb}}
+\index{halosubhalonb@{halosubhalonb}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{halosubhalonb}{halosubhalonb}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4), dimension(\+:), allocatable modhalo\+::halosubhalonb}\hypertarget{namespacemodhalo_a5047e50f3939eaf91496eb430ea12952}{}\label{namespacemodhalo_a5047e50f3939eaf91496eb430ea12952}
+
+
+number of subhalo for each halo 
+
+
+
+Definition at line 22 of file modhalo.\+f90.
+
+\index{modhalo@{modhalo}!myfinalnpart@{myfinalnpart}}
+\index{myfinalnpart@{myfinalnpart}!modhalo@{modhalo}}
+\subsubsection[{\texorpdfstring{myfinalnpart}{myfinalnpart}}]{\setlength{\rightskip}{0pt plus 5cm}integer(kind=4) modhalo\+::myfinalnpart}\hypertarget{namespacemodhalo_a52f1f25dcc26f652f137e54813e02309}{}\label{namespacemodhalo_a52f1f25dcc26f652f137e54813e02309}
+
+
+number of particles after the particles have been exchanged to gather them by haloes 
+
+
+
+Definition at line 17 of file modhalo.\+f90.
+

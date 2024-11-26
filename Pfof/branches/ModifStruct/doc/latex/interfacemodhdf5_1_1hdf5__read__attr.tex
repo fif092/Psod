@@ -1,0 +1,351 @@
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr}{\section{modhdf5\-:\-:hdf5\-\_\-read\-\_\-attr Interface Reference}
+\label{interfacemodhdf5_1_1hdf5__read__attr}\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+}
+
+
+Generic inteface used to read attributes from a hdf5 file.  
+
+
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a8f911e83ea7fd98d6198490ba5fed12c}{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read an integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_afa020293ebd3115b68cbe1fdfa312c4c}{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a455abe5ff52b1fae1e547aebd0c94875}{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D integer4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_ae31cf266133a70be9c4eaa7853b48b19}{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_abf02aaadb611874adb1b0129be1c0d5c}{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a1c6f87720f189a2302ed117e27441c2e}{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_aa0543551e37cada35de8bc387d679a60}{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d} (id, name, attr)
+\begin{DoxyCompactList}\small\item\em Read a real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a00681ffabb305348c87b169a8e541a00}{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read a 1-\/\-D real8 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a81c3ea7a304841609d46f0c39e183fa1}{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d} (id, name, n1, n2, attr)
+\begin{DoxyCompactList}\small\item\em Read a 2-\/\-D real4 attribute in a hdf5 file. \end{DoxyCompactList}\item 
+subroutine \hyperlink{interfacemodhdf5_1_1hdf5__read__attr_a12ed53d4b17f713c6dff6d09c93eae93}{hdf5\-\_\-read\-\_\-char\-\_\-attr} (id, name, n1, attr)
+\begin{DoxyCompactList}\small\item\em Read string attribute in a hdf5 file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Generic inteface used to read attributes from a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read \\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute \\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array (optional) \\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array (optional) \\
+\hline
+\mbox{\tt in,out}  & {\em data} & 0-\/\-D, 1-\/\-D or 2-\/\-D attribute of type Integer(4), Real(4), Real(8) or Character \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file modhdf5.\-f90.
+
+
+
+\subsection{Member Function/\-Subroutine Documentation}
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a12ed53d4b17f713c6dff6d09c93eae93}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-char\-\_\-attr@{hdf5\-\_\-read\-\_\-char\-\_\-attr}}
+\index{hdf5\-\_\-read\-\_\-char\-\_\-attr@{hdf5\-\_\-read\-\_\-char\-\_\-attr}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-char\-\_\-attr}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-char\-\_\-attr (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{character(len=n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a12ed53d4b17f713c6dff6d09c93eae93}
+
+
+Read string attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute string\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3257 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a8f911e83ea7fd98d6198490ba5fed12c}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a8f911e83ea7fd98d6198490ba5fed12c}
+
+
+Read an integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3025 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_afa020293ebd3115b68cbe1fdfa312c4c}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_afa020293ebd3115b68cbe1fdfa312c4c}
+
+
+Read a 1-\/\-D integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3053 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a455abe5ff52b1fae1e547aebd0c94875}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-int4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-int4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{integer(kind=4), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a455abe5ff52b1fae1e547aebd0c94875}
+
+
+Read a 2-\/\-D integer4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3078 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_ae31cf266133a70be9c4eaa7853b48b19}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{real(kind=4), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_ae31cf266133a70be9c4eaa7853b48b19}
+
+
+Read a real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3105 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_abf02aaadb611874adb1b0129be1c0d5c}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=4), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_abf02aaadb611874adb1b0129be1c0d5c}
+
+
+Read a 1-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3129 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a1c6f87720f189a2302ed117e27441c2e}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real4\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real4\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=4), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a1c6f87720f189a2302ed117e27441c2e}
+
+
+Read a 2-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3154 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_aa0543551e37cada35de8bc387d679a60}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr0d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr0d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{real(kind=8), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_aa0543551e37cada35de8bc387d679a60}
+
+
+Read a real8 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3181 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a00681ffabb305348c87b169a8e541a00}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr1d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr1d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{real(kind=8), dimension(n1), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a00681ffabb305348c87b169a8e541a00}
+
+
+Read a 1-\/\-D real8 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3205 of file modhdf5.\-f90.
+
+\hypertarget{interfacemodhdf5_1_1hdf5__read__attr_a81c3ea7a304841609d46f0c39e183fa1}{\index{modhdf5\-::hdf5\-\_\-read\-\_\-attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}!hdf5\-\_\-read\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}}
+\index{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d@{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}!modhdf5::hdf5_read_attr@{modhdf5\-::hdf5\-\_\-read\-\_\-attr}}
+\subsubsection[{hdf5\-\_\-read\-\_\-real8\-\_\-attr2d}]{\setlength{\rightskip}{0pt plus 5cm}subroutine modhdf5\-::hdf5\-\_\-read\-\_\-attr\-::hdf5\-\_\-read\-\_\-real8\-\_\-attr2d (
+\begin{DoxyParamCaption}
+\item[{integer(kind=hid\-\_\-t), intent(in)}]{id, }
+\item[{character(len={\bf h5strlen}), intent(in)}]{name, }
+\item[{integer(kind=4), intent(in)}]{n1, }
+\item[{integer(kind=4), intent(in)}]{n2, }
+\item[{real(kind=8), dimension(n1,n2), intent(inout)}]{attr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{interfacemodhdf5_1_1hdf5__read__attr_a81c3ea7a304841609d46f0c39e183fa1}
+
+
+Read a 2-\/\-D real4 attribute in a hdf5 file. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em id} & id of the file/group where the attribute will be read\\
+\hline
+\mbox{\tt in}  & {\em name} & name of the attribute\\
+\hline
+\mbox{\tt in}  & {\em n1} & first dimension of the attribute array\\
+\hline
+\mbox{\tt in}  & {\em n2} & second dimension of the attribute array\\
+\hline
+\mbox{\tt in,out}  & {\em attr} & attribute value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3230 of file modhdf5.\-f90.
+
+
+
+The documentation for this interface was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/roy/\-Travail/\-Devel/\-Cosmologie/\-Pfof/branches/\-Modif\-Struct/common/src/\hyperlink{modhdf5_8f90}{modhdf5.\-f90}\end{DoxyCompactItemize}

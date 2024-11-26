@@ -1,0 +1,5 @@
+<map id="modfofmpi::mergehaloes" name="modfofmpi::mergehaloes">
+<area shape="rect" id="node2" href="$namespacemodfofmpi.html#ad3a945459cf7b001e4c4e51429eb8f31" title="Finds the pairs of particles that should be linked through the merging procedure. &#160;&#160;two directions ar..." alt="" coords="242,5,389,32"/>
+<area shape="rect" id="node3" href="$namespacemodfofmpi.html#ac5a219c1a82d90230bcb2b1260adc4b4" title="This routine initializes the merging of halo parts. If the flag value is not 0, the position and halo..." alt="" coords="238,56,393,83"/>
+<area shape="rect" id="node4" href="$namespacemodfofmpi.html#ae5663edf5a2902f952f8d6d3f5c4c8a5" title="Exchanges the haloID of the particles located near the faces and edges and set the same haloID to eac..." alt="" coords="219,107,412,133"/>
+</map>
